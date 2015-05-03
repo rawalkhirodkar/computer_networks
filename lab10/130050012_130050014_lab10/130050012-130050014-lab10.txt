@@ -1,0 +1,73 @@
+1.	Religious because TCP starts with a SYN.
+	More welcomed because TCP does handshake.
+
+--------------------------------------------------------------------------------------------------------------------------------
+2.	The famous three-way handshake can be seen initially.
+	SYN (from sender of file to dest)
+	SYN-ACK (from sender of file to dest)
+	ACK (from sender of file to dest)
+
+	Four tuple associated with TCP connection:
+	< source IP, source port number, destination IP, destination port number >
+	< 10.105.11.83,	42308,	10.99.99.5,	80 >
+
+	Intial seq number from source (sender of file) to destination: 1826605803 (relative seq number is 0)
+	Intial seq number from destination to source (sender of file) : 2212176996 (relative seq number is 1)
+
+--------------------------------------------------------------------------------------------------------------------------------
+3.	POST HTTP request message is carried in TCP connection
+	(Details below) :-
+	Request Method: POST
+	Request Version: 1.1
+	Request URI:/repository/repository_ajax.php?action=upload
+
+	Found this in HTTP protocol packets sent from sender to receiver just after uploading of file is done.
+
+--------------------------------------------------------------------------------------------------------------------------------
+4.	Initial window size (sender): 29200 bytes
+	Determined by observing the SYN packet from sender to receiver in wireshark in the field 'calculated window size'.
+	This is also same as Window size value (no re-scaling done).
+
+--------------------------------------------------------------------------------------------------------------------------------
+5.	Peculiar about acks generated:
+	The ACK: packet sent ratio is not 1:1.
+	Numbers of ACKS is larger than number of packet sent.
+
+	This is possible maybe due to fragmentation. We sent a packet greater than the MTU size of the link, so in between the
+	packet	got fragmented into more than 1 packets, so sender received more than 1 Ack for 1 packet sent.
+
+--------------------------------------------------------------------------------------------------------------------------------
+6.	Maximum size of TCP segment: 21720 bytes
+	Minimum size of TCP segment: 889 bytes
+
+--------------------------------------------------------------------------------------------------------------------------------
+7.	Received window size of TCP connection: 14480 bytes (at start of connection)
+	Determined by observing the SYN-ACK packet from to receiver to sender in wireshark in the field 'calculated window size'.
+	This is also same as Window size value (no re-scaling done).
+
+	Receiver's window size is increasing with respect to size.
+	We think this is because the receiver is processing data at a faster rate than sender is sending.
+
+--------------------------------------------------------------------------------------------------------------------------------
+8.	Closing of connection was initiated by the server (receiver).
+	We determined this by looking at the FIN-ACK packets in the connection. The first FIN-ACK packet is sent by server to sender.
+	This happens just after the sender sent an ACK packet to server.
+
+--------------------------------------------------------------------------------------------------------------------------------
+9.	TCP throughput achieved by the connection:
+	Data from Summary:-
+	Time for which connection was open = 3.1683 - 1.719862 sec = 0.738238 sec.
+	Data from sender to receiver = 8768068 bytes
+		Throughput = 8768068 bytes/2 sec
+				   = 6.053464 Mbps
+
+--------------------------------------------------------------------------------------------------------------------------------
+10.	Yes, we can separate out the two phases. In slow start, there should be only 1 outstanding packet. It is happening only 
+	once in our case at the start of connection. by looking up the graph, as the recovery is very fast, this may be tcp reno.
+	After that, in most of the time, it is in phase of congestion avoidance.
+
+	Action in trace is congestion. In our case receiver advertise window size is always increasing and is greater than the outstanding bytes in flights. 
+	
+	We now that,Outstanding bytes in flight = minimum(network window, receiver advertise window).
+
+	As receiver window is much greater than outstanding bytes in flight, action can't be flow control . So it has to be the case of network congestion.

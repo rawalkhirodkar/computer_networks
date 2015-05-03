@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://www.binarytides.com/linux-netstat-command-examples/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<title>10 basic examples of linux netstat command</title>
+<link rel="stylesheet" type="text/css" media="all" href="./10 basic examples of linux netstat command_files/style.css">
+
+
+
+<!-- All in One SEO Pack 2.2.5.1 by Michael Torbert of Semper Fi Web Design[108,178] -->
+<meta name="description" itemprop="description" content="This tutorial shows 10 super simple examples of netstat command on linux for monitoring network connections">
+
+<link rel="canonical" href="./10 basic examples of linux netstat command_files/10 basic examples of linux netstat command.html">
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="BinaryTides » 10 basic examples of linux netstat command Comments Feed" href="http://www.binarytides.com/linux-netstat-command-examples/feed/">
+<link rel="stylesheet" id="yarppWidgetCss-css" href="./10 basic examples of linux netstat command_files/widget.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./10 basic examples of linux netstat command_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="digg-digg-css" href="./10 basic examples of linux netstat command_files/diggdigg-style.css" type="text/css" media="screen">
+<script async="" src="./10 basic examples of linux netstat command_files/saved_resource"></script><script src="./10 basic examples of linux netstat command_files/quant.js" async="" type="text/javascript"></script><script async="" src="./10 basic examples of linux netstat command_files/fbds.js"></script><script src="./10 basic examples of linux netstat command_files/cb=gapi.loaded_1" async=""></script><script src="./10 basic examples of linux netstat command_files/cb=gapi.loaded_0" async=""></script><script async="" src="./10 basic examples of linux netstat command_files/analytics.js"></script><script type="text/javascript" src="./10 basic examples of linux netstat command_files/jquery.js"></script><style type="text/css"></style>
+<script type="text/javascript" src="./10 basic examples of linux netstat command_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./10 basic examples of linux netstat command_files/jquery.lazyload.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.binarytides.com/blog/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.binarytides.com/blog/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Install Nginx + Php FPM + APC  on CentOS 6.4" href="http://www.binarytides.com/install-nginx-php-fpm-centos/">
+<link rel="next" title="Install MariaDB on CentOS 6.4" href="http://www.binarytides.com/install-mariadb-centos-6-4/">
+<meta name="generator" content="WordPress 4.1.1">
+<link rel="shortlink" href="http://www.binarytides.com/?p=6252">
+
+<!-- Schema.org markup for Google+ --> 
+<meta itemprop="name" content="10 basic examples of linux netstat command"> 
+<meta itemprop="description" content="This tutorial shows 10 super simple examples of netstat command on linux for monitoring network connections">
+
+
+<!-- Open Graph data -->
+<meta property="og:title" content="10 basic examples of linux netstat command">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://www.binarytides.com/linux-netstat-command-examples/">
+<meta property="og:description" content="This tutorial shows 10 super simple examples of netstat command on linux for monitoring network connections">
+<meta property="og:site_name" content="BinaryTides">
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@binarytides">
+<meta name="twitter:title" content="10 basic examples of linux netstat command">
+<meta name="twitter:description" content="This tutorial shows 10 super simple examples of netstat command on linux for monitoring network connections">
+<meta name="twitter:creator" content="@binarytides">
+<!-- Twitter summary card with large image must be at least 280x150px -->
+<meta name="twitter:image:src" content="">
+
+	<!-- google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2702686-20', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Google Plus Publisher Markup -->
+<link href="https://plus.google.com/+binarytides" rel="publisher"><style type="text/css">
+img.lazy { display: none; }
+</style>
+<script type="text/javascript">
+	window._wp_rp_static_base_url = 'https://wprp.zemanta.com/static/';
+	window._wp_rp_wp_ajax_url = "http://www.binarytides.com/blog/wp-admin/admin-ajax.php";
+	window._wp_rp_plugin_version = '3.5.4';
+	window._wp_rp_post_id = '6252';
+	window._wp_rp_num_rel_posts = '6';
+	window._wp_rp_thumbnails = true;
+	window._wp_rp_post_title = '10+basic+examples+of+linux+netstat+command';
+	window._wp_rp_post_tags = ['netstat', 'network+monitoring', 'linux+network', 'linux+commands', 'server', 'web', 'tool', 'linux', 'unix', 'list', 'tabl', 'socket', 'port', 'network', 'system', 'connect', 'tutori', 'internet', 'state'];
+	window._wp_rp_promoted_content = true;
+</script>
+<script type="text/javascript" src="./10 basic examples of linux netstat command_files/loader.js" async=""></script>
+<link rel="stylesheet" href="http://www.binarytides.com/blog/wp-content/plugins/wordpress-23-related-posts-plugin/static/themes/modern.css?version=3.5.4">
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+
+<link href="./10 basic examples of linux netstat command_files/css" rel="stylesheet" type="text/css">
+<link href="./10 basic examples of linux netstat command_files/css(1)" rel="stylesheet" type="text/css">
+<link href="./10 basic examples of linux netstat command_files/css(2)" rel="stylesheet" type="text/css">
+
+<script src="./10 basic examples of linux netstat command_files/secureAnonymousFramework"></script><script type="text/javascript" async="" src="./10 basic examples of linux netstat command_files/embed.js"></script><script async="" type="text/javascript" src="./10 basic examples of linux netstat command_files/count.js"></script><style type="text/css">* html #li_ui_li_gen_1429169010412_0 a#li_ui_li_gen_1429169010412_0-link{height:1% !important;}#li_ui_li_gen_1429169010412_0{position:relative !important;overflow:visible !important;display:block !important;}#li_ui_li_gen_1429169010412_0 span{-webkit-box-sizing:content-box !important;-moz-box-sizing:content-box !important;box-sizing:content-box !important;}#li_ui_li_gen_1429169010412_0 a#li_ui_li_gen_1429169010412_0-link{border:0 !important;height:20px !important;text-decoration:none !important;padding:0 !important;margin:0 !important;display:inline-block !important;}#li_ui_li_gen_1429169010412_0 a#li_ui_li_gen_1429169010412_0-link:link, #li_ui_li_gen_1429169010412_0 a#li_ui_li_gen_1429169010412_0-link:visited, #li_ui_li_gen_1429169010412_0 a#li_ui_li_gen_1429169010412_0-link:hover, #li_ui_li_gen_1429169010412_0 a#li_ui_li_gen_1429169010412_0-link:active{border:0 !important;text-decoration:none !important;}#li_ui_li_gen_1429169010412_0 a#li_ui_li_gen_1429169010412_0-link:after{content:"." !important;display:block !important;clear:both !important;visibility:hidden !important;line-height:0 !important;height:0 !important;}#li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-logo{background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-position:0px -593px !important;background-repeat:no-repeat !important;background-color:#0077b5 !important;background-size:initial !important;cursor:pointer !important;border:0 !important;border-right:1px solid #066094 !important;text-indent:-9999em !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:absolute !important;left:0px !important;top:0px !important;display:block !important;width:20px !important;height:20px !important;float:right !important;border-radius:2px !important;-webkit-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;}#li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title{color:#fff !important;cursor:pointer !important;display:block !important;white-space:nowrap !important;float:left !important;margin-left:1px !important;vertical-align:top !important;overflow:hidden !important;text-align:center !important;height:18px !important;padding:0 4px 0 23px !important;border:1px solid #000 !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;text-shadow:0 -1px #005887 !important;line-height:20px !important;border-radius:2px !important;-webkit-border-radius:2px !important;border-top-right-radius:2px !important;border-bottom-right-radius:2px !important;-webkit-border-top-right-radius:2px !important;-webkit-border-bottom-right-radius:2px !important;background-color:#0077b5 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0077b5), color-stop(100%,#0077b5)) !important; background-image: -webkit-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}#li_ui_li_gen_1429169010412_0.hovered #li_ui_li_gen_1429169010412_0-title{border:1px solid #000 !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0369a0), color-stop(100%,#0369a0)) !important; background-image: -webkit-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}#li_ui_li_gen_1429169010412_0.clicked #li_ui_li_gen_1429169010412_0-title, #li_ui_li_gen_1429169010412_0.down #li_ui_li_gen_1429169010412_0-title{color:#fff !important;border:1px solid #000 !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#066094), color-stop(100%,#066094)) !important; background-image: -webkit-linear-gradient(top, #066094 0%, #066094 100%) !important;}.IN-shadowed #li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title{}.IN-shadowed #li_ui_li_gen_1429169010412_0.hovered #li_ui_li_gen_1429169010412_0-title{}.IN-shadowed #li_ui_li_gen_1429169010412_0.clicked #li_ui_li_gen_1429169010412_0-title, .IN-shadowed #li_ui_li_gen_1429169010412_0.down #li_ui_li_gen_1429169010412_0-title{}#li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title-text, #li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title-text *{color:#fff !important;font-size:11px !important;font-family:Arial, sans-serif !important;font-weight:bold !important;font-style:normal !important;-webkit-font-smoothing:antialiased !important;display:inline-block !important;background:transparent none !important;vertical-align:top !important;height:18px !important;line-height:20px !important;float:none !important;}#li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title-text strong{font-weight:bold !important;}#li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title-text em{font-style:italic !important;}#li_ui_li_gen_1429169010412_0.hovered #li_ui_li_gen_1429169010412_0-title-text, #li_ui_li_gen_1429169010412_0.hovered #li_ui_li_gen_1429169010412_0-title-text *{color:#fff !important;}#li_ui_li_gen_1429169010412_0.clicked #li_ui_li_gen_1429169010412_0-title-text, #li_ui_li_gen_1429169010412_0.down #li_ui_li_gen_1429169010412_0-title-text, #li_ui_li_gen_1429169010412_0.clicked #li_ui_li_gen_1429169010412_0-title-text *, #li_ui_li_gen_1429169010412_0.down #li_ui_li_gen_1429169010412_0-title-text *{color:#fff !important;}#li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title #li_ui_li_gen_1429169010412_0-mark{display:inline-block !important;width:0px !important;overflow:hidden !important;}.success #li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title{color:#fff !important;border-top-color:#0077b5 !important;border-right-color:#0077b5 !important;border-bottom-color:#0077b5 !important;border-left-color:#0077b5 !important;background-color:#0077b5 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0077b5), color-stop(100%,#0077b5)) !important; background-image: -webkit-linear-gradient(top, #0077b5 0%, #0077b5 100%) !important;}.success #li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title-text, .success #li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1429169010412_0 #li_ui_li_gen_1429169010412_0-title{}.success #li_ui_li_gen_1429169010412_0.hovered #li_ui_li_gen_1429169010412_0-title{color:#fff !important;border-top-color:#0369a0 !important;border-right-color:#0369a0 !important;border-bottom-color:#0369a0 !important;border-left-color:#0369a0 !important;background-color:#0369a0 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#0369a0), color-stop(100%,#0369a0)) !important; background-image: -webkit-linear-gradient(top, #0369a0 0%, #0369a0 100%) !important;}.success #li_ui_li_gen_1429169010412_0.hovered #li_ui_li_gen_1429169010412_0-title-text, .success #li_ui_li_gen_1429169010412_0.hovered #li_ui_li_gen_1429169010412_0-title-text *{color:#fff !important;}.success #li_ui_li_gen_1429169010412_0.clicked #li_ui_li_gen_1429169010412_0-title, .success #li_ui_li_gen_1429169010412_0.down #li_ui_li_gen_1429169010412_0-title{color:#fff !important;border-top-color:#066094 !important;border-right-color:#066094 !important;border-bottom-color:#066094 !important;border-left-color:#066094 !important;background-color:#066094 !important;background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#066094), color-stop(100%,#066094)) !important; background-image: -webkit-linear-gradient(top, #066094 0%, #066094 100%) !important;}.success #li_ui_li_gen_1429169010412_0.clicked #li_ui_li_gen_1429169010412_0-title-text, .success #li_ui_li_gen_1429169010412_0.down #li_ui_li_gen_1429169010412_0-title-text, .success #li_ui_li_gen_1429169010412_0.clicked #li_ui_li_gen_1429169010412_0-title-text *, .success #li_ui_li_gen_1429169010412_0.down #li_ui_li_gen_1429169010412_0-title-text *{color:#fff !important;}.IN-shadowed .success #li_ui_li_gen_1429169010412_0.clicked #li_ui_li_gen_1429169010412_0-title, .IN-shadowed .success #li_ui_li_gen_1429169010412_0.down #li_ui_li_gen_1429169010412_0-title{}#li_ui_li_gen_1429169010430_1-container.IN-top {display:inline-block !important;overflow:visible !important;position:relative !important;height:42px !important;line-height:1px !important;cursor:pointer !important;}#li_ui_li_gen_1429169010430_1.IN-top {display:inline-block !important;height:42px !important;width:60px !important;text-align:center !important;background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:-207px -470px !important;}#li_ui_li_gen_1429169010430_1-content.IN-top {display:inline !important;font-size:16px !important;color:#4e4e4e !important;font-weight:bold !important;font-family:Arial, sans-serif !important;line-height:38px !important;}#li_ui_li_gen_1429169010430_1-container.IN-empty #li_ui_li_gen_1429169010430_1-inner.IN-top {background-image:url(https://static.licdn.com/scds/common/u/images/apps/connect/sprites/sprite_connect_v14.png) !important;background-color:transparent !important;background-repeat:no-repeat !important;background-position:0px -560px !important;background-size:initial !important;overflow:hidden !important;margin:4px auto 0 auto !important;width:28px !important;height:28px !important;display:block !important;}#li_ui_li_gen_1429169010430_1-container.IN-empty #li_ui_li_gen_1429169010430_1-content.IN-top {text-indent:-999px !important;display:inline-block !important;}#li_ui_li_gen_1429169010430_1-container.IN-hidden #li_ui_li_gen_1429169010430_1 {display:none !important;}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f8;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3a5795;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #2f477a;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f8;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style><script async="" src="./10 basic examples of linux netstat command_files/count-data.js"></script><script type="text/javascript" src="http://ads.dfgio.com/loader.js?client=topaz0003"></script><script src="./10 basic examples of linux netstat command_files/alfie.f51946af45e0b561c60f768335c9eb79.js" async="" charset="UTF-8"></script></head>
+<body data-twttr-rendered="true">
+
+<!-- Begin #wrapper -->
+<div id="wrapper">
+	<!-- Begin #header -->
+	<div id="header">
+	<div id="header2">
+		<div id="logo"><a href="http://www.binarytides.com/">BinaryTides</a></div>
+
+		<!-- Begin #topMenuRight -->
+			<div id="topMenuRight">
+			
+			</div>
+		<!-- End #topMenuRight -->
+	</div>
+	</div>
+	<!-- End #header -->
+
+
+
+	<!-- Begin #nav_menu -->
+	<div id="nav_menu">
+	<div id="nav_menu_contents">
+	<!-- Begin #topMenu -->
+	<div id="topMenu" class="ddsmoothmenu"><ul id="menu-header-navigation" class="menu"><li id="menu-item-7601" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7601"><a href="http://www.binarytides.com/">Home</a></li>
+<li id="menu-item-7528" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7528"><a href="http://www.binarytides.com/category/apps/">Apps</a></li>
+<li id="menu-item-7530" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7530"><a href="http://www.binarytides.com/category/programming/">Coding</a>
+<ul class="sub-menu">
+	<li id="menu-item-7532" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7532"><a href="http://www.binarytides.com/category/programming/html5-2/">Html5</a>
+	<ul class="sub-menu">
+		<li id="menu-item-7533" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7533"><a href="http://www.binarytides.com/category/programming/html5-2/box2d-game-programming/">Box2d</a></li>
+	</ul>
+</li>
+	<li id="menu-item-7534" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7534"><a href="http://www.binarytides.com/category/programming/javascript/">Javascript</a></li>
+	<li id="menu-item-7531" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7531"><a href="http://www.binarytides.com/category/programming/database/">Database</a></li>
+	<li id="menu-item-7535" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7535"><a href="http://www.binarytides.com/category/programming/php-tutorials/">PHP</a>
+	<ul class="sub-menu">
+		<li id="menu-item-7536" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7536"><a href="http://www.binarytides.com/category/programming/php-tutorials/php-snippets/">Php Snippets</a></li>
+		<li id="menu-item-7537" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7537"><a href="http://www.binarytides.com/category/programming/php-tutorials/tutorial/">Tutorial</a></li>
+	</ul>
+</li>
+	<li id="menu-item-7538" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7538"><a href="http://www.binarytides.com/category/programming/sockets/">Socket Programming</a>
+	<ul class="sub-menu">
+		<li id="menu-item-7539" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7539"><a href="http://www.binarytides.com/category/programming/sockets/c-sockets/">C</a></li>
+		<li id="menu-item-7540" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7540"><a href="http://www.binarytides.com/category/programming/sockets/java-sockets-sockets/">Java</a></li>
+		<li id="menu-item-7541" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7541"><a href="http://www.binarytides.com/category/programming/sockets/perl/">Perl</a></li>
+		<li id="menu-item-7542" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7542"><a href="http://www.binarytides.com/category/programming/sockets/php-sockets-sockets/">PHP</a></li>
+		<li id="menu-item-7543" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7543"><a href="http://www.binarytides.com/category/programming/sockets/python-sockets-sockets/">Python</a></li>
+		<li id="menu-item-7544" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7544"><a href="http://www.binarytides.com/category/programming/sockets/winsock-sockets/">Winsock</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-7545" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7545"><a href="http://www.binarytides.com/category/distros/">Distros</a>
+<ul class="sub-menu">
+	<li id="menu-item-7546" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7546"><a href="http://www.binarytides.com/category/distros/centos-linux/">CentOS</a></li>
+	<li id="menu-item-7547" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7547"><a href="http://www.binarytides.com/category/distros/debian-linux/">Debian</a></li>
+	<li id="menu-item-7548" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7548"><a href="http://www.binarytides.com/category/distros/fedora-linux/">Fedora</a></li>
+	<li id="menu-item-7549" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7549"><a href="http://www.binarytides.com/category/distros/linux-mint/">Linux Mint</a></li>
+	<li id="menu-item-7550" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7550"><a href="http://www.binarytides.com/category/distros/opensuse/">openSuse</a></li>
+	<li id="menu-item-7551" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7551"><a href="http://www.binarytides.com/category/distros/ubuntu-2/">Ubuntu</a></li>
+</ul>
+</li>
+<li id="menu-item-7552" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7552"><a href="http://www.binarytides.com/category/general/">General</a>
+<ul class="sub-menu">
+	<li id="menu-item-7555" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7555"><a href="http://www.binarytides.com/category/general/freelancing-general/">Freelancing</a></li>
+	<li id="menu-item-7556" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7556"><a href="http://www.binarytides.com/category/general/networking-2/">Networking</a></li>
+	<li id="menu-item-7557" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7557"><a href="http://www.binarytides.com/category/general/virtualbox/">Virtualbox</a></li>
+	<li id="menu-item-7558" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7558"><a href="http://www.binarytides.com/category/general/windows/">Windows</a></li>
+	<li id="menu-item-7559" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7559"><a href="http://www.binarytides.com/category/general/windows/windows-8/">Windows 8</a></li>
+</ul>
+</li>
+<li id="menu-item-7561" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-7561"><a href="http://www.binarytides.com/category/linux/">Linux</a>
+<ul class="sub-menu">
+	<li id="menu-item-7562" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7562"><a href="http://www.binarytides.com/category/linux/hardware/">Hardware</a></li>
+	<li id="menu-item-7563" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-7563"><a href="http://www.binarytides.com/category/linux/linux-commands-linux/">Linux Commands</a></li>
+</ul>
+</li>
+<li id="menu-item-7564" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7564"><a href="http://www.binarytides.com/category/reviews/">Reviews</a></li>
+<li id="menu-item-7565" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7565"><a href="http://www.binarytides.com/category/security/">Security</a>
+<ul class="sub-menu">
+	<li id="menu-item-7566" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7566"><a href="http://www.binarytides.com/category/security/burp-suite-hacking-2/">Burp Suite</a></li>
+	<li id="menu-item-7567" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7567"><a href="http://www.binarytides.com/category/security/kali-linux-hacking-2/">Kali Linux</a></li>
+	<li id="menu-item-7568" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7568"><a href="http://www.binarytides.com/category/security/metasploit-hacking-2/">Metasploit</a></li>
+</ul>
+</li>
+<li id="menu-item-7569" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-7569"><a href="http://www.binarytides.com/category/server-2/">Server</a>
+<ul class="sub-menu">
+	<li id="menu-item-7570" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7570"><a href="http://www.binarytides.com/category/server-2/ftp-server-2/">FTP</a></li>
+	<li id="menu-item-7571" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7571"><a href="http://www.binarytides.com/category/server-2/http-server-2/">Http</a></li>
+	<li id="menu-item-7572" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7572"><a href="http://www.binarytides.com/category/server-2/monitoring/">Monitoring</a></li>
+	<li id="menu-item-7573" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7573"><a href="http://www.binarytides.com/category/server-2/smtp/">Smtp</a></li>
+</ul>
+</li>
+<li id="menu-item-7574" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7574"><a href="http://www.binarytides.com/category/super-tips/">Super Tips</a></li>
+</ul></div>			
+	<!-- End #topMenu -->
+	</div>
+	</div>
+	<!-- End #nav_menu -->
+
+
+	<!-- Begin #content -->
+	<div id="content" class="clearfix">	<div id="title">
+
+				<h1>10 basic examples of linux netstat command</h1>
+
+
+
+<div class="postMetaSingle" style="overflow:hidden;">
+
+<div class="info" style="font-size:90%; float:left;">
+
+	
+	<a class="category" href="http://www.binarytides.com/category/linux/linux-commands-linux/" title="View all posts in Linux Commands">Linux Commands</a>	
+	<!-- author and date -->
+	<span style="margin-left:15px;">By</span> 
+	<span style="color: #07c;">Silver Moon</span> 
+
+	<!-- date -->
+	<span style="margin-left:15px;">On</span> 
+	<span style="color: #07c;">Nov 12, 2013</span>
+	
+	<!-- comments link -->
+	<span style="margin-left:15px;">
+		<a href="http://www.binarytides.com/linux-netstat-command-examples/#disqus_thread" title="Comment on 10 basic examples of linux netstat command" data-disqus-identifier="6252 http://www.binarytides.com/?p=6252">9 Comments</a>	</span>
+</div>
+<!-- info div close -->	
+
+	<!-- social links -->
+	<div class="social">
+
+	<div style="display:inline-block; float:left; width:90px;">
+
+<iframe src="./10 basic examples of linux netstat command_files/like(1).html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowtransparency="true"></iframe>
+
+
+	</div>
+	<div style="display:inline-block;">
+		<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1429169010050" name="I0_1429169010050" src="./10 basic examples of linux netstat command_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div>
+	</div>
+	<div style="display:inline-block;">
+		<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./10 basic examples of linux netstat command_files/tweet_button.20ed5cfd7315475c9d1d523194b1645f.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 108px; height: 20px;"></iframe>
+	</div>
+	</div>
+
+</div>
+
+
+</div>
+
+<div id="colwrap">
+<!-- Begin #colLeft -->
+		<div id="colLeft">
+		<div id="colLeftInner">
+		<!-- Begin .postBox -->
+		<div class="postBox">
+
+			<div class="postBoxMid">
+				<div class="postBoxMidInner first clearfix">
+
+
+
+
+
+
+				
+
+<a id="dd_start"></a><div id="post_start"></div>
+<h3>Netstat</h3>
+<p>Netstat is a command line utility that can be used to list out all the network (socket) connections on a system. It lists out all the tcp, udp socket connections and the unix socket connections.
+</p><pre class="adflexi"><div class="adcontent">
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- binarytides.com 336x280 post top -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-5814774904969415" data-ad-slot="0700059493"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+</pre>
+<p><!-- Time : 7.8916549682617E-5, Pos : 216 --></p>
+<p>Apart from connected sockets it can also list listening sockets that are waiting for incoming connections. So by verifying an open port 80 you can confirm if a web server is running on the system or not. This makes it a very useful tool for network and system administrators. </p>
+<p>In this tutorial we shall be checking out few examples of how to use netstat to find information about network connections and open ports on a system.</p>
+<p>Here is a quick intro to netstat from the man pages</p>
+<pre class="highlight  ">netstat - Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships</pre>
+<h3>1. List out all connections</h3>
+<p>The first and most simple command is to list out all the current connections. Simply run the netstat command with the a option.</p>
+<pre class="terminal">$ netstat -a
+
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 enlightened:domain      *:*                     LISTEN     
+tcp        0      0 localhost:ipp           *:*                     LISTEN     
+tcp        0      0 enlightened.local:54750 li240-5.members.li:http ESTABLISHED
+tcp        0      0 enlightened.local:49980 del01s07-in-f14.1:https ESTABLISHED
+tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN     
+udp        0      0 enlightened:domain      *:*                                
+udp        0      0 *:bootpc                *:*                                
+udp        0      0 enlightened.local:ntp   *:*                                
+udp        0      0 localhost:ntp           *:*                                
+udp        0      0 *:ntp                   *:*                                
+udp        0      0 *:58570                 *:*                                
+udp        0      0 *:mdns                  *:*                                
+udp        0      0 *:49459                 *:*                                
+udp6       0      0 fe80::216:36ff:fef8:ntp [::]:*                             
+udp6       0      0 ip6-localhost:ntp       [::]:*                             
+udp6       0      0 [::]:ntp                [::]:*                             
+udp6       0      0 [::]:mdns               [::]:*                             
+udp6       0      0 [::]:63811              [::]:*                             
+udp6       0      0 [::]:54952              [::]:*                             
+Active UNIX domain sockets (servers and established)
+Proto RefCnt Flags       Type       State         I-Node   Path
+unix  2      [ ACC ]     STREAM     LISTENING     12403    @/tmp/dbus-IDgfj3UGXX
+unix  2      [ ACC ]     STREAM     LISTENING     40202    @/dbus-vfs-daemon/socket-6nUC6CCx</pre>
+<pre class="adwrap" style="border:1px solid #ddd; text-align:center; background:#fafafa; white-space:normal; height:90px;">
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- binarytides.com post middle horizontal -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-5814774904969415" data-ad-slot="7125586293"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</pre>
+<p><!-- Time : 0.00081300735473633 --></p>
+<p>The above command shows all connections from different protocols like tcp, udp and unix sockets. However this is not quite useful. Administrators often want to pick out specific connections based on protocols or port numbers for example.</p>
+<h3>2. List only TCP or UDP connections</h3>
+<p>To list out only tcp connections use the t options.</p>
+<pre class="terminal">$ netstat -at
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 enlightened:domain      *:*                     LISTEN     
+tcp        0      0 localhost:ipp           *:*                     LISTEN     
+tcp        0      0 enlightened.local:36310 del01s07-in-f24.1:https ESTABLISHED
+tcp        0      0 enlightened.local:45038 a96-17-181-10.depl:http ESTABLISHED
+tcp        0      0 enlightened.local:37892 ABTS-North-Static-:http ESTABLISHED
+.....</pre>
+<p>Similarly to list out only udp connections use the u option.</p>
+<pre class="terminal">$ netstat -au
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+udp        0      0 *:34660                 *:*                                
+udp        0      0 enlightened:domain      *:*                                
+udp        0      0 *:bootpc                *:*                                
+udp        0      0 enlightened.local:ntp   *:*                                
+udp        0      0 localhost:ntp           *:*                                
+udp        0      0 *:ntp                   *:*                                
+udp6       0      0 fe80::216:36ff:fef8:ntp [::]:*                             
+udp6       0      0 ip6-localhost:ntp       [::]:*                             
+udp6       0      0 [::]:ntp                [::]:*</pre>
+<p>The above output shows both ipv4 and ipv6 connections.</p>
+<h3>3. Disable reverse dns lookup for faster output</h3>
+<p>By default, the netstat command tries to find out the hostname of each ip address in the connection by doing a reverse dns lookup. This slows down the output. If you do not need to know the host name and just the ip address is sufficient then suppress the hostname lookup with the n option.</p>
+<pre class="terminal">$ netstat -ant
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.1.1:53            0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN     
+tcp        0      0 192.168.1.2:49058       173.255.230.5:80        ESTABLISHED
+tcp        0      0 192.168.1.2:33324       173.194.36.117:443      ESTABLISHED
+tcp6       0      0 ::1:631                 :::*                    LISTEN</pre>
+<p>The above command shows ALL TCP connections with NO dns resolution. Got it ? Good.</p>
+<h3>4. List out only listening connections</h3>
+<p>Any network daemon/service keeps an open port to listen for incoming connections. These too are like socket connections and are listed out by netstat. To view only listening ports use the l options.</p>
+<pre class="terminal">$ netstat -tnl
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 127.0.1.1:53            0.0.0.0:*               LISTEN     
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN     
+tcp6       0      0 ::1:631                 :::*                    LISTEN</pre>
+<p>Now we can see only listening tcp ports/connections. If you want to see all listening ports, remove the t option. If you want to see only listening udp ports use the u option instead of t.<br>
+Make sure to remove the 'a' option, otherwise all connections would get listed and not just the listening connections.</p>
+<h3>5. Get process name/pid and user id</h3>
+<p>When viewing the open/listening ports and connections, its often useful to know the process name/pid which has opened that port or connection. For example the Apache httpd server opens port 80. So if you want to check whether any http server is running or not, or which http server is running, apache or nginx, then track down the process name. </p>
+<p>The process details are made available by the 'p' option.</p>
+<pre class="terminal">~$ sudo netstat -nlpt
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.1.1:53            0.0.0.0:*               LISTEN      1144/dnsmasq    
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      661/cupsd       
+tcp6       0      0 ::1:631                 :::*                    LISTEN      661/cupsd</pre>
+<p>When using the p option, netstat must be run with root privileges, otherwise it cannot detect the pids of processes running with root privileges and most services like http and ftp often run with root privileges.</p>
+<p>Along with process name/pid its even more useful to get the username/uid owning that particular process. Use the e option along with the p option to get the username too.</p>
+<pre class="terminal">$ sudo netstat -ltpe
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       User       Inode       PID/Program name
+tcp        0      0 enlightened:domain      *:*                     LISTEN      root       11090       1144/dnsmasq    
+tcp        0      0 localhost:ipp           *:*                     LISTEN      root       9755        661/cupsd       
+tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN      root       9754        661/cupsd</pre>
+<p>The above example lists out Listening connections of Tcp type with Process information and Extended information.<br>
+The extended information contains the username and inode of the process. This is a useful command for network administrators.</p>
+<p><b>Note - </b> If you use the n option with the e option, the uid would be listed and not the username.</p>
+<h3>6. Print statistics</h3>
+<p>The netstat command can also print out network statistics like total number of packets received and transmitted by protocol type and so on.</p>
+<p>To list out statistics of all packet types</p>
+<pre class="terminal">$ netstat -s
+Ip:
+    32797 total packets received
+    0 forwarded
+    0 incoming packets discarded
+    32795 incoming packets delivered
+    29115 requests sent out
+    60 outgoing packets dropped
+Icmp:
+    125 ICMP messages received
+    0 input ICMP message failed.
+    ICMP input histogram:
+        destination unreachable: 125
+    125 ICMP messages sent
+    0 ICMP messages failed
+    ICMP output histogram:
+        destination unreachable: 125
+... OUTPUT TRUNCATED ...</pre>
+<p>To print out statistics of only select protocols like TCP or UDP use the corresponding options like t and u along with the s option. Simple!</p>
+<h3>7. Display kernel routing information</h3>
+<p>The kernel routing information can be printed with the r option. It is the same output as given by the route command. We also use the n option to disable the hostname lookup.</p>
+<pre class="terminal">$ netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.1.1     0.0.0.0         UG        0 0          0 eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0</pre>
+<h3>8. Print network interfaces</h3>
+<p>The netstat command can also print out the information about the network interfaces. The i option does the task.</p>
+<pre class="terminal">$ netstat -i
+Kernel Interface table
+Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+eth0       1500 0     31611      0      0 0         27503      0      0      0 BMRU
+lo        65536 0      2913      0      0 0          2913      0      0      0 LRU</pre>
+<p>The above output contains information in a very raw format. To get a more human friendly version of the output use the e option along with i.</p>
+<pre class="terminal">$ netstat -ie
+Kernel Interface table
+eth0      Link encap:Ethernet  HWaddr 00:16:36:f8:b2:64  
+          inet addr:192.168.1.2  Bcast:192.168.1.255  Mask:255.255.255.0
+          inet6 addr: fe80::216:36ff:fef8:b264/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:31682 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:27573 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000 
+          RX bytes:29637117 (29.6 MB)  TX bytes:4590583 (4.5 MB)
+          Interrupt:18 Memory:da000000-da020000 
+
+lo        Link encap:Local Loopback  
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:2921 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2921 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0 
+          RX bytes:305297 (305.2 KB)  TX bytes:305297 (305.2 KB)</pre>
+<p>The above output is similar to the output shown by the ifconfig command.</p>
+<h3>9. Get netstat output continuously</h3>
+<p>Netstat can output connection information continuously with the c option.</p>
+<pre class="terminal">$ netstat -ct</pre>
+<p>The above command will output tcp connections continuously.</p>
+<h3>10. Display multicast group information</h3>
+<p>The g option will display the multicast group information for IPv4 and IPv6 protocols.</p>
+<pre class="terminal">$ netstat -g
+IPv6/IPv4 Group Memberships
+Interface       RefCnt Group
+--------------- ------ ---------------------
+lo              1      all-systems.mcast.net
+eth0            1      224.0.0.251
+eth0            1      all-systems.mcast.net
+lo              1      ip6-allnodes
+lo              1      ff01::1
+eth0            1      ff02::fb
+eth0            1      ff02::1:fff8:b264
+eth0            1      ip6-allnodes
+eth0            1      ff01::1
+wlan0           1      ip6-allnodes
+wlan0           1      ff01::1</pre>
+<h3>More examples of netstat command</h3>
+<p>Okay, we covered the basic examples of netstat command above. Now its time to do some geek stuff with style.</p>
+<h4>Print active connections</h4>
+<p>Active socket connections are in "ESTABLISHED" state. So to get all current active connections use netstat with grep as follows</p>
+<pre class="terminal">$ netstat -atnp | grep ESTA
+(Not all processes could be identified, non-owned process info
+ will not be shown, you would have to be root to see it all.)
+tcp        0      0 192.168.1.2:49156       173.255.230.5:80        ESTABLISHED 1691/chrome     
+tcp        0      0 192.168.1.2:33324       173.194.36.117:443      ESTABLISHED 1691/chrome</pre>
+<p>To watch a continous list of active connections, use the watch command along with netstat and grep</p>
+<pre class="terminal">$ watch -d -n0 "netstat -atnp | grep ESTA"</pre>
+<h4>Check if a service is running</h4>
+<p>If you want to check if a server like http,smtp or ntp is running or not, use grep again.</p>
+<pre class="terminal">$ sudo netstat -aple | grep ntp
+udp        0      0 enlightened.local:ntp   *:*                                 root       17430       1789/ntpd       
+udp        0      0 localhost:ntp           *:*                                 root       17429       1789/ntpd       
+udp        0      0 *:ntp                   *:*                                 root       17422       1789/ntpd       
+udp6       0      0 fe80::216:36ff:fef8:ntp [::]:*                              root       17432       1789/ntpd       
+udp6       0      0 ip6-localhost:ntp       [::]:*                              root       17431       1789/ntpd       
+udp6       0      0 [::]:ntp                [::]:*                              root       17423       1789/ntpd       
+unix  2      [ ]         DGRAM                    17418    1789/ntpd</pre>
+<p>So we found that ntp server is running. Grep for http or smtp or whatever you are looking for.</p>
+<p>Well, that was most of what netstat is used for. If you are looking for more advanced information or want to dig deeper, read up the netstat manual (man netstat).</p>
+<p>And do leave your feedback and suggestions in the comments box below.</p>
+<div class="updated_on">Last Updated On : 25th December 2014</div>
+<script type="text/javascript">var dd_offset_from_content = 40;var dd_top_offset_from_content = 0;var dd_override_start_anchor_id = "";var dd_override_top_offset = "";</script><script type="text/javascript" src="./10 basic examples of linux netstat command_files/diggdigg-floating-bar.js"></script>
+
+
+
+
+
+                    <div class="postTags">
+<a href="http://www.binarytides.com/tag/linux-network/"><b>linux network</b></a><a href="http://www.binarytides.com/tag/netstat/"><b>netstat</b></a><a href="http://www.binarytides.com/tag/network-monitoring/"><b>network monitoring</b></a></div>
+
+
+
+
+
+				</div>
+	
+
+<input type="hidden" name="IL_IN_TAG" value="2">
+				
+
+<div id="subscribe_feedburner"> 
+
+<form style="text-align:center;" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;http://feedburner.google.com/fb/a/mailverify?uri=binarytides&#39;, &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true">
+
+
+<p style="margin:0; font-weight:bold;">
+Subscribe to get updates delivered to your inbox 
+
+<input type="text" name="email" placeholder="Enter email to subscribe" style="width: 200px;
+border:none;
+padding: 5px;
+line-height: 20px;
+outline: none;
+margin-left: 10px;">
+
+<input type="submit" value="Subscribe" style="background: #07c;
+color: #fff;
+border:none;
+margin:0 0 0 10px;
+outline: none;
+font-weight:bold;
+line-height: 20px;
+background:#E26A1A;
+padding: 5px 10px;">
+</p>
+
+<input type="hidden" value="binarytides" name="uri"><input type="hidden" name="loc" value="en_US">
+
+
+</form>
+</div>
+
+
+
+
+<div class="postCredentials">
+				
+
+		
+							
+							<!-- Related Posts-->
+
+<div class="yarpp-related">
+<div class="relatedPosts"><span class="title">Related Posts</span><ul>
+<li><a href="http://www.binarytides.com/linux-ss-command/" rel="bookmark" title="10 examples of Linux ss command to monitor network connections">10 examples of Linux ss command to monitor network connections </a></li>
+<li><a href="http://www.binarytides.com/linux-commands-monitor-network/" rel="bookmark" title="18 commands to monitor network bandwidth on Linux server">18 commands to monitor network bandwidth on Linux server </a></li>
+</ul></div>
+</div>
+
+
+
+														<!-- end Related Posts-->
+							
+
+
+<div id="authorDetails">
+								<img alt="" src="./10 basic examples of linux netstat command_files/e23f2767e6907e798da5b28694a2bf28" class="avatar avatar-64 photo" height="64" width="64">				About <b>Silver Moon</b>
+						<p>
+Php developer, blogger and Linux enthusiast. 
+He can be reached at <a href="mailto:admin@binarytides.com">admin@binarytides.com</a>.
+Or find him on <a href="https://plus.google.com/117145272367995638274/posts" rel="author">Google+</a>
+
+</p>
+						</div>
+					
+		</div>
+		<!-- postboxcredentials -->
+	
+
+
+
+<div class="ad728x90 adwrap" style="margin:20px 0;">
+
+<iframe src="javascript:(function () { var goTo = 'http://ib.msaex.com/?id=JzA4JTs&size=728x90&page_url='+encodeURIComponent(parent.window.document.location)+'&r='+encodeURIComponent(parent.window.document.referrer)+'&l='+encodeURIComponent(parent.window.document.location); this.location=goTo; })()" width="728" height="90" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true"></iframe>
+
+</div>
+
+<div class="postBoxMidInner" id="comments">
+		
+		
+		
+        
+<div id="disqus_thread"><iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./10 basic examples of linux netstat command_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 1258px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+var disqus_url = 'http://www.binarytides.com/linux-netstat-command-examples/';
+var disqus_identifier = '6252 http://www.binarytides.com/?p=6252';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'binarytides';
+var disqus_title = "10 basic examples of linux netstat command";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+        this.callbacks.onReady.push(function () {
+
+        // sync comments in the background so we don't block the page
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = '?cf_action=sync_comments&post_id=6252';
+
+        var firstScript = document.getElementsByTagName('script')[0];
+        firstScript.parentNode.insertBefore(script, firstScript);
+    });
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+			</div>
+			</div>
+
+		</div>
+				
+		</div>
+		<!-- End #colLeftInner -->
+		</div>
+		<!-- End #colLeft -->
+
+<!-- Begin #colRight -->
+<div id="colRight">
+	
+	<div id="adsense_search" class="rightBox">
+<div class="widget_content">
+<form action="http://www.binarytides.com/search" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-5814774904969415:4586881861">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="hidden" name="ie" value="UTF-8">
+<table><tbody><tr><td>
+    <input type="text" name="q" size="55"></td><td>
+    <input type="submit" name="sa" value="Search"></td></tr></tbody></table>
+  </div>
+</form>
+<script type="text/javascript" src="./10 basic examples of linux netstat command_files/brand"></script>
+
+</div></div>
+<!-- search box ends here -->
+<center>
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- binarytides 300x250 sidebar -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-5814774904969415" data-ad-slot="7101063767"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+<br><center>
+<a target="_blank" href="http://feedburner.google.com/fb/a/mailverify?uri=binarytides&loc=en_US" style="display:block;"><img src="./10 basic examples of linux netstat command_files/free-linux-ebooks.jpg"></a>
+</center>
+<br><div class="rightBox"><span class="title">Connect with us</span><div class="widget_content"><ul class="lsi-social-icons icon-set-lsi_widget-2"><li class="lsi-social-facebook"><a class="tooltip tooltipstered" rel="nofollow" href="https://www.facebook.com/binarytides" target="_blank"><i class="lsicon lsicon-facebook"></i></a></li><li class="lsi-social-twitter"><a class="tooltip tooltipstered" rel="nofollow" href="https://twitter.com/binarytides" target="_blank"><i class="lsicon lsicon-twitter"></i></a></li><li class="lsi-social-gplus"><a class="tooltip tooltipstered" rel="nofollow" href="https://plus.google.com/+binarytides" target="_blank"><i class="lsicon lsicon-gplus"></i></a></li><li class="lsi-social-rss"><a class="tooltip tooltipstered" rel="nofollow" href="https://feedburner.google.com/fb/a/mailverify?uri=binarytides" target="_blank"><i class="lsicon lsicon-rss"></i></a></li></ul></div></div><div class="rightBox">
+<div class="wp_rp_wrap  wp_rp_modern" id="wp_rp_first"><div class="wp_rp_content"><span class="title">Other interesting stuff</span><div class="widget_content"><ul class="related_post wp_rp"><li data-position="0" data-poid="in-6280" data-post-type="none"><a href="http://www.binarytides.com/linux-ss-command/" class="wp_rp_thumbnail"><img src="./10 basic examples of linux netstat command_files/linux-ss-command-150x150.png" alt="10 examples of Linux ss command to monitor network connections" width="150" height="150"></a><a href="http://www.binarytides.com/linux-ss-command/" class="wp_rp_title">10 examples of Linux ss command to monitor network connections</a></li><li data-position="1" data-poid="in-6362" data-post-type="none"><a href="http://www.binarytides.com/linux-commands-monitor-network/" class="wp_rp_thumbnail"><img src="./10 basic examples of linux netstat command_files/iptraf-150x150.png" alt="18 commands to monitor network bandwidth on Linux server" width="150" height="150"></a><a href="http://www.binarytides.com/linux-commands-monitor-network/" class="wp_rp_title">18 commands to monitor network bandwidth on Linux server</a></li><li data-position="2" data-poid="in-7467" data-post-type="none"><a href="http://www.binarytides.com/linux-mailx-command/" class="wp_rp_thumbnail"><img src="./10 basic examples of linux netstat command_files/0.jpg" alt="9 mail/mailx command examples to send emails from command line on Linux" width="150" height="150"></a><a href="http://www.binarytides.com/linux-mailx-command/" class="wp_rp_title">9 mail/mailx command examples to send emails from command line on Linux</a></li><li data-position="3" data-poid="in-7613" data-post-type="none"><a href="http://www.binarytides.com/linux-tar-command/" class="wp_rp_thumbnail"><img src="./10 basic examples of linux netstat command_files/tar-command-linux-150x150.png" alt="10 quick tar command examples to create/extract archives in Linux" width="150" height="150"></a><a href="http://www.binarytides.com/linux-tar-command/" class="wp_rp_title">10 quick tar command examples to create/extract archives in Linux</a></li><li data-position="4" data-poid="in-7447" data-post-type="none"><a href="http://www.binarytides.com/linux-mail-with-smtp/" class="wp_rp_thumbnail"><img src="./10 basic examples of linux netstat command_files/25.jpg" alt="Send mail from command line with external smtp server on Linux" width="150" height="150"></a><a href="http://www.binarytides.com/linux-mail-with-smtp/" class="wp_rp_title">Send mail from command line with external smtp server on Linux</a></li><li data-position="5" data-poid="in-7265" data-post-type="none"><a href="http://www.binarytides.com/linux-command-check-disk-partitions/" class="wp_rp_thumbnail"><img src="./10 basic examples of linux netstat command_files/linux-cfdisk-150x150.png" alt="9 commands to check hard disk partitions and disk space on Linux" width="150" height="150"></a><a href="http://www.binarytides.com/linux-command-check-disk-partitions/" class="wp_rp_title">9 commands to check hard disk partitions and disk space on Linux</a></li></ul></div></div>
+</div></div><center>
+<iframe src="./10 basic examples of linux netstat command_files/likebox.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:214px;" allowtransparency="true"></iframe>
+</center>
+<br><center>
+<!-- BEGIN IFRAME TAG - binarytides.com RON Global Display Rev Share < - DO NOT MODIFY -->
+<iframe src="about:blank" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true" width="0" height="0" style="display: none !important; visibility: hidden !important; opacity: 0 !important; background-position: 300px 250px;"></iframe>
+<!-- END TAG -->
+</center>
+</div>
+<!-- End #colRight -->	
+
+</div>
+<!-- end of colwrap -->
+
+</div>
+		<!-- end content -->
+	
+	</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./10 basic examples of linux netstat command_files/KvoNGODIqPG.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./10 basic examples of linux netstat command_files/KvoNGODIqPG(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+	<!-- end wrapper -->
+	<!-- begin footer -->
+	
+	<div id="footer">
+		<div id="copyrightInner">
+
+<div style="line-height:32px;">			
+
+<div id="footer_links">
+	<a href="http://www.binarytides.com/about">About us</a>
+	<a href="http://www.binarytides.com/contact">Contact us</a>
+	<a href="http://www.binarytides.com/faq">Faq</a>
+	<a href="http://www.binarytides.com/advertise">Advertise</a>
+	<a href="http://www.binarytides.com/privacy">Privacy Policy</a>
+<!--	<a href="/terms">Terms of Service</a>-->
+</div>
+
+Copyright © 2015 BinaryTides
+
+</div>
+		
+
+		</div>
+
+
+
+	</div>
+	<!-- end footer -->
+
+	
+
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'binarytides';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script'); 
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type="text/javascript">
+ 
+$(function () 
+{
+  var msie6 = $.browser == 'msie' && $.browser.version < 7;
+ /*
+  if (!msie6) 
+{
+var elem = $('#right_gad').closest('.rightBox');
+    var top = elem.offset().top - parseFloat(elem.css('margin-top').replace(/auto/, 0));
+ 
+	$(window).scroll(function (event) 
+{
+
+// what the y position of the scroll is
+      var y = $(this).scrollTop();
+ 
+      if (y >= top) {
+        // if so, ad the fixed class
+        elem.addClass('fixed');
+      } else {
+        // otherwise remove it
+        elem.removeClass('fixed');
+      }
+    });
+  }  */
+});
+ 
+</script>
+
+
+
+
+
+<!-- google analytics event tracking -->
+<script type="text/javascript">
+$(function() 
+{ 
+
+$('li.SPOSTARBUST-Related-Post a').click(function() 
+{ 
+	ga('send', 'event', 'clicks', 'related_posts_right', $(this).html(), {'nonInteraction': 1});
+});
+	
+//For adverts and offers, save the href/link
+$('a.offer').click(function() 
+{ 
+//	_gaq.push(['_trackEvent', 'clicks', 'offer', $(this).attr('href') , 5, true]);
+});
+
+$('.postBoxMidInner p img').closest('p').css('clear','both');
+	
+
+// detect ad blocking
+	
+if( $('.adcontent').height() == 0 )
+{
+	// console.log('Sad. You have ad blocker enabled');
+	ga('send', 'event', 'adblocks', 'adblocks', 'adblocks', {'nonInteraction': 1});
+
+	// add some content to the empty ad area
+}
+
+});	
+</script>
+
+
+
+
+
+<!-- facebook retargetting code -->
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+  _fbq.push(['addPixelId', '549413535176484']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(["track", "PixelInitialized", {}]);
+</script>
+<noscript>&lt;img height="1" width="1" border="0" alt="" style="display:none" src="https://www.facebook.com/tr?id=549413535176484&amp;ev=NoScript" /&gt;</noscript>
+
+
+
+
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+
+_qevents.push({
+qacct:"p-PydpEyknvJJzJ"
+});
+</script>
+
+<noscript>
+&lt;div style="display:none;"&gt;
+&lt;img src="//pixel.quantserve.com/pixel/p-PydpEyknvJJzJ.gif" border="0" height="1" width="1" alt="Quantcast"/&gt;
+&lt;/div&gt;
+</noscript>
+<!-- End Quantcast tag --><link rel="stylesheet" id="yarppRelatedCss-css" href="./10 basic examples of linux netstat command_files/related.css" type="text/css" media="all">
+<link rel="stylesheet" id="lsi-style-css" href="./10 basic examples of linux netstat command_files/style(1).css" type="text/css" media="all">
+<style id="lsi-style-inline-css" type="text/css">
+
+			.icon-set-lsi_widget-2 {
+				text-align:left !important;
+			}
+			.icon-set-lsi_widget-2 a, 
+			.icon-set-lsi_widget-2 a:visited, 
+			.icon-set-lsi_widget-2 a:focus {
+				border-radius: 2px;
+				background: #1E72BD !important;
+				color: #FFFFFF !important;
+				font-size: 20px !important;
+			}
+			.icon-set-lsi_widget-2 a:hover {
+				background: #dd3333 !important;
+				color: #FFFFFF !important;
+			}
+</style>
+<script type="text/javascript" src="./10 basic examples of linux netstat command_files/jquery.form.min.js"></script><iframe name="oauth2relay345012688" id="oauth2relay345012688" src="./10 basic examples of linux netstat command_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.binarytides.com\/blog\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./10 basic examples of linux netstat command_files/scripts.js"></script>
+<script type="text/javascript" src="./10 basic examples of linux netstat command_files/jquery.tooltipster.min.js"></script>
+
+
+<!-- Quick Cache file path: /cache/quick-cache/cache/http/www-binarytides-com/linux-netstat-command-examples.html -->
+<!-- Quick Cache file built for (http://www.binarytides.com/linux-netstat-command-examples/) in 0.15270 seconds, on: Apr 12th, 2015 @ 1:21 pm UTC. -->
+<!-- This Quick Cache file will auto-expire (and be rebuilt) on: Apr 19th, 2015 @ 1:21 pm UTC (based on your configured expiration time). -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- Quick Cache fully functional :-) Cache file served for (http://www.binarytides.com/linux-netstat-command-examples/) in 0.00059 seconds, on: Apr 16th, 2015 @ 7:23 am UTC. --><div class="dd_outer"><div class="dd_inner" style="width: 1080px;"><div id="dd_ajax_float" style="position: absolute; top: 286px; left: -95px; display: block;"><div class="dd_button_v"><iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="./10 basic examples of linux netstat command_files/tweet_button.20ed5cfd7315475c9d1d523194b1645f.en(1).html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-vertical" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 56px; height: 62px;"></iframe><script type="text/javascript" src="./10 basic examples of linux netstat command_files/widgets.js"></script></div><div style="clear:left"></div><div class="dd_button_v"><script src="./10 basic examples of linux netstat command_files/all.js"></script><fb:like href="http://www.binarytides.com/linux-netstat-command-examples/" send="false" show_faces="false" layout="box_count" width="50" class=" fb_iframe_widget" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fwww.binarytides.com%2Flinux-netstat-command-examples%2F&amp;layout=box_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=50"><span style="vertical-align: bottom; width: 48px; height: 61px;"><iframe name="f2c9f7faec" width="50px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./10 basic examples of linux netstat command_files/like.html" style="border: none; visibility: visible; width: 48px; height: 61px;" class=""></iframe></span></fb:like></div><div style="clear:left"></div><div class="dd_button_v"><script type="text/javascript" src="./10 basic examples of linux netstat command_files/plusone.js" gapi_processed="true"></script><div id="___plusone_1" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" tabindex="0" vspace="0" width="100%" id="I1_1429169010704" name="I1_1429169010704" src="./10 basic examples of linux netstat command_files/fastbutton(1).html" data-gapiattached="true" title="+1"></iframe></div></div><div style="clear:left"></div><div class="dd_button_v"><script src="./10 basic examples of linux netstat command_files/in.js" type="text/javascript"></script><span class="IN-widget" style="line-height: 1; vertical-align: baseline; display: inline-block; text-align: center;"><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1429169010430_1-container" class="IN-top"><span id="li_ui_li_gen_1429169010430_1" class="IN-top"><span id="li_ui_li_gen_1429169010430_1-inner" class="IN-top"><span id="li_ui_li_gen_1429169010430_1-content" class="IN-top">3</span></span></span></span></span><br><span style="padding: 0px !important; margin: 0px !important; text-indent: 0px !important; display: inline-block !important; vertical-align: baseline !important; font-size: 1px !important;"><span id="li_ui_li_gen_1429169010412_0"><a id="li_ui_li_gen_1429169010412_0-link" href="javascript:void(0);"><span id="li_ui_li_gen_1429169010412_0-logo">in</span><span id="li_ui_li_gen_1429169010412_0-title"><span id="li_ui_li_gen_1429169010412_0-mark"></span><span id="li_ui_li_gen_1429169010412_0-title-text">Share</span></span></a></span></span></span><script type="IN/Share+init" data-url="http://www.binarytides.com/linux-netstat-command-examples/" data-counter="top"></script></div><div style="clear:left"></div></div></div></div></body></html>

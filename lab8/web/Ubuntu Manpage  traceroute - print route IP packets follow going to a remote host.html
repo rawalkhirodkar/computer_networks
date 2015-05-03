@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0091)http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc5 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr"><head profile="http://a9.com/-/spec/opensearch/1.1/"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="search" type="application/opensearchdescription+xml" href="http://manpages.ubuntu.com/ubuntu-manpage-search.xml" title="Ubuntu Manpage Search">
+        <title>Ubuntu Manpage:
+
+       traceroute - print route IP packets follow going to a remote host
+</title>
+        <link rel="stylesheet" type="text/css" href="./Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host_files/reset.css">
+        <link rel="stylesheet" type="text/css" href="./Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host_files/styles.css">
+        <link rel="stylesheet" type="text/css" href="./Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host_files/manpages.css">
+        <link rel="shortcut icon" href="http://manpages.ubuntu.com/assets/light/images/favicon.ico" type="image/x-icon">
+        <script language="JavaScript" src="./Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host_files/functions.js"></script><style type="text/css"></style><script src="./Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host_files/ga.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://ads.dfgio.com/loader.js?client=topaz0003"></script></head>
+    <body>
+        <div id="container">
+            <div id="container-inner">
+                <div id="header">
+                    <h1 id="ubuntu-header"><a href="http://manpages.ubuntu.com/">Ubuntu manuals</a></h1>
+                </div>
+                <div id="subheader">
+                    <div id="subheader-search">
+                        <form method="get" action="http://manpages.ubuntu.com/cgi-bin/search.py" id="cse-search-box">
+                            <input type="text" name="q" tabindex="1" id="search-box-input">
+                            <button type="submit" name="op" id="search-box-button"><span>go</span></button>
+                            <input type="hidden" name="cx" value="003883529982892832976:5zl6o8w6f0s">
+                            <input type="hidden" name="cof" value="FORID:9">
+                            <input type="hidden" name="ie" value="UTF-8">
+                            <script type="text/javascript" src="./Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host_files/brand"></script>
+                        </form>
+                    </div>
+                    <div class="subheader-menu">
+                        <script>navbar();</script><ul><li class="active" id="plain"><a href="http://manpages.ubuntu.com/manpages/lucid/man8/traceroute-nanog.genuine.8.html">10.04 LTS</a></li><li class="active" id="plain"><a href="http://manpages.ubuntu.com/manpages/precise/man8/traceroute-nanog.genuine.8.html">12.04 LTS</a></li><li class="active" id="plain"><a href="http://manpages.ubuntu.com/manpages/trusty/man8/traceroute-nanog.genuine.8.html">14.04 LTS</a></li><li class="active" id="plain"><a href="http://manpages.ubuntu.com/manpages/utopic/man8/traceroute-nanog.genuine.8.html">14.10</a></li><li><a href="javascript:printManpage()"><img src="./Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host_files/printer.png"></a></li></ul>
+                    </div>
+                </div>
+                <div id="content" class="clearfix content-area">
+                    <div class="level-4-nav" id="toc"><ul><ul><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc0"><b>name</b></a></li><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc1"><b>synopsis</b></a></li><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc2"><b>description</b></a></li><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc3"><b>options</b></a></li><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc4"><b>diagnostics</b></a></li><li><a href="./Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host_files/Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host.html"><b>examples</b></a></li><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc6"><b>environment</b></a></li><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc7"><b>notes</b></a></li><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc8"><b>see</b> <b>also</b></a></li><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc9"><b>bugs</b></a></li><li><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/traceroute-nanog.genuine.8.html#contenttoc10"><b>authors</b></a></li></ul></ul></div>
+                    <script>distroAndSection();</script><a href="http://manpages.ubuntu.com/manpages/jaunty/">jaunty</a> (<a href="http://manpages.ubuntu.com/manpages/jaunty/man8">8</a>) <a href="http://manpages.ubuntu.com/manpages.gz/jaunty/man8/traceroute-nanog.genuine.8.gz">traceroute-nanog.genuine.8.gz</a><br>
+
+Provided by: <a href="https://launchpad.net/ubuntu/jaunty/+package/traceroute-nanog">traceroute-nanog_6.4.2-1_i386</a> <a href="https://bugs.launchpad.net/ubuntu/+source/traceroute-nanog/+filebug-advanced" title="Report a bug in the content of this documentation"><img src="./Ubuntu Manpage  traceroute - print route IP packets follow going to a remote host_files/bug.png" alt="bug" border="0"></a><br><br><pre></pre><h4 id="contenttoc0"><b>NAME</b></h4><pre>       traceroute - print route IP packets follow going to a remote host
+
+</pre><h4 id="contenttoc1"><b>SYNOPSIS</b></h4><pre>       <b>traceroute</b> [ <u>options</u> ] <u>host</u> [ <u>size</u> ]
+
+</pre><h4 id="contenttoc2"><b>DESCRIPTION</b></h4><pre>       Traceroute  attempts  to  trace  the route an IP packet follows to some
+       internet host.  It finds  out  intermediate  hops  by  launching  probe
+       packets  with a small time-to-live (TTL) value, and then listens for an
+       ICMP reply of <u>time</u> <u>exceeded</u> from an  intermediate  router.   Traceroute
+       starts  probing  with a TTL of one, and increments by one until an ICMP
+       <u>port</u> <u>unreachable</u> reply is received.  This means the  probe  either  got
+       through to <u>host</u>, or hit the maximum TTL.
+
+       <u>host</u>  is  the only mandatory argument, and specifies the target system,
+       either as an IP address, or as a host name.  Parameter <u>size</u>  determines
+       the size of the probe packets in bytes.
+
+</pre><h4 id="contenttoc3"><b>OPTIONS</b></h4><pre>       <b>-a</b>     Abort after 10 consecutive hops without an answer.
+
+       <b>-d</b>     Turn  on  socket level debugging.  This option is only available
+              to the super-user (root).
+
+       <b>-m</b> <u>max_ttl</u>
+              Set the maximum time-to-live (TTL) value that will be  used  for
+              probing.  Hosts that are farther than <u>max_ttl</u> hops away will not
+              be traced (default 30).
+
+       <b>-n</b>     Report only IP addresses, but no hostnames.
+
+       <b>-p</b> <u>port</u>
+              Start  probing  at  an  alternate  UDP  port  (default   33434).
+              Traceroute by default sends out UDP packets with increasing port
+              numbers starting at <u>port</u>, and listens for ICMP  errors  returned
+              from  remote  hosts.  This scheme only works if there are no UDP
+              servers listening on the probed hosts in the range from <u>port</u>  to
+              <u>port</u> <u>+</u> <u>max_ttl</u>.
+
+       <b>-q</b> <u>n</u>   Send  out  <u>n</u>  queries  for  each  TTL  (each  intermediate host)
+              (default 3).
+
+       <b>-r</b>     Set Dont Route option, advising routers to drop the packets.  In
+              other words, only probe within the local subnet.
+
+       <b>-s</b> <u>addr</u>
+              Set  source address of outgoing packets to <u>addr</u>, given either as
+              numeric IP address, or as hostname.
+
+       <b>-t</b> <u>tos</u> Set  the  type-of-service  field  in  the  outgoing  IP  packets
+              (default 0).  <u>tos</u> is valid in the range of 0 to 255.
+
+       <b>-u</b>     Use microsecond timestamps.
+
+       <b>-v</b>     Turn on verbose output.
+
+       <b>-w</b> <u>wait</u>
+              Set  timeout for replies to <u>wait</u> seconds (default 5 sec).  If no
+              ICMP reply is received within <u>wait</u> after a packet has been  sent
+              out, the probe is considered as failed.
+
+       <b>-A</b>     Report  the Autonomous System Number (ASN) at each hop.  Roughly
+              speaking, the ASN tells which administration a router is subject
+              to.   See  RFC 1930 for all the details, and section ENVIRONMENT
+              below on how to fine tune the lookup.
+
+       <b>-I</b> <u>proto</u>
+              Send out probe packets using IP protocol <u>proto</u>, given either  as
+              name  or  numerical  value  (default  UDP).   Some features like
+              parallel probing are only available when using UDP.
+
+       <b>-M</b>     Determine the maximum transfer unit (MTU) along the  path.   See
+              RFC 1191 for details.
+
+       <b>-O</b>     At each hop, perform a DNS lookup and report the owner as listed
+              in the SOA record.
+
+       <b>-P</b>     Send out multiple probes in  parallel.   The  default  behaviour
+              probes  each  hop  in turn, starting from the nearest.  Parallel
+              mode is faster, but less reliable.  Many routers rate limit ICMP
+              packets  from a single host, so dropouts are much more likely in
+              parallel mode, and need not indicate a networking problem.
+
+       <b>-Q</b>     Report detailed statistics on the round trip times at  each  hop
+              (minimum / average +- standard deviation / maximum).  The values
+              are given in milli seconds.
+
+       <b>-S</b> <u>min_ttl</u>
+              Set the time-to-live (TTL) value in the first packet sent out to
+              <u>min_ttl</u> (default 1).  This option determines the first (nearest)
+              host that will show up in the trace.
+
+       <b>-T</b> <u>t</u>   End each line with <u>t</u> instead of a newline.  This comes in handy,
+              for example, when including traceroute’s output in an HTML page.
+
+       <b>-U</b>     Move on to probing the next hop as soon as the first  successful
+              probe arrives.
+
+       <b>-$</b>     Send  out  nothing  but a single ping with a very large time-to-
+              live.
+
+</pre><h4 id="contenttoc4"><b>DIAGNOSTICS</b></h4><pre>       Usually the round trip time is printed for  each  probe  at  each  hop.
+       Special symbols denote when something went wrong:
+
+       <b>*</b>      No reply received within <u>wait</u> seconds.
+
+       <b>!</b>      Reply arrived with a time-to-live value of one or lower.
+
+       <b>!H</b>     Received   a   reply   telling  that  the  destination  host  is
+              unreachable.
+
+       <b>!N</b>     Received  a  reply  telling  that  the  destination  network  is
+              unreachable.
+
+       <b>!P</b>     Received   a   reply   telling  that  the  desired  protocol  is
+              unavailable.
+
+       <b>!S</b>     Received a reply telling that  source  routing  failed.   Should
+              never occur--unless the probed gateway is screwed.
+
+       <b>!F</b>     Received  a  reply telling that fragmentation is needed.  Should
+              never occur--unless the probed gateway is screwed.
+
+</pre><h4 id="contenttoc5"><b>EXAMPLES</b></h4><pre>       (This section is taken almost verbatim from the  documentation  in  the
+       traceroute sourcecode.)
+
+              [yak 71]% traceroute nis.nsf.net.
+              traceroute to nis.nsf.net (35.1.1.48), 30 hops max, 56 byte packet
+               1  helios.ee.lbl.gov (128.3.112.1)  19 ms  19 ms  0 ms
+               2  lilac-dmc.Berkeley.EDU (128.32.216.1)  39 ms  39 ms  19 ms
+               3  lilac-dmc.Berkeley.EDU (128.32.216.1)  39 ms  39 ms  19 ms
+               4  ccngw-ner-cc.Berkeley.EDU (128.32.136.23)  39 ms  40 ms  39 ms
+               5  ccn-nerif22.Berkeley.EDU (128.32.168.22)  39 ms  39 ms  39 ms
+               6  128.32.197.4 (128.32.197.4)  40 ms  59 ms  59 ms
+               7  131.119.2.5 (131.119.2.5)  59 ms  59 ms  59 ms
+               8  129.140.70.13 (129.140.70.13)  99 ms  99 ms  80 ms
+               9  129.140.71.6 (129.140.71.6)  139 ms  239 ms  319 ms
+              10  129.140.81.7 (129.140.81.7)  220 ms  199 ms  199 ms
+              11  nic.merit.edu (35.1.1.48)  239 ms  239 ms  239 ms
+
+       Note  that  lines 2 &amp; 3 are the same.  This is due to a buggy kernel on
+       the 2nd hop system -- lbl-csam.arpa -- that  forwards  packets  with  a
+       zero TTL.
+
+       A more interesting example is:
+
+              [yak 72]% traceroute allspice.lcs.mit.edu.
+              traceroute to allspice.lcs.mit.edu (18.26.0.115), 30 hops max
+               1  helios.ee.lbl.gov (128.3.112.1)  0 ms  0 ms  0 ms
+               2  lilac-dmc.Berkeley.EDU (128.32.216.1)  19 ms  19 ms  19 ms
+               3  lilac-dmc.Berkeley.EDU (128.32.216.1)  39 ms  19 ms  19 ms
+               4  ccngw-ner-cc.Berkeley.EDU (128.32.136.23)  19 ms  39 ms  39 ms
+               5  ccn-nerif22.Berkeley.EDU (128.32.168.22)  20 ms  39 ms  39 ms
+               6  128.32.197.4 (128.32.197.4)  59 ms  119 ms  39 ms
+               7  131.119.2.5 (131.119.2.5)  59 ms  59 ms  39 ms
+               8  129.140.70.13 (129.140.70.13)  80 ms  79 ms  99 ms
+               9  129.140.71.6 (129.140.71.6)  139 ms  139 ms  159 ms
+              10  129.140.81.7 (129.140.81.7)  199 ms  180 ms  300 ms
+              11  129.140.72.17 (129.140.72.17)  300 ms  239 ms  239 ms
+              12  * * *
+              13  128.121.54.72 (128.121.54.72)  259 ms  499 ms  279 ms
+              14  * * *
+              15  * * *
+              16  * * *
+              17  * * *
+              18  ALLSPICE.LCS.MIT.EDU (18.26.0.115)  339 ms  279 ms  279 ms
+
+       (I start to see why I’m having so much trouble with mail to MIT.)  Note
+       that the gateways 12, 14, 15, 16 &amp; 17 hops away either don’t send  ICMP
+       "time exceeded" messages or send them with a TTL too small to reach us.
+       14 - 17 are running the MIT C Gateway  code  that  doesn’t  send  "time
+       exceeded"s.  God only knows what’s going on with 12.
+
+       The  silent  gateway  12 in the above may be the result of a bug in the
+       4.[23]BSD network code (and its derivatives):  4.x (x &lt;=  3)  sends  an
+       unreachable   message  using  whatever  TTL  remains  in  the  original
+       datagram.  Since, for gateways, the remaining TTL  is  zero,  the  icmp
+       "time  exceeded" is guaranteed to not make it back to us.  The behavior
+       of this bug is  slightly  more  interesting  when  it  appears  on  the
+       destination system:
+
+               1  helios.ee.lbl.gov (128.3.112.1)  0 ms  0 ms  0 ms
+               2  lilac-dmc.Berkeley.EDU (128.32.216.1)  39 ms  19 ms  39 ms
+               3  lilac-dmc.Berkeley.EDU (128.32.216.1)  19 ms  39 ms  19 ms
+               4  ccngw-ner-cc.Berkeley.EDU (128.32.136.23)  39 ms  40 ms  19 ms
+               5  ccn-nerif35.Berkeley.EDU (128.32.168.35)  39 ms  39 ms  39 ms
+               6  csgw.Berkeley.EDU (128.32.133.254)  39 ms  59 ms  39 ms
+               7  * * *
+               8  * * *
+               9  * * *
+              10  * * *
+              11  * * *
+              12  * * *
+              13  rip.Berkeley.EDU (128.32.131.22)  59 ms !  39 ms !  39 ms !
+
+       Notice  that  there are 12 "gateways" (13 is the final destination) and
+       exactly the last half of them are "missing".  What’s  really  happening
+       is  that  rip  (a  Sun-3  running  Sun OS3.5) is using the TTL from our
+       arriving datagram as the TTL in its icmp reply.   So,  the  reply  will
+       time  out  on the return path until we probe with a TTL that’s at least
+       twice the path length.  I.e., rip is really only 7 hops away.
+
+</pre><h4 id="contenttoc6"><b>ENVIRONMENT</b></h4><pre>       The lookup process of Autonomous System Numbers  (ASN,  see  option  <u>-A</u>
+       above) can be configured via several environment variables. By default,
+       traceroute issues a whois query on the Routing Assets  Database  (RADB)
+       at <u>whois.ra.net</u>, which should be sufficient in most cases.  Chances are
+       that you don’t want to change anything here, unless you know very  well
+       what you are doing.
+
+       The  contents of the following environment variables are limited to 100
+       characters at most.  Any trailing characters are silently ignored.   If
+       unset, compiled-in defaults are used.
+
+       <b>RA_SERVER</b>
+              Server to issue a RADB whois query on, given either as hostname,
+              or dotted-quad IP address.  Defaults to <u>whois.ra.net</u>.
+
+       <b>RA_SERVICE</b>
+              TCP port to connect to on the whois server, given either as name
+              or port number.  Defaults to <u>whois</u>.
+
+       The following variables determine how traceroute attempts to extract an
+       ASN from the whois reply.
+
+       <b>DATA_DELIMITER</b>
+              Each line containing an ASN starts with this tag.   Defaults  to
+              <u>origin:</u>.
+
+       The  RADB  may  contain more than one entry for a given IP address.  To
+       find out the correct entry, traceroute has to look up the  subnet  that
+       is the most specific to this IP.
+
+       <b>ROUTE_DELIMITER</b>
+              Each  line  containing  a  subnet  entry  starts  with this tag.
+              Defaults to <u>route:</u>.
+
+       <b>PREFIX_DELIMITER</b>
+              The network IP  and  the  prefix  are  separated  by  this  tag.
+              Defaults to <u>/</u>.
+
+</pre><h4 id="contenttoc7"><b>NOTES</b></h4><pre>       This  is  not  the  standard  version of traceroute (as included in the
+       netkit package), but an alternative implementation maintained  by  Ehud
+       Gavron.  It  is  based on the Van Jacobson/BSD traceroute, and includes
+       additional features  including  AS  lookup,  TOS  support,  microsecond
+       timestamps,  path  MTU discovery, and parallel probing.  It is known as
+       trACESroute or traceroute-nanog.
+
+</pre><h4 id="contenttoc8"><b>SEE</b> <b>ALSO</b></h4><pre>       <b><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/mtr.8.html">mtr</a></b>(8), <b><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/netstat.8.html">netstat</a></b>(8), <b><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/pchar.8.html">pchar</a></b>(8), <b><a href="http://manpages.ubuntu.com/manpages/jaunty/man8/ping.8.html">ping</a></b>(8)
+
+</pre><h4 id="contenttoc9"><b>BUGS</b></h4><pre>       Please send any bugs to Ehud Gavron &lt;<a href="mailto:gavron@wetwork.net">gavron@wetwork.net</a>&gt; and/or  report
+       them      to      the     Debian     Bug     Tracking     System     at
+       <u><a href="http://bugs.debian.org/traceroute-nanog">http://bugs.debian.org/traceroute-nanog</a></u>.
+
+</pre><h4 id="contenttoc10"><b>AUTHORS</b></h4><pre>       TrACESroute is maintained by Ehud Gavron &lt;<a href="mailto:ehud.gavron@login.com">ehud.gavron@login.com</a>&gt;.
+
+       The first man page was written by Brian Russo for use with  Debian/GNU,
+       and was later rewritten by Daniel Kobras &lt;<a href="mailto:kobras@debian.org">kobras@debian.org</a>&gt; and Martin
+       A.  Godisch  &lt;<a href="mailto:martin@godisch.de">martin@godisch.de</a>&gt;.   Some  parts  are  taken  from   the
+       documentation  in the source code.  Still, this man page may be used by
+       others.
+</pre>
+
+                </div>
+            </div>
+            <div id="copyright">
+                <p>
+                Powered by the <a href="https://launchpad.net/ubuntu-manpage-repository">Ubuntu Manpage Repository</a> generator
+                maintained by <a href="http://blog.dustinkirkland.com/">Dustin Kirkland</a><br>
+                © 2010 Canonical Ltd. Ubuntu and Canonical are registered trademarks of Canonical Ltd.
+                </p>
+            </div>
+        </div>
+    
+
+
+</body></html>

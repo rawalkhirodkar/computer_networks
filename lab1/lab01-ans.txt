@@ -1,0 +1,119 @@
+CS252 Computer Networks Laboratory
+Lab Assignment 1
+
+ 
+
+Exercise 2: Simple Stuff
+
+1. Machine Host Name: osl-33 (found in the file /etc/hostname)
+Machine IP Address: 10.105.11.33 (ifconfig or via command "host osl-33")
+
+2. Next-hop ipaddress : 10.105.1.250 (using the route command)
+Mac address : 00:19:56:ed:66:c1 (using the command "arp 10.105.1.250")
+
+3. DNS Server's IP address is : 10.105.1.7 (found in /etc/resolv.conf)
+hostname is : rsl-jeeves.cse.iitb.ac.in (via command host 10.105.1.7 or via arp 10.105.1.7)
+
+
+4. The number represents the protocol number. This number is found in the headers of packets, and is used demultiplexing packets at the network layer.
+
+5. ssh - port 22 on tcp and port 22 on udp
+   ftp - port 20/21 on tcp
+   nfs - port 2049 on tcp and port 2049 on udp
+   smtp - port 25 on tcp
+(obtained via /etc/services)
+
+Exercise 3
+
+1. Design
+1. First Set up the tcpdump listener
+Command
+ tcpdump -i eth0 host www.iitb.ac.in -w /tmp/exercise3.pcap
+2. use wget to download the page
+Command
+ wget --no-proxy http://www.iitb.ac.in/
+3. Use Wireshark to examine the output trace
+Command
+ wireshark -r /tmp/exercise3.out
+
+2
+a. First Hop Router:
+MAC Address: 00:19:56:ed:66:c1
+IP Address: 10.105.1.250
+Method: Go to the first TCP entry on wireshark, and the mac address can be found on double clicking and then seeing the destination MAC address in the ethernet tab. ip address can be obtained using the arp -n command on the terminal, and matching the MAC address.
+(Note the destination IP not same as next hop router IP)
+
+
+b. Final Destination:
+MAC Address: ?? 
+IP Address: 10.102.1.111
+Method: Go to the first entry on wireshark, and the ip address is the destination in the IP Version 4 tab, and the mac address cannot be determined since the destination is not in the same local-area network
+
+c. 
+Ethernet : Field Used = Frame Type ; Frame Type : IP , ID : 0x0800 (Hex), 2048 (Decimal)
+IP : Field Used = Protocol ; Protocol : TCP, ID: 6 (Hex and Decimal)
+TCP : Field Used = Port No.; Port No : 80 (in decimal) (http) (Note that this is the destination port)
+      
+
+
+Exercise 4:
+
+1. Design: Setup the tcpdump listener
+
+tcpdump -i eth0 -n host 10.105.11.34 -w /tmp/exercise4.out &
+
+now for ssh
+
+ssh xxx@osl-34.cse.iitb.ac.in
+(the ip of this computer is the id 10.105.11.34 specified in the previous line)
+
+now for ping
+ping 10.105.11.34
+(the ip of this computer is the id 10.105.11.34 specified earlier)
+
+2.
+a. The trace is entirely in the Link Layer. This is because ARP is implemented entirely in the link layer. 
+-> Processing starts with a frame, which is seen at the ethernet level (link layer level)
+-> In the ethernet, the frame type is of Type : ARP
+-> All further processing takes part as the ARP protocol in the link layer itself
+-> Under the ARP (Address Resolution Protocol Tab), once can see the details of the sender's and receiver's MAC address and IP
+
+b. Field type: Frame Type, Field value : 0x0806 in hex, 2054 in decimal, this is of type ARP
+
+
+3.
+a. The trace is in the link layer, followed by the Network Layer, and it does not go further to transport layer etc. This is because the ICMP protocol is implemented in the network layer itself
+-> Processing starts with a frame, which is seen at the link layer level (ethernet)
+-> In the ethernet, the frame type is: IP
+-> Now the flow moves on from the IP layer 
+-> In the IP layer, the protocol type is: ICMP
+-> All further processing takes place in the network layer itself
+-> Under the Internet Control Message Protocol Tab, further details can be seen
+
+b. Field type: Frame Type , Field value : 0x0800 in hex, 2048 in decimal, Field Type : IP
+
+c. Field type: Protocol Type, Field value : 1 (in decimal, hex, etc.), Field Type: ICMP 
+
+4.
+a. Source IP: 10.105.11.33
+   Destination IP: 10.105.11.34
+
+b. Source Port: 54012
+   Destination Port: 22 (ssh)
+
+c. The destination is the SSH server (not the source). In this case, it is, 10.105.11.34. This is because the destination port is 22 and this is designated in /etc/services
+
+
+Exercise 5: 
+ 1. The X value can be obtained by looking at the HTTP OK packet. Under content length it is specified as 33392010. The Z value is roughly the time of this packet i.e. 2.84 sec. The Y value is calculated as X/Z ~ 11.75 MBps. 
+
+2. To express it in Mbps, multiply it with 8 i.e. 94Mbps. So, we are on 100Mbps LAN.
+
+3. It is the time difference between when the first ICMP packet (echo request) was sent to when the ack (echo reply) was recieved.
+
+
+
+
+
+
+

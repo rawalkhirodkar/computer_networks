@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<!-- saved from url=(0250)https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#2 -->
+<html lang="en" dir="ltr" class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script async="" src="saved_resource"></script>
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+    </style>
+
+<style type="text/css"></style><link rel="stylesheet" href="https://a.disquscdn.com/next/embed/styles/lounge.eb7efda0fc0cb7804cfc91e3fb963837.css" media="all"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="remote/config" src="config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common.bundle" src="common.bundle.57ffab17433ce57ca7c3ec3ad140e9f2.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lounge.bundle" src="lounge.bundle.110b4a304a053d7def43105d7a2cd9f2.js"></script><style id="css_1429168635063"></style><!--<base target="_parent">--><base href="." target="_parent"><script src="event.js" async="" charset="UTF-8"></script><link rel="stylesheet" href="https://a.disquscdn.com/next/embed/styles/discovery.fb542712b8eee01e072d27af98fb896b.css" media="all"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ga" src="ga.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="discovery/main" src="discovery.bundle.6c2ccadf5601fe882a8958b0bd176695.js"></script></head>
+<body>
+    
+    <!--[if lte IE 8]>
+<script src="//a.disquscdn.com/1428955678/build/vendor/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//a.disquscdn.com/1428955678/build/vendor/ie9.js"></script>
+<![endif]-->
+
+    
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/current/embed"
+}</script>
+
+    
+
+    <div id="error" style="display:none; text-align: center">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="https://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"audienceSyncVerified":false,"canReply":true,"mustVerifyEmail":false},"features":{},"forum":{"category":"Others","description":"\u003cp>\u003ca href=\"https://danielmiessler.com/about/\" rel=\"nofollow\">https://danielmiessler.com/abo...\u003c/a>\u003c/p>","founder":"397459","settings":{"canEnableSponsoredComments":false,"discoveryVariant":"default","allowAnonPost":true,"allowMedia":true,"moderatorText":"Host","typeface":"sans-serif","disable3rdPartyTrackers":false,"promotedDiscoveryEnabled":false,"allowAnonVotes":false,"discoveryMax":false,"ssoRequired":false,"discoveryLocked":false,"audienceSyncEnabled":false,"hasCustomAvatar":true,"organicDiscoveryEnabled":true,"discoverySettingsUrl":"https://drm.disqus.com/admin/settings/ads/","discoveryThumbnailsEnabled":false,"colorScheme":"light","isVIP":false,"sponsoredCommentsEnabled":false,"linkAffiliationEnabled":false},"url":"https://danielmiessler.com/","guidelines":null,"favicon":{"permalink":"https://disqus.com/api/forums/favicons/drm.jpg","cache":"//a.disquscdn.com/uploads/forums/14/1358/favicon.png"},"language":"en","avatar":{"small":{"permalink":"https://disqus.com/api/forums/avatars/drm.jpg?size=32","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"https://disqus.com/api/forums/avatars/drm.jpg?size=92","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"}},"pk":"141358","signedUrl":"https://disq.us/?url=https%3A%2F%2Fdanielmiessler.com%2F&key=wzsDoLrczv4cSrnhYEM0-g","raw_guidelines":null,"id":"drm","channel":null,"name":"danielmiessler.com"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"total":16,"prev":null,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1429026191,"posts":[{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"username":"khailey","about":"","name":"khailey","disable3rdPartyTrackers":false,"url":"","joinedAt":"2009-12-14T15:26:20","rep":1.236944,"profileUrl":"https://disqus.com/by/khailey/","reputation":1.236944,"location":"","isPrivate":false,"isPrimary":true,"isAnonymous":false,"id":"1388889","avatar":{"small":{"permalink":"https://disqus.com/api/users/avatars/khailey.jpg","cache":"//a.disquscdn.com/uploads/users/138/8889/avatar32.jpg?1372463168"},"isCustom":true,"permalink":"https://disqus.com/api/users/avatars/khailey.jpg","cache":"//a.disquscdn.com/uploads/users/138/8889/avatar92.jpg?1372463168","large":{"permalink":"https://disqus.com/api/users/avatars/khailey.jpg","cache":"//a.disquscdn.com/uploads/users/138/8889/avatar92.jpg?1372463168"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"nice to see a writeup on tcpdump.\n\nLinked it into my blog post on pinpointing the layer responsible for majority of latency in NFS using tcpdump to capture, wireshark to translate and perl to parse, agregate and filter http://www.kylehailey.com/tcp-trace-analysis-for-nfs/","isSpam":false,"depth":0,"numReports":0,"likes":4,"isEdited":false,"message":"\u003cp>nice to see a writeup on tcpdump.\u003c/p>\u003cp>Linked it into my blog post on pinpointing the layer responsible for majority of latency in NFS using tcpdump to capture, wireshark to translate and perl to parse, agregate and filter \u003ca href=\"http://www.kylehailey.com/tcp-trace-analysis-for-nfs/\" rel=\"nofollow\">http://www.kylehailey.com/tcp-...\u003c/a>\u003c/p>","id":"1127345890","createdAt":"2013-11-17T22:07:02","points":4},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"Russell","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Great write up. Just FYI, it does not look like this is correct. \n\n# Traffic originating from Mars or Pluto that isn't to the SSH port\n\ntcpdump -vv src mars and not dst port 22","isSpam":false,"depth":0,"numReports":0,"likes":2,"isEdited":false,"message":"\u003cp>Great write up. Just FYI, it does not look like this is correct.\u003c/p>\u003cp># Traffic originating from Mars or Pluto that isn't to the SSH port\u003c/p>\u003cp>tcpdump -vv src mars and not dst port 22\u003c/p>","id":"1315031030","createdAt":"2014-04-02T15:53:08","points":2},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"Nope","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Nice job! Thanks so much for all that you do!","isSpam":false,"depth":0,"numReports":0,"likes":2,"isEdited":false,"message":"\u003cp>Nice job! Thanks so much for all that you do!\u003c/p>","id":"1262326815","createdAt":"2014-02-27T01:49:46","points":2},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"uday3110","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Amazingly concise and informative","isSpam":false,"depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>Amazingly concise and informative\u003c/p>","id":"1407766066","createdAt":"2014-05-28T04:28:37","points":1},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"Dan","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Nice tutorials, thanks for writing these up!  Definitely bookmarked.","isSpam":false,"depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>Nice tutorials, thanks for writing these up!  Definitely bookmarked.\u003c/p>","id":"1372284614","createdAt":"2014-05-06T18:16:51","points":1},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"username":"vbernat","about":"","name":"Vincent Bernat","disable3rdPartyTrackers":false,"url":"http://vincent.bernat.im/","joinedAt":"2011-05-12T05:33:43","rep":1.318648,"profileUrl":"https://disqus.com/by/vbernat/","reputation":1.318648,"location":"Paris","isPrivate":false,"isPrimary":true,"isAnonymous":false,"id":"10270445","avatar":{"small":{"permalink":"https://disqus.com/api/users/avatars/vbernat.jpg","cache":"//a.disquscdn.com/uploads/users/1027/445/avatar32.jpg?1428390759"},"isCustom":true,"permalink":"https://disqus.com/api/users/avatars/vbernat.jpg","cache":"//a.disquscdn.com/uploads/users/1027/445/avatar92.jpg?1428390759","large":{"permalink":"https://disqus.com/api/users/avatars/vbernat.jpg","cache":"//a.disquscdn.com/uploads/users/1027/445/avatar92.jpg?1428390759"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"The default value for \u003ccode>-s\u003c/code> is 65535 since 4.1.0. However, I keep using \u003ccode>-s 0\u003c/code> to not care of the version. Also, using more than 1514 is useful even without jumbo frames, for example when you are using TSO/GSO/GRO/LRO.\n\n\nI also like to use a command like this:\n\n\n\u003cpre>\nssh somehost tcpdump -s0 -w - -U some filter | wireshark -k -i -\n\n\u003c/pre>","isSpam":false,"depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>The default value for \u003ccode>-s\u003c/code> is 65535 since 4.1.0. However, I keep using \u003ccode>-s 0\u003c/code> to not care of the version. Also, using more than 1514 is useful even without jumbo frames, for example when you are using TSO/GSO/GRO/LRO.\u003c/p>\u003cp>I also like to use a command like this:\u003c/p>\u003cp>\u003c/p>\u003cpre>ssh somehost tcpdump -s0 -w - -U some filter | wireshark -k -i -\u003cbr>\u003cbr>\u003c/pre>","id":"1265557500","createdAt":"2014-03-01T10:16:37","points":1},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"Mike","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Nice one. I think -s0 is even better if you want to capture all packet data (jumbo frames like mentioned before)","isSpam":false,"depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>Nice one. I think -s0 is even better if you want to capture all packet data (jumbo frames like mentioned before)\u003c/p>","id":"1154742503","createdAt":"2013-12-08T09:28:50","points":1},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"username":"vurso","about":"","name":"VURSO","disable3rdPartyTrackers":false,"url":"","joinedAt":"2013-09-17T13:39:29","rep":1.2374509999999999,"profileUrl":"https://disqus.com/by/vurso/","reputation":1.2374509999999999,"location":"","isPrivate":false,"isPrimary":true,"isAnonymous":false,"id":"73604374","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Nice high quality write up dude, appreciated","isSpam":false,"depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Nice high quality write up dude, appreciated\u003c/p>","id":"1966981806","createdAt":"2015-04-14T15:43:10","points":0},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"HPack","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"There's a typo, Unskilled Attackers Pester Real SecurityFolk is a mnemonic, not an anagram.","isSpam":false,"depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>There's a typo, Unskilled Attackers Pester Real SecurityFolk is a mnemonic, not an anagram.\u003c/p>","id":"1965585325","createdAt":"2015-04-13T20:03:00","points":0},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"Tomaz","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"On the example labeled \"Capture TCP flags using the tcpflags option\" you write it like so:\n\ntcpdump 'tcp[tcpflags] && tcp-syn != 0'\n\nYou're using && instead of & . Since we're dealing with flags on bits, maybe you've made a mistake using the boolean AND instead of the bitwise AND ?\n\nOther than that, awesome and very clear article. O/","isSpam":false,"depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>On the example labeled \"Capture TCP flags using the tcpflags option\" you write it like so:\u003c/p>\u003cp>tcpdump 'tcp[tcpflags] &amp;&amp; tcp-syn != 0'\u003c/p>\u003cp>You're using &amp;&amp; instead of &amp; . Since we're dealing with flags on bits, maybe you've made a mistake using the boolean AND instead of the bitwise AND ?\u003c/p>\u003cp>Other than that, awesome and very clear article. O/\u003c/p>","id":"1882333475","createdAt":"2015-03-01T20:00:13","points":0},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"hooman","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"thanks man , it is very helpful to me","isSpam":false,"depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>thanks man , it is very helpful to me\u003c/p>","id":"1864074388","createdAt":"2015-02-19T17:17:48","points":0},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"Clif","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Thanks for a the tcpdump tutorial/primer.  Very helpful and easy to understand.","isSpam":false,"depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Thanks for a the tcpdump tutorial/primer.  Very helpful and easy to understand.\u003c/p>","id":"1766168423","createdAt":"2014-12-31T16:35:45","points":0},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"kousi","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"great post","isSpam":false,"depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>great post\u003c/p>","id":"1422663454","createdAt":"2014-06-06T14:32:01","points":0},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"Dissector Writer","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"\u003cb>In a discipline so dependent on a true understanding of concepts vs.rote learning, it's important to stay fluent in the underlying mechanics of the TCP/IP suite. A thorough grasp of these protocols allows one to troubleshoot at a level far beyond the average analyst, but mastery of the protocols is only possible through continued exposure to them.\u003c/b>\n\n\nLet's say you have a 1GB capture and you need to know how many SMB2 CREATEs that wanted WDAC access compared with those that did not want WDAC access, how are you going to do this with tcpdump?","isSpam":false,"depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>\u003cb>In a discipline so dependent on a true understanding of concepts vs.rote learning, it's important to stay fluent in the underlying mechanics of the TCP/IP suite. A thorough grasp of these protocols allows one to troubleshoot at a level far beyond the average analyst, but mastery of the protocols is only possible through continued exposure to them.\u003c/b>\u003c/p>\u003cp>Let's say you have a 1GB capture and you need to know how many SMB2 CREATEs that wanted WDAC access compared with those that did not want WDAC access, how are you going to do this with tcpdump?\u003c/p>","id":"1265241134","createdAt":"2014-03-01T01:31:43","points":0},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"hanruna","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Always (years) wanted to find something precisely like this. Somewhere to begin!","isSpam":false,"depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Always (years) wanted to find something precisely like this. Somewhere to begin!\u003c/p>","id":"1264838087","createdAt":"2014-02-28T19:51:16","points":0},{"parent":null,"isHighlighted":false,"isFlagged":false,"thread":"1944570081","forum":"drm","author":{"name":"Marcin Cabaj","url":"","profileUrl":"","emailHash":"","avatar":{"small":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar32.jpg?1391425145"},"large":{"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"permalink":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145","cache":"//a.disquscdn.com/uploads/forums/14/1358/avatar92.jpg?1391425145"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"'-ttt' is a nice option, prints delta time between packets","isSpam":false,"depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>'-ttt' is a nice option, prints delta time between packets\u003c/p>","id":"1134881194","createdAt":"2013-11-22T20:00:02","points":0}],"thread":{"feed":"https://drm.disqus.com/a_tcpdump_primer_91/latest.rss","uploadAdd":"//drm.disqus.com/thread/a_tcpdump_primer_91/async_media_upload/","author":"397459","dislikes":0,"likes":6,"clean_title_unescaped":"A tcpdump Primer","message":"","id":"1944570081","createdAt":"2013-11-07T13:01:28","category":"145161","clean_title":"A tcpdump Primer","userScore":0,"moderators":[397459],"signedLink":"https://disq.us/?url=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&key=47Mkh2eECe8AlFIpOek-lQ","isDeleted":false,"hasStreaming":false,"uploadRemove":"//drm.disqus.com/thread/a_tcpdump_primer_91/async_media_remove/","raw_message":"","isClosed":false,"link":"https://danielmiessler.com/study/tcpdump/","slug":"a_tcpdump_primer_91","forum":"drm","identifiers":[],"posts":16,"userSubscription":false,"title":"A tcpdump Primer","highlightedPost":null}},"order":"popular"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+    <script src="lounge.load.b2269d7bccf5cf6e7bf746017b258dd1.js" id="bootstrap-script" data-app="lounge"></script>
+
+
+<div id="layout" data-tracking-area="layout">
+
+<div id="discovery-top" data-tracking-area="discovery-north"></div>
+
+<div id="onboard" data-tracking-area="onboard"></div>
+
+<div id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post" style="display: none;"></div>
+
+<div id="global-alert"></div>
+
+<header id="main-nav" data-tracking-area="main-nav">
+<nav class="nav nav-primary">
+<ul>
+<li class="tab-conversation active">
+<a data-role="post-count" class="publisher-nav-color"><span class="comment-count">
+16 comments
+</span>
+
+<span class="comment-count-placeholder">
+Comments
+</span>
+</a>
+</li>
+<li class="tab-community">
+<a href="https://disqus.com/home/forums/drm/" class="publisher-nav-color" data-action="community-sidebar" data-forum="drm" id="community-tab">
+<span class="community-name">
+<strong>danielmiessler.com</strong>
+
+</span>
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="dropdown user-menu" data-role="logout"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+<span>
+Login
+</span>
+
+</span> <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+
+
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="auth:google">Google</a>
+</li>
+
+
+
+</ul>
+</li>
+<li class="notification-menu unread" data-role="notification-menu"><a href="https://disqus.com/home/inbox/" class="notification-container" data-action="home" data-home-path="home/inbox">
+<span class="notification-icon icon-comment" aria-hidden=""></span>
+<span class="notification-count" data-role="notification-count">1</span>
+</a>
+</li>
+</ul>
+</nav>
+</header>
+
+<section id="conversation" data-role="main" data-tracking-area="main">
+<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+<ul>
+<li id="recommend-button" class="recommend dropdown">
+<div class="thread-likes"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="recommend" title="Recommend this discussion" class="dropdown-toggle ">
+<span class="icon-heart"></span>
+<span class="label label-default">Recommend</span>
+<span class="label label-recommended">Recommended</span>
+<span class="label label-count">6</span>
+</a>
+<ul class="dropdown-menu coachmark">
+<li>
+<h2>Discussion Recommended!</h2>
+<p>Recommending means this is a discussion worth sharing. It gets shared to your followers' Disqus feeds, and gives the creator kudos!</p>
+<a href="https://disqus.com/home/?utm_source=disqus_embed&utm_content=recommend_btn" class="btn btn-primary" target="_blank">
+ Find More Discussions 
+</a>
+</li>
+</ul>
+</div></li>
+<li id="thread-share-menu" class="dropdown share-menu hidden-sm"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="icon-export"></span>
+<span class="label">Share</span>
+</a>
+<ul class="share-menu dropdown-menu">
+<li class="share">Share this discussion on
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li data-role="post-sort" class="dropdown sorting pull-right">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="dropdown-toggle" data-toggle="dropdown">
+Sort by Best
+
+
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu pull-right">
+<li class="selected">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="sort" data-sort="popular">Best<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="sort" data-sort="desc">Newest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="sort" data-sort="asc">Oldest<i aria-hidden="true" class="icon-checkmark"></i></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div id="posts">
+<div id="form"><form class="reply">
+<div class="postbox">
+<div role="alert"></div>
+<div class="avatar">
+<span class="user">
+<img data-role="user-avatar" src="noavatar92.b677f9ddbee6f4bb22f473ae3bd61b85.png" alt="Avatar">
+</span>
+</div>
+
+<div class="textarea-wrapper" data-role="textarea" dir="auto"><div><span class="placeholder">Join the discussion…</span><div class="textarea" tabindex="0" role="textbox" aria-multiline="true" contenteditable="true" data-role="editable" aria-label="Join the discussion…" style="overflow: auto; max-height: 350px;"><p><br></p></div><div style="display: none;"><ul class="suggestions">
+<li class="header">
+<h5>in this conversation</h5>
+</li>
+</ul>
+</div></div>
+<div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+<div class="drag-text">
+⬇ Drag and drop your images here to upload them.
+</div>
+</div>
+<div class="media-preview empty" data-role="media-preview">
+<ul data-role="media-legacy-list"></ul>
+<ul data-role="media-progress-list"></ul>
+<ul data-role="media-rich-list"></ul>
+<div class="media-expanded empty" data-role="media-preview-expanded">
+<img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-role="media-preview-expanded-image" alt="Media preview placeholder">
+</div>
+</div>
+<div class="edit-alert" role="postbox-alert"></div>
+<div class="post-actions">
+<ul class="wysiwyg">
+<li>
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" tabindex="-1" data-action="attach" class="attach" title="Upload Images"><span>Attach</span></a>
+<input type="file" data-role="media-upload" tabindex="-1" class="regular" accept="image/*">
+</li>
+</ul>
+</div>
+</div>
+
+<div data-role="login-form"><div><section class="auth-section logged-out">
+<div class="connect">
+<h6>Sign in with</h6>
+<ul data-role="login-menu" class="services login-buttons">
+
+
+<li class="auth-disqus">
+<button type="button" data-action="auth:disqus" title="Disqus"><i class="icon-disqus"></i></button>
+</li>
+<li class="auth-facebook">
+<button type="button" data-action="auth:facebook" title="Facebook"><i class="icon-facebook-circle"></i></button>
+</li>
+<li class="auth-twitter">
+<button type="button" data-action="auth:twitter" title="Twitter"><i class="icon-twitter-circle"></i></button>
+</li>
+<li class="auth-google">
+<button type="button" data-action="auth:google" title="Google"><i class="icon-google-plus-circle"></i></button>
+</li>
+</ul>
+</div>
+<div class="guest">
+<h6 class="guest-form-title">
+or pick a name
+</h6>
+
+<div class="what-is-disqus help-icon">
+<div id="rules" class="tooltip show">
+<h3>Disqus is a conversation network</h3>
+<ul>
+<li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+<li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+<li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+</ul>
+<p class="clearfix"><a href="https://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small" target="_blank">Read full terms and conditions</a></p>
+</div>
+</div>
+
+<p class="input-wrapper">
+<input dir="auto" type="text" placeholder="Name" name="display_name" id="view92_display_name" maxlength="30">
+</p>
+
+<div class="guest-details " data-role="guest-details">
+<p class="input-wrapper">
+<input dir="auto" type="email" placeholder="Email" name="email" id="view92_email">
+</p>
+
+<p class="input-wrapper">
+<input dir="auto" type="password" placeholder="Password" name="password" id="view92_password">
+</p>
+<div class="guest-checkbox">
+<label>
+<input type="checkbox" name="author-guest">
+I'd rather post as guest
+</label>
+</div>
+
+<div class="proceed">
+<button type="submit" class="btn submit" aria-label="Post"><span class="icon-proceed"></span></button>
+<button type="submit" class="btn next" aria-label="Next"><span class="icon-proceed"></span></button>
+</div>
+</div>
+</div>
+</section>
+
+</div></div>
+</div>
+</form></div>
+
+<button class="alert realtime" style="display: none;" data-role="realtime-notification">
+</button>
+
+<div id="no-posts" style="display: none;">Be the first to comment.</div>
+
+<ul id="post-list" class="post-list"><li class="post" id="post-1127345890"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/khailey/" class="user" data-action="profile" data-username="khailey">
+<img data-role="user-avatar" data-user="1388889" src="avatar92.jpg" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/khailey/" data-action="profile" data-username="khailey" data-role="username">khailey</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1127345890" data-role="relative-time" class="time-ago" title="Monday, November 18, 2013 3:37 AM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>nice to see a writeup on tcpdump.</p><p>Linked it into my blog post on pinpointing the layer responsible for majority of latency in NFS using tcpdump to capture, wireshark to translate and perl to parse, agregate and filter <a href="http://www.kylehailey.com/tcp-trace-analysis-for-nfs/" rel="nofollow">http://www.kylehailey.com/tcp-...</a></p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-4" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">4</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1127345890">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1127345890">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1315031030"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Russell</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1315031030" data-role="relative-time" class="time-ago" title="Wednesday, April 2, 2014 9:23 PM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Great write up. Just FYI, it does not look like this is correct.</p><p># Traffic originating from Mars or Pluto that isn't to the SSH port</p><p>tcpdump -vv src mars and not dst port 22</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-2" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">2</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1315031030">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1315031030">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1262326815"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Nope</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1262326815" data-role="relative-time" class="time-ago" title="Thursday, February 27, 2014 7:19 AM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Nice job! Thanks so much for all that you do!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-2" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">2</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1262326815">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1262326815">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1407766066"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">uday3110</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1407766066" data-role="relative-time" class="time-ago" title="Wednesday, May 28, 2014 9:58 AM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Amazingly concise and informative</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-1" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1407766066">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1407766066">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1372284614"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Dan</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1372284614" data-role="relative-time" class="time-ago" title="Tuesday, May 6, 2014 11:46 PM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Nice tutorials, thanks for writing these up!  Definitely bookmarked.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-1" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1372284614">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1372284614">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1265557500"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/vbernat/" class="user" data-action="profile" data-username="vbernat">
+<img data-role="user-avatar" data-user="10270445" src="avatar92.jpg" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/vbernat/" data-action="profile" data-username="vbernat" data-role="username">Vincent Bernat</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1265557500" data-role="relative-time" class="time-ago" title="Saturday, March 1, 2014 3:46 PM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>The default value for <code>-s</code> is 65535 since 4.1.0. However, I keep using <code>-s 0</code> to not care of the version. Also, using more than 1514 is useful even without jumbo frames, for example when you are using TSO/GSO/GRO/LRO.</p><p>I also like to use a command like this:</p><p></p><pre>ssh somehost tcpdump -s0 -w - -U some filter | wireshark -k -i -<br><br></pre>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-1" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1265557500">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1265557500">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1154742503"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Mike</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1154742503" data-role="relative-time" class="time-ago" title="Sunday, December 8, 2013 2:58 PM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Nice one. I think -s0 is even better if you want to capture all packet data (jumbo frames like mentioned before)</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-1" data-action="upvote" title="">
+
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1154742503">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1154742503">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1966981806"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar hovercard">
+<a href="https://disqus.com/by/vurso/" class="user" data-action="profile" data-username="vurso">
+<img data-role="user-avatar" data-user="73604374" src="avatar92.jpg" alt="Avatar">
+</a>
+</div>
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author publisher-anchor-color"><a href="https://disqus.com/by/vurso/" data-action="profile" data-username="vurso" data-role="username">VURSO</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1966981806" data-role="relative-time" class="time-ago" title="Tuesday, April 14, 2015 9:13 PM">
+2 days ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Nice high quality write up dude, appreciated</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1966981806">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1966981806">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1965585325"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">HPack</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1965585325" data-role="relative-time" class="time-ago" title="Tuesday, April 14, 2015 1:33 AM">
+2 days ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>There's a typo, Unskilled Attackers Pester Real SecurityFolk is a mnemonic, not an anagram.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1965585325">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1965585325">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1882333475"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Tomaz</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1882333475" data-role="relative-time" class="time-ago" title="Monday, March 2, 2015 1:30 AM">
+a month ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>On the example labeled "Capture TCP flags using the tcpflags option" you write it like so:</p><p>tcpdump 'tcp[tcpflags] &amp;&amp; tcp-syn != 0'</p><p>You're using &amp;&amp; instead of &amp; . Since we're dealing with flags on bits, maybe you've made a mistake using the boolean AND instead of the bitwise AND ?</p><p>Other than that, awesome and very clear article. O/</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1882333475">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1882333475">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1864074388"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">hooman</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1864074388" data-role="relative-time" class="time-ago" title="Thursday, February 19, 2015 10:47 PM">
+2 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>thanks man , it is very helpful to me</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1864074388">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1864074388">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1766168423"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Clif</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1766168423" data-role="relative-time" class="time-ago" title="Wednesday, December 31, 2014 10:05 PM">
+4 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Thanks for a the tcpdump tutorial/primer.  Very helpful and easy to understand.</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1766168423">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1766168423">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1422663454"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">kousi</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1422663454" data-role="relative-time" class="time-ago" title="Friday, June 6, 2014 8:02 PM">
+10 months ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>great post</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1422663454">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1422663454">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1265241134"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Dissector Writer</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1265241134" data-role="relative-time" class="time-ago" title="Saturday, March 1, 2014 7:01 AM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p><b>In a discipline so dependent on a true understanding of concepts vs.rote learning, it's important to stay fluent in the underlying mechanics of the TCP/IP suite. A thorough grasp of these protocols allows one to troubleshoot at a level far beyond the average analyst, but mastery of the protocols is only possible through continued exposure to them.</b></p><p>Let's say you have a 1GB capture and you need to know how many SMB2 CREATEs that wanted WDAC access compared with those that did not want WDAC access, how are you going to do this with tcpdump?</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1265241134">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1265241134">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1264838087"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">hanruna</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1264838087" data-role="relative-time" class="time-ago" title="Saturday, March 1, 2014 1:21 AM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>Always (years) wanted to find something precisely like this. Somewhere to begin!</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1264838087">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1264838087">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li><li class="post" id="post-1134881194"><div role="alert"></div>
+<div data-role="post-content" class="post-content">
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+<li class="" role="menu">
+<a class="dropdown-toggle" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+</li>
+</ul>
+<div class="indicator"></div>
+
+<div class="avatar">
+<div class="user"><img src="avatar92.jpg" class="user" alt="Avatar"></div>
+</div>
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+<span class="author">Marcin Cabaj</span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+<a href="https://danielmiessler.com/study/tcpdump/#comment-1134881194" data-role="relative-time" class="time-ago" title="Saturday, November 23, 2013 1:30 AM">
+a year ago
+</a>
+</span>
+
+</header>
+
+<div class="post-body-inner">
+<div class="post-message-container" data-role="message-container">
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+<p>'-ttt' is a nice option, prints delta time between packets</p>
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+<menu>
+
+<li class="voting" data-role="voting">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" data-action="downvote" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+</span>
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="reply" data-role="reply-link">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="reply">
+<i class="icon icon-mobile icon-reply"></i><span class="text">Reply</span></a></li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="https://danielmiessler.com/study/tcpdump/#comment-1134881194">Link</a></li>
+</ul>
+</li>
+
+<li class="realtime" data-role="realtime-notification:1134881194">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" class="btn btn-small"></a>
+</li>
+
+</menu>
+</footer>
+</div>
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+<ul data-role="children" class="children"></ul>
+
+</li></ul>
+
+<div class="load-more" data-role="more" style="display: none;">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" data-action="more-posts" class="btn">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<div id="discovery" data-tracking-area="discovery-south" style="position: static; visibility: visible; display: block; width: 100%;"><div id="discovery-main-c340" class="discovery-main style-variant-default">
+<div id="discovery-note" class="discovery-note">
+<div class="alert">
+<button class="close" data-action="discovery-help-close" title="Close this box">×</button>
+Disqus helps you find new and interesting content, discussions and products. Some sponsors and ecommerce sites may pay us for these recommendations and links. <a href="https://help.disqus.com/customer/portal/articles/666278-introducing-promoted-discovery-and-f-a-q-" target="_blank">Learn more</a>
+ or <a href="https://www.surveymonkey.com/s/GHK872T" target="_blank">
+give us feedback</a>.
+</div>
+</div>
+
+<div class="discovery-options">
+<button class="discovery-help" data-action="discovery-help">
+What's this?
+</button>
+</div>
+
+<section id="col-organic-c340" class="col-organic discovery-col-0 ">
+<header class="discovery-col-header">
+
+<h2>Also on <strong>danielmiessler.com</strong>
+</h2>
+
+
+</header>
+<ul class="discovery-posts"><li class="discovery-post post-0" id="discovery-link-organic-3639103875" data-id="3639103875" style="margin-bottom: 20px;">
+<a href="http://redirect.disqus.com/url?url=https%3A%2F%2Fdanielmiessler.com%2Fblog%2Fcontrol-memory-experience%2F%3AjBfSbOru8falwZ_xp9ciSiRxe0Y&imp=8g7qtgg10hnnp4&prev_imp&forum_id=141358&forum=drm&thread_id=1944570081&major_version=metadata&thread=3639103875&zone=thread&area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Control Over Memory is Control Over Experience">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Control Over Memory is Control Over Experience
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+1 comment
+</li>
+<li class="time">17 days ago</li>
+</ul>
+</header>
+
+</a><a href="http://redirect.disqus.com/url?url=https%3A%2F%2Fdanielmiessler.com%2Fblog%2Fcontrol-memory-experience%2F%3AjBfSbOru8falwZ_xp9ciSiRxe0Y&imp=8g7qtgg10hnnp4&prev_imp&forum_id=141358&forum=drm&thread_id=1944570081&major_version=metadata&thread=3639103875&zone=thread&area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Marco </span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3">Total Recall comes to mind :)</span></p>
+</a>
+
+</li>
+<li class="discovery-post post-1" id="discovery-link-organic-3666236371" data-id="3666236371" style="clear: right;">
+<a href="http://redirect.disqus.com/url?url=https%3A%2F%2Fdanielmiessler.com%2Fblog%2Fgoing-minimalist%2F%3Akuajkpqtt1vXEi99v_BTiB2qlAc&imp=8g7qtgg10hnnp4&prev_imp&forum_id=141358&forum=drm&thread_id=1944570081&major_version=metadata&thread=3666236371&zone=thread&area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Going Minimalist">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Going Minimalist
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+3 comments
+</li>
+<li class="time">7 days ago</li>
+</ul>
+</header>
+
+</a><a href="http://redirect.disqus.com/url?url=https%3A%2F%2Fdanielmiessler.com%2Fblog%2Fgoing-minimalist%2F%3Akuajkpqtt1vXEi99v_BTiB2qlAc&imp=8g7qtgg10hnnp4&prev_imp&forum_id=141358&forum=drm&thread_id=1944570081&major_version=metadata&thread=3666236371&zone=thread&area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">LaurenB</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> Daniel - I also read Spent after you mentioned it a while back.  Quite an impact on me and how I …</span></p>
+</a>
+
+</li>
+<li class="discovery-post post-2" id="discovery-link-organic-3598699698" data-id="3598699698" style="margin-bottom: 20px;">
+<a href="http://redirect.disqus.com/url?url=https%3A%2F%2Fdanielmiessler.com%2Fblog%2Ftake-1-security-podcast-episode-10%2F%3ACvhLIofppJ5wEkQkJVI4cl8zbUY&imp=8g7qtgg10hnnp4&prev_imp&forum_id=141358&forum=drm&thread_id=1944570081&major_version=metadata&thread=3598699698&zone=thread&area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Take 1 Security Podcast: Episode 10">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">
+Take 1 Security Podcast: Episode 10
+</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+2 comments
+</li>
+<li class="time">a month ago</li>
+</ul>
+</header>
+
+</a><a href="http://redirect.disqus.com/url?url=https%3A%2F%2Fdanielmiessler.com%2Fblog%2Ftake-1-security-podcast-episode-10%2F%3ACvhLIofppJ5wEkQkJVI4cl8zbUY&imp=8g7qtgg10hnnp4&prev_imp&forum_id=141358&forum=drm&thread_id=1944570081&major_version=metadata&thread=3598699698&zone=thread&area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">eoslick</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> Just wanted to say that I have enjoyed this approach to consuming security news and your …</span></p>
+</a>
+
+</li>
+<li class="discovery-post post-3" id="discovery-link-organic-3610988270" data-id="3610988270" style="clear: right;">
+<a href="http://redirect.disqus.com/url?url=https%3A%2F%2Fdanielmiessler.com%2Fblog%2Fapple-watch-form-function%2F%3A-IxJKCLlHMIhk0So6W0SatqpcK8&imp=8g7qtgg10hnnp4&prev_imp&forum_id=141358&forum=drm&thread_id=1944570081&major_version=metadata&thread=3610988270&zone=thread&area=discovery" class="publisher-anchor-color">
+
+<header class="discovery-post-header">
+<h3 title="Apple Watch Will Illuminate the Difference Between Form and Function">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="2">  Apple Watch Will Illuminate the Difference Between Form and …</span>
+
+
+</h3>
+
+<ul class="meta">
+<li class="comments">
+1 comment
+</li>
+<li class="time">a month ago</li>
+</ul>
+</header>
+
+</a><a href="http://redirect.disqus.com/url?url=https%3A%2F%2Fdanielmiessler.com%2Fblog%2Fapple-watch-form-function%2F%3A-IxJKCLlHMIhk0So6W0SatqpcK8&imp=8g7qtgg10hnnp4&prev_imp&forum_id=141358&forum=drm&thread_id=1944570081&major_version=metadata&thread=3610988270&zone=thread&area=discovery" class="top-comment" data-role="discovery-top-comment">
+<img alt="Avatar" data-role="discovery-avatar">
+<p><span class="user" data-role="discovery-top-comment-author">Aliakbar Panahi</span> — <span data-role="discovery-top-comment-snippet" class="line-truncate" data-line-truncate="3"> Since I'm never been a watch wearer for functionality or fashion, I think cellphones or …</span></p>
+</a>
+
+</li>
+</ul>
+</section>
+
+</div>
+</div>
+
+<div id="footer" data-tracking-area="footer">
+<ul>
+<li class="logo"><a href="https://disqus.com/" rel="nofollow" title="Powered by Disqus">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email"> 
+<div class="default">
+<a href="https://disqus.com/embed/comments/?base=default&version=b2269d7bccf5cf6e7bf746017b258dd1&f=drm&t_u=https%3A%2F%2Fdanielmiessler.com%2Fstudy%2Ftcpdump%2F&t_d=A%20tcpdump%20Tutorial%20and%20Primer&t_t=A%20tcpdump%20Tutorial%20and%20Primer&s_o=default#" rel="nofollow" data-action="subscribe" title="Subscribe and get email updates from this discussion"><i aria-hidden="true" class="icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" type="email" placeholder="yourname@email.com"></div>
+</div>
+</li>
+<li class="install">
+<a href="https://disqus.com/websites/?utm_source=drm&utm_medium=Disqus-Footer" rel="nofollow" target="_blank">
+<i aria-hidden="true" class="icon-disqus"></i>
+<span class="clip">Add Disqus to your site</span>
+</a>
+</li>
+<li class="privacy">
+<a href="https://help.disqus.com/customer/portal/articles/1657951?utm_source=disqus&utm_medium=embed-footer&utm_content=privacy-btn" rel="nofollow" target="_blank">
+<i aria-hidden="true" class="icon-privacy"></i>
+<span class="clip">Privacy</span>
+</a>
+</li>
+</ul>
+</div>
+</div></body></html>

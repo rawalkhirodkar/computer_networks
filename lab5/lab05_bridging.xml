@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+-->
+
+<vnx xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/usr/share/xml/vnx/vnx-2.00.xsd">
+  <global>
+    <version>2.0</version>
+    <scenario_name>bridging</scenario_name>
+    <automac/>
+    <vm_mgmt type="none" />
+    <!--vm_mgmt type="private" network="10.250.0.0" mask="24" offset="200">
+       <host_mapping />
+    </vm_mgmt-->
+    <vm_defaults>
+        <console id="0" display="no"/>
+        <console id="1" display="yes"/>
+    </vm_defaults>
+
+    <!--
+    <cmd-seq seq="ls12">ls1,ls2</cmd-seq>
+    <cmd-seq seq="ls123">ls12,ls3</cmd-seq>
+    <cmd-seq seq="ls1234">ls123,ls4</cmd-seq>
+
+    <help>
+        <seq_help seq='start-www'>Start apache2 web server</seq_help>
+        <seq_help seq='stop-www'>Stop apache2 web server</seq_help>
+    </help>
+    -->
+  </global>
+
+  <net name="Net0" mode="virtual_bridge" />
+  <net name="Net1" mode="virtual_bridge" />
+  <net name="Net2" mode="virtual_bridge" />
+
+  <vm name="uml1" type="lxc">
+    <filesystem type="cow">/usr/share/vnx/filesystems/rootfs_lxc</filesystem>
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.1</ipv4>
+    </if>
+  </vm>
+
+  <vm name="uml2" type="lxc">
+    <filesystem type="cow">/usr/share/vnx/filesystems/rootfs_lxc</filesystem>
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.2</ipv4>
+    </if>
+  </vm>
+
+  <vm name="uml3" type="lxc">
+    <filesystem type="cow">/usr/share/vnx/filesystems/rootfs_lxc</filesystem>
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.3</ipv4>
+    </if>
+    <if id="2" net="Net1">
+      <ipv4>10.0.0.4</ipv4>
+    </if>
+  </vm>
+
+  <vm name="uml4" type="lxc">
+    <filesystem type="cow">/usr/share/vnx/filesystems/rootfs_lxc</filesystem>
+    <if id="1" net="Net1">
+      <ipv4>10.0.0.5</ipv4>
+    </if>
+  </vm>
+
+  <vm name="uml5" type="lxc">
+    <filesystem type="cow">/usr/share/vnx/filesystems/rootfs_lxc</filesystem>
+    <if id="1" net="Net1">
+      <ipv4>10.0.0.6</ipv4>
+    </if>
+    <if id="2" net="Net2">
+      <ipv4>10.0.0.7</ipv4>
+    </if>
+  </vm>
+
+  <vm name="uml6" type="lxc">
+    <filesystem type="cow">/usr/share/vnx/filesystems/rootfs_lxc</filesystem>
+    <if id="1" net="Net2">
+      <ipv4>10.0.0.8</ipv4>
+    </if>
+  </vm>
+</vnx>

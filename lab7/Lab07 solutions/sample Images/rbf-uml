@@ -1,0 +1,96 @@
+After disabling the root bridge,   (ifconfig bridge02 down)
+
+output is : 
+
+bridge12
+ bridge id              8000.fefd00000501
+ designated root        8000.fefd00000301
+ root port                 1                    path cost                100
+ max age                  20.00                 bridge max age            20.00
+ hello time                2.00                 bridge hello time          2.00
+ forward delay            15.00                 bridge forward delay      15.00
+ ageing time             300.00
+ hello timer               0.00                 tcn timer                  0.00
+ topology change timer     0.00                 gc timer                   0.04
+ flags                  TOPOLOGY_CHANGE 
+
+
+eth1 (0)
+ port id                0000                    state                forwarding
+ designated root        8000.fefd00000301       path cost                100
+ designated bridge      8000.fefd00000301       message age timer         18.73
+ designated port        8002                    forward delay timer        0.00
+ designated cost           0                    hold timer                 0.00
+ flags  
+
+eth2 (0)
+ port id                0000                    state                forwarding
+ designated root        8000.fefd00000301       path cost                100
+ designated bridge      8000.fefd00000501       message age timer          0.00
+ designated port        8002                    forward delay timer        0.00
+ designated cost         100                    hold timer                 0.00
+ flags  
+
+------------------------
+
+bridge01
+ bridge id              8000.fefd00000301
+ designated root        8000.fefd00000301
+ root port                 0                    path cost                  0
+ max age                  20.00                 bridge max age            20.00
+ hello time                2.00                 bridge hello time          2.00
+ forward delay            15.00                 bridge forward delay      15.00
+ ageing time             300.00
+ hello timer               1.72                 tcn timer                  0.00
+ topology change timer    16.72                 gc timer                   0.07
+ flags                  TOPOLOGY_CHANGE TOPOLOGY_CHANGE_DETECTED 
+
+
+eth1 (0)
+ port id                0000                    state                forwarding
+ designated root        8000.fefd00000301       path cost                100
+ designated bridge      8000.fefd00000301       message age timer          0.00
+ designated port        8001                    forward delay timer        0.00
+ designated cost           0                    hold timer                 0.72
+ flags  
+
+eth2 (0)
+ port id                0000                    state                forwarding
+ designated root        8000.fefd00000301       path cost                100
+ designated bridge      8000.fefd00000301       message age timer          0.00
+ designated port        8002                    forward delay timer        0.00
+ designated cost           0                    hold timer                 0.72
+ flags  
+---------------------------
+
+bridge02
+ bridge id              8000.fefd00000201
+ designated root        8000.fefd00000201
+ root port                 0                    path cost                  0
+ max age                  20.00                 bridge max age            20.00
+ hello time                2.00                 bridge hello time          2.00
+ forward delay            15.00                 bridge forward delay      15.00
+ ageing time             300.00
+ hello timer               0.00                 tcn timer                  0.00
+ topology change timer     0.00                 gc timer                   0.00
+ flags  
+
+
+eth1 (0)
+ port id                0000                    state                  disabled
+ designated root        8000.fefd00000201       path cost                100
+ designated bridge      8000.fefd00000201       message age timer          0.00
+ designated port        8001                    forward delay timer        0.00
+ designated cost           0                    hold timer                 0.00
+ flags  
+
+eth2 (0)
+ port id                0000                    state                  disabled
+ designated root        8000.fefd00000201       path cost                100
+ designated bridge      8000.fefd00000201       message age timer          0.00
+ designated port        8002                    forward delay timer        0.00
+ designated cost           0                    hold timer                 0.00
+ flags  
+
+---------------------
+

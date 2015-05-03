@@ -1,0 +1,50 @@
+
+#ubuntu-header {
+    background-image: url(/img/header_logo.png);
+    left: 16px;
+    top: 16px;
+    width: 196px;
+}
+
+#subheader-search {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+#copyright {
+    background-position: 827px 38px;
+    padding-bottom: 10px;
+}
+
+#content pre {
+    line-height: 16px;
+}
+
+.level-4-nav li a b {
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px dotted #333;
+}
+
+pre img {
+    margin: 4px;
+    vertical-align: middle;
+}
+
+table {
+    background: white;
+    border: none;
+    width: 100%;
+}
+
+#content td {
+    border: none;
+}
+
+#content table table td {
+    border-bottom: 1px dotted #CCC;
+}

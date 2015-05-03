@@ -1,0 +1,243 @@
+Exercise 1
+###################################################################################################
+1.a
+Size of TCP packet = 1040 bytes
+Size of ack = 40 bytes
+
+1.b
+FTP (File Transfer Protocol) is the application which feeds TCP
+
+1.c
+Queue-size limit at the intermediate node is 10 packets.
+
+1.d
+*Link 1 (from node 0 to node 1)
+	Data rate = 10Mbps
+	Propagation Delay = 10ms
+
+*Link 2 (from node 1 to node 2)
+	Data rate = 1Mbps
+	Propagation Delay = 5ms
+	
+1.e
+Command:grep "d" tcp.tr
+
+On analysing the output from the above command,on can conclude that no ack packet was dropped,
+as all packets dropped are tcp packets.
+
+Command: grep -c "d" tcp.tr
+Output: 60
+
+Conclusion:
+Dropped TCP Packets = 60
+Dropped ACK Packets = 0
+
+##################################################################################################
+2.a
+(Distinguished on basis of transport protocol)
+Two flows namely TCP and UDP are set-up as a part of simulation.
+
+2.b
+TCP is fed data by FTP application
+UDP is fed data by CBR.
+
+2.c
+Source Data rate = Packet size (bits)/ time interval between packets(secs)
+
+For TCP,source data-rate cannot be calculated from the .tcl file as the size of packet is not known.
+
+For UDP,Packet size = 1000 bytes, interval between packets = 20ms.
+Therefore, source data-rate = 1000*8/0.020 = 400kbps
+
+2.d
+UDP(CBR) flow ends at 5secs
+TCP(FTP) flow ends at 4secs
+
+2.e
+Throughput calculation for UDP(CBR) flow:
+Command:grep "^r.*2\s3\scbr" simple.tr
+Output:Standard parsed output
+
+1st packet recieved by receiver at t1 = 0.138706 secs
+last packet recieved by receiver at t2 = 4.998706 secs
+
+Receiver engagement time (T) = t2 - t1 = 4.86 secs
+
+Command:grep -c "^r.*2\s3\scbr" simple.tr
+Output:242
+
+This gives us the number of cbr packets(size = 1000bytes) successfully received at node 3.
+Start time of udp flow = 0.1 sec (from .tcl file)
+Stop time of udp flow = 5 sec (from .tcl file)
+
+Throughput(Receiver) = 242*1000*8/(T) bps
+					 = 398353.909465 bps = 398kbps
+		   
+
+Throughput calculation for TCP(FTP) flow:
+Command:grep "^r.*2\s3\stcp" simple.tr
+Output:Standard parsed output
+
+1st packet recieved by receiver at t1 = 1.030348 secs
+last packet recieved by receiver at t2 = 4.067101 secs
+
+Receiver engagement time (T) = t2 - t1 = 3.036753 secs
+
+Command:grep -c "^r.*2\s3\scbr" simple.tr
+Output:389
+
+This gives us the number of tcp packets(size = 1040bytes) successfully received at node 3.
+Start time of tcp flow = 1 sec (from .tcl file)
+Stop time of tcp flow = 4 sec (from .tcl file)
+
+Throughput(Receiver) = 389*1040*8/(T) bps
+					 = 1065769.91938 bps = 1.06 Mbps
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Exercise 2.
+
+40k -
+
+a - Total packets sent = 1001
+	Time = 10.5s-0.5s = 10s
+	Packet size = 50 Bytes = 400 b
+	Source data rate = 1001*400/10 bps = 40.04kbps
+
+b- 	Total packets dropped = 0
+	Percentage =(0/1001)*100= 0% 
+
+c-
+	Total packets received = 1001
+	Time of receving first packet = 0.55544
+	Time of receving last packet = 10.55544
+	Time taken = 10.569 - 0.569s =10s
+	Packet size=50B=50*8b=400b
+	
+	Throughput=1001*50*8/10=40.04kbps	
+
+d-
+	Sum of Time differences =  55.49544
+	Packets transferred =  1001
+	Average end to end delay =  0.05544
+
+##################################################################################################
+
+
+80k-
+
+a - Total packets sent = 1001
+	Time = 10.5s-0.5s = 10s
+	Packet size=100 B = 100*8 b=800b
+	Source data rate = 001*800/10 bps = 80.08kbps
+	
+b- 	
+	Total packets dropped = 0
+	Percentage = (0/1001)*100=0%
+	
+c-
+	total packets received = 1001
+	time of receving first packet = 0.5638
+	time of receving last packet =10.5638
+	time taken = 10.5638 -0.5638=10s
+	packet size=100B=100*8b=800b
+	throughput=1001*800/10=80.08kbps	
+d-
+	Sum of Time differences =  63.8638
+	Packets transferred =  1001
+	Average end to end delay =  0.06380
+
+
+##################################################################################################
+	
+120k-
+a - Total packets sent =1001
+	Time=10.5s-0.5s=10s
+	Packet size=200 B = 200*8 b=1600b
+	Source data rate = 1001*200*8/10 bps = 160.16kbps
+b- 
+	total packets dropped = 158
+	percentage 158/1001 = 15.78%
+
+c-
+	Total packets received = 843
+	Time of receving first packet = 0.5682
+	Time of receving last packet = 10.6722
+	Time taken = 10.6722- 0.5682 =10.104
+	packet size=150B=150*8b=1200b
+	
+	Throughput=843*1200/10.104=100.11kbps		
+	
+d-
+	Sum of Time differences =  141.0586
+	Packets transferred =  843
+	Average end to end delay =  0.16732
+
+##################################################################################################
+
+160k-
+a-
+	Total packets sent =1001
+	Time=10.5s-0.5s=10s
+	Tacket size=200 B = 200*8 b=1600b
+	Source data rate = 1001*200*8/10 bps = 160.16kbps
+b-
+	Total PAcket Dropped=367
+	Percentage=(367/1001)*100=36.66
+
+c-	
+	Total packets received = 634
+	Time of receving first packet = 0.5726
+	Time of receving last packet = 10.7006
+	Time taken = 10.7006 - 0.5726 =10.128s
+	packet size=200B=200*8b=1600b
+	
+	Throughput=634*1600/10.128 = 100.15kbps	
+d-
+	Sum of Time differences = 131.9944
+	packets transferred = 634
+	Average end to end delay =  0.20819
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Exercise 3
+
+For 120kbps data rate:
+
+Average queuing delay =  .09912
+Average end to end delay =  .16732
+
+Percentage of end to end delay comprised of queuing delay is = 59.23%
+Thus,Queuing delay plays a big role in overall delay for a packet,
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

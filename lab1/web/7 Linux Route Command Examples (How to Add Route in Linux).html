@@ -1,0 +1,1095 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0051)http://www.thegeekstuff.com/2012/04/route-examples/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>7 Linux Route Command Examples (How to Add Route in Linux)</title>
+<meta name="robots" content="noodp, noydir">
+<link rel="stylesheet" href="./7 Linux Route Command Examples (How to Add Route in Linux)_files/layout.css" type="text/css" media="screen, projection">
+<!--[if lte IE 8]><link rel="stylesheet" href="http://static.thegeekstuff.com/wp-content/themes/thesis_185/lib/css/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+<link rel="stylesheet" href="./7 Linux Route Command Examples (How to Add Route in Linux)_files/custom.css" type="text/css" media="screen, projection">
+<link rel="canonical" href="./7 Linux Route Command Examples (How to Add Route in Linux)_files/7 Linux Route Command Examples (How to Add Route in Linux).html">
+<link rel="alternate" type="application/rss+xml" title="The Geek Stuff RSS Feed" href="http://feedproxy.google.com/TheGeekStuff">
+<link rel="pingback" href="http://www.thegeekstuff.com/xmlrpc.php">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.thegeekstuff.com/xmlrpc.php?rsd">
+<link href="http://static.thegeekstuff.com/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="author" href="https://plus.google.com/112493711428194838421/posts">
+<link rel="alternate" type="application/rss+xml" title="The Geek Stuff » 7 Linux Route Command Examples (How to Add Route in Linux) Comments Feed" href="http://www.thegeekstuff.com/2012/04/route-examples/feed/">
+
+<!-- All in One SEO Pack 2.1 by Michael Torbert of Semper Fi Web Design[277,342] -->
+<meta name="description" content="In the 1st part of the IP Routing series, we learned the fundamentals of Linux IP Routing. Route command is used to show/manipulate the IP routing table. It">
+
+<link rel="canonical" href="./7 Linux Route Command Examples (How to Add Route in Linux)_files/7 Linux Route Command Examples (How to Add Route in Linux).html">
+<!-- /all in one seo pack -->
+<style type="text/css"></style><script type="text/javascript" async="" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/ga.js"></script><script src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/cb=gapi.loaded_1" async=""></script><script src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/saved_resource"></script><link type="text/css" href="./7 Linux Route Command Examples (How to Add Route in Linux)_files/inputtools.css" rel="stylesheet"><script type="text/javascript" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/inputtools.js"></script><script type="text/javascript" src="http://ads.dfgio.com/loader.js?client=topaz0003"></script></head>
+<body class="custom" data-twttr-rendered="true">
+<div id="container">
+<div id="page">
+	<div id="header">
+<p id="logo"><a href="http://www.thegeekstuff.com/"><img src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/thegeekstuff.gif" alt="The Geek Stuff"></a></p><div id="header_ad"><div id="header_ad1">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8090601437064582";
+/* TGS Logo Header Big Image Only */
+google_ad_slot = "4708993701";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div></div>
+	</div>
+<ul class="menu">
+<li class="tab tab-home"><a href="http://www.thegeekstuff.com/">Home</a></li>
+<li class="tab tab-1"><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/" title="Linux 101 Hacks eBook, by Ramesh Natarajan">Free eBook</a></li>
+<li class="tab tab-2"><a href="http://www.thegeekstuff.com/contact/" title="Contact">Contact</a></li>
+<li><a href="http://www.thegeekstuff.com/about/">About</a></li>
+<li><a href="http://www.thegeekstuff.com/best-of-the-blog">Start Here</a></li>
+</ul>
+	<div id="content_box">
+		<div id="content" class="hfeed">
+
+			<div class="post-10482 post type-post status-publish format-standard hentry category-linux post_box top" id="post-10482">
+				<div class="headline_area">
+					<h1 class="entry-title">7 Linux Route Command Examples (How to Add Route in Linux)</h1>
+					<p class="headline_meta">by <span class="author vcard"><span class="fn">Lakshmanan Ganapathy</span></span> on <abbr class="published" title="2012-04-30">April 30, 2012</abbr></p>
+				</div>
+				<div class="format_text entry-content">
+<div style="margin:7px 0px 6px 0px; padding:5px;"> 
+
+<div style="float:left; width=95px">
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1429168463787" name="I0_1429168463787" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div>
+</div>
+
+<div style="float:left; padding:2px; width:90px"><iframe src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowtransparency="true"></iframe>
+</div>
+
+<div style="width=95px">
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/tweet_button.20ed5cfd7315475c9d1d523194b1645f.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 108px; height: 20px;"></iframe><script type="text/javascript" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/widgets.js"></script>
+</div>
+
+</div>
+<p>In the 1st part of the IP Routing series, we learned the <a href="http://www.thegeekstuff.com/2012/04/ip-routing-intro/">fundamentals of Linux IP Routing</a>.</p>
+<p>Route command is used to show/manipulate the IP routing table. It is primarily used to setup static routes to specific host or networks via an interface.</p>
+<p>In this article we will see how to manipulate the routing tables in Linux using route command.</p>
+<p>We’ll first explain how routing is done with some basic route command examples, and then we’ll explain using a sample network architecture about how to setup routes in your network.<br>
+<span id="more-10482"></span></p>
+<h2>I. How Routing is Done?</h2>
+<h3>1. Display Existing Routes</h3>
+<p>route command by default will show the details of the kernel routing table entries. In this example, the ip-address of the system where the route command is being executed is 192.168.1.157</p>
+<pre>$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0</pre>
+<p>The above command shows that if the destination is within the network range 192.168.1.0 – 192.168.1.255, then the gateway is *, which is 0.0.0.0.</p>
+<p>When packets are sent within this IP range, then the MAC address of the destination is found through ARP Protocol and the packet will be sent to the MAC address.</p>
+    <center>
+      <div style="margin-left:2px; margin-top:10px; margin-bottom:10px; ">
+
+        <!-- AD BLOCK -->
+		
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8090601437064582";
+/* TGS SinglePost Bottom Medium Rect */
+google_ad_slot = "8643685131";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+        <!-- END AD BLOCK -->
+
+	  </div>
+    </center>
+
+
+<p>If you don’t know what ARP is, you should first understand <a href="http://www.thegeekstuff.com/2012/01/arp-cache-poisoning/">how ARP protocol works</a>.</p>
+<p>In order to send packets to destination which is not within this ip range, the packets will be forwarded to a default gateway, which decides further routing for that packet. We will see this shortly.</p>
+<p>By default route command displays the host name in its output. We can request it to display the numerical IP address using -n option as shown below.</p>
+<pre>$ route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+0.0.0.0         192.168.1.10    0.0.0.0         UG    0      0        0 eth0</pre>
+<h3>2. Adding a Default Gateway</h3>
+<p>We can specify that the packets that are not within the network has to be forwarded to a Gateway address.</p>
+<p>The following route add command will set the default gateway as 192.168.1.10.</p>
+<pre>$ route add default gw 192.168.1.10</pre>
+<p>Now the route command will display the following entries.</p>
+<pre>$ route
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+default         gateway.co.in   0.0.0.0         UG    0      0        0 eth0</pre>
+<p>Now we have just added a default gateway to our machine. To verify whether it is working properly, ping some external host (for example, google.com) to send ICMP packet.</p>
+<pre>$ ping www.google.com</pre>
+<p>The following is the sequences of evets that happens when the above ping command is executed.</p>
+<ol>
+<li>First it will query the DNS server to obtain the ip-address of google.com ( for example: 74.125.236.34 )</li>
+<li>The destination address ( 74.125.236.34 ) is not within the network range.</li>
+<li>So, in Layer-3 (IP header) the DESTINATION IP will be set as “74.125.236.34″.</li>
+<li>In Layer-2, the DESTINATION MAC address will be the filled in as the MAC address of the default gateway ( 192.168.1.10′s MAC ). The MAC will be found by using ARP as described earlier.</li>
+<li>When the packet is sent out, the network switch ( which works on Layer-2 ), send the packet to the default gateway since the destination MAC is that of the gateway.</li>
+<li>Once the gateway receives the packet, based on its routing table, it will forward the packets further.</li>
+</ol>
+<p>The above 2 examples would have given a good idea about how routing is done within a network. Now we will see other command line options available with route command.</p>
+<h3>3. List Kernel’s Routing Cache Information</h3>
+<p>Kernel maintains the routing cache information to route the packets faster. We can list the kernel’s routing cache information by using the -C flag.</p>
+<pre>$ route -Cn
+Kernel IP routing cache
+Source          Destination     Gateway         Flags Metric Ref    Use Iface
+192.168.1.157   192.168.1.51    192.168.1.51          0      0        1 eth0
+192.168.1.157   74.125.236.69   192.168.1.10          0      0        0 eth0
+.
+.
+.</pre>
+<h3>4. Reject Routing to a Particular Host or Network</h3>
+<p>Sometimes we may want to reject routing the packets to a particular host/network. To do that, add the following entry.</p>
+<pre>$ route add -host 192.168.1.51 reject</pre>
+<p>As you see below, we cannot access that particular host (i.e .51 host that we just rejected).</p>
+<pre>$ ping 192.168.1.51
+connect: Network is unreachable</pre>
+<p>However we can still access other hosts in the network (for example, .52 host is still accessible).</p>
+<pre>$ ping 192.168.1.53
+PING 192.168.1.53 (192.168.1.53) 56(84) bytes of data.
+64 bytes from 192.168.1.53: icmp_seq=1 ttl=64 time=7.77 ms</pre>
+<p>If you want to reject an entire network ( 192.168.1.1 – 192.168.1.255 ), then add the following entry.</p>
+<pre>$ route add -net 192.168.1.0 netmask 255.255.255.0 reject</pre>
+<p>Now, you cannot access any of the host in that network (for example: .51, .52, .53, etc.)</p>
+<pre>$ ping 192.168.1.51
+connect: Network is unreachable
+
+$ ping 192.168.1.52
+connect: Network is unreachable
+
+$ ping 192.168.1.53
+connect: Network is unreachable</pre>
+<h2>II. A Sample Network Architecture (to understand routing)</h2>
+<p>Let us use the following sample network architecture for the rest of the examples.</p>
+<p>In the diagram below, we have 2 individual networks ( 192.168.1.0 and 192.168.3.0, with subnet mask of 255.255.255.0 ).</p>
+<p>We also have a “GATEWAY” machine with 3 network cards. 1st card is connected to 192.168.1.0, 2nd card is connected to 192.168.3.0, and the 3rd card is connected to the external world.<br>
+<img class="aligncenter size-full wp-image-10542" title="Network for Routing" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/route-command.png" alt="" width="600" height="451"></p>
+<h3>5. Make 192.168.3.* Accessible from 192.168.1.*</h3>
+<p>Now we need to add a routing entry such that we are able to ping 192.168.3. series ip-addresses from 192.168.1. series. The common point we have is the GATEWAY machine.</p>
+<p>So, on each machine in 192.168.1.* network a default gateway will be added as shown below.</p>
+<pre>$ route add default gw 192.168.1.10</pre>
+<p>Now when 192.168.1.1 pings 192.168.3.1, it will go to the GATEWAY via 192.168.1.10.</p>
+<p>In GATEWAY, add the following routing entry.</p>
+<pre>$ route add -net 192.168.3.0 netmask 255.255.255.0 gw 192.168.3.10</pre>
+<p>Now all the packets addressed to 192.168.3.* network will be forwarded via the 192.168.3.10 interface, which then delivers the packets to the addressed machine.</p>
+<h3>6. Make 192.168.1.* Accessible from 192.168.3.*</h3>
+<p>It is very similar to what we did earlier.</p>
+<p>So, on each machine in 192.168.3.* network a default gateway will be added as shown below.</p>
+<pre>$ route add default gw 192.168.3.10</pre>
+<p>In GATEWAY, add the following routing entry.</p>
+<pre>$ route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.10</pre>
+<p>Now 192.168.3.* machines can ping 192.168.1.* machines.</p>
+<h3>7. Allow Internet Access ( External World )</h3>
+<p>In the previous two example, we have interconnected the 2 different networks.</p>
+<p>Now we need to access the internet from these 2 different networks. For that, we can add a default routing ( when no routing rule matches ) to the 125.250.60.59 which is connected to the external world as follows.</p>
+<pre>$ route add default gw 125.250.60.59</pre>
+<p>This is how it works:</p>
+<ol>
+<li>Now when you try to access the internet (for example: ping google.com) from any of these machines (for example, from 192.168.3.2), the following is the sequence of events that happens.</li>
+<li>Since the destination (google.com) is not within 3.* series, it will be forwarded to GATEWAY via 3.10 interface</li>
+<li>In GATEWAY, it checks whether the destination is within 1.* range. In this example, it is not.</li>
+<li>It then checks whether the destination is within 2.* range. IN this example, it is not</li>
+<li>Finally, it takes the default route to forward the packets (i.e using the 125.250.60.59 interface, which is connected to the external world).</li>
+</ol>
+<div style="margin:7px 0px 3px 0px; padding:5px; background:#F2F0E8">
+
+<div style="float:left; width=95px">
+<div id="___plusone_1" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I1_1429168463794" name="I1_1429168463794" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/fastbutton(1).html" data-gapiattached="true" title="+1"></iframe></div>
+</div>
+
+<div style="float:left; width=95px">
+<iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/tweet_button.20ed5cfd7315475c9d1d523194b1645f.en(1).html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 108px; height: 20px;"></iframe><script type="text/javascript" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/widgets.js"></script>
+</div>
+
+<div style="float:left; padding:2px; width:90px"><iframe src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowtransparency="true"></iframe>
+</div>
+
+<div style="padding:1px">
+&gt;&nbsp;<a href="http://www.thegeekstuff.com/2012/04/route-examples/#respond">Add your comment</a> 
+</div>
+
+</div>
+<h3>If you enjoyed this article, you might also like..</h3>
+<table>
+<tbody><tr>
+<td valign="top">
+<ol>
+<li><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/">50 Linux Sysadmin Tutorials</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/">50 Most Frequently Used Linux Commands (With Examples)</a></li>
+<li><a href="http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/">Top 25 Best Linux Performance Monitoring and Debugging Tools</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/">Mommy, I found it! – 15 Practical Linux Find Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/">Linux 101 Hacks 2nd Edition eBook</a>&nbsp;<img title="Linux 101 Hacks Book" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/free-small.png" alt="Linux 101 Hacks Book"></li>
+</ol>
+</td>
+<td>
+<ul>
+<li><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/">Awk Introduction – 7 Awk Print Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/">Advanced Sed Substitution Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/8-essential-vim-editor-navigation-fundamentals/">8 Essential Vim Editor Navigation Fundamentals</a></li>
+<li><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<br>
+<center> 
+<table border="0" cellspacing="10"> 
+<tbody><tr> 
+<td> 
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/"><img title="Bash 101 Hacks Book" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/bash-132.png" alt="Bash 101 Hacks Book"></a> 
+</td> 
+<td> 
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/"><img title="Sed and Awk 101 Hacks Book" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/sed-and-awk-132.png" alt="Sed and Awk 101 Hacks Book"></a> 
+</td> 
+<td> 
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/"><img title="Nagios Core 3 Book" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/nagios-core-132.png" alt="Nagios Core 3 Book"></a> 
+</td> 
+<td> 
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/"><img title="Vim 101 Hacks Book" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/vim-101-hacks-132.png" alt="Vim 101 Hacks Book"></a> 
+</td> 
+</tr> 
+</tbody></table> 
+</center>
+<br>
+<div id="tgs-tags">
+</div>
+				</div>
+			</div>
+
+			<div id="comments">
+				<div id="comments_intro" class="comments_intro">
+					<p><span class="bracket">{</span> <span>44</span> comments… read them below or <a href="http://www.thegeekstuff.com/2012/04/route-examples/#respond" rel="nofollow">add one</a> <span class="bracket">}</span></p>
+				</div>
+
+				<dl id="comment_list">
+					<dt class="comment even thread-even depth-1" id="comment-228507">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-228507" title="Permalink to this comment" rel="nofollow">1</a></span>
+<span class="comment_author">rinku</span>
+<span class="comment_time">April 30, 2012 at 4:12 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-228507">
+<p>Great work</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-228546">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-228546" title="Permalink to this comment" rel="nofollow">2</a></span>
+<span class="comment_author">Ironmaniaco</span>
+<span class="comment_time">April 30, 2012 at 6:29 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-228546">
+<p>I don’t know how much time will take to deprecate the ifconfig+route with <a href="http://www.linuxfoundation.org/collaborate/workgroups/networking/iproute2" rel="nofollow">iproute2</a>, but will not be so difficult to people learn iproute2 methods of creating routes, since the logic is basically the same, changing some “words” on the command sintax. <img src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-228571">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-228571" title="Permalink to this comment" rel="nofollow">3</a></span>
+<span class="comment_author">bob</span>
+<span class="comment_time">April 30, 2012 at 7:32 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-228571">
+<p>thank you. learnt something today.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-228578">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-228578" title="Permalink to this comment" rel="nofollow">4</a></span>
+<span class="comment_author">Jalal Hajigholamali</span>
+<span class="comment_time">April 30, 2012 at 7:39 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-228578">
+<p>Hi,</p>
+<p>Useful article…</p>
+<p>thanks a lot</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-228597">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-228597" title="Permalink to this comment" rel="nofollow">5</a></span>
+<span class="comment_author">yakup</span>
+<span class="comment_time">April 30, 2012 at 9:14 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-228597">
+<p>Well written.  One typo – in point 4 at the end, “is within 2.* range” should be “is within 3.* range”</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-228708">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-228708" title="Permalink to this comment" rel="nofollow">6</a></span>
+<span class="comment_author">dexcript</span>
+<span class="comment_time">April 30, 2012 at 1:53 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-228708">
+<p>I prefer iproute2, its more flexible and powerfull..</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-228773">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-228773" title="Permalink to this comment" rel="nofollow">7</a></span>
+<span class="comment_author">clay</span>
+<span class="comment_time">April 30, 2012 at 8:37 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-228773">
+<p>great series of articles.<br>
+another option:   ip route [add|change|replace]</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-228819">
+<span class="avatar"><a href="http://cavepopo.hd.free.fr/wordpress/" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-228819" title="Permalink to this comment" rel="nofollow">8</a></span>
+<span class="comment_author"><a href="http://cavepopo.hd.free.fr/wordpress/" rel="external nofollow" class="url">Pierre B.</a></span>
+<span class="comment_time">May 1, 2012 at 1:04 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-228819">
+<p>Yep! TGS strikes again!</p>
+<p>Thanks for this tuto, and for the comments about iproute2, i need to learn this one too apparently.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-228923">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-228923" title="Permalink to this comment" rel="nofollow">9</a></span>
+<span class="comment_author">Sudharshan</span>
+<span class="comment_time">May 1, 2012 at 9:39 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-228923">
+<p>Great thanks a lot ….</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-229082">
+<span class="avatar"><a href="http://www.solide.cl/" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-229082" title="Permalink to this comment" rel="nofollow">10</a></span>
+<span class="comment_author"><a href="http://www.solide.cl/" rel="external nofollow" class="url">Iván Carrasco quiroz</a></span>
+<span class="comment_time">May 1, 2012 at 11:19 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-229082">
+<p>A little summary of Iproute2:</p>
+<p>Instead of “route add -net IP netmask MASk gw IP” you should enter<br>
+“ip route add IP/MASk via IP”.<br>
+Another command that can be used to replace “route -n” is “ip route show”.<br>
+To set a default gateway use: “ip route add default via IP”, and finally to delete a route use: “ip route del IP/MASK”.</p>
+<p>Good luck<br>
+ <img src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/icon_smile.gif" alt=":-)" class="wp-smiley"> </p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-229112">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-229112" title="Permalink to this comment" rel="nofollow">11</a></span>
+<span class="comment_author">niraj</span>
+<span class="comment_time">May 2, 2012 at 12:50 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-229112">
+<p>Its really a good one to create a more than one gateway  and route the same.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-229201">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-229201" title="Permalink to this comment" rel="nofollow">12</a></span>
+<span class="comment_author">Shashank Gosavi</span>
+<span class="comment_time">May 2, 2012 at 6:02 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-229201">
+<p>Thnx buddy for introducing new commands…</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-229228">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-229228" title="Permalink to this comment" rel="nofollow">13</a></span>
+<span class="comment_author">TedSki</span>
+<span class="comment_time">May 2, 2012 at 8:05 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-229228">
+<p>A reminder that adding these static routes does not make them persistent across system reboots.  Make sure to commit these changes to the relevant files within your distribution to make these persistent.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-229236">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-229236" title="Permalink to this comment" rel="nofollow">14</a></span>
+<span class="comment_author">Assi</span>
+<span class="comment_time">May 2, 2012 at 8:31 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-229236">
+<p>good one, but after linux reboot all the routing table gone, to solved that follow this instraction:</p>
+<p>1. Create call “route-eth0″  file in nano -w /etc/sysconfig/network-scripts/route-eth0<br>
+2. save the following lines to the file:<br>
+ADDRESS0=10.0.0.0<br>
+NETMASK0=255.255.0.0<br>
+GATEWAY0=192.168.0.1<br>
+if there is more then one route change the extention of the ADD, NET, GAT, to 1 and etc….<br>
+sample:<br>
+route 1<br>
+ADDRESS0=10.100.0.0<br>
+NETMASK0=255.255.0.0<br>
+GATEWAY0=192.168.0.1</p>
+<p>route 2<br>
+ADDRESS1=10.200.0.0<br>
+NETMASK1=255.255.0.0<br>
+GATEWAY1= 192.168.0.1</p>
+<p>reboot and route saved successfully.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-229240">
+<span class="avatar"><a href="http://www.solide.cl/" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-229240" title="Permalink to this comment" rel="nofollow">15</a></span>
+<span class="comment_author"><a href="http://www.solide.cl/" rel="external nofollow" class="url">Ivan Carrasco Quiroz</a></span>
+<span class="comment_time">May 2, 2012 at 8:56 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-229240">
+<p>Thanks Assi, nice tip!<br>
+Anyway you can edit your /etc/rc.local and insert the command “ip route …”, it will load your routes at start.</p>
+<p> <img src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/icon_smile.gif" alt=":-)" class="wp-smiley"> </p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-229255">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-229255" title="Permalink to this comment" rel="nofollow">16</a></span>
+<span class="comment_author">Assi</span>
+<span class="comment_time">May 2, 2012 at 9:58 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-229255">
+<p>Thanks Ivan <img src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/icon_smile.gif" alt=":-)" class="wp-smiley"><br>
+i try to add this line (“ip route …”, ) to production servers that have RH / CentOS,  from some reason its not working for me.<br>
+then i create the file “route-eth0″ and its working like a magic.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-229358">
+<span class="avatar"><a href="http://www.solide.cl/" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-229358" title="Permalink to this comment" rel="nofollow">17</a></span>
+<span class="comment_author"><a href="http://www.solide.cl/" rel="external nofollow" class="url">Ivan Carrasco Quiroz</a></span>
+<span class="comment_time">May 2, 2012 at 4:50 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-229358">
+<p>Try “apt-get install iproute” (DEB/UBUNTU) or “yum install iproute”(CENTOS). Maybe your distro does not have the package installed.</p>
+<p> <img src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/icon_smile.gif" alt=":-)" class="wp-smiley"> </p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-230004">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-230004" title="Permalink to this comment" rel="nofollow">18</a></span>
+<span class="comment_author">bob</span>
+<span class="comment_time">May 4, 2012 at 8:23 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-230004">
+<p>in the example for the “reject”, you might want to show the dump of the route command so that we can see how the entries look like.</p>
+<p>in the sample network above, once you have configured everything, you might want to show dump of “route -n” at each of the 3 nodes, so that we can see at a glance how everything looks like.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-234417">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-234417" title="Permalink to this comment" rel="nofollow">19</a></span>
+<span class="comment_author">ramsse</span>
+<span class="comment_time">May 15, 2012 at 7:46 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-234417">
+<p>In step 7, where do we add the default route? in GATEWAY only?<br>
+$ route add default gw 125.250.60.59</p>
+</div>
+					</dd>
+					<dt class="comment byuser comment-author-lakshmanan bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-335798">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-335798" title="Permalink to this comment" rel="nofollow">20</a></span>
+<span class="comment_author">Lakshmanan Ganapathy</span>
+<span class="comment_time">October 12, 2012 at 9:59 am</span>
+
+					</dt>
+					<dd class="comment byuser comment-author-lakshmanan bypostauthor odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-335798">
+<p>@ramsee,</p>
+<p>That is done, to ensure that we can access the outside world. ( Internet ). </p>
+<p>If the destination is not within the 1.* and 3.* series, it will reach out to outside world.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-338874">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-338874" title="Permalink to this comment" rel="nofollow">21</a></span>
+<span class="comment_author">Anonymous</span>
+<span class="comment_time">October 15, 2012 at 3:13 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-338874">
+<p>awesome and thanks very much</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-352591">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-352591" title="Permalink to this comment" rel="nofollow">22</a></span>
+<span class="comment_author">pria</span>
+<span class="comment_time">October 25, 2012 at 11:46 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-352591">
+<p>Great article !!!</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-360940">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-360940" title="Permalink to this comment" rel="nofollow">23</a></span>
+<span class="comment_author">Nargunam</span>
+<span class="comment_time">November 1, 2012 at 10:09 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-360940">
+<p>Suprb Article!!!</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-368198">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-368198" title="Permalink to this comment" rel="nofollow">24</a></span>
+<span class="comment_author">alieblice</span>
+<span class="comment_time">November 6, 2012 at 9:13 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-368198">
+<p>Hi<br>
+I dont understand this part :<br>
+——–<br>
+4.   It then checks whether the destination is within 2.* range. IN this example, it is not<br>
+——–<br>
+why it should check fore 2.* range ? is 2.* should be 3.* ?</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-397936">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-397936" title="Permalink to this comment" rel="nofollow">25</a></span>
+<span class="comment_author">obvious</span>
+<span class="comment_time">November 25, 2012 at 3:59 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-397936">
+<p>@alieblice: It’s a typo. It IS 3</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-404449">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-404449" title="Permalink to this comment" rel="nofollow">26</a></span>
+<span class="comment_author">Girish</span>
+<span class="comment_time">November 29, 2012 at 3:29 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-404449">
+<p>Great work Thanks for the info</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-529708">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-529708" title="Permalink to this comment" rel="nofollow">27</a></span>
+<span class="comment_author">marikhu</span>
+<span class="comment_time">February 3, 2013 at 10:26 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-529708">
+<p>Nice work, clear and concise!</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-537620">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-537620" title="Permalink to this comment" rel="nofollow">28</a></span>
+<span class="comment_author">Bilal Ali</span>
+<span class="comment_time">February 10, 2013 at 2:23 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-537620">
+<p>I think this the thing from which I had a routing fobia.<br>
+Which is now vanished.<br>
+Thanks for explaining step by step which helps beginners alot.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-545469">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-545469" title="Permalink to this comment" rel="nofollow">29</a></span>
+<span class="comment_author">santosh loke</span>
+<span class="comment_time">February 19, 2013 at 4:36 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-545469">
+<p>nicely explained!<br>
+thx.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-554478">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-554478" title="Permalink to this comment" rel="nofollow">30</a></span>
+<span class="comment_author">giri</span>
+<span class="comment_time">February 27, 2013 at 11:02 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-554478">
+<p>In the above example:<br>
+4. Reject Routing to a Particular Host or Network</p>
+<p>How do i undo the block? i mean later if the IP which is rejected,needs to be accepted,then what command we need to use?</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-723759">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-723759" title="Permalink to this comment" rel="nofollow">31</a></span>
+<span class="comment_author">Anonymous</span>
+<span class="comment_time">April 30, 2013 at 8:59 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-723759">
+<p>ip route del</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-756897">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-756897" title="Permalink to this comment" rel="nofollow">32</a></span>
+<span class="comment_author">Shamsoo</span>
+<span class="comment_time">May 22, 2013 at 11:08 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-756897">
+<p>In steps 5 and 6, why are routes being added on the Gateway to the local subnets (.1 and .3). Is that necessary?</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-773696">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-773696" title="Permalink to this comment" rel="nofollow">33</a></span>
+<span class="comment_author">bechesa</span>
+<span class="comment_time">June 2, 2013 at 2:25 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-773696">
+<p>@Shamso: yes , so that the two different sub networks are able to communicate to each other.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-816213">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-816213" title="Permalink to this comment" rel="nofollow">34</a></span>
+<span class="comment_author">shawn</span>
+<span class="comment_time">June 20, 2013 at 9:15 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-816213">
+<p>why are you specifying step #7<br>
+$ route add default gw 125.250.60.59<br>
+??</p>
+<p>This can only be true if you are assigned a static IP from your ISP and using that, otherwise your modem interface (whatever that may be, i like to use eth0), should be set to DHCP and you have to masquerade out from the GATEWAY machine, which should be a firewall/router/DHCP/DNS server all in one to secure and solidify your whole LAN. make it easier.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-844215">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-844215" title="Permalink to this comment" rel="nofollow">35</a></span>
+<span class="comment_author">Javier Talens</span>
+<span class="comment_time">July 15, 2013 at 5:14 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-844215">
+<p>Nice explanation. Good job! <img src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-873637">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-873637" title="Permalink to this comment" rel="nofollow">36</a></span>
+<span class="comment_author">vinay kumar</span>
+<span class="comment_time">August 7, 2013 at 1:02 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-873637">
+<p>hi </p>
+<p>i want to add one virtual gateway in the centos , i have two nic card and assigned one static ip with gateway on the eth1 but second local ip with out gateway on the eth0</p>
+<p>i have created one file route-eth0 (/etc/sysconfig/network-scripts)<br>
+added three lines for the route<br>
+ADDRESS0=192.168.3.3<br>
+NETMASK0=255.255.255.0<br>
+GATEWAY0=192.168.3.51<br>
+when i staring the service i am getting error Bringing up interface eth0:  RTNETLINK answers: Invalid argument and it is not showing gateway thorugh this command route -n </p>
+<p>Please help me for the same</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-875965">
+<span class="avatar"><a href="http://www.solide.cl/" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-875965" title="Permalink to this comment" rel="nofollow">37</a></span>
+<span class="comment_author"><a href="http://www.solide.cl/" rel="external nofollow" class="url">ivancarrascoq</a></span>
+<span class="comment_time">August 8, 2013 at 10:39 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-875965">
+<p>Hi vinay kumar,</p>
+<p>I think you should use on CentOS:<br>
+  [root@corporativo ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0<br>
+  DEVICE=eth0<br>
+  BOOTPROTO=none<br>
+  ONBOOT=yes<br>
+  IPADDR=192.168.3.3<br>
+  NETMASK=255.255.255.0<br>
+  GATEWAY=192.168.3.51</p>
+<p>Anyway, I recommend you first try your config with float addresses/gateways.<br>
+  # ip addr add 192.168.3.3/24 dev eth0<br>
+  # ip route add default via 192.168.3.51</p>
+<p>You can load it into /etc/rc.local<br>
+What do you want to do?</p>
+<p>Best regards,<br>
+Iván Carrasco Quiroz.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-885458">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-885458" title="Permalink to this comment" rel="nofollow">38</a></span>
+<span class="comment_author">nino</span>
+<span class="comment_time">August 14, 2013 at 5:56 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-885458">
+<p>Hi, really great work, i was trying to implement the sample network using VMs in Openstack, but can seem to ping the networks from each other, though they can both ping the VM which i was using as the gateway, any help on what might be the reason i can implement it in an all VM situation</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-937053">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-937053" title="Permalink to this comment" rel="nofollow">39</a></span>
+<span class="comment_author">abhi</span>
+<span class="comment_time">September 17, 2013 at 2:15 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-937053">
+<p>Thanks a lot though i used route often but was filled up with some doubt.<br>
+Required a detailed information part 1 was full of basics and part 2 was well supported by example thanks a lot</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-1179975">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-1179975" title="Permalink to this comment" rel="nofollow">40</a></span>
+<span class="comment_author">shiv</span>
+<span class="comment_time">January 8, 2014 at 10:51 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-1179975">
+<p>hi Laxmanan<br>
+Nice Explaination, it not working in my situation,<br>
+Can you figure out where is the mistake</p>
+<p> firewall(ISP 101.202.100.201 and local 192.168.0.0 )  gateway 192.168.0.1<br>
+     |<br>
+Gateway node(network 10.3.61.0 and 192.168.0.0)<br>
+     |<br>
+Internal network(10.3.61.0) with gateway 10.3.61.1</p>
+<p>I am able to access internet at gateway node by using proxy ip that is 192.168.0.1</p>
+<p>I am not able to ping 192.168.0.1 from internal network. I did the setting as you specified in your architecture diagram.<br>
+I am able to ping gateway node on 10.1.1.1 gw from internal network.</p>
+<p>I want to access internet from internal network and want all the traffic from internal network will pass through gateway node.</p>
+<p>Please let me know if same can be achieved in some other way too.<br>
+Thanks in advance….</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-1243379">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-1243379" title="Permalink to this comment" rel="nofollow">41</a></span>
+<span class="comment_author">MikeS</span>
+<span class="comment_time">January 31, 2014 at 2:33 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-1243379">
+<p>Ok, so I’m trying to do this exact same setup except using ipv6 and I just can’t seem to get Lan A to talk to Lan B</p>
+<p>Here’s my setup</p>
+<p>LAN A Host: 2001::2</p>
+<p>Gateway NicA: 2001::1<br>
+               NicB  2000::1</p>
+<p>Lan B Host:    2000::2</p>
+<p>I’ve got the hosts’s gateway’d to my gateway. And i’ve been able to pink the nics on the gateway, but can not seem to get traffic to pass to the other network.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-1489872">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-1489872" title="Permalink to this comment" rel="nofollow">42</a></span>
+<span class="comment_author">chris</span>
+<span class="comment_time">April 16, 2014 at 5:39 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-1489872">
+<p>Hi, ive been reading a lot of comments and docs regarding nullrouting. I am actually interested to nullroute one of my own IPs, and add 1 exemption to it. For example, I have a VPS with 3 IPs and I want 1 IP address to be null routed, while the other 2 working normal like before. As far as I read around i can only null route a specific address to my IP. What i want is my IP address to be totally null routed to any other external IP address, and adding only 1 IP exemption. Being said, I have 3 IPs, I want 2 of them to work normally like before, but one to be nullrouted to the internet, excepting 1 ip to be allowed to reach it.<br>
+Thanks,</p>
+<p>Chris</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-1750421">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-1750421" title="Permalink to this comment" rel="nofollow">43</a></span>
+<span class="comment_author">Arun</span>
+<span class="comment_time">May 22, 2014 at 4:48 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-1750421">
+<p>The screenshot shown for point 1 is actually that of point 2 and vice versa. Kindly check.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-1900517">
+<span class="avatar"><a href="http://mythinkpond.com/" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/04/route-examples/#comment-1900517" title="Permalink to this comment" rel="nofollow">44</a></span>
+<span class="comment_author"><a href="http://mythinkpond.com/" rel="external nofollow" class="url">Venkatt Guhesan</a></span>
+<span class="comment_time">June 24, 2014 at 9:00 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-1900517">
+<p>Ramesh – can you include the following notes under the sections for #5 and #6 of this article?</p>
+<p>** In some Linux versions, IP-Forwarding will be switched OFF by default so you will need to enable it in addition to the “route add” to make the “ping” work.</p>
+<p>Here is how you enable the IP-Forwarding (on the GATEWAY box):<br>
+# Edit /etc/sysctl.conf and set the following to a “1″<br>
+net.ipv4.ip_forward = 1 #used to be a zero<br>
+# Reboot the gateway box.<br>
+After you reboot if you tried pinging an IP on the other network and you now get “Destination Host Prohibited”, then you need to either turn off iptables or firewall rules (or add rules to allow those ports) on the Gateway box.<br>
+# If you wish to toggle that same ip_forward feature in real-time without restarting the gateway box, you can do this the following way:<br>
+echo 1 &gt; /proc/sys/net/ipv4/ip_forward<br>
+# This turns the ip_forward switch ON but if you reboot, it will revert back to the default state of OFF (unless you change it in the /etc/sysctl.conf) file.</p>
+</div>
+					</dd>
+				</dl>
+				<div id="respond">
+					<div id="respond_intro">
+						<p>Leave a Comment</p>
+					</div>
+					<form action="http://www.thegeekstuff.com/wp-comments-post.php" method="post" id="commentform">
+						<p><input class="text_input" type="text" name="author" id="author" value="" tabindex="1"><label for="author">Name</label></p>
+						<p><input class="text_input" type="text" name="email" id="email" value="" tabindex="2"><label for="email">E-mail</label></p>
+						<p><input class="text_input" type="text" name="url" id="url" value="" tabindex="3"><label for="url">Website</label></p>
+						<p class="comment_box">
+							<textarea name="comment" id="comment" tabindex="4" cols="40" rows="8"></textarea>
+						</p>
+
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;">
+	<label for="subscribe">Notify me of followup comments via e-mail</label>
+	</p>
+
+
+						<p class="remove_bottom_margin">
+							<input name="submit" class="form_submit" type="submit" id="submit" tabindex="5" value="Submit">
+<input type="hidden" name="comment_post_ID" value="10482" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="30c6e7b26d"></p>					</form>
+				</div>
+			</div>
+					<div class="prev_next post_nav">
+						<p class="previous">Previous post: <a href="http://www.thegeekstuff.com/2012/04/emc-delete-lun-raid-group/" rel="prev">EMC Navisphere – How to Delete LUN and RAID Group on CLARiiON</a></p>
+						<p>Next post: <a href="http://www.thegeekstuff.com/2012/05/backup-ubuntu-desktop/" rel="next">Top 7 Ubuntu Desktop Backup Software</a></p>
+					</div>
+		</div>
+
+		<div id="sidebars">
+			<div id="sidebar_1" class="sidebar">
+				<ul class="sidebar_list">
+<li class="widget widget_text" id="text-21">			<div class="textwidget"><a title="Subscribe via RSS" href="http://www.thegeekstuff.com/feed" rel="nofollow">RSS</a>&nbsp; | &nbsp;<a title="Subscribe via Email" href="http://feedburner.google.com/fb/a/mailverify?uri=TheGeekStuff&loc=en_US" rel="nofollow">Email</a>&nbsp; | &nbsp;<a title="Follow us on Twitter" href="http://twitter.com/thegeekstuff" rel="nofollow">Twitter</a>&nbsp; | &nbsp;<a title="Become a fan" href="http://www.facebook.com/thegeekstuff" rel="nofollow">Facebook</a>&nbsp; | &nbsp;<a title="Follow us on Google+" href="https://plus.google.com/112493711428194838421/posts">Google+</a>
+<br><br>
+<form action="http://www.thegeekstuff.com/search" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="005666763606120661560:zkmegbt_djm">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input style="background-color:#fffeee" type="text" name="q" size="35">
+    <input style="border-color:#CCCCCC #999999 #999999 #CCCCCC; border-style:double; border-width:1px; overflow:visible;" type="submit" name="sa" value="Search">
+  </div>
+</form>
+<script type="text/javascript" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/jsapi"></script>
+<script type="text/javascript">google.load("elements", "1", {packages: "transliteration"});</script><script src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/saved_resource(1)" type="text/javascript"></script><link href="./7 Linux Route Command Examples (How to Add Route in Linux)_files/transliteration.css" type="text/css" rel="stylesheet"><script src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/transliteration.I.js" type="text/javascript"></script>
+<script type="text/javascript" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/t13n"></script>
+<script type="text/javascript" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/brand"></script>
+<br></div>
+		</li><li class="widget widget_text" id="text-3">			<div class="textwidget"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-8090601437064582";
+/* TGS Right Bar Rectangle Text Ad */
+google_ad_slot = "9054077260";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br></div>
+		</li><li class="widget widget_text" id="text-4"><h3>EBOOKS</h3>			<div class="textwidget"><ul>
+<li><img title="Linux 101 Hacks Book" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/free-small.png" alt="Linux 101 Hacks Book">&nbsp;<a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/">Linux 101 Hacks 2nd Edition eBook</a> - Practical Examples to Build a Strong Foundation in Linux</li>
+<li><a href="http://www.thegeekstuff.com/bash-101-hacks-ebook/">Bash 101 Hacks eBook</a> - Take Control of Your Bash Command Line and Shell Scripting</li>
+<li><a href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/">Sed and Awk 101 Hacks eBook</a> - Enhance Your UNIX / Linux Life with Sed and Awk</li>
+<li><a href="http://www.thegeekstuff.com/vim-101-hacks-ebook/">Vim 101 Hacks eBook</a> - Practical Examples for Becoming Fast and Productive in Vim Editor</li>
+<li><a href="http://www.thegeekstuff.com/nagios-core-ebook/">Nagios Core 3 eBook</a> - Monitor Everything, Be Proactive, and Sleep Well</li>
+</ul></div>
+		</li><li class="widget widget_text" id="text-22">			<div class="textwidget"><iframe src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/likebox.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:258px;" allowtransparency="true"></iframe></div>
+		</li><li class="widget widget_text" id="text-17"><h3>POPULAR POSTS</h3>			<div class="textwidget"><ul>
+<li><a href="http://www.thegeekstuff.com/2009/01/12-amazing-and-essential-linux-books-to-enrich-your-brain-and-library/">12 Amazing and Essential Linux Books To Enrich Your Brain and Library</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/">50 UNIX / Linux Sysadmin Tutorials</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/">50 Most Frequently Used UNIX / Linux Commands (With Examples)</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/gtd-getting-things-done/">How To Be Productive and Get Things Done Using GTD</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/03/30-things-to-do-when-you-are-bored-and-have-a-computer/">30 Things To Do When you are Bored and have a Computer</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/09/linux-file-system-structure/">Linux Directory Structure (File System Structure) Explained with Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/">Linux Crontab: 15 Awesome Cron Job Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/">Get a Grip on the Grep! – 15 Practical Grep Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/07/linux-ls-command-examples/">Unix LS Command: 15 Practical Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/">15 Examples To Master Linux Command Line History</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/bug-tracking-system/">Top 10 Open Source Bug Tracking System</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/01/vi-and-vim-macro-tutorial-how-to-record-and-play/">Vi and Vim Macro Tutorial: How To Record and Play</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/">Mommy, I found it! -- 15 Practical Linux Find Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/07/best-gmail-tips-and-tricks/">15 Awesome Gmail Tips and Tricks</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/06/expertise-in-google-search/">15 Awesome Google Search Tips and Tricks</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/raid-levels-tutorial/">RAID 0, RAID 1, RAID 5, RAID 10 Explained with Diagrams</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/01/15-practical-unix-linux-top-command-examples/">Can You Top This? 15 Practical Linux Top Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/09/top-5-best-network-monitoring-tools/">Top 5 Best System Monitoring Tools</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/06/top-5-best-linux-os-distributions/">Top 5 Best Linux OS Distributions</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/06/how-to-monitor-remote-linux-host-using-nagios-30/">How To Monitor Remote Linux Host using Nagios 3.0</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/">Awk Introduction Tutorial – 7 Awk Print Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/">How to Backup Linux? 15 rsync Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/09/the-ultimate-wget-download-guide-with-15-awesome-examples/">The Ultimate Wget Download Guide With 15 Awesome Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/07/top-5-best-linux-text-editors/">Top 5 Best Linux Text Editors</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/tcpdump-command-examples/">Packet Analyzer: 15 TCPDUMP Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/06/bash-array-tutorial/">The Ultimate Bash Array Tutorial with 15 Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/">3 Steps to Perform SSH Login Without Password Using ssh-keygen &amp; ssh-copy-id</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/">Unix Sed Tutorial: Advanced Sed Substitution Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/03/netstat-command-examples/">UNIX / Linux: 10 Netstat Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/06/the-ultimate-guide-for-creating-strong-passwords/">The Ultimate Guide for Creating Strong Passwords</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/6-steps-to-secure-your-home-wireless-network/">6 Steps to Secure Your Home Wireless Network</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul></div>
+		</li><li class="widget widget_text" id="text-19"><h3>CATEGORIES</h3>			<div class="textwidget"><ul>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/linux/">Linux Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/vim-2/">Vim Editor</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/sed/">Sed Scripting</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/awk/">Awk Scripting</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/bash-2/">Bash Shell Scripting</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/nagios-2/">Nagios Monitoring</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/openssh-2/">OpenSSH</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/iptables/">IPTables Firewall</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/apache/">Apache Web Server</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/mysql/">MySQL Database</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/perl/">Perl Programming</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/google/">Google Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/ubuntu/">Ubuntu Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/postgresql/">PostgreSQL DB</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/hello-world/">Hello World Examples</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/c-programming/">C Programming</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/c-plus-plus/">C++ Programming</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/dell-2/">DELL Server Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/oracle/">Oracle Database</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/vmware/">VMware Tutorials</a></li>
+</ul></div>
+		</li><li class="widget widget_text" id="text-20">			<div class="textwidget"><div id="___person_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 300px; height: 106px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 106px;" tabindex="0" vspace="0" width="100%" id="I2_1429168463799" name="I2_1429168463799" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/person.html" data-gapiattached="true" title="+Badge"></iframe></div></div>
+		</li>				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+<div class="col_footer1">
+	<ul class="sidebar_list">
+<li id="text-7" class="widget widget_text"><h3>About The Geek Stuff</h3>			<div class="textwidget"><br>
+<img class="float" title="Ramesh Natarajan" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/ramesh-small.gif" alt="Linux 101 Hacks Book">
+My name is <strong>Ramesh Natarajan</strong>. I will be posting instruction guides, how-to, troubleshooting tips and tricks on Linux, database, hardware, security and web. My focus is to write articles that will either teach you or help you resolve a problem. Read more about <a href="http://www.thegeekstuff.com/about/">Ramesh Natarajan</a> and the blog.</div>
+		</li>
+<li id="text-8" class="widget widget_text"><h3>Support Us</h3>			<div class="textwidget"><br>
+Support this blog by purchasing one of my ebooks.
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/">Bash 101 Hacks eBook</a>
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/">Sed and Awk 101 Hacks eBook</a>
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/">Vim 101 Hacks eBook</a>
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/">Nagios Core 3 eBook</a></div>
+		</li>
+<li id="text-9" class="widget widget_text"><h3>Contact Us</h3>			<div class="textwidget"><br>
+<strong>Email Me :</strong>
+Use this <a href="http://www.thegeekstuff.com/contact" rel="nofollow">Contact Form</a> to get in touch me with your comments, questions or suggestions about this site. You can also simply drop me a line to say hello!.
+<br><br>
+<a title="Follow us on Google+" href="https://plus.google.com/112493711428194838421/posts">Follow us on Google+</a>
+<br><br>
+<a title="Follow us on Twitter" href="http://twitter.com/thegeekstuff" rel="nofollow">Follow us on Twitter</a>
+<br><br>
+<a href="http://www.facebook.com/thegeekstuff" rel="nofollow">Become a fan on Facebook</a>&nbsp;&nbsp;</div>
+		</li>
+	</ul>
+</div>
+
+<div class="cb"></div>
+	<p>Copyright © 2008–2014 Ramesh Natarajan. All rights reserved  | 
+<a href="http://www.thegeekstuff.com/copyright">Terms of Service</a> </p>	</div>
+</div>
+</div>
+<!--[if lte IE 8]>
+<div id="ie_clear"></div>
+<![endif]-->
+<script type="text/javascript" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5302569-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk: enhanced
+Content Delivery Network via Amazon Web Services: CloudFront: static.thegeekstuff.com
+
+ Served from: www.thegeekstuff.com @ 2015-04-15 23:56:17 by W3 Total Cache --><iframe name="oauth2relay268644527" id="oauth2relay268644527" src="./7 Linux Route Command Examples (How to Add Route in Linux)_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

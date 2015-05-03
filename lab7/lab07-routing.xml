@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vnuml SYSTEM "/usr/share/xml/vnuml/vnuml.dtd">
+
+<!--
+
+VNUML Limited User Scenario
+See the tutorial/index.html document for details
+
+NOTE: if you are experiencing problems with the conventional xterm, we recommend you
+to uncomment the <xterm> tag, in order to use gnome-terminal, that seems to be more 
+stable. Of course, you will need the gnome-terminal installed
+in your system.
+
+-->
+
+<vnuml>
+  <global>
+    <version>1.8</version>
+    <simulation_name>Routing</simulation_name>
+    <automac/>
+    <vm_mgmt type="none" />
+    <vm_defaults exec_mode="mconsole">
+       <filesystem type="cow">/usr/share/vnuml/filesystems/root_fs_tutorial</filesystem>
+       <kernel>/usr/share/vnuml/kernels/linux</kernel>
+       <console id="0">xterm</console>
+       <xterm>gnome-terminal,-t,-x</xterm>
+    </vm_defaults>
+  </global>
+  <net name="Net0" mode="uml_switch" />
+  <net name="Net1" mode="uml_switch" />
+  <net name="Net2" mode="uml_switch" />
+  <vm name="uml1">
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.1</ipv4>
+    </if>
+  </vm>
+  <vm name="uml2">
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.2</ipv4>
+    </if>
+  </vm>
+  <vm name="uml3">
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.3</ipv4>
+    </if>
+    <if id="2" net="Net1">
+      <ipv4>10.0.0.4</ipv4>
+    </if>
+  </vm>
+  <vm name="uml4">
+    <if id="1" net="Net1">
+      <ipv4>10.0.0.5</ipv4>
+    </if>
+    <if id="2" net="Net2">
+      <ipv4>10.0.0.6</ipv4>
+    </if>
+  </vm>
+  <vm name="uml5">
+    <if id="1" net="Net2">
+      <ipv4>10.0.0.7</ipv4>
+    </if>
+  </vm>
+</vnuml>

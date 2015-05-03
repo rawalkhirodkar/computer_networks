@@ -1,0 +1,36 @@
+Exercise.1
+
+1. set lan [$ns make-lan -trace on $nodelist $opt(bw) $opt(delay) \
+			 $opt(ll) $opt(ifq) \
+			 $opt(mac) $opt(chan)]
+
+Mac via -macType $opt(mac)
+
+2. set opt(bw)	1Mb
+    
+3. set rate 100Kb
+
+4. $cbr_($i) set packetSize_ 1000 ; 80ms (1000*8 bits/100 kbps)
+
+5. duration is 10; begin at 0.5, ends at 10.5; $ns at 0.5 "$cbr_($i) start" and set opt(fin) 10.5;
+
+
+Exercise.2
+
+1.   500 Packets via grep "^r " csmacd.tr | wc -l
+
+2.  No packets dropped since 400kbps (sum of the 4 nodes data-rate is much below link capacity of 1Mbps) (no d's in the trace file)
+
+3. System Throughput is 400000.0
+	System Efficiency: 40.0%
+
+4. System efficiency is not 100% since the load is low (input itself is 400kbps)
+
+5. Node-1	Throughput: 100000.0 (via P1 =  grep "^r " csmacd.tr | grep "1.0 0.0" | wc -l )
+	Node-2	Throughput: 100000.0
+	Node-3	Throughput: 100000.0
+	Node-4	Throughput: 100000.0
+	Total Throughput Sum: 400000.0
+	The total throughput is the system throughput found in 3rd question.
+
+

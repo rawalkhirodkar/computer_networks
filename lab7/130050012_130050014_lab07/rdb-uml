@@ -1,0 +1,61 @@
+uml5:~# brctl showstp br1
+br1
+ bridge id              8000.fefd00000501
+ designated root        8000.fefd00000301
+ root port                 1                    path cost                100
+ max age                  20.00                 bridge max age            20.00
+ hello time                2.00                 bridge hello time          2.00
+ forward delay            15.00                 bridge forward delay      15.00
+ ageing time             300.00
+ hello timer               0.00                 tcn timer                  0.00
+ topology change timer     0.00                 gc timer                   0.08
+ flags  
+
+
+eth1 (0)
+ port id                0000                    state                forwarding
+ designated root        8000.fefd00000301       path cost                100
+ designated bridge      8000.fefd00000301       message age timer         18.92
+ designated port        8002                    forward delay timer        0.00
+ designated cost           0                    hold timer                 0.00
+ flags  
+
+eth2 (0)
+ port id                0000                    state                forwarding
+ designated root        8000.fefd00000301       path cost                100
+ designated bridge      8000.fefd00000501       message age timer          0.00
+ designated port        8002                    forward delay timer        0.00
+ designated cost         100                    hold timer                 0.00
+ flags 
+
+###############################################################################
+ 
+uml3:~# brctl showstp br0
+br0
+ bridge id              8000.fefd00000301
+ designated root        8000.fefd00000301
+ root port                 0                    path cost                  0
+ max age                  20.00                 bridge max age            20.00
+ hello time                2.00                 bridge hello time          2.00
+ forward delay            15.00                 bridge forward delay      15.00
+ ageing time             300.00
+ hello timer               0.74                 tcn timer                  0.00
+ topology change timer     0.00                 gc timer                   0.04
+ flags  
+
+
+eth1 (0)
+ port id                0000                    state                forwarding
+ designated root        8000.fefd00000301       path cost                100
+ designated bridge      8000.fefd00000301       message age timer          0.00
+ designated port        8001                    forward delay timer        0.00
+ designated cost           0                    hold timer                 0.00
+ flags  
+
+eth2 (0)
+ port id                0000                    state                forwarding
+ designated root        8000.fefd00000301       path cost                100
+ designated bridge      8000.fefd00000301       message age timer          0.00
+ designated port        8002                    forward delay timer        0.00
+ designated cost           0                    hold timer                 0.00
+ flags  

@@ -1,0 +1,908 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0057)http://www.thegeekstuff.com/2012/02/dig-command-examples/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>10 Linux DIG Command Examples for DNS Lookup</title>
+<meta name="robots" content="noodp, noydir">
+<link rel="stylesheet" href="./10 Linux DIG Command Examples for DNS Lookup_files/layout.css" type="text/css" media="screen, projection">
+<!--[if lte IE 8]><link rel="stylesheet" href="http://static.thegeekstuff.com/wp-content/themes/thesis_185/lib/css/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+<link rel="stylesheet" href="./10 Linux DIG Command Examples for DNS Lookup_files/custom.css" type="text/css" media="screen, projection">
+<link rel="canonical" href="./10 Linux DIG Command Examples for DNS Lookup_files/10 Linux DIG Command Examples for DNS Lookup.html">
+<link rel="alternate" type="application/rss+xml" title="The Geek Stuff RSS Feed" href="http://feedproxy.google.com/TheGeekStuff">
+<link rel="pingback" href="http://www.thegeekstuff.com/xmlrpc.php">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.thegeekstuff.com/xmlrpc.php?rsd">
+<link href="http://static.thegeekstuff.com/favicon.ico" rel="icon" type="image/x-icon">
+<link rel="author" href="https://plus.google.com/112493711428194838421/posts">
+<link rel="alternate" type="application/rss+xml" title="The Geek Stuff » 10 Linux DIG Command Examples for DNS Lookup Comments Feed" href="http://www.thegeekstuff.com/2012/02/dig-command-examples/feed/">
+
+<!-- All in One SEO Pack 2.1 by Michael Torbert of Semper Fi Web Design[277,328] -->
+<meta name="description" content="Dig stands for domain information groper. Using dig command you can query DNS name servers for your DNS lookup related tasks. This article explains 10">
+
+<link rel="canonical" href="./10 Linux DIG Command Examples for DNS Lookup_files/10 Linux DIG Command Examples for DNS Lookup.html">
+<!-- /all in one seo pack -->
+<style type="text/css"></style><script type="text/javascript" async="" src="./10 Linux DIG Command Examples for DNS Lookup_files/ga.js"></script><script src="./10 Linux DIG Command Examples for DNS Lookup_files/cb=gapi.loaded_1" async=""></script><script src="./10 Linux DIG Command Examples for DNS Lookup_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./10 Linux DIG Command Examples for DNS Lookup_files/saved_resource"></script><link type="text/css" href="./10 Linux DIG Command Examples for DNS Lookup_files/inputtools.css" rel="stylesheet"><script type="text/javascript" src="./10 Linux DIG Command Examples for DNS Lookup_files/inputtools.js"></script><script type="text/javascript" src="http://ads.dfgio.com/loader.js?client=topaz0003"></script></head>
+<body class="custom" data-twttr-rendered="true">
+<div id="container">
+<div id="page">
+	<div id="header">
+<p id="logo"><a href="http://www.thegeekstuff.com/"><img src="./10 Linux DIG Command Examples for DNS Lookup_files/thegeekstuff.gif" alt="The Geek Stuff"></a></p><div id="header_ad"><div id="header_ad1">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8090601437064582";
+/* TGS Logo Header Big Image Only */
+google_ad_slot = "4708993701";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div></div>
+	</div>
+<ul class="menu">
+<li class="tab tab-home"><a href="http://www.thegeekstuff.com/">Home</a></li>
+<li class="tab tab-1"><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/" title="Linux 101 Hacks eBook, by Ramesh Natarajan">Free eBook</a></li>
+<li class="tab tab-2"><a href="http://www.thegeekstuff.com/contact/" title="Contact">Contact</a></li>
+<li><a href="http://www.thegeekstuff.com/about/">About</a></li>
+<li><a href="http://www.thegeekstuff.com/best-of-the-blog">Start Here</a></li>
+</ul>
+	<div id="content_box">
+		<div id="content" class="hfeed">
+
+			<div class="post-9415 post type-post status-publish format-standard hentry category-linux post_box top" id="post-9415">
+				<div class="headline_area">
+					<h1 class="entry-title">10 Linux DIG Command Examples for DNS Lookup</h1>
+					<p class="headline_meta">by <span class="author vcard"><span class="fn">Ramesh Natarajan</span></span> on <abbr class="published" title="2012-02-29">February 29, 2012</abbr></p>
+				</div>
+				<div class="format_text entry-content">
+<div style="margin:7px 0px 6px 0px; padding:5px;"> 
+
+<div style="float:left; width=95px">
+<div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1429169673445" name="I0_1429169673445" src="./10 Linux DIG Command Examples for DNS Lookup_files/fastbutton.html" data-gapiattached="true" title="+1"></iframe></div>
+</div>
+
+<div style="float:left; padding:2px; width:90px"><iframe src="./10 Linux DIG Command Examples for DNS Lookup_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowtransparency="true"></iframe>
+</div>
+
+<div style="width=95px">
+<iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./10 Linux DIG Command Examples for DNS Lookup_files/tweet_button.20ed5cfd7315475c9d1d523194b1645f.en.html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 108px; height: 20px;"></iframe><script type="text/javascript" src="./10 Linux DIG Command Examples for DNS Lookup_files/widgets.js"></script>
+</div>
+
+</div>
+<p><img src="./10 Linux DIG Command Examples for DNS Lookup_files/dig-it-213x300.png" alt="" title="Linux Dig Command" width="213" height="300" class="alignright size-medium wp-image-9892">Dig stands for domain information groper.</p>
+<p>Using dig command you can query DNS name servers for your DNS lookup related tasks. This article explains 10 examples on how to use dig command.</p>
+<h3>1. Simple dig Command Usage (Understand dig Output)</h3>
+<p>When you pass a domain name to the dig command, by default it displays the A record (the ip-address of the site that is queried) as shown below.<br>
+<span id="more-9415"></span><br>
+In this example, it displays the A record of redhat.com in the “ANSWER SECTION” of the dig command output.</p>
+<pre>$ dig redhat.com
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; redhat.com
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 62863
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 4, ADDITIONAL: 3
+
+;; QUESTION SECTION:
+;redhat.com.                    IN      A
+
+;; ANSWER SECTION:
+redhat.com.             37      IN      A       209.132.183.81
+
+;; AUTHORITY SECTION:
+redhat.com.             73      IN      NS      ns4.redhat.com.
+redhat.com.             73      IN      NS      ns3.redhat.com.
+redhat.com.             73      IN      NS      ns2.redhat.com.
+redhat.com.             73      IN      NS      ns1.redhat.com.
+
+;; ADDITIONAL SECTION:
+ns1.redhat.com.         73      IN      A       209.132.186.218
+ns2.redhat.com.         73      IN      A       209.132.183.2
+ns3.redhat.com.         73      IN      A       209.132.176.100
+
+;; Query time: 13 msec
+;; SERVER: 209.144.50.138#53(209.144.50.138)
+;; WHEN: Thu Jan 12 10:09:49 2012
+;; MSG SIZE  rcvd: 164</pre>
+<p>The dig command output has the following sections:</p>
+<ul>
+<li>Header: This displays the dig command version number, the global options used by the dig command, and few additional header information.</li>
+<li>QUESTION SECTION: This displays the question it asked the DNS. i.e This is your input. Since we said ‘dig redhat.com’, and the default type dig command uses is A record, it indicates in this section that we asked for the A record of the redhat.com website</li>
+<li>ANSWER SECTION: This displays the answer it receives from the DNS. i.e This is your output. This displays the A record of redhat.com</li>
+<li>AUTHORITY SECTION: This displays the DNS name server that has the authority to respond to this query. Basically this displays available name servers of redhat.com</li>
+<li>ADDITIONAL SECTION: This displays the ip address of the name servers listed in the AUTHORITY SECTION.</li>
+<li>Stats section at the bottom displays few dig command statistics including how much time it took to execute this query</li>
+</ul>
+<h3>2. Display Only the ANSWER SECTION of the Dig command Output</h3>
+<p>For most part, all you need to look at is the “ANSWER SECTION” of the dig command. So, we can turn off all other sections as shown below.</p>
+<ul>
+<li>+nocomments – Turn off the comment lines</li>
+<li>+noauthority – Turn off the authority section</li>
+<li>+noadditional – Turn off the additional section</li>
+<li>+nostats – Turn off the stats section</li>
+<li>+noanswer – Turn off the answer section (Of course, you wouldn’t want to turn off the answer section)</li>
+</ul>
+<p>The following dig command displays only the ANSWER SECTION.</p>
+<pre>$ dig redhat.com +nocomments +noquestion +noauthority +noadditional +nostats
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; redhat.com +nocomments +noquestion +noauthority +noadditional +nostats
+;; global options: +cmd
+redhat.com.             9       IN      A       209.132.183.81</pre>
+<p>Instead of disabling all the sections that we don’t want one by one, we can disable all sections using +noall (this turns off answer section also), and add the +answer which will show only the answer section.</p>
+    <center>
+      <div style="margin-left:2px; margin-top:10px; margin-bottom:10px; ">
+
+        <!-- AD BLOCK -->
+		
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-8090601437064582";
+/* TGS SinglePost Bottom Medium Rect */
+google_ad_slot = "8643685131";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+        <!-- END AD BLOCK -->
+
+	  </div>
+    </center>
+
+
+<p>The above command can also be written in a short form as shown below, which displays only the ANSWER SECTION.</p>
+<pre>$ dig redhat.com +noall +answer
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; redhat.com +noall +answer
+;; global options: +cmd
+redhat.com.             60      IN      A       209.132.183.81</pre>
+<h3>3. Query MX Records Using dig -t MX</h3>
+<p>To query MX records, pass MX as an argument to the dig command as shown below.</p>
+<pre>$ dig redhat.com  MX +noall +answer
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; redhat.com MX +noall +answer
+;; global options: +cmd
+redhat.com.             513     IN      MX      5 mx1.redhat.com.
+redhat.com.             513     IN      MX      10 mx2.redhat.com.</pre>
+<p>You can also use option -t to pass the query type (for example: MX) as shown below.</p>
+<pre>$ dig -t MX redhat.com +noall +answer
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; -t MX redhat.com +noall +answer
+;; global options: +cmd
+redhat.com.             489     IN      MX      10 mx2.redhat.com.
+redhat.com.             489     IN      MX      5 mx1.redhat.com.</pre>
+<h3>4. Query NS Records Using dig -t NS</h3>
+<p>To query the NS record use the type NS as shown below.</p>
+<pre>$ dig redhat.com NS +noall +answer
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; redhat.com NS +noall +answer
+;; global options: +cmd
+redhat.com.             558     IN      NS      ns2.redhat.com.
+redhat.com.             558     IN      NS      ns1.redhat.com.
+redhat.com.             558     IN      NS      ns3.redhat.com.
+redhat.com.             558     IN      NS      ns4.redhat.com.</pre>
+<p>You can also use option -t to pass the query type (for example: NS) as shown below.</p>
+<pre>$ dig -t NS redhat.com +noall +answer
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; -t NS redhat.com +noall +answer
+;; global options: +cmd
+redhat.com.             543     IN      NS      ns4.redhat.com.
+redhat.com.             543     IN      NS      ns1.redhat.com.
+redhat.com.             543     IN      NS      ns3.redhat.com.
+redhat.com.             543     IN      NS      ns2.redhat.com.</pre>
+<h3>5. View ALL DNS Records Types Using dig -t ANY</h3>
+<p>To view all the record types (A, MX, NS, etc.), use ANY as the record type as shown below.</p>
+<pre>$ dig redhat.com ANY +noall +answer
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; redhat.com ANY +noall +answer
+;; global options: +cmd
+redhat.com.             430     IN      MX      5 mx1.redhat.com.
+redhat.com.             430     IN      MX      10 mx2.redhat.com.
+redhat.com.             521     IN      NS      ns3.redhat.com.
+redhat.com.             521     IN      NS      ns1.redhat.com.
+redhat.com.             521     IN      NS      ns4.redhat.com.
+redhat.com.             521     IN      NS      ns2.redhat.com.</pre>
+<p>(or) Use -t ANY</p>
+<pre>$ dig -t ANY redhat.com  +noall +answer
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; -t ANY redhat.com +noall +answer
+;; global options: +cmd
+redhat.com.             367     IN      MX      10 mx2.redhat.com.
+redhat.com.             367     IN      MX      5 mx1.redhat.com.
+redhat.com.             458     IN      NS      ns4.redhat.com.
+redhat.com.             458     IN      NS      ns1.redhat.com.
+redhat.com.             458     IN      NS      ns2.redhat.com.
+redhat.com.             458     IN      NS      ns3.redhat.com.</pre>
+<h3>6. View Short Output Using dig +short</h3>
+<p>To view just the ip-address of a web site (i.e the A record), use the short form option as shown below.</p>
+<pre>$ dig redhat.com +short
+209.132.183.81</pre>
+<p>You can also specify a record type that you want to view with the +short option.</p>
+<pre>$ dig redhat.com ns +short
+ns2.redhat.com.
+ns3.redhat.com.
+ns1.redhat.com.
+ns4.redhat.com.</pre>
+<h3>7. DNS Reverse Look-up Using dig -x</h3>
+<p>To perform a DNS reverse look up using the ip-address using dig -x as shown below</p>
+<p>For example, if you just have an external ip-address and would like to know the website that belongs to it, do the following.</p>
+<pre>$ dig -x 209.132.183.81 +short
+www.redhat.com.</pre>
+<p>To view the full details of the DNS reverse look-up, remove the +short option.</p>
+<pre>$ dig -x 209.132.183.81
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; -x 209.132.183.81
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 62435
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 4, ADDITIONAL: 3
+
+;; QUESTION SECTION:
+;81.183.132.209.in-addr.arpa.   IN      PTR
+
+;; ANSWER SECTION:
+81.183.132.209.in-addr.arpa. 600 IN     PTR     www.redhat.com.
+
+;; AUTHORITY SECTION:
+183.132.209.in-addr.arpa. 248   IN      NS      ns2.redhat.com.
+183.132.209.in-addr.arpa. 248   IN      NS      ns1.redhat.com.
+183.132.209.in-addr.arpa. 248   IN      NS      ns3.redhat.com.
+183.132.209.in-addr.arpa. 248   IN      NS      ns4.redhat.com.
+
+;; ADDITIONAL SECTION:
+ns1.redhat.com.         363     IN      A       209.132.186.218
+ns2.redhat.com.         363     IN      A       209.132.183.2
+ns3.redhat.com.         363     IN      A       209.132.176.100
+
+;; Query time: 35 msec
+;; SERVER: 209.144.50.138#53(209.144.50.138)
+;; WHEN: Thu Jan 12 10:15:00 2012
+;; MSG SIZE  rcvd: 193</pre>
+<h3>8. Use a Specific DNS server Using dig @dnsserver</h3>
+<p>By default dig uses the DNS servers defined in your /etc/resolv.conf file.</p>
+<p>If you like to use a different DNS server to perform the query, specify it in the command line as @dnsserver.</p>
+<p>The following example uses ns1.redhat.com as the DNS server to get the answer (instead of using the DNS servers from the /etc/resolv.conf file).</p>
+<pre>$ dig @ns1.redhat.com redhat.com
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; @ns1.redhat.com redhat.com
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 20963
+;; flags: qr aa rd; QUERY: 1, ANSWER: 1, AUTHORITY: 4, ADDITIONAL: 4
+;; WARNING: recursion requested but not available
+
+;; QUESTION SECTION:
+;redhat.com.                    IN      A
+
+;; ANSWER SECTION:
+redhat.com.             60      IN      A       209.132.183.81
+
+;; AUTHORITY SECTION:
+redhat.com.             600     IN      NS      ns1.redhat.com.
+redhat.com.             600     IN      NS      ns4.redhat.com.
+redhat.com.             600     IN      NS      ns3.redhat.com.
+redhat.com.             600     IN      NS      ns2.redhat.com.
+
+;; ADDITIONAL SECTION:
+ns1.redhat.com.         600     IN      A       209.132.186.218
+ns2.redhat.com.         600     IN      A       209.132.183.2
+ns3.redhat.com.         600     IN      A       209.132.176.100
+ns4.redhat.com.         600     IN      A       209.132.188.218
+
+;; Query time: 160 msec
+;; SERVER: 209.132.186.218#53(209.132.186.218)
+;; WHEN: Thu Jan 12 10:22:11 2012
+;; MSG SIZE  rcvd: 180</pre>
+<h3>9. Bulk DNS Query Using dig -f (and command line)</h3>
+<h4>Query multiple websites using a data file:</h4>
+<p>You can perform a bulk DNS query based on the data from a file.</p>
+<p>First, create a sample names.txt file that contains the website that you want to query.</p>
+<pre>$ vi names.txt
+redhat.com
+centos.org</pre>
+<p>Next, execute dig -f as shown below, which will perform DNS query for the websites listed in the names.txt file and display the output.</p>
+<pre>$ dig -f names.txt +noall +answer
+redhat.com.             60      IN      A       209.132.183.81
+centos.org.             60      IN      A       72.232.194.162</pre>
+<p>You can also combine record type with the -f option. The following example displays the MX records of multiple websites that are located in the names.txt file.</p>
+<pre>$ dig -f names.txt MX +noall +answer
+redhat.com.             600     IN      MX      10 mx2.redhat.com.
+redhat.com.             600     IN      MX      5 mx1.redhat.com.
+centos.org.             3600    IN      MX      10 mail.centos.org.</pre>
+<h4>Query multiple websites from dig command line:</h4>
+<p>You can also query multiple websites from the dig command line as shown below. The following example queries MX record for redhat.com, and NS record for centos.org from the command line</p>
+<pre>$ dig redhat.com mx +noall +answer centos.org ns +noall +answer
+
+; &lt;&lt;&gt;&gt; DiG 9.7.3-RedHat-9.7.3-2.el6 &lt;&lt;&gt;&gt; redhat.com mx +noall +answer centos.org ns +noall +answer
+;; global options: +cmd
+redhat.com.             332     IN      MX      10 mx2.redhat.com.
+redhat.com.             332     IN      MX      5 mx1.redhat.com.
+centos.org.             3778    IN      NS      ns3.centos.org.
+centos.org.             3778    IN      NS      ns4.centos.org.
+centos.org.             3778    IN      NS      ns1.centos.org.</pre>
+<h3>10. Use $HOME/.digrc File to Store Default dig Options</h3>
+<p>If you are always trying to view only the ANSWER section of the dig output, you don’t have to keep typing “+noall +answer” on your every dig command. Instead, add your dig options to the .digrc file as shown below.</p>
+<pre>$ cat $HOME/.digrc
++noall +answer</pre>
+<p>Now anytime you execute dig command, it will always use +noall and +answer options by default. Now the dig command line became very simple and easy to read without you have to type those options every time.</p>
+<pre>$ dig redhat.com
+redhat.com.             60      IN      A       209.132.183.81
+
+$ dig redhat.com MX
+redhat.com.             52      IN      MX      5 mx1.redhat.com.
+redhat.com.             52      IN      MX      10 mx2.redhat.com.</pre>
+<div style="margin:7px 0px 3px 0px; padding:5px; background:#F2F0E8">
+
+<div style="float:left; width=95px">
+<div id="___plusone_1" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I1_1429169673451" name="I1_1429169673451" src="./10 Linux DIG Command Examples for DNS Lookup_files/fastbutton(1).html" data-gapiattached="true" title="+1"></iframe></div>
+</div>
+
+<div style="float:left; width=95px">
+<iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" src="./10 Linux DIG Command Examples for DNS Lookup_files/tweet_button.20ed5cfd7315475c9d1d523194b1645f.en(1).html" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" title="Twitter Tweet Button" data-twttr-rendered="true" style="width: 108px; height: 20px;"></iframe><script type="text/javascript" src="./10 Linux DIG Command Examples for DNS Lookup_files/widgets.js"></script>
+</div>
+
+<div style="float:left; padding:2px; width:90px"><iframe src="./10 Linux DIG Command Examples for DNS Lookup_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowtransparency="true"></iframe>
+</div>
+
+<div style="padding:1px">
+&gt;&nbsp;<a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#respond">Add your comment</a> 
+</div>
+
+</div>
+<h3>If you enjoyed this article, you might also like..</h3>
+<table>
+<tbody><tr>
+<td valign="top">
+<ol>
+<li><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/">50 Linux Sysadmin Tutorials</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/">50 Most Frequently Used Linux Commands (With Examples)</a></li>
+<li><a href="http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/">Top 25 Best Linux Performance Monitoring and Debugging Tools</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/">Mommy, I found it! – 15 Practical Linux Find Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/">Linux 101 Hacks 2nd Edition eBook</a>&nbsp;<img title="Linux 101 Hacks Book" src="./10 Linux DIG Command Examples for DNS Lookup_files/free-small.png" alt="Linux 101 Hacks Book"></li>
+</ol>
+</td>
+<td>
+<ul>
+<li><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/">Awk Introduction – 7 Awk Print Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/">Advanced Sed Substitution Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/8-essential-vim-editor-navigation-fundamentals/">8 Essential Vim Editor Navigation Fundamentals</a></li>
+<li><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<br>
+<center> 
+<table border="0" cellspacing="10"> 
+<tbody><tr> 
+<td> 
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/"><img title="Bash 101 Hacks Book" src="./10 Linux DIG Command Examples for DNS Lookup_files/bash-132.png" alt="Bash 101 Hacks Book"></a> 
+</td> 
+<td> 
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/"><img title="Sed and Awk 101 Hacks Book" src="./10 Linux DIG Command Examples for DNS Lookup_files/sed-and-awk-132.png" alt="Sed and Awk 101 Hacks Book"></a> 
+</td> 
+<td> 
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/"><img title="Nagios Core 3 Book" src="./10 Linux DIG Command Examples for DNS Lookup_files/nagios-core-132.png" alt="Nagios Core 3 Book"></a> 
+</td> 
+<td> 
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/"><img title="Vim 101 Hacks Book" src="./10 Linux DIG Command Examples for DNS Lookup_files/vim-101-hacks-132.png" alt="Vim 101 Hacks Book"></a> 
+</td> 
+</tr> 
+</tbody></table> 
+</center>
+<br>
+<div id="tgs-tags">
+</div>
+				</div>
+			</div>
+
+			<div id="comments">
+				<div id="comments_intro" class="comments_intro">
+					<p><span class="bracket">{</span> <span>24</span> comments… read them below or <a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#respond" rel="nofollow">add one</a> <span class="bracket">}</span></p>
+				</div>
+
+				<dl id="comment_list">
+					<dt class="comment even thread-even depth-1" id="comment-202587">
+<span class="avatar"><a href="https://bitbucket.org/rsvp/gists/overview" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-202587" title="Permalink to this comment" rel="nofollow">1</a></span>
+<span class="comment_author"><a href="https://bitbucket.org/rsvp/gists/overview" rel="external nofollow" class="url">Adriano</a></span>
+<span class="comment_time">February 29, 2012 at 12:53 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-202587">
+<p>Instructive article… wish you published it weeks ago when I wrote digy which is a tutorial script that simplifies, yet extends, dig.</p>
+<p>digy tames the DNS utility dig with reasonable options and error handling (which is otherwise cryptic or non-existent). Emphasis on readability of output. Also gets WAN public IP address, checks local network status, and discovers who is behind sites: check <a href="https://bitbucket.org/rsvp/gists/src/919de7b93940/digy.sh" rel="nofollow">here</a> for the latest version.</p>
+<p>It has some illustrative examples to get started. The output is designed for further processing by other commands. digy also eliminates the need (#10) to set up a .digrc file because the most useful options are built-in <img src="./10 Linux DIG Command Examples for DNS Lookup_files/icon_smile.gif" alt=":-)" class="wp-smiley"> </p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-202670">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-202670" title="Permalink to this comment" rel="nofollow">2</a></span>
+<span class="comment_author">konggil</span>
+<span class="comment_time">February 29, 2012 at 6:13 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-202670">
+<p>excellent!</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-202727">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-202727" title="Permalink to this comment" rel="nofollow">3</a></span>
+<span class="comment_author">alieblice</span>
+<span class="comment_time">February 29, 2012 at 10:21 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-202727">
+<p>Thanks for the good article.<br>
+It would be good if you write an article about dns server installation too.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-202733">
+<span class="avatar"><a href="http://www.tahirmehmood.com/" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-202733" title="Permalink to this comment" rel="nofollow">4</a></span>
+<span class="comment_author"><a href="http://www.tahirmehmood.com/" rel="external nofollow" class="url">Tahir</a></span>
+<span class="comment_time">February 29, 2012 at 10:52 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-202733">
+<p>if my dns is not resolving ,, mean dig is not working… then how should is troubleshoot.<br>
+plz explain the problem areas of dns also…<br>
+and write an article on . “how to prepare good dns server”</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-202878">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-202878" title="Permalink to this comment" rel="nofollow">5</a></span>
+<span class="comment_author">Kundan</span>
+<span class="comment_time">February 29, 2012 at 10:11 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-202878">
+<p>Thanks for the artivle really helpful in getting nameservers of domains</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-202923">
+<span class="avatar"><a href="http://www.chikkubukuexpress.com/" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-202923" title="Permalink to this comment" rel="nofollow">6</a></span>
+<span class="comment_author"><a href="http://www.chikkubukuexpress.com/" rel="external nofollow" class="url">Madharasan</a></span>
+<span class="comment_time">March 1, 2012 at 1:15 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-202923">
+<p>@Ramesh </p>
+<p>u did a dig on dig <img src="./10 Linux DIG Command Examples for DNS Lookup_files/icon_smile.gif" alt=":)" class="wp-smiley">  </p>
+<p>gud</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-203349">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-203349" title="Permalink to this comment" rel="nofollow">7</a></span>
+<span class="comment_author">Jalal Hajigholamali</span>
+<span class="comment_time">March 2, 2012 at 10:27 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-203349">
+<p>Hi,</p>
+<p>Very nice article</p>
+<p>Thanks</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-203445">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-203445" title="Permalink to this comment" rel="nofollow">8</a></span>
+<span class="comment_author">Shockre</span>
+<span class="comment_time">March 2, 2012 at 4:09 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-203445">
+<p>Excellent dig summary!<br>
+Thank you very much!</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-204487">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-204487" title="Permalink to this comment" rel="nofollow">9</a></span>
+<span class="comment_author">Rajesh</span>
+<span class="comment_time">March 4, 2012 at 11:47 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-204487">
+<p>Good article..!! For digging <img src="./10 Linux DIG Command Examples for DNS Lookup_files/icon_wink.gif" alt=";-)" class="wp-smiley"> </p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-545652">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-545652" title="Permalink to this comment" rel="nofollow">10</a></span>
+<span class="comment_author">Timothy</span>
+<span class="comment_time">February 19, 2013 at 8:43 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-545652">
+<p>Nice article really has shaped my dig understanding</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-562081">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-562081" title="Permalink to this comment" rel="nofollow">11</a></span>
+<span class="comment_author">Ankit Gupta</span>
+<span class="comment_time">March 5, 2013 at 4:18 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-562081">
+<p>A nice informative articles even for beginners <img src="./10 Linux DIG Command Examples for DNS Lookup_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-741720">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-741720" title="Permalink to this comment" rel="nofollow">12</a></span>
+<span class="comment_author">Greg</span>
+<span class="comment_time">May 10, 2013 at 12:29 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-741720">
+<p>I really “dig” this tutorial.  Very practical stuff here.  There are so many ways to do tasks.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-901361">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-901361" title="Permalink to this comment" rel="nofollow">13</a></span>
+<span class="comment_author">Ashish</span>
+<span class="comment_time">August 24, 2013 at 9:04 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-901361">
+<p>Does any one else have the same problem as myself?<br>
+dig google.com<br>
+Does not return ‘authority’ section anymore.<br>
+Even with googles own free DNS<br>
+dig @8.8.8.8 google.com<br>
+If you get ‘authority’ section in your results, can you please post what is your isp, and dns servers?<br>
+And no, I don’t have a ‘~/.digrc’<br>
+Ash</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-1164333">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-1164333" title="Permalink to this comment" rel="nofollow">14</a></span>
+<span class="comment_author">I1ilan</span>
+<span class="comment_time">January 2, 2014 at 12:57 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-1164333">
+<p>Explained very nicely<br>
+thx</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-1224119">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-1224119" title="Permalink to this comment" rel="nofollow">15</a></span>
+<span class="comment_author">daniel</span>
+<span class="comment_time">January 22, 2014 at 10:47 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-1224119">
+<p>I liked hearing that you can perform bulk DNS look-ups through a text file with dig (a command I just learned about today.) I hope to learn more useful commands where you can ( query, find, manipulate, or whatever) info that’s in a text file on the command line in Linux.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-1250977">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-1250977" title="Permalink to this comment" rel="nofollow">16</a></span>
+<span class="comment_author">Larry Mateo</span>
+<span class="comment_time">February 4, 2014 at 11:03 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-1250977">
+<p>Great article: Informative. Clear. Usable.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-1252724">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-1252724" title="Permalink to this comment" rel="nofollow">17</a></span>
+<span class="comment_author">Ancy Sherin Jose</span>
+<span class="comment_time">February 5, 2014 at 5:36 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-1252724">
+<p>Excellent. Thankyou  very much for this article <img src="./10 Linux DIG Command Examples for DNS Lookup_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-1320532">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-1320532" title="Permalink to this comment" rel="nofollow">18</a></span>
+<span class="comment_author">Praveen mourya</span>
+<span class="comment_time">March 7, 2014 at 9:26 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-1320532">
+<p>what is ns (name server) ???? what its use..</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-1387760">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-1387760" title="Permalink to this comment" rel="nofollow">19</a></span>
+<span class="comment_author">lluish</span>
+<span class="comment_time">March 25, 2014 at 3:07 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-1387760">
+<p>Excellent, Ramesh, thank you very much!</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-1486835">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-1486835" title="Permalink to this comment" rel="nofollow">20</a></span>
+<span class="comment_author">Tommy</span>
+<span class="comment_time">April 16, 2014 at 7:48 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-1486835">
+<p>hum, nice tips.  you have saved me loads of time with all these commands. Thanks</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-1795496">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-1795496" title="Permalink to this comment" rel="nofollow">21</a></span>
+<span class="comment_author">Prabhu Thiyagarajan</span>
+<span class="comment_time">May 28, 2014 at 9:49 pm</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-1795496">
+<p>Wonderful.</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-2038305">
+<span class="avatar"><a href="http://blakemoore.co.uk/" rel="nofollow"></a></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-2038305" title="Permalink to this comment" rel="nofollow">22</a></span>
+<span class="comment_author"><a href="http://blakemoore.co.uk/" rel="external nofollow" class="url">Blake</a></span>
+<span class="comment_time">August 6, 2014 at 3:28 am</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-2038305">
+<p>I prefer using the below</p>
+<p><code>dig +noall +nocmd example.com +answer</code></p>
+<p>This gives the cleanest output.</p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-2261307">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-2261307" title="Permalink to this comment" rel="nofollow">23</a></span>
+<span class="comment_author">Sam</span>
+<span class="comment_time">September 17, 2014 at 10:59 am</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-2261307">
+<p>Simple and clear information ! —-thank you</p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-3811512">
+<span class="avatar"></span>
+<span class="comment_num"><a href="http://www.thegeekstuff.com/2012/02/dig-command-examples/#comment-3811512" title="Permalink to this comment" rel="nofollow">24</a></span>
+<span class="comment_author">dumplump</span>
+<span class="comment_time">February 18, 2015 at 10:48 pm</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-3811512">
+<p>As much as this tutorial is nice, it does not explain what the output actually is telling someone. I guess there is an assumption that the person reading knows what “MX” means.</p>
+</div>
+					</dd>
+				</dl>
+				<div id="respond">
+					<div id="respond_intro">
+						<p>Leave a Comment</p>
+					</div>
+					<form action="http://www.thegeekstuff.com/wp-comments-post.php" method="post" id="commentform">
+						<p><input class="text_input" type="text" name="author" id="author" value="" tabindex="1"><label for="author">Name</label></p>
+						<p><input class="text_input" type="text" name="email" id="email" value="" tabindex="2"><label for="email">E-mail</label></p>
+						<p><input class="text_input" type="text" name="url" id="url" value="" tabindex="3"><label for="url">Website</label></p>
+						<p class="comment_box">
+							<textarea name="comment" id="comment" tabindex="4" cols="40" rows="8"></textarea>
+						</p>
+
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;">
+	<label for="subscribe">Notify me of followup comments via e-mail</label>
+	</p>
+
+
+						<p class="remove_bottom_margin">
+							<input name="submit" class="form_submit" type="submit" id="submit" tabindex="5" value="Submit">
+<input type="hidden" name="comment_post_ID" value="9415" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="86c24ee4fe"></p>					</form>
+				</div>
+			</div>
+					<div class="prev_next post_nav">
+						<p class="previous">Previous post: <a href="http://www.thegeekstuff.com/2012/02/linux-memory-swap-cache-shared-vm/" rel="prev">Linux Memory Management – Swapping, Caches and Shared VM</a></p>
+						<p>Next post: <a href="http://www.thegeekstuff.com/2012/03/linux-nm-command/" rel="next">10 Practical Linux nm Command Examples</a></p>
+					</div>
+		</div>
+
+		<div id="sidebars">
+			<div id="sidebar_1" class="sidebar">
+				<ul class="sidebar_list">
+<li class="widget widget_text" id="text-21">			<div class="textwidget"><a title="Subscribe via RSS" href="http://www.thegeekstuff.com/feed" rel="nofollow">RSS</a>&nbsp; | &nbsp;<a title="Subscribe via Email" href="http://feedburner.google.com/fb/a/mailverify?uri=TheGeekStuff&loc=en_US" rel="nofollow">Email</a>&nbsp; | &nbsp;<a title="Follow us on Twitter" href="http://twitter.com/thegeekstuff" rel="nofollow">Twitter</a>&nbsp; | &nbsp;<a title="Become a fan" href="http://www.facebook.com/thegeekstuff" rel="nofollow">Facebook</a>&nbsp; | &nbsp;<a title="Follow us on Google+" href="https://plus.google.com/112493711428194838421/posts">Google+</a>
+<br><br>
+<form action="http://www.thegeekstuff.com/search" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="005666763606120661560:zkmegbt_djm">
+    <input type="hidden" name="cof" value="FORID:10">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input style="background-color:#fffeee" type="text" name="q" size="35">
+    <input style="border-color:#CCCCCC #999999 #999999 #CCCCCC; border-style:double; border-width:1px; overflow:visible;" type="submit" name="sa" value="Search">
+  </div>
+</form>
+<script type="text/javascript" src="./10 Linux DIG Command Examples for DNS Lookup_files/jsapi"></script>
+<script type="text/javascript">google.load("elements", "1", {packages: "transliteration"});</script><script src="./10 Linux DIG Command Examples for DNS Lookup_files/saved_resource(1)" type="text/javascript"></script><link href="./10 Linux DIG Command Examples for DNS Lookup_files/transliteration.css" type="text/css" rel="stylesheet"><script src="./10 Linux DIG Command Examples for DNS Lookup_files/transliteration.I.js" type="text/javascript"></script>
+<script type="text/javascript" src="./10 Linux DIG Command Examples for DNS Lookup_files/t13n"></script>
+<script type="text/javascript" src="./10 Linux DIG Command Examples for DNS Lookup_files/brand"></script>
+<br></div>
+		</li><li class="widget widget_text" id="text-3">			<div class="textwidget"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-8090601437064582";
+/* TGS Right Bar Rectangle Text Ad */
+google_ad_slot = "9054077260";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br></div>
+		</li><li class="widget widget_text" id="text-4"><h3>EBOOKS</h3>			<div class="textwidget"><ul>
+<li><img title="Linux 101 Hacks Book" src="./10 Linux DIG Command Examples for DNS Lookup_files/free-small.png" alt="Linux 101 Hacks Book">&nbsp;<a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/">Linux 101 Hacks 2nd Edition eBook</a> - Practical Examples to Build a Strong Foundation in Linux</li>
+<li><a href="http://www.thegeekstuff.com/bash-101-hacks-ebook/">Bash 101 Hacks eBook</a> - Take Control of Your Bash Command Line and Shell Scripting</li>
+<li><a href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/">Sed and Awk 101 Hacks eBook</a> - Enhance Your UNIX / Linux Life with Sed and Awk</li>
+<li><a href="http://www.thegeekstuff.com/vim-101-hacks-ebook/">Vim 101 Hacks eBook</a> - Practical Examples for Becoming Fast and Productive in Vim Editor</li>
+<li><a href="http://www.thegeekstuff.com/nagios-core-ebook/">Nagios Core 3 eBook</a> - Monitor Everything, Be Proactive, and Sleep Well</li>
+</ul></div>
+		</li><li class="widget widget_text" id="text-22">			<div class="textwidget"><iframe src="./10 Linux DIG Command Examples for DNS Lookup_files/likebox.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:258px;" allowtransparency="true"></iframe></div>
+		</li><li class="widget widget_text" id="text-17"><h3>POPULAR POSTS</h3>			<div class="textwidget"><ul>
+<li><a href="http://www.thegeekstuff.com/2009/01/12-amazing-and-essential-linux-books-to-enrich-your-brain-and-library/">12 Amazing and Essential Linux Books To Enrich Your Brain and Library</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/">50 UNIX / Linux Sysadmin Tutorials</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/">50 Most Frequently Used UNIX / Linux Commands (With Examples)</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/gtd-getting-things-done/">How To Be Productive and Get Things Done Using GTD</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/03/30-things-to-do-when-you-are-bored-and-have-a-computer/">30 Things To Do When you are Bored and have a Computer</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/09/linux-file-system-structure/">Linux Directory Structure (File System Structure) Explained with Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/06/15-practical-crontab-examples/">Linux Crontab: 15 Awesome Cron Job Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/15-practical-unix-grep-command-examples/">Get a Grip on the Grep! – 15 Practical Grep Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/07/linux-ls-command-examples/">Unix LS Command: 15 Practical Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/15-examples-to-master-linux-command-line-history/">15 Examples To Master Linux Command Line History</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/bug-tracking-system/">Top 10 Open Source Bug Tracking System</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/01/vi-and-vim-macro-tutorial-how-to-record-and-play/">Vi and Vim Macro Tutorial: How To Record and Play</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/">Mommy, I found it! -- 15 Practical Linux Find Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/07/best-gmail-tips-and-tricks/">15 Awesome Gmail Tips and Tricks</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/06/expertise-in-google-search/">15 Awesome Google Search Tips and Tricks</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/raid-levels-tutorial/">RAID 0, RAID 1, RAID 5, RAID 10 Explained with Diagrams</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/01/15-practical-unix-linux-top-command-examples/">Can You Top This? 15 Practical Linux Top Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/09/top-5-best-network-monitoring-tools/">Top 5 Best System Monitoring Tools</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/06/top-5-best-linux-os-distributions/">Top 5 Best Linux OS Distributions</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/06/how-to-monitor-remote-linux-host-using-nagios-30/">How To Monitor Remote Linux Host using Nagios 3.0</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/">Awk Introduction Tutorial – 7 Awk Print Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/09/rsync-command-examples/">How to Backup Linux? 15 rsync Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/09/the-ultimate-wget-download-guide-with-15-awesome-examples/">The Ultimate Wget Download Guide With 15 Awesome Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/07/top-5-best-linux-text-editors/">Top 5 Best Linux Text Editors</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/08/tcpdump-command-examples/">Packet Analyzer: 15 TCPDUMP Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/06/bash-array-tutorial/">The Ultimate Bash Array Tutorial with 15 Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/11/3-steps-to-perform-ssh-login-without-password-using-ssh-keygen-ssh-copy-id/">3 Steps to Perform SSH Login Without Password Using ssh-keygen &amp; ssh-copy-id</a></li>
+<li><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/">Unix Sed Tutorial: Advanced Sed Substitution Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2010/03/netstat-command-examples/">UNIX / Linux: 10 Netstat Command Examples</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/06/the-ultimate-guide-for-creating-strong-passwords/">The Ultimate Guide for Creating Strong Passwords</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/6-steps-to-secure-your-home-wireless-network/">6 Steps to Secure Your Home Wireless Network</a></li>
+<li><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul></div>
+		</li><li class="widget widget_text" id="text-19"><h3>CATEGORIES</h3>			<div class="textwidget"><ul>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/linux/">Linux Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/vim-2/">Vim Editor</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/sed/">Sed Scripting</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/awk/">Awk Scripting</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/bash-2/">Bash Shell Scripting</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/nagios-2/">Nagios Monitoring</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/openssh-2/">OpenSSH</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/iptables/">IPTables Firewall</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/apache/">Apache Web Server</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/mysql/">MySQL Database</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/perl/">Perl Programming</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/google/">Google Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/ubuntu/">Ubuntu Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/postgresql/">PostgreSQL DB</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/hello-world/">Hello World Examples</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/c-programming/">C Programming</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/c-plus-plus/">C++ Programming</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/dell-2/">DELL Server Tutorials</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/oracle/">Oracle Database</a></li>
+<li><a rel="nofollow" href="http://www.thegeekstuff.com/category/vmware/">VMware Tutorials</a></li>
+</ul></div>
+		</li><li class="widget widget_text" id="text-20">			<div class="textwidget"><div id="___person_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 300px; height: 106px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 106px;" tabindex="0" vspace="0" width="100%" id="I2_1429169673454" name="I2_1429169673454" src="./10 Linux DIG Command Examples for DNS Lookup_files/person.html" data-gapiattached="true" title="+Badge"></iframe></div></div>
+		</li>				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+<div class="col_footer1">
+	<ul class="sidebar_list">
+<li id="text-7" class="widget widget_text"><h3>About The Geek Stuff</h3>			<div class="textwidget"><br>
+<img class="float" title="Ramesh Natarajan" src="./10 Linux DIG Command Examples for DNS Lookup_files/ramesh-small.gif" alt="Linux 101 Hacks Book">
+My name is <strong>Ramesh Natarajan</strong>. I will be posting instruction guides, how-to, troubleshooting tips and tricks on Linux, database, hardware, security and web. My focus is to write articles that will either teach you or help you resolve a problem. Read more about <a href="http://www.thegeekstuff.com/about/">Ramesh Natarajan</a> and the blog.</div>
+		</li>
+<li id="text-8" class="widget widget_text"><h3>Support Us</h3>			<div class="textwidget"><br>
+Support this blog by purchasing one of my ebooks.
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/">Bash 101 Hacks eBook</a>
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/">Sed and Awk 101 Hacks eBook</a>
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/">Vim 101 Hacks eBook</a>
+<br><br>
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/">Nagios Core 3 eBook</a></div>
+		</li>
+<li id="text-9" class="widget widget_text"><h3>Contact Us</h3>			<div class="textwidget"><br>
+<strong>Email Me :</strong>
+Use this <a href="http://www.thegeekstuff.com/contact" rel="nofollow">Contact Form</a> to get in touch me with your comments, questions or suggestions about this site. You can also simply drop me a line to say hello!.
+<br><br>
+<a title="Follow us on Google+" href="https://plus.google.com/112493711428194838421/posts">Follow us on Google+</a>
+<br><br>
+<a title="Follow us on Twitter" href="http://twitter.com/thegeekstuff" rel="nofollow">Follow us on Twitter</a>
+<br><br>
+<a href="http://www.facebook.com/thegeekstuff" rel="nofollow">Become a fan on Facebook</a>&nbsp;&nbsp;</div>
+		</li>
+	</ul>
+</div>
+
+<div class="cb"></div>
+	<p>Copyright © 2008–2014 Ramesh Natarajan. All rights reserved  | 
+<a href="http://www.thegeekstuff.com/copyright">Terms of Service</a> </p>	</div>
+</div>
+</div>
+<!--[if lte IE 8]>
+<div id="ie_clear"></div>
+<![endif]-->
+<script type="text/javascript" src="./10 Linux DIG Command Examples for DNS Lookup_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-5302569-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk: enhanced
+Content Delivery Network via Amazon Web Services: CloudFront: static.thegeekstuff.com
+
+ Served from: www.thegeekstuff.com @ 2015-04-16 00:22:28 by W3 Total Cache --><iframe name="oauth2relay444257005" id="oauth2relay444257005" src="./10 Linux DIG Command Examples for DNS Lookup_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe></body></html>

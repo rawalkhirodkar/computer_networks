@@ -1,0 +1,79 @@
+Exercise 2:
+
+2)	Id of root bridge = 8000.fefd00000201 (uml2)
+	Designated bridge for net 0 = 8000.fefd00000201 (uml2)
+	Designated bridge for net 1 = 8000.fefd00000201 (uml2)
+	Designated bridge for net 2 = 8000.fefd00000501 (uml5)
+
+5) New root bridge is = 8000.fefd00000301 uml3
+	Designated bridge for net 0 = 8000.fefd00000301 (uml3)
+	Designated bridge for net 1 = 8000.fefd00000301 (uml3)
+	Designated bridge for net 2 = 8000.fefd00000501 (uml5)
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Exercise 3:
+
+1) The ping doesn't works because the default interface for sending out packets is eth1 (IP 10.0.0.3 , interface Net0) of uml3.
+	Reason: Tcpdump at uml2 shows packet captured sent by uml3 with ip 10.0.0.3.
+
+2)	"-I" option allows to specify the interface for the packets to be sent on.
+	Now uml3 sends packet using Ip 10.0.0.4.
+
+	ping -I eth2 10.0.0.5 thus works.
+	eth2 for uml3 corresponds to Net1 in topology.
+
+3)	Default listening interface for uml3 is eth1(Net0).
+	Hence it does not receives packets (ARP requests for 10.0.0.4) from Net1 sent by uml4.
+
+4)	Command at uml3: route add -host 10.0.0.5 eth2
+	This enables connection between uml3 and uml4.
+
+	Command at uml3: ping 10.0.0.5    works.
+	Command at uml4: ping 10.0.0.4    works.
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Exercise 4:
+
+1)	uml1 has no default router entry and IP 10.0.1.1 doesn't belong to the local network subnet space.
+	Hence uml1 is not able to send packets to 10.0.1.1
+	error "connect: Network is unreachable".
+
+	No hosts receive this ping packets. (As uml1 doesn't attempts to send ping packets)
+
+2)	Command at uml1: route add -host 10.0.1.1 eth1
+
+	This adds ip of uml3 in the routing table of uml1 as a host. 
+
+	As a result the uml1 attempts to ping to 10.0.1.1 (which it did not before).
+	ARP request in Net0 is sent by uml1 asking for MAC address for 10.0.1.1.
+	uml3 receives this request and responds. uml3 is listening by default on eth1 (Net0),this is important for the ping to work.
+	Thus uml1 is now able to communicate to uml3 at ip 10.0.1.1
+
+	Therefore ping works.
+
+3)	The IP 10.0.1.2 doesn't satisfies the subnetmask requirement for Net0.
+	Also there is no entry corresponding to this IP in routing table of uml1 along with no default router entry.
+
+	Therefore, uml1 doesnt even attempts to send ping packets with error "connect: Network is unreachable".
+
+	No hosts receive these packets.
+
+4)	a)For this part we are adding 10.0.1.2 as a network in routing table of uml1.
+	Command used at uml1: route add -net 10.0.1.0/24 dev eth1
+
+	uml3 is converted into a router.
+
+	This doesn't works as uml1 does not receives reply to its ARP request for IP 10.0.1.2. ARP request is local to network. 
+	At this point uml1 doesnt have an entry for default gateway router. Hence no ARP request for IP of gateway router sent by uml1.
+
+	Thus converting uml3 to router is not sufficient.
+
+	b)
+	Default gateway for uml1 is uml3
+	Command at uml1:route add default gw 10.0.0.3
+
+	Default gateway for uml4 is uml3
+	Command at uml1:route add default gw 10.0.1.1
+
+5)	Shown to TA
+-----------------------------------------------------------------------------------------------------------------------------------

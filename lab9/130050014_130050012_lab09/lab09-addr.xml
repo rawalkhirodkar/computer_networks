@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vnuml SYSTEM "/usr/share/xml/vnuml/vnuml.dtd">
+
+
+<vnuml>
+  <global>
+    <version>1.8</version>
+    <simulation_name>Lab09</simulation_name>
+    <automac/>
+    <vm_mgmt type="none" />
+    <vm_defaults exec_mode="mconsole">
+       <filesystem type="cow">/usr/share/vnuml/filesystems/root_fs_tutorial</filesystem>
+       <kernel>/usr/share/vnuml/kernels/linux</kernel>
+       <console id="0">xterm</console>
+       <xterm>gnome-terminal,-t,-x</xterm>
+    </vm_defaults>
+  </global>
+  <net name="Net0" mode="uml_switch" />
+
+  <vm name="uml1">
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.100</ipv4>
+    </if>
+  </vm>
+  <vm name="uml2">
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.101</ipv4>
+    </if>
+  </vm>
+  <vm name="uml3">
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.102</ipv4>
+    </if>
+  </vm>
+  <vm name="uml4">
+    <if id="1" net="Net0">
+      <ipv4>10.0.0.103</ipv4>
+    </if>
+  </vm>
+</vnuml>

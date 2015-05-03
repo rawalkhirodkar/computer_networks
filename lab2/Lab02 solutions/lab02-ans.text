@@ -1,0 +1,100 @@
+Exercise 1:
+
+Q1) For ns-tcp.tcl:
+	
+	a) Size of TCP packet is 1040 bytes.
+	   Size of ack is 40 bytes.	
+	   
+	b) FTP application feeds TCP.
+	
+	c) Queue-size at the intermediate node is 10.
+	
+	d) For link betweeen n0 and n1:
+		Data Rate : 10 Mb
+		Propogation delay : 10 ms
+		
+	   For link betweeen n1 and n2:
+		Data Rate : 1 Mb
+		Propogation delay : 5 ms
+		
+	e) Number of tcp packets dropped is 60.
+		Command used :  grep "d " tcp.tr | grep "tcp"|wc -l
+		
+	   Number of ack packets dropped is 0.
+	   	Command used :  grep "d " tcp.tr | grep "ack"|wc -l
+	   	
+
+Q2)	For ns-simple.tcl
+
+	a)2 flows... types are tcp and udp
+
+	b)TCP flow is fed by FTP
+  	  UDP flow is fed by CBR
+  	  
+ 	c) UDP-CBR flow : 400 kbps (1000B/0.02s)
+ 	   Using the tcl file, we can't figure out the data-rate of the TCP-FTP flow
+ 	   
+ 	d)TCP-FTP flow ends at 4s
+ 	  UDP-CBR flow ends at 5s
+ 	  
+ 	e) 
+
+CMD for UDP-CBR flow:
+Get the number of packets received: grep "^r" simple.tr | grep "3 cbr" | wc -l = 242
+Each packet is 1000B -> data received is 242000B
+Determine start and end time of the flow (@receiver): grep "^r" simple.tr | grep "3 cbr" > temp; then look
+at the first and last line
+Throughput is: 242000 * 8/(4.998706-0.138706) s = 398.353kbps 
+
+
+
+CMD for TCP-FTP flow:
+grep "^r" simple.tr | grep "3 tcp" |wc -l to get the number of packets = 389
+The first packet is 40 bytes, rest are 1040. So total data is 403560B
+Ans: 403560 * 8/(4.067101-1.030348)s = 1.06Mbps
+(Note that this is not the correct way to calculate the TCP throughput since there could be duplicate packets delivered which should not be considered, since its double counting. But we will ignore that for now.)
+
+				
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------   	
+
+Exercise 2:
+Note that for the specific script ns-udp.tcl enclosed, 1001 packets were generated overall @ the rate of 1 packet every 10ms.
+The packet size was varied to change the offered load.
+All values mentioned below are for the tracefiles given in the directory.
+
+Plot Inferences:
+
+Graph1: Offered Load(OL)(x) vs. Percentage packet loss(PPL) (y):
+For calculating drops use : grep "^d" trace-file | wc -l
+
+The PPL is 0% for OL = 40 and 80 Kbps. For OL = 120 Kbps, there is some packet loss (158/1000) and for OL =160Kbps,
+there is more packet loss (367/1000).
+This is because our bottleneck bandwidth is 100Kbps. So as long as OL is less than 100 Kbps, no packets will be dropped
+and since queue size is finite(10), in OL=120 and 160 Kbps, packets get dropped with more packets being dropped in the
+later case.
+
+Graph2:Offered Load(OL)(x) vs. Throughput (TP)(y):
+For calculating throughput, use the below
+No-pkts = grep "^r" trace-file | grep "2 cbr" | wc -l (or you could subtract the above calculated drops from 1001)
+Throughput = No-pkt * pkt-size / (end-time - start-time)
+(Use grep "^r" trace-file | grep "2 cbr" > temp. You can get the end-time/start-time from temp by reading the first and last
+line)
+
+The TP increases and is equal to OL as long as OL is less than the bottleneck bandwidth(100Kbps in this case)
+When OL > 100 Kbps, the TP increases to reach and is saturated at 100Kbps(the bottleneck bandwidth). This is because by
+definition, the maximum permissible bandwidth is 100Kbps and, therefore, it cannot cross that value and stays at that value
+if OL > 100Kbps
+
+
+Graph3:Offered Load(OL)(x) vs. Average End-to-End Delay(AED)(y):
+Script attached in the directory
+
+AED increases as OL increases because the traffic on the network increases as OL increases.
+But AED increases substantially, once the OL increases the bottleneck bandwidth(100Kbps), because then packets start
+getting queued and the delay increases.
+
+
+
+Exercise 3:
+Average queuing delay will be calculated on basis of 120k trace file. It should make the major confirm of total end delay. (Graph will also vary on the basis of trace file).

@@ -1,0 +1,205 @@
+
+Exercise 1
+
+1.	MY ip: 10.105.11.83
+	tcpdump -w exercise1a.pcap
+	ping 10.105.11.80
+	wireshark exercise1a.pcap
+	The ip satisfies the subnet mask (255.255.0.0) for the local network, the user exists.
+
+	Two ARP message were exchanged. One was arp request and one was arp reply.
+	Yes, there is an ARP entry corresponding to the Host Ip address after we contacted the remote host through the ping. 
+
+	Observation :
+	Initially, there was no arp entry corresponding to Host Ip. When we pinged the Host, device ran ARP because host was in the same link network (same subnet) and found out the MAC address corresponding to the Ip and stored in the ARP cache. 
+
+
+2.	tcpdump -w exercise1b.pcap
+	ping 10.4.165.252
+	wireshark exercise1b.pcap
+	subnet is different.
+
+	No Arp messages were exchanged.
+	No entry corresponding to the contacted Host Ip address.
+
+	Observation : 
+	Device does not run arp for machines which have different subnet (outside the local network), so there are no arp packets are captured.
+	Packets thus went through the default gateway router.
+
+3.	tcpdump -w exercise1c.pcap
+	ping -c 1 10.105.11.200
+	wireshark exercise1c.pcap
+	subnet is same but host does not exist.
+
+	There are 3 arp requests but no arp replies.(For 1 ping)
+	One new entry in arp cache but it is incomplete.
+	
+	Address                  HWtype  HWaddress           Flags Mask            Iface
+	10.105.11.200                    (incomplete)                              eth0
+	
+	Observation : 
+	As the subnet of host is same as our machine, our machine sent an arp request to find the mac corresponding to host ip. 
+	But as the host is not present, there will be no replies. So the entry corresponding to the host iP will remain incomplete.
+
+-------------------------------------------------------------------------------------------------------------------
+Exercise 2:
+
+1.	My IP:	10.105.11.84
+	Commands used: 
+
+	To create Gratuitous ARP from my machine: 
+	a)	arping -c 10 -A -I eth0 10.105.11.84
+		arping -c 10 -U -I eth0 10.105.11.84
+
+	( My machine's ip is 10.105.11.84, and 10 such packet are sent on eth0 interface. )
+	(-A flag for reply, -U flag for request)
+
+	To capture:
+	b)	tcpdump -w exercise2.pcap
+	c)	wireshark -r exercise2.pcap
+
+	The order of execution of commands => b) -> a) -> wait for a while -> c)
+
+	Filter by protocol in wireshark, and look out for "ARP" or search for "gratuitous" in the packet list.
+
+2.	The Destination MAC address is set as broadcast address (ff:ff:ff:ff:ff:ff). 
+	Link layer broadcasting is implemented.
+	This is an instruction for routers to flood the packet in the local network.
+	This enables flooding of this packet within the physical network.
+
+3.	Differences between capture of Request and Reply gratuitous ARP.
+	
+	Request: 
+	Opcode: request(1)
+	Target MAC address: Broadcast (ff:ff:ff:ff:ff:ff)
+
+	Reply:
+	Opcode: reply(2)
+	Sender MAC address = Target MAC address
+-------------------------------------------------------------------------------------------------------------------
+
+Exercise 3:
+
+1.	ip.dst == 10.105.11.83
+	Total Length: 1028
+	Identification: 0xfe5a (65114)
+	Flags: 0x02 (Don't Fragment)
+		0... .... = Reserved bit: Not set
+		.1.. .... = Don't fragment: Set
+		..0. .... = More fragments: Not set
+	Fragment offset: 0
+
+2.	Length input = 2000, Two fragments as a result.
+
+	ip.dst == 10.105.11.83
+	
+	Fragment 1:-
+		Total Length: 1500
+		Identification: 0x42a9 (17065)
+		Flags: 0x01 (More Fragments)
+			0... .... = Reserved bit: Not set
+			.0.. .... = Don't fragment: Not set
+			..1. .... = More fragments: Set
+		Fragment offset: 0
+
+	Fragment 2:-
+		Total Length: 548
+		Identification: 0x42a9 (17065)
+		Flags: 0x00
+			0... .... = Reserved bit: Not set
+			.0.. .... = Don't fragment: Not set
+			..0. .... = More fragments: Not set
+		Fragment offset: 1480
+-------------------------------------------------------------------------------------------------------------------
+
+Exercise 4:
+
+1.	IP address if DHCP server = 10.129.1.53
+	Port listening on: 67
+
+2.	No DHCP relay involved.
+	In DHCP discover packet, under Bootstrap Protocol field,
+	Relay agent ip is 0.0.0.0, this is a default entry and this ip is not used.
+	If relay agent was used, this field will contain its ip address.
+
+3.	Reply sent on Ip address: 10.129.26.130
+	
+	The scenario deals with the end of lease case.
+	The host requested the renewal of its old ip(10.129.26.130) in the "Discover" packet on the end of lease.
+	The DHCP agreed,and hence sent unicast "Offer" packet to the old ip address of the host instead of a Broadcast.
+
+4.	Your (client) IP address: 10.129.26.130 (10.129.26.130)
+	IP Address Lease Time: (600s) 10 minutes
+
+	Offered IP: 10.129.26.130
+	valid for 600sec.
+
+5.	Additional information received from dhcp:
+
+	DHCP Server Identifier: 10.129.1.53 (10.129.1.53)
+	Subnet Mask: 255.255.128.0 (255.255.128.0)
+	Router: 10.129.1.250 (10.129.1.250)
+	Domain Name: it.iitb.ac.in cse.iitb.ac.in
+	Domain Name Server: 10.129.1.1 (10.129.1.1)
+-------------------------------------------------------------------------------------------------------------------
+
+Exercise 5
+
+1.	For type 0 code 0 (Echo (ping) reply ) ICMP Packet :
+		Ping a reachable host , the ICMP Message which will come in reply is of type 0 code 0.
+		Command : ping <known reachable Host>
+
+	For type 8 code 0 (Echo (ping) request ) ICMP Packet :
+		Ping a reachable host , the ICMP Message which will be is of type 8 code 0.
+		Command : ping <known reachable Host>
+
+	For type 3 code 3 (Destination port unreachable) ICMP Packet :
+		We can use traceroute, on reaching the destination, the host will send us the ICMP message stating that the port is unreachable. 
+		Command : traceroute <known host> 
+				eg. traceroute bodhitree1.cse.iitb.ac.in
+
+-------------------------------------------------------------------------------------------------------------------
+Exercise 6
+
+1.	Command :: 	$ tcpdump -w exercise6a.pcap &
+				$ traceroute 10.129.1.153
+				$ wireshark -r exercise6a.pcap
+	Output ::
+		traceroute to 10.129.1.153 (10.129.1.153), 30 hops max, 60 byte packets
+		 1  router.cse.iitb.ac.in (10.105.250.1)  5.403 ms  5.382 ms  5.681 ms
+		 2  10.250.105.1 (10.250.105.1)  0.783 ms  0.799 ms  1.046 ms
+		 3  172.16.5.1 (172.16.5.1)  0.353 ms  0.366 ms  0.358 ms
+		 4  10.129.1.153 (10.129.1.153)  0.702 ms  0.688 ms  0.677 ms
+
+2.	Types of ICMP messages involved Type 11 Code 0 (Time to live exceeded in transit), 
+	and Type 3 code 3 (Unreachable port) message (on reaching the destination).
+
+3.	Working of Command traceroute : 
+
+	As seen in trace file, machine first sends an ICMP message to the destination but with some unrealistic port number with TTL = 1,
+	the packet will die at first hop and the router at the first hop will send the type 11 code 0 ICMP message along with its IP address.
+	This way we can find its IP Address(Default gateway router).
+
+	In the next iteration, our machine will increase TTL by 1 (1+1=2) and once again send the ICMP message. 
+	This time, the packet will die at second hop and the router at the second hop will send the type 11 code 0 ICMP message along with its IP address. 
+	Going this way we can find IP address of all the intermediate routers till the destination host. 
+
+	When ICMP packet reaches the final host, as we have sent the packet on an unrealistic port, 
+	the destination will send type 3 code 3 ICMP packet stating that port is unreachable. 
+	From this, traceroute will conclude that we have reached the destination.
+	
+4.	In general , the first encountered entry in traceroute is default gateway router => Default Gateway Router = 10.105.250.1.
+	While using route, output is :
+
+		Kernel IP routing table
+		Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+		default         10.105.1.250    0.0.0.0         UG    0      0        0 eth0
+		10.0.3.0        *               255.255.255.0   U     0      0        0 lxcbr0
+		10.105.0.0      *               255.255.0.0     U     0      0        0 eth0
+		link-local      *               255.255.0.0     U     1000   0        0 eth0
+		192.168.122.0   *               255.255.255.0   U     0      0        0 virbr0
+
+	According to this, Ip address of default gateway router is 10.105.1.250 .
+	( We talked about this to Ma'am, she said that may be the router has more than 1 Ip Addresses)	
+
+-------------------------------------------------------------------------------------------------------------------	

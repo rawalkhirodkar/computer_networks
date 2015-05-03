@@ -1,0 +1,119 @@
+Exercise 1:
+
+Q1)
+
+From uml3, when we pinged 10.0.0.5, uml3 sent out arp packets on it's default interface(eth1) and therefore, uml2 recieves arp packets asking who has 10.0.0.5 tell 10.0.0.3. Since, uml4 doesn't receive any arp packets because it falls on eth2 interface(which is not the default interface for uml3). Therefore, ping-ing to 10.0.0.5 doesn't work.
+
+-------------------------------------------------
+
+Q2) 
+
+ping -I eth2 10.0.0.5 works because now we are sending the packet from eth2 interface, uml4 now receives the arp packet and, thus, replies. Therefore, ping-ing to 10.0.0.5 now works. We also ran tcpdump on uml2 while ping-ing as stated above. In this case, nothing was received on uml2.
+
+------------------------------------------------
+
+Q3)
+
+ping to 10.0.0.4 from uml4 doesn't work regardless of the interface that uml4 uses because the default interface for uml3 is eth1 and not eth2 and therefore, it listens and sends the arp on it's default interface(eth1) and does not reply(not active) on eth2
+
+-----------------------------------------------
+
+Q4)
+
+On uml3 xterm, execute
+route add -host 10.0.0.5 dev eth2
+This adds 10.0.0.5 to the routing table of uml3(and specifies that this is on the eth2 inteface of uml3)
+
+-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
+Exercise 2)
+
+First, we change the IP of all hosts.
+e.g. for uml3 , eth1 interface,
+ifconfig eth1 10.0.0.3 netmask 255.255.255.0
+
+--------------------------------------------- 
+
+Q1) 
+ping doesn't work because we don't have an entry for 10.0.1.1 in the routing table for uml1(shown below)
+
+Routing Table at uml1:
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.0.0        0.0.0.0         255.255.255.0   U     0      0        0 eth1
+
+No host received any ping packets since uml1 doesn't know where to send the ping packets(because of the reason stated above)
+
+--------------------------------------------
+
+
+Q2) 
+
+Command used at uml1:
+route add -host 10.0.1.1 dev eth1
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+10.0.1.1        0.0.0.0         255.255.255.255 UH    0      0        0 eth1
+10.0.0.0        0.0.0.0         255.255.255.0   U     0      0        0 eth1
+
+The command adds the host 10.0.1.1 in the routing table for uml1
+It works now because one interface(eth1) of uml3 is on Net0 and the other interface(eth2) corresponds to 10.0.1.1. Therefore, uml3 can listen to the ping/arp packets sent to 10.0.1.1 on Net0 and can respond appropriately.
+
+Therefore, it now works and the output is:
+
+ping 10.0.1.1                   
+PING 10.0.1.1 (10.0.1.1) 56(84) bytes of data.
+64 bytes from 10.0.1.1: icmp_seq=1 ttl=64 time=20.7 ms
+64 bytes from 10.0.1.1: icmp_seq=2 ttl=64 time=0.343 ms
+64 bytes from 10.0.1.1: icmp_seq=3 ttl=64 time=0.350 ms
+
+--------------------------------------------
+
+
+Q3)
+
+This will not work because there is no entry for 10.0.1.2 the in routing table for uml1. Again, as in Q1) , no host received any ping packets since uml1 doesn't know where to send the ping packets
+
+
+------------------------------------------
+
+
+Q4) 
+
+a) 
+	We convert uml3 to a router and enable forwarding on uml3. It still doesn't work because uml1 still doesn't have 10.0.1.2 in it's routing table
+
+b) 
+	On uml1, command is 
+	route add -net 10.0.1.0 netmask 255.255.255.0 gw 10.0.0.3 dev eth1
+
+	On uml4, command is 
+    route add -net 10.0.0.0 netmask 255.255.255.0 gw 10.0.1.1 dev eth1
+
+    Now, ping from uml1 to 10.0.1.2 and 10.0.1.1 works
+    
+-------------------------------------------
+    
+
+Q5)
+First we convert uml4 to a router and enable IP forwarding both ways.
+
+Subsequent commands used:
+On uml1,
+route add -net 10.0.2.0 netmask 255.255.255.0 gw 10.0.0.3 dev eth1
+
+On uml2,
+route add -net 10.0.2.0 netmask 255.255.255.0 gw 10.0.0.3 dev eth1
+route add -net 10.0.1.0 netmask 255.255.255.0 gw 10.0.0.3 dev eth1
+
+On uml3,
+route add -net 10.0.2.0 netmask 255.255.255.0 gw 10.0.1.2 dev eth2
+
+On uml5,
+route add -net 10.0.1.0 netmask 255.255.255.0 gw 10.0.2.1 dev eth1
+route add -net 10.0.0.0 netmask 255.255.255.0 gw 10.0.2.1 dev eth1
+
+Now, we can ping any host successfully from any other host.
+

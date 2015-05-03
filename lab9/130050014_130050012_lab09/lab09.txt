@@ -1,0 +1,153 @@
+Exercise 1:
+
+1.	uml1 received 4 ping replies.
+	uml2 received 10 ping replies.
+
+	uml1 invokes arp corresponding to ip of uml3.
+	uml3 replies with its MAC address and notes down Mac address of uml1 corresponding to ip 10.0.0.100.
+
+	After four pings from uml1, we made a ping to uml3 from uml2.
+	Till now uml1 received four ping replies.
+
+	uml2 invokes arp corresponding to ip of uml3.
+	uml3 replies with its MAC address and notes down Mac address of uml2 corresponding to ip 10.0.0.100.
+
+	Now when rest of ping from uml1 reach to uml3, uml3 replies to uml2 as the MAC of uml2 is associated with the source IP of ICMP ping request.
+	In this way, uml2 receives 16 ICMP packets in total from uml3, but among this 16 packets , 6 are replies of ICMP request from uml1.
+	uml2 discards this replies as it does not recognises the sequence number and ID of this replies from uml3.
+
+	Thus only 10 ping replies are accepted by uml2.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.	uml1 received 4 ping replies.
+	uml2 received 10 ping replies.
+
+	uml1 invokes arp corresponding to ip of uml3.
+	uml3 replies with its MAC address and notes down Mac address of uml1 corresponding to ip 10.0.0.100.
+	uml4 listens ARP request of uml1 too, and makes a note of Mac address of uml1 corresponding to ip 10.0.0.100.
+
+	After four pings from uml1, we made a ping to uml4 from uml2.
+	Till now uml1 received four ping replies from uml3.
+
+	uml2 invokes arp corresponding to ip of uml4.
+	uml4 replies with its MAC address and notes down Mac address of uml2 corresponding to ip 10.0.0.100.
+	(previous entry here was corresponding, to MAC of uml1)
+	uml3 listens ARP request of uml2 too, and makes a note of Mac address of uml2 corresponding to ip 10.0.0.100.
+	(previous entry here also was corresponding, to MAC of uml1)
+
+
+	Now when rest of ping from uml1 reach to uml3, uml3 replies to uml2 as the MAC of uml2 is associated with the source IP of ICMP ping request.
+	In this way, uml2 receives 16 ICMP packets in total,
+	but among this 16 packets , 6 are replies from uml3 of ICMP request from uml1. 
+	uml2 discards this replies as it does not recognises the sequence number and ID of this replies from uml3, as it never contacted uml3.
+
+	The rest 10 ICMP replies are from uml4 to uml2 corresponding to ping from uml2 to uml4.
+	This are legtimate for uml2 and thus accepts it.
+
+	In this part2, we noticed that connection was disrupted due to peer monitoring in ARP protocol.
+	Broadcast ARP packets are used by other hosts as a way to refresh and extract info about the local network.
+
+	In part1, the connection was disrupted due to end-to-end node (Src or Dest) monitoring in ARP protocol.
+	MAC address in ARP request is used to create a mapping between IP to MAC by destination and source nodes.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.	In first ping, uml1 replied to uml3.
+	In second ping, again uml1 replied to uml4.
+
+	uml3 invokes ARP request for MAC address corresponding to IP 10.0.0.100.
+	uml1 and uml2 both receive this request.
+	uml2 replies with its MAC address to uml3, also uml1 replies with its MAC address to uml3.
+
+	The catch here being that uml1 replies before uml2 to uml3.
+	Thus uml3 associates MAC address of uml1 to IP 10.0.0.100, as it received uml1's reply first.
+	Later when it receives reply from uml2, it ignores it.
+
+	uml4 invokes ARP request for MAC address corresponding to IP 10.0.0.100.
+	uml1 and uml2 both receive this request.
+	uml2 replies with its MAC address to uml4, also uml1 replies with its MAC address to uml4.
+
+	The catch here being that uml1 replies before uml2 to uml4.
+	Thus uml4 associates MAC address of uml1 to IP 10.0.0.100, as it received uml1's reply first.
+	Later when it receives reply from uml2, it ignores it.
+
+	In general the ARP reply which reaches a host first after the ARP query, goes into the cache entry.
+	All other replies which reach later (provided they are soon enough, if they are very late then the host refreshes/updates the entries.)
+	(The answer of which host replied may change depending on the simulation, we answered wrt our simulation run)
+
+	uml2 needs to make sure that its ARP replies reach any node soon enough than ARP replies of uml1.
+	i.e to take down entries corresponding to MAC address of uml1 from any ARP table in the network.
+
+	Three possible ways:
+	a. uml2 should send ARP replies to ARP requests corresponding to IP 10.0.0.100 faster than uml1.
+	b. uml2 can send Gratuitous ARP broadcasts in the network to take down uml1 entries.
+	c. Or uml2 can contact all the hosts in the network before even uml1 initiates conversation to any other hosts.
+		This avoids the invoking ARP request for IP 10.0.0.100, as already MAC of uml2 is saved corresponding to it.
+
+#################################################################################################################################################
+Exercise 2:
+
+1.	Observations:
+
+	uml1 is able to ping uml2.
+
+	uml4 is not able to ping uml2.
+
+	Conclusions:
+	
+	Ip of uml1: 10.0.0.100 (binary:00001010.00000000.00000000.01100100), Subnet: 255.255.255.240
+	Ip of uml2: 10.0.0.101 (binary:00001010.00000000.00000000.01100101), Subnet: 255.255.255.0
+
+
+	Ip of uml4: 10.0.0.120 (binary:00001010.00000000.00000000.01111000), Subnet: 255.255.255.240
+	Ip of uml2: 10.0.0.101 (binary:00001010.00000000.00000000.01100101), Subnet: 255.255.255.0
+
+	A.	
+	IP of uml2 matches the network number of uml1 as first 28 bits of IP address of uml1 matches with uml2,
+	i.e uml1 thinks uml2 belongs to its local network. Hence it invokes ARP, and is able to succesfully ping uml2.
+	And uml2 is also able to send ping reply to uml1 because first 24 bits of uml1 matches the 24 bits of uml2 IP.
+	(24 is because of netmask of uml2,28 is because of netmask of uml1)
+
+	B.
+	The first 28 bits of IP address of uml4 does not matches with uml2, therefore it concludes uml2 being outside its local network.
+	Hence uml4 does not attempts to contact(ping) uml2.(28 because of netmask of uml4)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.	Observations:
+
+	uml2 is able to ping uml1.
+
+	uml2 is not able to ping uml4.
+
+	Conclusions:
+	
+	Ip of uml1: 10.0.0.100 (binary:00001010.00000000.00000000.01100100), Subnet: 255.255.255.240
+	Ip of uml2: 10.0.0.101 (binary:00001010.00000000.00000000.01100101), Subnet: 255.255.255.0
+
+
+	Ip of uml4: 10.0.0.120 (binary:00001010.00000000.00000000.01111000), Subnet: 255.255.255.240
+	Ip of uml2: 10.0.0.101 (binary:00001010.00000000.00000000.01100101), Subnet: 255.255.255.0
+
+	A.	
+	IP of uml1 matches the network number of uml2 as first 24 bits of IP address of uml2 matches with uml1,
+	i.e uml2 thinks uml1 belongs to its local network. Hence it invokes ARP, and is able to succesfully ping uml1.
+	And uml1 is also able to send ping reply to uml2 because first 28 bits of uml1 matches the 28 bits of uml1 IP.
+	(28 is because of netmask of uml1,24 is because of netmask of uml2)
+
+	B.
+	IP of uml4 matches the network number of uml2 as first 24 bits of IP address of uml2 matches with uml4,
+	i.e uml2 thinks uml4 belongs to its local network. Hence it invokes ARP, and is able to succesfully send ping request to uml4.
+	But uml4 is not able to send ping reply to uml2 because first 28 bits of uml4 matches the 28 bits of uml2 IP. (28 is beacuse of netmask of uml4)	
+
+	To tackle this, we can implement a default router, which send the requests to other networks accordingly.
+
+	Difference Highlights between part 1 and part 2:
+
+	Part 1: The failure of ping from uml4 to uml2 is because of the sender(uml4) denying to ping uml2.
+	Part 2: The failure of ping from uml2 to uml4 is because of the receiver(uml4) denying to reply to ping request from uml2.
+
+	Rest everything is same in both parts.
+
+	The misconfiguration of uml4 hinders the connectivity.
+
+#################################################################################################################################################	

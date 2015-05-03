@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://www.tecmint.com/ifconfig-command-examples/ -->
+<html class="js" lang="en-US" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="alexaVerifyID" content="qqxQUyWSeUfqZOencfEoRM9vrVk">
+<meta name="msvalidate.01" content="E8C9208AD2F47ED874ED18E35FC370CE">
+<meta name="google-translate-customization" content="c567e5d7624a883b-609bf053fa02c58b-g01de0b1961de0feb-f">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://www.tecmint.com/xmlrpc.php">
+	
+	<title>15 Useful "ifconfig" Commands to Configure Network Interface in Linux</title>
+<script async="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/analytics.js"></script><script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+
+<!-- All in One SEO Pack 2.2.6.1 by Michael Torbert of Semper Fi Web Design[543,679] -->
+<link rel="author" href="https://plus.google.com/u/0/107665449243972690526">
+<meta name="description" itemprop="description" content="This artilce covers &quot;15 Useful ifconfig Commands&quot; with their practical examples, that might be very helpful to you in managing and configuring netowrk">
+
+<meta name="keywords" itemprop="keywords" content="ifconfig commands,set ip address in linux,configure network in linux">
+
+<link rel="canonical" href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/15 Useful  ifconfig  Commands to Configure Network Interface in Linux.html">
+			<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-33207530-1', 'auto', { 'allowLinker': true } );
+			ga('require', 'linker');
+			ga('linker:autoLink', ['tecmint.com'] );
+			ga('send', 'pageview');
+			</script>
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="Tecmint: Linux Howtos, Tutorials &amp; Guides » Feed" href="http://feeds.feedburner.com/tecmint">
+<link rel="alternate" type="application/rss+xml" title="Tecmint: Linux Howtos, Tutorials &amp; Guides » Comments Feed" href="http://www.tecmint.com/comments/feed/">
+<link href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/css" rel="stylesheet" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="Tecmint: Linux Howtos, Tutorials &amp; Guides » 15 Useful “ifconfig” Commands to Configure Network Interface in Linux Comments Feed" href="http://www.tecmint.com/ifconfig-command-examples/feed/">
+<link rel="stylesheet" id="dgd-scrollbox-plugin-core-css" href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="fancybox-style-css" href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/jquery.fancybox.css" type="text/css" media="all">
+<link rel="stylesheet" id="style-css" href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-css" href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="custom-css" href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/custom.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/font-awesome.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/jquery.js"></script><style type="text/css"></style>
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var $DGD = {"ajaxurl":"http:\/\/www.tecmint.com\/wp-admin\/admin-ajax.php","nonce":"eafefe44a2","debug":"","permalink":"http:\/\/www.tecmint.com\/ifconfig-command-examples\/","title":"15 Useful \"ifconfig\" Commands to Configure Network Interface in Linux","thumbnail":"http:\/\/www.tecmint.com\/wp-content\/uploads\/2013\/01\/ifconfig-command-for-Network-Administration.jpg","scripthost":"http:\/\/www.tecmint.com\/wp-content\/plugins\/dreamgrow-scroll-triggered-box\/","scrollboxes":[{"trigger":{"action":"scroll","scroll":"40","delaytime":"0","element":""},"vpos":"bottom","hpos":"right","cookieLifetime":"1","hide_mobile":"1","receiver_email":"0","thankyou":"You are subscribed. Thank You!","submit_auto_close":"5","delay_auto_close":"0","theme":"clean_white","widget_enabled":"1","height":"auto","width":"300","jsCss":{"padding":"10","margin":"10","backgroundColor":"","boxShadow":"0px","borderColor":"","borderWidth":"0px","borderRadius":"0px","backgroundImageUrl":""},"closeImageUrl":"","transition":{"from":"b","effect":"fade","speed":"400"},"social":{"facebook":"","twitter":"","google":"","pinterest":"","stumbleupon":"","linkedin":""},"id":"dgd_scrollbox-11027","voff":0,"hoff":0}]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/script.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.tecmint.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.tecmint.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Pybackpack (Python Backpack) Manager tool for Ubuntu and Linux Mint" href="http://www.tecmint.com/pybackpack-python-backpack-manager-tool-for-ubuntu-and-linux-mint/">
+<link rel="next" title="12 Useful “df” Commands to Check Disk Space in Linux" href="http://www.tecmint.com/how-to-check-disk-space-in-linux/">
+<meta name="generator" content="WordPress 4.1.1">
+<link rel="shortlink" href="http://www.tecmint.com/?p=1980">
+
+
+<!-- Facebook Like Thumbnail (v0.3.4) -->
+<meta property="og:image" content="http://www.tecmint.com/wp-content/uploads/2013/01/ifconfig-command-for-Network-Administration.jpg">
+<!-- using featured thumbnail -->
+<!-- Facebook Like Thumbnail (By Ashfame - https://github.com/ashfame/facebook-like-thumbnail) -->
+
+<link rel="shortcut icon" href="http://www.tecmint.com/wp-content/themes/tecmint/images/favicon.ico">
+<!--[if lt IE 9]>
+<script src="http://www.tecmint.com/wp-content/themes/tecmint/js/ie/html5.js"></script>
+<script src="http://www.tecmint.com/wp-content/themes/tecmint/js/ie/selectivizr.js"></script>
+<![endif]-->
+<style type="text/css">
+/* Dynamic CSS: For no styles in head, copy and put the css below in your custom.css or child theme's style.css, disable dynamic styles */
+body { font-family: "Roboto Condensed", Arial, sans-serif; }
+.boxed #wrapper, .container-inner { max-width: 1280px; }
+.sidebar .widget { padding-left: 20px; padding-right: 20px; padding-top: 20px; }
+
+.search-expand,
+#nav-topbar.nav-container { background-color: #23588c; }
+@media only screen and (min-width: 720px) {
+	#nav-topbar .nav ul { background-color: #23588c; }
+}			
+				
+
+#header { background-color: #075b88; }
+@media only screen and (min-width: 720px) {
+	#nav-header .nav ul { background-color: #075b88; }
+}			
+				
+
+#nav-header.nav-container { background-color: #2f6dab; }
+@media only screen and (min-width: 720px) {
+	#nav-header .nav ul { background-color: #2f6dab; }
+}			
+				
+#footer-bottom { background-color: #2f6dab; }
+.site-title a img { max-height: 90px; }
+img { -webkit-border-radius: 2px; border-radius: 2px; }
+</style>
+
+<link rel="author" href="https://plus.google.com/107665449243972690526/posts">
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="application/ld+json">
+{
+   "@context": "http://schema.org",
+   "@type": "WebSite",
+   "url": "http://www.tecmint.com/",
+   "potentialAction": {
+     "@type": "SearchAction",
+     "target": "http://www.tecmint.com/?s={search_term}",
+     "query-input": "required name=search_term"
+   }
+}
+</script>
+<script type="text/javascript">
+this.randomtip = function(){
+        var length = $("#tips li").length;
+        var ran = Math.floor(Math.random()*length) + 1;
+        $("#tips li:nth-child(" + ran + ")").show();
+};
+
+$(document).ready(function(){   
+        randomtip();
+});
+</script>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/main.js"></script><link rel="stylesheet" type="text/css" href="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/style(2).css"><script type="text/javascript" charset="UTF-8" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/element_main.js"></script><script type="text/javascript" src="http://ads.dfgio.com/loader.js?client=topaz0003"></script></head>
+
+<body class="single single-post postid-1980 single-format-standard col-2cl full-width topbar-enabled chrome s1-collapse s2-collapse" style="position: relative; min-height: 100%; top: 0px;">
+
+<div id="wrapper">
+
+	<header id="header">
+	
+					<nav class="nav-container group" id="nav-topbar">
+				<div class="nav-toggle"><i class="fa fa-bars"></i></div>
+				<div class="nav-text"><!-- put your mobile menu text here --></div>
+				<div class="nav-wrap container"><ul id="menu-home" class="nav container-inner group"><li id="menu-item-334" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-334"><a href="http://www.tecmint.com/">Home</a></li>
+<li id="menu-item-10774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10774"><a href="http://www.tecmint.com/who-we-are/">About</a></li>
+<li id="menu-item-3912" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3912"><a href="http://tecmint.tradepub.com/category/information-technology-servers-and-linux-server-os/806/">Free Linux eBooks</a></li>
+<li id="menu-item-10439" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10439"><a href="http://ask.tecmint.com/">Ask a Question</a></li>
+<li id="menu-item-10440" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10440"><a href="http://www.tecmint.com/donate-to-tecmint/">Donate to TecMint</a></li>
+<li id="menu-item-10775" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10775"><a href="http://www.tecmint.com/submit-articles/">Join TecMint</a></li>
+<li id="menu-item-11736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11736"><a href="http://www.tecmint.com/linux-training/">Linux Training</a></li>
+<li id="menu-item-12072" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12072"><a title="Linux Trainee Job" href="http://www.tecmint.com/career/">Career</a></li>
+<li id="menu-item-11907" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11907"><a href="http://www.tecmint.com/category/linux-stories/">Linux Stories</a></li>
+</ul></div>
+				
+				<div class="container">
+					<div class="container-inner">		
+						<div class="toggle-search"><i class="fa fa-search"></i></div>
+						<div class="search-expand">
+							<div class="search-expand-inner">
+								<form action="http://www.google.com/" id="cse-search-box" target="_blank">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-2601749019656699:2173448976">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input type="text" class="search" name="q" size="20">
+    <input type="submit" name="sa" value="Search">
+  </div>
+</form>							</div>
+						</div>
+					</div><!--/.container-inner-->
+				</div><!--/.container-->
+				
+			</nav><!--/#nav-topbar-->
+				
+		<div class="container group">
+			<div class="container-inner">
+				
+								<div class="group pad">
+					<p class="site-title"><a href="http://www.tecmint.com/" rel="home"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/logo.png" alt="Tecmint: Linux Howtos, Tutorials &amp; Guides"></a></p>
+															<div id="header-ads">
+						<div id="text-17" class="widget widget_text">			<div class="textwidget"><!-- Top Banner Ads 728x90 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="8210224606"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+		</div>					</div><!--/#header-ads-->
+									</div>
+												
+									<nav class="nav-container group" id="nav-header">
+						<div class="nav-toggle"><i class="fa fa-bars"></i></div>
+						<div class="nav-text"><!-- put your mobile menu text here --></div>
+						<div class="nav-wrap container" style="float:left"><ul id="menu-header" class="nav container-inner group"><li id="menu-item-10770" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10770"><a href="http://www.tecmint.com/best-linux-distributions/">Linux Distro’s</a></li>
+<li id="menu-item-10771" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10771"><a href="http://www.tecmint.com/category/interview-questions/">Interview Questions</a></li>
+<li id="menu-item-10772" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10772"><a title="Learn Linux Shell Scripting" href="http://www.tecmint.com/category/bash-shell/">Shell Scripting</a></li>
+<li id="menu-item-10773" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-10773"><a href="http://www.tecmint.com/category/linux-commands/">Linux Commands</a></li>
+<li id="menu-item-10443" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10443"><a href="http://www.tecmint.com/category/lfcs/">LFCS Exam</a></li>
+<li id="menu-item-10444" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10444"><a href="http://www.tecmint.com/category/lfce/">LFCE Exam</a></li>
+<li id="menu-item-11906" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11906"><a href="http://www.tecmint.com/category/rhcsa/">RHCSA Exam</a></li>
+<li id="menu-item-12399" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-has-children menu-item-12399"><a href="http://www.tecmint.com/#">Guides</a>
+<ul class="sub-menu" style="display: none;">
+	<li id="menu-item-12400" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12400"><a href="http://www.tecmint.com/create-lvm-storage-in-linux/">LVM Series</a></li>
+	<li id="menu-item-12402" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12402"><a href="http://www.tecmint.com/understanding-raid-setup-in-linux/">RAID Series</a></li>
+	<li id="menu-item-12403" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12403"><a href="http://www.tecmint.com/install-and-configure-kvm-in-linux/">KVM Series</a></li>
+	<li id="menu-item-12401" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12401"><a href="http://www.tecmint.com/create-centralized-secure-storage-using-iscsi-targetin-linux/">iSCSI Series</a></li>
+	<li id="menu-item-12406" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12406"><a href="http://www.tecmint.com/install-zentyal-as-primary-domain-controller-and-integrate-windows-system/">Zentyal Series</a></li>
+</ul>
+</li>
+</ul></div>
+
+<div class="google-translator">
+<div id="google_translate_element"><div class="skiptranslate goog-te-gadget" dir="ltr"><div id=":0.targetLanguage" style="display: inline;"><select class="goog-te-combo"><option value="">Select Language</option><option value="en">English</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="az">Azerbaijani</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bs">Bosnian</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="ceb">Cebuano</option><option value="ny">Chichewa</option><option value="zh-CN">Chinese (Simplified)</option><option value="zh-TW">Chinese (Traditional)</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="nl">Dutch</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="tl">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="ha">Hausa</option><option value="iw">Hebrew</option><option value="hi">Hindi</option><option value="hmn">Hmong</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="ig">Igbo</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="jw">Javanese</option><option value="kn">Kannada</option><option value="kk">Kazakh</option><option value="km">Khmer</option><option value="ko">Korean</option><option value="lo">Lao</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="lt">Lithuanian</option><option value="mk">Macedonian</option><option value="mg">Malagasy</option><option value="ms">Malay</option><option value="ml">Malayalam</option><option value="mt">Maltese</option><option value="mi">Maori</option><option value="mr">Marathi</option><option value="mn">Mongolian</option><option value="my">Myanmar (Burmese)</option><option value="ne">Nepali</option><option value="no">Norwegian</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="pa">Punjabi</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sr">Serbian</option><option value="st">Sesotho</option><option value="si">Sinhala</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="so">Somali</option><option value="es">Spanish</option><option value="su">Sundanese</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="tg">Tajik</option><option value="ta">Tamil</option><option value="te">Telugu</option><option value="th">Thai</option><option value="tr">Turkish</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="uz">Uzbek</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="yi">Yiddish</option><option value="yo">Yoruba</option><option value="zu">Zulu</option></select></div>&nbsp;&nbsp;Powered by <span style="white-space:nowrap"><a class="goog-logo-link" href="https://translate.google.com/" target="_blank"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/google_logo_41.png" width="37px" height="13px" style="padding-right: 3px">Translate</a></span></div></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, multilanguagePage: true, gaTrack: true, gaId: 'UA-33207530-1'}, 'google_translate_element');}
+</script>
+</div>
+</nav></div>
+					<!--/#nav-header-->
+								
+			</div><!--/.container-inner-->
+		</header></div><!--/.container-->
+		
+	<!--/#header-->
+	
+	<div class="container" id="page">
+		<div class="container-inner">			
+			<div class="main">
+				<div class="main-inner group">
+<section class="content">
+	
+	<div class="page-title pad group">
+
+			<ul class="meta-single group">
+			<li class="category"><a href="http://www.tecmint.com/category/linux-commands/" rel="category tag">Linux Commands</a></li>
+						<li class="comments"><a href="http://www.tecmint.com/ifconfig-command-examples/#comments"><i class="fa fa-comments-o"></i>12</a></li>
+					</ul>
+		
+	
+</div><!--/.page-title-->	
+	<div class="pad group">
+		
+					<article class="post-1980 post type-post status-publish format-standard has-post-thumbnail hentry category-linux-commands">	
+				<div class="post-inner group">
+					
+					<h1 class="post-title">15 Useful “ifconfig” Commands to Configure Network Interface in Linux</h1>
+					<p class="post-byline">by <a href="http://www.tecmint.com/author/admin/" title="Posts by Ravi Saive" rel="author">Ravi Saive</a> · January 14, 2013</p>
+					
+															<div class="clear"></div>
+					
+<!-- Above Post Ads 468x15 -->
+<div class="add-box">
+<ins class="adsbygoogle" style="display:inline-block;width:468px;height:15px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="1986283779"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="clear"></div>
+<div id="exam_announcement">
+Download Your Free eBooks NOW - <a target="_blank" href="http://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/" style="color:#dd3333;font-weight:400; font-size:16px;">10 Free Linux eBooks for Administrators</a>
+</div>
+<div class="clear"></div>
+
+<div class="ads-inner-mobile">
+<center>
+<!-- Post Inner Mobile Ads -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="9946480174"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+</div>
+<div class="clear"></div>
+
+					<div class="entry share">	
+						<div class="entry-inner">
+							<p><strong>ifconfig</strong> in short “<strong>interface configuration</strong>” utility for system/network administration in <strong>Unix/Linux</strong> operating systems to configure, manage and query network interface parameters via command line interface or in a system configuration scripts.</p>
+<p>The “<strong>ifconfig</strong>” command is used for displaying current network configuration information, setting up an ip address, netmask or broadcast address to an network interface, creating an alias for network interface, setting up hardware address and enable or disable network interfaces.</p>
+<div id="attachment_1985" style="width: 310px" class="wp-caption aligncenter"><a href="http://www.tecmint.com/ifconfig-command-examples/ifconfig-commands-2/" rel="attachment wp-att-1985"><img class="size-medium wp-image-1985" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/Ifconfig-Commands1-300x215.png" alt="Ifconfig Command Examples" width="300" height="215" data-lazy-loaded="true" style="display: inline;"><noscript>&lt;img class="size-medium wp-image-1985" src="http://www.tecmint.com/wp-content/uploads/2013/01/Ifconfig-Commands1-300x215.png" alt="Ifconfig Command Examples" width="300" height="215" /&gt;</noscript></a><p class="wp-caption-text">15 Useful ifconfig Commands</p></div>
+<p>This article covers “<strong>15 Useful “ifconfig” Commands</strong>” with their practical examples, that might be very helpful to you in managing and configuring network interfaces in Linux systems.</p>
+<p><strong style="color: red;">Update</strong> : The networking command <strong>ifconfig</strong> is deprecated by <a href="http://www.tecmint.com/ip-command-examples/" target="_blank">ip command</a> in most Linux distributions.</p>
+<h3>1. View All Network Setting</h3>
+<p>The “<strong>ifconfig</strong>” command with no arguments will display all the active interfaces details. The <strong>ifconfig</strong> command also used to check the assigned IP address of an server.</p>
+<pre>[root@tecmint ~]# ifconfig
+
+eth0      Link encap:Ethernet  HWaddr 00:0B:CD:1C:18:5A
+          inet addr:172.16.25.126  Bcast:172.16.25.63  Mask:255.255.255.224
+          inet6 addr: fe80::20b:cdff:fe1c:185a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2341604 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2217673 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:293460932 (279.8 MiB)  TX bytes:1042006549 (993.7 MiB)
+          Interrupt:185 Memory:f7fe0000-f7ff0000
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:5019066 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:5019066 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:2174522634 (2.0 GiB)  TX bytes:2174522634 (2.0 GiB)
+
+tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:10.1.1.1  P-t-P:10.1.1.2  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)</pre>
+<h3>2. Display Information of All Network Interfaces</h3>
+<p>The following <strong>ifconfig</strong> command with <strong>-a</strong> argument will display information of all active or inactive network interfaces on server. It displays the results for <strong>eth0</strong>, <strong>lo</strong>, <strong>sit0</strong> and <strong>tun0</strong>.</p>
+<pre>[root@tecmint ~]# ifconfig -a
+
+eth0      Link encap:Ethernet  HWaddr 00:0B:CD:1C:18:5A
+          inet addr:172.16.25.126  Bcast:172.16.25.63  Mask:255.255.255.224
+          inet6 addr: fe80::20b:cdff:fe1c:185a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2344927 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2220777 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:293839516 (280.2 MiB)  TX bytes:1043722206 (995.3 MiB)
+          Interrupt:185 Memory:f7fe0000-f7ff0000
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:16436  Metric:1
+          RX packets:5022927 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:5022927 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:2175739488 (2.0 GiB)  TX bytes:2175739488 (2.0 GiB)
+
+sit0      Link encap:IPv6-in-IPv4
+          NOARP  MTU:1480  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)
+
+tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00
+          inet addr:10.1.1.1  P-t-P:10.1.1.2  Mask:255.255.255.255
+          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1
+          RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:100
+          RX bytes:0 (0.0 b)  TX bytes:0 (0.0 b)</pre>
+<h3>3. View Network Settings of Specific Interface</h3>
+<p>Using interface name (<strong>eth0</strong>) as an argument with “<strong>ifconfig</strong>” command will display details of specific network interface.</p>
+<pre>[root@tecmint ~]# ifconfig eth0
+
+eth0      Link encap:Ethernet  HWaddr 00:0B:CD:1C:18:5A
+          inet addr:172.16.25.126  Bcast:172.16.25.63  Mask:255.255.255.224
+          inet6 addr: fe80::20b:cdff:fe1c:185a/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          RX packets:2345583 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:2221421 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:293912265 (280.2 MiB)  TX bytes:1044100408 (995.7 MiB)
+          Interrupt:185 Memory:f7fe0000-f7ff0000</pre>
+<h3>4. How to Enable an Network Interface</h3>
+<p>The “<strong>up</strong>” or “<strong>ifup</strong>” flag with interface name (<strong>eth0</strong>) activates an network interface, if it is not in active state and allowing to send and receive information. For example, “<strong>ifconfig eth0 up</strong>” or “<strong>ifup eth0</strong>” will activate the <strong>eth0</strong> interface.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 up
+OR
+[root@tecmint ~]# ifup eth0</pre>
+<h3>5. How to Disable an Network Interface</h3>
+<p>The “<strong>down</strong>” or “<strong>ifdown</strong>” flag with interface name (<strong>eth0</strong>) deactivates the specified network interface. For example, “<strong>ifconfig eth0 down</strong>” or “<strong>ifdown eth0</strong>” command deactivates the <strong>eth0</strong> interface, if it is in active state.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 down
+OR
+[root@tecmint ~]# ifdown eth0</pre>
+<h3>6. How to Assign a IP Address to Network Interface</h3>
+<p>To assign an IP address to an specific interface, use the following command with an interface name (<strong>eth0</strong>) and ip address that you want to set. For example, “<strong>ifconfig eth0 172.16.25.125</strong>” will set the IP address to interface <strong>eth0</strong>.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 172.16.25.125</pre>
+<h3>7. How to Assign a Netmask to Network Interface</h3>
+<p>Using the “<strong>ifconfig</strong>” command with “<strong>netmask</strong>” argument and interface name as (<strong>eth0</strong>) allows you to define an netmask to an given interface. For example, “<strong>ifconfig eth0 netmask 255.255.255.224</strong>” will set the network mask to an given interface <strong>eth0</strong>.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 netmask 255.255.255.224</pre>
+<h3>8. How to Assign a Broadcast to Network Interface</h3>
+<p>Using the “<strong>broadcast</strong>” argument with an interface name will set the broadcast address for the given interface. For example, “<strong>ifconfig eth0 broadcast 172.16.25.63</strong>” command sets the broadcast address to an interface <strong>eth0</strong>.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 broadcast 172.16.25.63</pre>
+<h3>9. How to Assign a IP, Netmask and Broadcast to Network Interface</h3>
+<p>To assign an IP address, Netmask address and Broadcast address all at once using “<strong>ifconfig</strong>” command with all arguments as given below.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 172.16.25.125 netmask 255.255.255.224 broadcast 172.16.25.63</pre>
+<h3>10. How to Change MTU for an Network Interface</h3>
+<p>The “<strong>mtu</strong>” argument set the maximum transmission unit to an interface. The <strong>MTU</strong> allows you to set the limit size of packets that are transmitted on an interface. The <strong>MTU</strong> able to handle maximum number of octets to an interface in one single transaction. For example, “<strong>ifconfig eth0 mtu 1000</strong>” will set the maximum transmission unit to given set (i.e. <strong>1000</strong>). Not all network interfaces supports <strong>MTU</strong> settings.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 mtu 1000</pre>
+<h3>11. How to Enable Promiscuous Mode</h3>
+<p>What happens in normal mode, when a packet received by a network card, it verifies that the packet belongs to itself. If not, it drops the packet normally, but in the promiscuous mode is used to accept all the packets that flows through the network card.</p>
+<p>Most of the today’s network tools uses the promiscuous mode to capture and analyze the packets that flows through the network interface. To set the promiscuous mode, use the following command.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 promisc</pre>
+<h3>12. How to Disable Promiscuous Mode</h3>
+<p>To disable promiscuous mode, use the “<strong>-promisc</strong>” switch that drops back the network interface in normal mode.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 -promisc</pre>
+<h3>13. How to Add New Alias to Network Interface</h3>
+<p>The <strong>ifconfig</strong> utility allows you to configure additional network interfaces using <strong>alias</strong> feature. To add alias network interface of <strong>eth0</strong>, use the following command. Please note that alias network address in same sub-net mask. For example, if your <strong>eth0</strong> network ip address is <strong>172.16.25.125</strong>, then alias ip address must be <strong>172.16.25.127</strong>.</p>
+<pre>[root@tecmint ~]# ifconfig eth0:0 172.16.25.127</pre>
+<p>Next, verify the newly created alias network interface address, by using “<strong>ifconfig eth0:0</strong>” command.</p>
+<pre>[root@tecmint ~]# ifconfig eth0:0
+
+eth0:0    Link encap:Ethernet  HWaddr 00:01:6C:99:14:68
+          inet addr:172.16.25.123  Bcast:172.16.25.63  Mask:255.255.255.240
+          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+          Interrupt:17</pre>
+<h3>14. How to Remove Alias to Network Interface</h3>
+<p>If you no longer required an alias network interface or you incorrectly configured it, you can remove it by using the following command.</p>
+<pre>[root@tecmint ~]# ifconfig eth0:0 down</pre>
+<h3>15. How to Change the MAC address of Network Interface</h3>
+<p>To change the <strong>MAC</strong> (<strong>Media Access Control</strong>) address of an <strong>eth0</strong> network interface, use the following command with argument “<strong>hw ether</strong>“. For example, see below.</p>
+<pre>[root@tecmint ~]# ifconfig eth0 hw ether AA:BB:CC:DD:EE:FF</pre>
+<p>These are the most useful commands for configuring network interfaces in <strong>Linux</strong>, for more information and usage of <strong>ifconfig</strong> command use the manpages like “<strong>man ifconfig</strong>” at the terminal. Check out some other networking utilities below.</p>
+<h4>Other Networking Utilities</h4>
+<ol>
+<li><a href="http://www.tecmint.com/12-tcpdump-commands-a-network-sniffer-tool/" target="_blank">Tcmpdump</a> — is an command-line packet capture and analyzer tool for monitoring network traffic.</li>
+<li><a href="http://www.tecmint.com/12-tcpdump-commands-a-network-sniffer-tool/" target="_blank">Netstat</a> — is an open source command line network monitoring tool that monitors incoming and outgoing network packets traffic.</li>
+<li><a href="http://www.tecmint.com/wireshark-network-protocol-analyzer-tool-for-rhelcentosfedora/" target="_blank">Wireshark</a> — is an open source network protocol analyzer that is used to troubleshoot network related issues.</li>
+<li><a href="http://www.tecmint.com/install-munin-network-monitoring-in-rhel-cent-6-3-fedora-17/" target="_blank">Munin</a> — is an web based network and system monitoring application that is used to display results in graphs using rrdtool.</li>
+<li><a href="http://www.tecmint.com/install-cacti-network-monitoring-on-rhel-centos-6-3-5-8-and-fedora-17-12/" target="_blank">Cacti</a> — is an complete web based monitoring and graphing application for network monitoring.</li>
+</ol>
+<p>To get more information and options for any of the above tools, see the manapages by entering “<strong>man toolname</strong>” at the command prompt. For example, to get the information for “<strong>netstat”</strong> tool, use the command as “<strong>man netstat</strong>“.</p>
+							
+						</div>
+						<div class="sharrre-container" style="position: relative; top: 3524.46875px; left: 0px;">
+	<span>Share</span>
+	<div id="twitter" data-url="http://www.tecmint.com/ifconfig-command-examples/" data-text="15 Useful “ifconfig” Commands to Configure Network Interface in Linux" data-title="Tweet" class="sharrre"><a class="box" href="http://www.tecmint.com/ifconfig-command-examples/#"><div class="count" href="#">61</div><div class="share"><i class="fa fa-twitter"></i></div></a></div>
+	<div id="facebook" data-url="http://www.tecmint.com/ifconfig-command-examples/" data-text="15 Useful “ifconfig” Commands to Configure Network Interface in Linux" data-title="Like" class="sharrre"><a class="box" href="http://www.tecmint.com/ifconfig-command-examples/#"><div class="count" href="#">489</div><div class="share"><i class="fa fa-facebook-square"></i></div></a></div>
+	<div id="googleplus" data-url="http://www.tecmint.com/ifconfig-command-examples/" data-text="15 Useful “ifconfig” Commands to Configure Network Interface in Linux" data-title="+1" class="sharrre"><a class="box" href="http://www.tecmint.com/ifconfig-command-examples/#"><div class="count" href="#">81</div><div class="share"><i class="fa fa-google-plus-square"></i></div></a></div>
+	<div id="linkedin" data-url="http://www.tecmint.com/ifconfig-command-examples/" data-text="15 Useful “ifconfig” Commands to Configure Network Interface in Linux" data-title="Share It" class="sharrre"><a class="box" href="http://www.tecmint.com/ifconfig-command-examples/#" rel="nofollow"><div class="count" href="#">7</div><div class="share"><i class="fa fa-linkedin"></i></div></a></div>
+<div style="text-align:center;font-weight:600;padding-top:5px;"><a href="http://www.tecmint.com/ifconfig-command-examples/#comments"><i class="fa fa-comments-o"></i></a><a href="http://www.tecmint.com/ifconfig-command-examples/#comments" class="comments-link" title="Comment on 15 Useful “ifconfig” Commands to Configure Network Interface in Linux">12 <span style="font-size:10px;color:#2776c6;margin-top:-8px;">comments</span></a></div>
+
+</div><!--/.sharrre-container-->
+
+<script type="text/javascript">
+	// Sharrre
+	jQuery(document).ready(function(){
+		jQuery('#twitter').sharrre({
+			share: {
+				twitter: true
+			},
+			template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-twitter"></i></div></a>',
+			enableHover: false,
+			enableTracking: true,
+			buttons: { twitter: {via: 'tecmint'}},
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('twitter');
+			}
+		});
+		jQuery('#facebook').sharrre({
+			share: {
+				facebook: true
+			},
+			template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-facebook-square"></i></div></a>',
+			enableHover: false,
+			enableTracking: true,
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('facebook');
+			}
+		});
+		jQuery('#googleplus').sharrre({
+			share: {
+				googlePlus: true
+			},
+			template: '<a class="box" href="#"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-google-plus-square"></i></div></a>',
+			enableHover: false,
+			enableTracking: true,
+			urlCurl: 'http://www.tecmint.com/wp-content/themes/tecmint/js/sharrre.php',
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('googlePlus');
+			}
+		});
+
+jQuery('#linkedin').sharrre({
+			share: {
+				linkedin: true
+			},
+			template: '<a class="box" href="#" rel="nofollow"><div class="count" href="#">{total}</div><div class="share"><i class="fa fa-linkedin"></i></div></a>',
+			enableHover: false,
+			enableTracking: true,
+			buttons: {
+			linkedin: {
+				description: '15 Useful &#8220;ifconfig&#8221; Commands to Configure Network Interface in Linux',media: 'http://www.tecmint.com/wp-content/uploads/2013/01/ifconfig-command-for-Network-Administration.jpg'				}
+			},
+			click: function(api, options){
+				api.simulateClick();
+				api.openPopup('linkedin');
+			}
+		});
+
+
+				
+				
+			// Scrollable sharrre bar, contributed by Erik Frye. Awesome!
+			var shareContainer = jQuery(".sharrre-container"),
+			header = jQuery('#header'),
+			postEntry = jQuery('.entry'),
+			$window = jQuery(window),
+			distanceFromTop = 20,
+			startSharePosition = shareContainer.offset(),
+			contentBottom = postEntry.offset().top + postEntry.outerHeight(),
+			topOfTemplate = header.offset().top;
+			getTopSpacing();
+
+			shareScroll = function(){
+				if($window.width() > 719){	
+					var scrollTop = $window.scrollTop() + topOfTemplate,
+					stopLocation = contentBottom - (shareContainer.outerHeight() + topSpacing);
+					if(scrollTop > stopLocation){
+						shareContainer.offset({top: contentBottom - shareContainer.outerHeight(),left: startSharePosition.left});
+					}
+					else if(scrollTop >= postEntry.offset().top-topSpacing){
+						shareContainer.offset({top: scrollTop + topSpacing, left: startSharePosition.left});
+					}else if(scrollTop < startSharePosition.top+(topSpacing-1)){
+						shareContainer.offset({top: startSharePosition.top,left:startSharePosition.left});
+					}
+				}
+			},
+
+			shareMove = function(){
+				startSharePosition = shareContainer.offset();
+				contentBottom = postEntry.offset().top + postEntry.outerHeight();
+				topOfTemplate = header.offset().top;
+				getTopSpacing();
+			};
+
+			/* As new images load the page content body gets longer. The bottom of the content area needs to be adjusted in case images are still loading. */
+			setTimeout(function() {
+				contentBottom = postEntry.offset().top + postEntry.outerHeight();
+			}, 2000);
+
+			if (window.addEventListener) {
+				window.addEventListener('scroll', shareScroll, false);
+				window.addEventListener('resize', shareMove, false);
+			} else if (window.attachEvent) {
+				window.attachEvent('onscroll', shareScroll);
+				window.attachEvent('onresize', shareMove);
+			}
+
+			function getTopSpacing(){
+				if($window.width() > 1024)
+					topSpacing = distanceFromTop + jQuery('.nav-wrap').outerHeight();
+				else
+					topSpacing = distanceFromTop;
+			}
+				
+	});
+</script>						<div class="clear"></div>				
+					</div><!--/.entry-->
+					
+				</div><!--/.post-inner-->
+
+			</article><!--/.post-->				
+				
+		<div class="clear"></div>
+		   		<div class="clear"></div>
+
+<div class="ads-inner-mobile">
+<center style="padding-top:30px;">
+<!-- Post-Bottom-Inner-300x250 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="7807254572"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+</div>
+<div class="clear"></div>
+
+				
+					<div class="author-bio">
+				<div class="bio-avatar"><img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://1.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=128&amp;d=blank&amp;r=G" class="avatar avatar-128 photo" height="128" width="128"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=128&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-128 photo' height='128' width='128' /&gt;</noscript></div>
+<p style="float:right; font-weight:600;"><a target="_blank" class="author-link" href="http://www.tecmint.com/author/admin/" rel="author">View all Posts</a></p>
+				<p class="bio-name">Ravi Saive</p>
+				<p class="bio-desc">Simple Word a Computer Geek and Linux Guru who loves to share tricks and tips on Internet. Most Of My Servers runs on Open Source Platform called Linux.</p>
+				<div class="clear"></div>
+			</div>
+		
+<div id="exam_announcement">
+<span style="color:#000;font-weight:400; font-size:18px;">Host Your Own Website at $97 Discount + One Free Domain Using our Promo Code '<b style="color:#d35f5f">Tec97</b>' (Enter this code during Signup) - <a target="_blank" rel="nofollow" onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;DreamHost Tec97&#39;,&#39;dreamhost.com&#39;)" href="http://www.dreamhost.com/r.cgi?2057984|Tec97" style="color:#dd3333;font-weight:400; font-size:19px; text-decoration:underline;">Signup with DreamHost Now!</a></span>
+</div>
+<div class="hr"></div>
+<div class="freebooks">
+<center><h1 style="padding-bottom:15px;font-size:25px;">Download Free Linux eBooks</h1></center>
+<div class="grid one-fourth">
+<a rel="nofollow" target="_blank" href="http://tecmint.tradepub.com/free/w_advb01/prgm.cgi" onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Advance-Bash-Scripting&#39;,&#39;tecmint.tradepub.com&#39;)"><img title="Advanced Bash-Scripting Guide" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/w_advb01c4.gif" alt="Advanced Bash-Scripting Guide"></a>
+</div>
+<div class="grid one-fourth">
+   <a rel="nofollow" target="_blank" href="http://tecmint.tradepub.com/free/w_wile13/prgm.cgi" onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Linux-Bible&#39;,&#39;tecmint.tradepub.com&#39;)"><img title="Linux Bible" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/w_wile13c4.gif" alt="Linux Bible"></a>
+</div>
+<div class="grid one-fourth">
+   <a rel="nofollow" target="_blank" href="http://tecmint.tradepub.com/free/w_make07/prgm.cgi" onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Linux-Newbies-Guide&#39;,&#39;tecmint.tradepub.com&#39;)"><img title="A Newbie&#39;s Getting Started Guide to Linux" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/w_make07c4.gif" alt="A Newbie&#39;s Getting Started Guide to Linux"></a>
+</div>
+
+<div class="grid one-fourth last">
+   <a rel="nofollow" target="_blank" href="http://tecmint.tradepub.com/free/w_wile11/prgm.cgi" onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Ubuntu-Linux-Toolbox&#39;,&#39;tecmint.tradepub.com&#39;)"><img title="Ubuntu Linux Toolbox: 1000+ Commands" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/w_wile11c4.gif" alt="Ubuntu Linux Toolbox: 1000+ Commands"></a>
+</div>
+<div class="clear"></div>
+</div>
+		
+			<ul class="post-nav group">
+		<li class="next"><a href="http://www.tecmint.com/how-to-check-disk-space-in-linux/" rel="next"><i class="fa fa-chevron-right"></i><strong>Next story</strong> <span>12 Useful “df” Commands to Check Disk Space in Linux</span></a></li>
+		<li class="previous"><a href="http://www.tecmint.com/pybackpack-python-backpack-manager-tool-for-ubuntu-and-linux-mint/" rel="prev"><i class="fa fa-chevron-left"></i><strong>Previous story</strong> <span>Pybackpack (Python Backpack) Manager tool for Ubuntu and Linux Mint</span></a></li>
+	</ul>
+		
+		
+
+<h4 class="heading">
+	<i class="fa fa-hand-o-right"></i>You may also like...</h4>
+
+<ul class="related-posts group">
+	
+		<li class="related post-hover">
+		<article class="post-6650 post type-post status-publish format-standard has-post-thumbnail hentry category-linux-commands tag-archive-tools">
+
+			<div class="post-thumbnail">
+				<a href="http://www.tecmint.com/command-line-archive-tools-for-linux/" title="5 Best Command Line Archive Tools for Linux – Part 1">
+											<img width="520" height="245" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://www.tecmint.com/wp-content/uploads/2014/05/Linux-Commandline-Archives-520x245.jpg" class="attachment-thumb-medium wp-post-image" alt="Linux Commandline Archives Tools"><noscript>&lt;img width="520" height="245" src="http://www.tecmint.com/wp-content/uploads/2014/05/Linux-Commandline-Archives-520x245.jpg" class="attachment-thumb-medium wp-post-image" alt="Linux Commandline Archives Tools" /&gt;</noscript>																								</a>
+									<a class="post-comments" href="http://www.tecmint.com/command-line-archive-tools-for-linux/#comments"><span><i class="fa fa-comments-o"></i>4</span></a>
+							</div><!--/.post-thumbnail-->
+			
+			<div class="related-inner">
+				
+				<h4 class="post-title">
+					<a href="http://www.tecmint.com/command-line-archive-tools-for-linux/" rel="bookmark" title="5 Best Command Line Archive Tools for Linux – Part 1">5 Best Command Line Archive Tools for Linux – Part 1</a>
+				</h4><!--/.post-title-->
+				
+				<div class="post-meta group">
+					<p class="post-date">1 May, 2014</p>
+				</div><!--/.post-meta-->
+			
+			</div><!--/.related-inner-->
+
+		</article>
+	</li><!--/.related-->
+		<li class="related post-hover">
+		<article class="post-5423 post type-post status-publish format-standard has-post-thumbnail hentry category-linux-commands tag-linux-x-window-commands tag-x-based-commands">
+
+			<div class="post-thumbnail">
+				<a href="http://www.tecmint.com/8-useful-x-window-gui-based-linux-commands-part-i/" title="8 Useful X-window (Gui Based) Linux Commands – Part I">
+											<img width="520" height="245" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://www.tecmint.com/wp-content/uploads/2014/01/Gui-Linux-Commands-520x245.jpg" class="attachment-thumb-medium wp-post-image" alt="Linux Gui Commands"><noscript>&lt;img width="520" height="245" src="http://www.tecmint.com/wp-content/uploads/2014/01/Gui-Linux-Commands-520x245.jpg" class="attachment-thumb-medium wp-post-image" alt="Linux Gui Commands" /&gt;</noscript>																								</a>
+									<a class="post-comments" href="http://www.tecmint.com/8-useful-x-window-gui-based-linux-commands-part-i/#comments"><span><i class="fa fa-comments-o"></i>4</span></a>
+							</div><!--/.post-thumbnail-->
+			
+			<div class="related-inner">
+				
+				<h4 class="post-title">
+					<a href="http://www.tecmint.com/8-useful-x-window-gui-based-linux-commands-part-i/" rel="bookmark" title="8 Useful X-window (Gui Based) Linux Commands – Part I">8 Useful X-window (Gui Based) Linux Commands – Part I</a>
+				</h4><!--/.post-title-->
+				
+				<div class="post-meta group">
+					<p class="post-date">27 Jan, 2014</p>
+				</div><!--/.post-meta-->
+			
+			</div><!--/.related-inner-->
+
+		</article>
+	</li><!--/.related-->
+		<li class="related post-hover">
+		<article class="post-5800 post type-post status-publish format-standard has-post-thumbnail hentry category-linux-commands tag-kernel-boot-time-parameters tag-linux-boot-parameters">
+
+			<div class="post-thumbnail">
+				<a href="http://www.tecmint.com/linux-kernel-boot-time-parameters-explained/" title="11 Linux Kernel Boot-time Parameters Explained">
+											<img width="520" height="245" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://www.tecmint.com/wp-content/uploads/2014/03/Linux-Kernel-Parameters-Explained-520x245.jpg" class="attachment-thumb-medium wp-post-image" alt="Linux Kernel Parameters Explained"><noscript>&lt;img width="520" height="245" src="http://www.tecmint.com/wp-content/uploads/2014/03/Linux-Kernel-Parameters-Explained-520x245.jpg" class="attachment-thumb-medium wp-post-image" alt="Linux Kernel Parameters Explained" /&gt;</noscript>																								</a>
+									<a class="post-comments" href="http://www.tecmint.com/linux-kernel-boot-time-parameters-explained/#comments"><span><i class="fa fa-comments-o"></i>3</span></a>
+							</div><!--/.post-thumbnail-->
+			
+			<div class="related-inner">
+				
+				<h4 class="post-title">
+					<a href="http://www.tecmint.com/linux-kernel-boot-time-parameters-explained/" rel="bookmark" title="11 Linux Kernel Boot-time Parameters Explained">11 Linux Kernel Boot-time Parameters Explained</a>
+				</h4><!--/.post-title-->
+				
+				<div class="post-meta group">
+					<p class="post-date">13 Mar, 2014</p>
+				</div><!--/.post-meta-->
+			
+			</div><!--/.related-inner-->
+
+		</article>
+	</li><!--/.related-->
+	
+</ul><!--/.post-related-->
+
+		
+		
+<section id="comments" class="themeform">
+	
+		
+		<h3 class="heading">12 Responses</h3>
+	
+		<ul class="comment-tabs group">
+			<li class="active"><a href="http://www.tecmint.com/ifconfig-command-examples/#commentlist-container"><i class="fa fa-comments-o"></i>Comments<span>12</span></a></li>
+			<li><a href="http://www.tecmint.com/ifconfig-command-examples/#pinglist-container"><i class="fa fa-share"></i>Pingbacks<span>0</span></a></li>
+		</ul>
+
+				<div id="commentlist-container" class="comment-tab">
+			
+			<ol class="commentlist">
+						<li class="comment even thread-even depth-1 parent" id="comment-379247">
+				<div id="div-comment-379247" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://0.gravatar.com/avatar/c28d4633c3490be0020fcca658344767?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://0.gravatar.com/avatar/c28d4633c3490be0020fcca658344767?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Ikkin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-379247">
+			November 21, 2014 at 6:16 pm</a>		</div>
+
+		<p>Can you tell me how to presist ifconfig changes after reboot? I am trying to change broadcast and netmask with ifconfig. It changes successfully but after reboot it revert back to previous settings.</p>
+<p>Thanks in Advance,<br>
+Nikkishah</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=379247#respond" onclick="return addComment.moveForm( &quot;div-comment-379247&quot;, &quot;379247&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to Ikkin">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="comment-380003">
+				<div id="div-comment-380003" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://1.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Ravi Saive</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-380003">
+			November 22, 2014 at 12:39 pm</a>		</div>
+
+		<p>@Nikki,<br>
+How you changing the network settings? directly on the command line? if yes, then settings will be for temporary only. Better add the settings in ifcfg file under network-scripts directory, if you are using Centos distro..</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=380003#respond" onclick="return addComment.moveForm( &quot;div-comment-380003&quot;, &quot;380003&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to Ravi Saive">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-373477">
+				<div id="div-comment-373477" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://1.gravatar.com/avatar/390804fcae75cfc472f76d0e13fbdcce?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/390804fcae75cfc472f76d0e13fbdcce?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">mike</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-373477">
+			November 16, 2014 at 12:24 pm</a>		</div>
+
+		<p>I have two interfaces and after ifconfig command, two interfaces show same inet address (this probably i guess I made forwarding command  in iptables in firewall  ), and interrupt shows read “Interrupt” as shown in example above. I dont know why interrupt is indicated and also  I could connect internet.  I suspect the fox browser contaminated by some hacks . What to do now, Do I need reinstall fox.</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=373477#respond" onclick="return addComment.moveForm( &quot;div-comment-373477&quot;, &quot;373477&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to mike">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-227823">
+				<div id="div-comment-227823" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://0.gravatar.com/avatar/6ed50e538342b0fd856b1e4f06289fdb?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://0.gravatar.com/avatar/6ed50e538342b0fd856b1e4f06289fdb?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Manolo Baclig</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-227823">
+			July 30, 2014 at 9:36 pm</a>		</div>
+
+		<p>how about editing /etc/sysconfig/network-scripts/***interface-name***</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=227823#respond" onclick="return addComment.moveForm( &quot;div-comment-227823&quot;, &quot;227823&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to Manolo Baclig">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-84800">
+				<div id="div-comment-84800" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://0.gravatar.com/avatar/25997c88ee32b749b76cf9dea151ff3b?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://0.gravatar.com/avatar/25997c88ee32b749b76cf9dea151ff3b?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Allan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-84800">
+			December 13, 2013 at 9:39 am</a>		</div>
+
+		<p>I can’t reply to some emails because of an IPconfig error message and have to copy the email address into a compose document</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=84800#respond" onclick="return addComment.moveForm( &quot;div-comment-84800&quot;, &quot;84800&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to Allan">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-68382">
+				<div id="div-comment-68382" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://1.gravatar.com/avatar/58b56eda53e0f64b81d286698e868bab?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/58b56eda53e0f64b81d286698e868bab?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">hamid</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-68382">
+			November 10, 2013 at 11:19 pm</a>		</div>
+
+		<p>hi</p>
+<p>in my iptables (centos 5)  i use  !  command </p>
+<p>after install new version  of centos6.3   i get error  that is deprecated command</p>
+<p>plz help  me whats is instead  this</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=68382#respond" onclick="return addComment.moveForm( &quot;div-comment-68382&quot;, &quot;68382&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to hamid">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-66228">
+				<div id="div-comment-66228" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://0.gravatar.com/avatar/80709e39901fd38bfbc65d43a1e64b2c?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://0.gravatar.com/avatar/80709e39901fd38bfbc65d43a1e64b2c?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">mansoor</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-66228">
+			November 6, 2013 at 4:11 pm</a>		</div>
+
+		<p>Download Your Free eBook NOW – A Newbie’s Getting Started Guide to Linux<br>
+I can’t download this, as it asking telephone number belongs to US to download the book, what ever number i give its shows error</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=66228#respond" onclick="return addComment.moveForm( &quot;div-comment-66228&quot;, &quot;66228&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to mansoor">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="comment-66267">
+				<div id="div-comment-66267" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://1.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Ravi Saive</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-66267">
+			November 6, 2013 at 7:13 pm</a>		</div>
+
+		<p>Dear Sneaha,</p>
+<p>Sorry for trouble, we will look into this issue and fix it soon.</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=66267#respond" onclick="return addComment.moveForm( &quot;div-comment-66267&quot;, &quot;66267&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to Ravi Saive">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-55265">
+				<div id="div-comment-55265" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://1.gravatar.com/avatar/f7aab6eafd157fb4df2824b2c1f36e19?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/f7aab6eafd157fb4df2824b2c1f36e19?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">test</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-55265">
+			October 8, 2013 at 8:40 pm</a>		</div>
+
+		<p>Hi,<br>
+How to know which is primary interface, if more than one interface is configured?</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=55265#respond" onclick="return addComment.moveForm( &quot;div-comment-55265&quot;, &quot;55265&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to test">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-19324">
+				<div id="div-comment-19324" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://1.gravatar.com/avatar/b9754b6b199bb31a84e3f72a84d327f2?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/b9754b6b199bb31a84e3f72a84d327f2?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">Anon</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-19324">
+			January 16, 2013 at 12:50 am</a>		</div>
+
+		<p>Hasn’t ifconfig been deprecated for awhile now?</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=19324#respond" onclick="return addComment.moveForm( &quot;div-comment-19324&quot;, &quot;19324&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to Anon">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment even depth-2" id="comment-19355">
+				<div id="div-comment-19355" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://0.gravatar.com/avatar/088c1bd6142c57a3b09384fb4c7fc8d4?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://0.gravatar.com/avatar/088c1bd6142c57a3b09384fb4c7fc8d4?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn">DavidD</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-19355">
+			January 16, 2013 at 2:25 am</a>		</div>
+
+		<p>It has, in favor of the “ip” command.</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=19355#respond" onclick="return addComment.moveForm( &quot;div-comment-19355&quot;, &quot;19355&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to DavidD">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt depth-2" id="comment-19474">
+				<div id="div-comment-19474" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/1x1.trans.gif" data-lazy-src="http://0.gravatar.com/avatar/03ae9b148caf9a61c873e2b8c354cb52?s=96&amp;d=blank&amp;r=G" class="avatar avatar-96 photo" height="96" width="96"><noscript>&lt;img alt='' src="http://0.gravatar.com/avatar/03ae9b148caf9a61c873e2b8c354cb52?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>			<cite class="fn"><a href="http://www.rosehosting.com/" rel="external nofollow" class="url">RoseHosting</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tecmint.com/ifconfig-command-examples/comment-page-1/#comment-19474">
+			January 16, 2013 at 8:34 am</a>		</div>
+
+		<p>yes ‘ifconfig (net-tools)’ has been deprecated for a while now.. There is the drop-in replacement ‘iproute2′.</p>
+<p>however, many systems still have ‘ifconfig’, it is still used by many folks even though ‘ip’ is much more powerful as it nicely manages the networking tasks. It has the functionality of the tools like ‘ifconfig’, ‘iptunel’, ‘route’ etc…</p>
+
+		<div class="reply"><a class="comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/?replytocom=19474#respond" onclick="return addComment.moveForm( &quot;div-comment-19474&quot;, &quot;19474&quot;, &quot;respond&quot;, &quot;1980&quot; )" aria-label="Reply to RoseHosting">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	
+			</ol><!--/.commentlist-->
+			
+						
+		</div>	
+				
+		
+		
+									<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.tecmint.com/ifconfig-command-examples/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://www.tecmint.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-describedby="email-notes" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-describedby="form-allowed-tags" aria-required="true"></textarea></p>						<p class="form-allowed-tags" id="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="1980" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="ce290b2b6c"></p><p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1429169095037"></form>
+							</div><!-- #respond -->
+			
+</section><!--/#comments-->		
+	</div><!--/.pad-->
+	
+</section><!--/.content-->
+
+
+	<div class="sidebar s1">
+		
+		<a class="sidebar-toggle" title="Expand Sidebar"><i class="fa icon-sidebar-toggle"></i></a>
+		
+		<div class="sidebar-content">
+			
+			<div class="sidebar-top group">
+				<span style="color:#002873; font-weight:600; font-size:20px;">I <i class="fa fa-heart col-love-l"></i> TecMint :</span>
+				<ul class="social-links"><li><a rel="nofollow" class="social-tooltip" title="twitter" href="http://twitter.com/tecmint" target="Array"><i class="fa fa-twitter" style="color: #33ccff;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="facebook" href="https://www.facebook.com/TecMint" target="Array"><i class="fa fa-facebook" style="color: #3b5998;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Google+" href="https://plus.google.com/101049688653487009744" target="Array"><i class="fa fa-google-plus" style="color: #db4a39;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Rss" href="http://www.tecmint.com/feed" target="Array"><i class="fa fa-rss" style="color: #ff6600;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Youtube" href="https://www.youtube.com/channel/UCkiRkzdLvoGBtW_YArytJlQ" target="Array"><i class="fa fa fa-youtube-square" style="color: #c4302b;"></i></a></li></ul>			</div>
+			
+						
+						
+						
+			<div id="text-21" class="widget widget_text">			<div class="textwidget"><center>
+<!-- Sidebar Top Ad 300x250 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="7270921771"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center></div>
+		</div><div id="text-12" class="widget widget_text">			<div class="textwidget"><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Atlantic Cloud Hosting&#39;,&#39;www.atlantic.net&#39;)" href="https://www.atlantic.net/cloud-hosting/pricing/?utm_source=TM&utm_medium=TM&utm_term=TM&utm_content=TM&utm_campaign=TM" target="_blank" rel="nofollow"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/300x250-$4.97-v5.png" width="0" height="0" style="display: none !important; visibility: hidden !important; opacity: 0 !important; background-position: 0px 0px;"></a></div>
+		</div><div id="text-3" class="widget widget_text">			<div class="textwidget"><div class="ads-sidebar-desktop">
+<center>
+<!-- SideBar2 Ads 300x600 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-2601749019656699" data-ad-slot="9098920170"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+</div></div>
+		</div><div id="alxtabs-2" class="widget widget_alx_tabs">
+<ul class="alx-tabs-nav group tab-count-2"><li class="alx-tab tab-popular active"><a href="http://www.tecmint.com/ifconfig-command-examples/#tab-popular" title="Popular Posts"><i class="fa fa-star"></i><span>Popular Posts</span></a></li><li class="alx-tab tab-comments"><a href="http://www.tecmint.com/ifconfig-command-examples/#tab-comments" title="Recent Comments"><i class="fa fa-comments-o"></i><span>Recent Comments</span></a></li></ul>
+	<div class="alx-tabs-container">
+
+	
+		
+
+						
+						<ul id="tab-popular" class="alx-tab group thumbs-enabled" style="display: block;">
+				
+								<li>
+				
+										<div class="tab-item-thumbnail">
+						<a href="http://www.tecmint.com/how-to-add-linux-host-to-nagios-monitoring-server/" title="How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin">
+															<img width="160" height="160" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/Add-Linux-Host-to-Nagios-160x160.jpg" class="attachment-thumb-small wp-post-image" alt="Add Linux Host to Nagios Monitoring" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img width="160" height="160" src="http://www.tecmint.com/wp-content/uploads/2013/11/Add-Linux-Host-to-Nagios-160x160.jpg" class="attachment-thumb-small wp-post-image" alt="Add Linux Host to Nagios Monitoring" /&gt;</noscript>																																		</a>
+					</div>
+										
+					<div class="tab-item-inner group">
+												<p class="tab-item-title"><a href="http://www.tecmint.com/how-to-add-linux-host-to-nagios-monitoring-server/" rel="bookmark" title="How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin">How to Add Linux Host to Nagios Monitoring Server Using NRPE Plugin</a></p>
+						<p class="tab-item-date">8 Nov, 2013</p>					</div>
+					
+				</li>
+								<li>
+				
+										<div class="tab-item-thumbnail">
+						<a href="http://www.tecmint.com/install-nagios-in-linux/" title="Nagios 4.0.1 Released – Install on RHEL/CentOS 6.x/5.x and Fedora 19/18/17">
+															<img width="160" height="160" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/Install-Nagios-in-CentOS-160x160.jpg" class="attachment-thumb-small wp-post-image" alt="Install Nagios in CentOS" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img width="160" height="160" src="http://www.tecmint.com/wp-content/uploads/2013/10/Install-Nagios-in-CentOS-160x160.jpg" class="attachment-thumb-small wp-post-image" alt="Install Nagios in CentOS" /&gt;</noscript>																																		</a>
+					</div>
+										
+					<div class="tab-item-inner group">
+												<p class="tab-item-title"><a href="http://www.tecmint.com/install-nagios-in-linux/" rel="bookmark" title="Nagios 4.0.1 Released – Install on RHEL/CentOS 6.x/5.x and Fedora 19/18/17">Nagios 4.0.1 Released – Install on RHEL/CentOS 6.x/5.x and Fedora 19/18/17</a></p>
+						<p class="tab-item-date">28 Oct, 2013</p>					</div>
+					
+				</li>
+								<li>
+				
+										<div class="tab-item-thumbnail">
+						<a href="http://www.tecmint.com/install-google-chrome-on-redhat-centos-fedora-linux/" title="Google Chrome 41 Released – Install on RHEL/CentOS 7/6 and Fedora 21-15">
+															<img width="160" height="160" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/Install-Google-Chrome-in-CentOS-160x160.jpg" class="attachment-thumb-small wp-post-image" alt="Install Google Chrome in CentOS" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img width="160" height="160" src="http://www.tecmint.com/wp-content/uploads/2014/11/Install-Google-Chrome-in-CentOS-160x160.jpg" class="attachment-thumb-small wp-post-image" alt="Install Google Chrome in CentOS" /&gt;</noscript>																																		</a>
+					</div>
+										
+					<div class="tab-item-inner group">
+												<p class="tab-item-title"><a href="http://www.tecmint.com/install-google-chrome-on-redhat-centos-fedora-linux/" rel="bookmark" title="Google Chrome 41 Released – Install on RHEL/CentOS 7/6 and Fedora 21-15">Google Chrome 41 Released – Install on RHEL/CentOS 7/6 and Fedora 21-15</a></p>
+						<p class="tab-item-date">24 Jan, 2015</p>					</div>
+					
+				</li>
+								<li>
+				
+										<div class="tab-item-thumbnail">
+						<a href="http://www.tecmint.com/install-cacti-network-monitoring-on-rhel-centos-6-3-5-8-and-fedora-17-12/" title="Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 21-12">
+															<img width="160" height="120" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/Install-Cacti.jpg" class="attachment-thumb-small wp-post-image" alt="Install Cacti in Linux" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img width="160" height="120" src="http://www.tecmint.com/wp-content/uploads/2012/09/Install-Cacti.jpg" class="attachment-thumb-small wp-post-image" alt="Install Cacti in Linux" /&gt;</noscript>																																		</a>
+					</div>
+										
+					<div class="tab-item-inner group">
+												<p class="tab-item-title"><a href="http://www.tecmint.com/install-cacti-network-monitoring-on-rhel-centos-6-3-5-8-and-fedora-17-12/" rel="bookmark" title="Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 21-12">Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 21-12</a></p>
+						<p class="tab-item-date">19 Mar, 2015</p>					</div>
+					
+				</li>
+								<li>
+				
+										<div class="tab-item-thumbnail">
+						<a href="http://www.tecmint.com/install-wine-in-rhel-centos-and-fedora/" title="Install Wine 1.6.2 Stable in RHEL/CentOS 7.0/6.x/5.x and Fedora 20-12">
+															<img width="160" height="160" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/Install-Wine-in-Linux-160x160.jpg" class="attachment-thumb-small wp-post-image" alt="Install Wine in Linux" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img width="160" height="160" src="http://www.tecmint.com/wp-content/uploads/2014/11/Install-Wine-in-Linux-160x160.jpg" class="attachment-thumb-small wp-post-image" alt="Install Wine in Linux" /&gt;</noscript>																																		</a>
+					</div>
+										
+					<div class="tab-item-inner group">
+												<p class="tab-item-title"><a href="http://www.tecmint.com/install-wine-in-rhel-centos-and-fedora/" rel="bookmark" title="Install Wine 1.6.2 Stable in RHEL/CentOS 7.0/6.x/5.x and Fedora 20-12">Install Wine 1.6.2 Stable in RHEL/CentOS 7.0/6.x/5.x and Fedora 20-12</a></p>
+						<p class="tab-item-date">29 Nov, 2014</p>					</div>
+					
+				</li>
+								<li>
+				
+										<div class="tab-item-thumbnail">
+						<a href="http://www.tecmint.com/centos-6-4-installation-guide-with-screenshots/" title="CentOS 6.4 Step by Step Installation Guide with Screenshots">
+															<img width="160" height="120" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/cent-1.jpg" class="attachment-thumb-small wp-post-image" alt="Boot CentOS 6.4 Installation Media" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img width="160" height="120" src="http://www.tecmint.com/wp-content/uploads/2013/03/cent-1.jpg" class="attachment-thumb-small wp-post-image" alt="Boot CentOS 6.4 Installation Media" /&gt;</noscript>																																		</a>
+					</div>
+										
+					<div class="tab-item-inner group">
+												<p class="tab-item-title"><a href="http://www.tecmint.com/centos-6-4-installation-guide-with-screenshots/" rel="bookmark" title="CentOS 6.4 Step by Step Installation Guide with Screenshots">CentOS 6.4 Step by Step Installation Guide with Screenshots</a></p>
+						<p class="tab-item-date">25 Mar, 2013</p>					</div>
+					
+				</li>
+							</ul><!--/.alx-tab-->
+			
+			
+
+		
+						
+			<ul id="tab-comments" class="alx-tab group avatars-enabled" style="display: none;">
+								<li>
+					
+												<div class="tab-item-avatar">
+							<a href="http://www.tecmint.com/how-to-install-and-configure-pfsense/comment-page-1/#comment-543483">
+								<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/93e89d9363013ae838e391856a25b067" class="avatar avatar-96 photo" height="96" width="96" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/93e89d9363013ae838e391856a25b067?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+						</div>
+												
+						<div class="tab-item-inner group">
+												
+							<div class="tab-item-name">Ratan says:</div>
+							<div class="tab-item-comment"><a href="http://www.tecmint.com/how-to-install-and-configure-pfsense/comment-page-1/#comment-543483">Dear Admin,
+
+This is very help full for those want to install...</a></div>
+							
+						</div>
+
+				</li>
+								<li>
+					
+												<div class="tab-item-avatar">
+							<a href="http://www.tecmint.com/iscsi-initiator-client-setup/comment-page-1/#comment-543433">
+								<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/8e8c78a3bbf728313e3b7e5353431397" class="avatar avatar-96 photo" height="96" width="96" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img alt='' src="http://0.gravatar.com/avatar/8e8c78a3bbf728313e3b7e5353431397?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+						</div>
+												
+						<div class="tab-item-inner group">
+												
+							<div class="tab-item-name">Nariman says:</div>
+							<div class="tab-item-comment"><a href="http://www.tecmint.com/iscsi-initiator-client-setup/comment-page-1/#comment-543433">Thank you very much for your posts, I have learned so...</a></div>
+							
+						</div>
+
+				</li>
+								<li>
+					
+												<div class="tab-item-avatar">
+							<a href="http://www.tecmint.com/setup-file-sharing-in-zentyal-3-4-pdc/comment-page-1/#comment-543355">
+								<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/7b2f75e2a2f4d303d9ee44400fbe8f89" class="avatar avatar-96 photo" height="96" width="96" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/7b2f75e2a2f4d303d9ee44400fbe8f89?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+						</div>
+												
+						<div class="tab-item-inner group">
+												
+							<div class="tab-item-name">Wade Noxon says:</div>
+							<div class="tab-item-comment"><a href="http://www.tecmint.com/setup-file-sharing-in-zentyal-3-4-pdc/comment-page-1/#comment-543355">So far, I'm finding Zentyal to be a real time saver.</a></div>
+							
+						</div>
+
+				</li>
+								<li>
+					
+												<div class="tab-item-avatar">
+							<a href="http://www.tecmint.com/things-to-do-after-installing-fedora-21-workstation/comment-page-4/#comment-542998">
+								<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/c75653ff4bf67d84e2ab86844658c0ea" class="avatar avatar-96 photo" height="96" width="96" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img alt='' src="http://0.gravatar.com/avatar/c75653ff4bf67d84e2ab86844658c0ea?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+						</div>
+												
+						<div class="tab-item-inner group">
+												
+							<div class="tab-item-name">iqbalmf says:</div>
+							<div class="tab-item-comment"><a href="http://www.tecmint.com/things-to-do-after-installing-fedora-21-workstation/comment-page-4/#comment-542998">how to install vga card ati after instaling fedora 21 ?...</a></div>
+							
+						</div>
+
+				</li>
+								<li>
+					
+												<div class="tab-item-avatar">
+							<a href="http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/comment-page-5/#comment-542997">
+								<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/8dc51f5edf6bb82d087f4dd95081d2d2" class="avatar avatar-96 photo" height="96" width="96" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img alt='' src="http://0.gravatar.com/avatar/8dc51f5edf6bb82d087f4dd95081d2d2?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+						</div>
+												
+						<div class="tab-item-inner group">
+												
+							<div class="tab-item-name">sanjay says:</div>
+							<div class="tab-item-comment"><a href="http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/comment-page-5/#comment-542997">Dear Ravi,
+Issue is resolved there is problem with permissions now it...</a></div>
+							
+						</div>
+
+				</li>
+								<li>
+					
+												<div class="tab-item-avatar">
+							<a href="http://www.tecmint.com/things-to-do-after-installing-fedora-21-workstation/comment-page-4/#comment-542918">
+								<img alt="" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/5f876bfdd46f03cb9b8a4d0ba63876a7" class="avatar avatar-96 photo" height="96" width="96" data-lazy-loaded="true" style="display: block;"><noscript>&lt;img alt='' src="http://1.gravatar.com/avatar/5f876bfdd46f03cb9b8a4d0ba63876a7?s=96&amp;amp;d=blank&amp;amp;r=G" class='avatar avatar-96 photo' height='96' width='96' /&gt;</noscript>							</a>
+						</div>
+												
+						<div class="tab-item-inner group">
+												
+							<div class="tab-item-name">Abby says:</div>
+							<div class="tab-item-comment"><a href="http://www.tecmint.com/things-to-do-after-installing-fedora-21-workstation/comment-page-4/#comment-542918">Thank you so much for this guide! Everything worked perfectly! </a></div>
+							
+						</div>
+
+				</li>
+							</ul><!--/.alx-tab-->
+
+		
+			</div>
+
+</div>
+<div id="text-4" class="widget widget_text"><h3>Download Free Linux eBooks</h3>			<div class="textwidget"><ol>
+<li><a href="http://tecmint.tradepub.com/free/w_makb09/prgm.cgi" rel="nofollow" target="_blank">Complete Linux Command Line Cheat Sheet</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_free01/prgm.cgi" rel="nofollow" target="_blank">The GNU/Linux Advanced Administration Guide</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_opeb01/prgm.cgi" rel="nofollow" target="_blank">Securing &amp; Optimizing Linux Servers</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_infk12/prgm.cgi" rel="nofollow" target="_blank">Linux Patch Management: Keeping Linux Up To Date</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_mach01/prgm.cgi" rel="nofollow" target="_blank">Introduction to Linux – A Hands on Guide</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_infk10/prgm.cgi" rel="nofollow" target="_blank">Understanding the Linux® Virtual Memory Manager</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_wile13/prgm.cgi" rel="nofollow" target="_blank">Linux Bible – Packed with Updates and Exercises</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_make07/prgm.cgi" rel="nofollow" target="_blank">A Newbie’s Getting Started Guide to Linux</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_linu01/prgm.cgi" rel="nofollow" target="_blank">Linux from Scratch – Create Your Own Linux OS</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_pack42/prgm.cgi" rel="nofollow" target="_blank">Linux Shell Scripting Cookbook, Second Edition</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_opeb01/prgm.cgi" rel="nofollow" target="_blank">Securing &amp; Optimizing Linux: The Hacking Solution</a></li>
+<li><a href="http://tecmint.tradepub.com/free/w_infk09/prgm.cgi" rel="nofollow" target="_blank">User Mode Linux – Understanding and Administration</a></li>
+</ol></div>
+		</div><div id="text-22" class="widget widget_text">			<div class="textwidget"><center><a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Bash Guide for Beginners&#39;,&#39;tecmint.tradepub.com&#39;)" href="http://tecmint.tradepub.com/free/w_mach02/prgm.cgi" target="_blank" rel="nofollow"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/w_mach02c4.gif"></a></center>
+
+<span style="font-size:17px; font-weight:600;"><b style="color:red">Free eBook</b> <a onclick="ga(&#39;send&#39;,&#39;event&#39;,&#39;Bash Guide for Beginners&#39;,&#39;tecmint.tradepub.com&#39;)" rel="nofollow" target="_blank" href="http://tecmint.tradepub.com/free/w_mach02/prgm.cgi">Bash Guide for Beginners</a></span></div>
+		</div>			
+		</div><!--/.sidebar-content-->
+		
+	</div><!--/.sidebar-->
+
+		
+
+				</div><!--/.main-inner-->
+			</div><!--/.main-->			
+		</div><!--/.container-inner-->
+	</div><!--/.container-->
+
+	<footer id="footer">
+		
+				<section class="container" id="footer-ads">
+			<div class="container-inner">
+				<div id="text-18" class="widget widget_text"><h3>Join our TecMint Community and become an Author</h3>			<div class="textwidget"><style>
+.authorlist { margin: 5px;padding: 5px;height: auto;width: auto; float: left; text-align: center;}	
+.authorlist img { display: inline;margin: 5px 10px;padding:2px; border: 5px solid #eee;border-radius: 50%;}
+.desc { font-size: 15px; font-weight: normal;padding: 10px; text-align: center;}
+</style>
+
+
+<div class="authorlist">
+ <a target="_blank" href="http://www.tecmint.com/author/admin"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/ravi.jpeg" alt="Ravi Saive"></a>
+ <div class="desc">Ravi Saive</div>
+</div>
+<div class="authorlist">
+ <a target="_blank" href="http://www.tecmint.com/author/avishek"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/avi.jpeg" alt="Avishek Kumar"></a>
+ <div class="desc">Avishek Kumar</div>
+</div>
+<div class="authorlist">
+ <a target="_blank" href="http://www.tecmint.com/author/gacanepa/"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/d9d14c5b51331864398e6288cb0c2091" alt="Gabriel Cánepa"></a>
+ <div class="desc">Gabriel Cánepa</div>
+</div>
+<div class="authorlist">
+ <a target="_blank" href="http://www.tecmint.com/author/cezarmatei"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/cezar.jpeg" alt="Matei Cezar"></a>
+ <div class="desc">Matei Cezar</div>
+</div>
+<div class="authorlist">
+ <a target="_blank" href="http://www.tecmint.com/author/navin"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/navin.jpeg" alt="Narad Shrestha"></a>
+ <div class="desc">Narad Shrestha</div>
+</div>
+
+
+<div class="authorlist">
+ <a target="_blank" href="http://www.tecmint.com/author/dos2009"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/mohammed.jpeg" alt="Mohammad Dosoukey"></a>
+ <div class="desc">Mohammad Dosoukey</div>
+</div>
+<div class="authorlist">
+ <a target="_blank" href="http://www.tecmint.com/author/anusha"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/anu.jpeg" alt="Anusha Saive"></a>
+ <div class="desc">Anusha Saive</div>
+</div>
+<div class="authorlist">
+ <a target="_blank" href="http://www.tecmint.com/author/babinlonston"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/bob.jpeg" alt="Babin Lonston"></a>
+ <div class="desc">Babin Lonston</div>
+</div>
+<div class="authorlist">
+ <a target="_blank" href="http://www.tecmint.com/author/hannyhelal"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/hany.jpeg" alt="Hanny Helal"></a>
+ <div class="desc">Hanny Helal</div>
+</div></div>
+		</div>			</div><!--/.container-inner-->
+		</section><!--/.container-->
+				
+				
+		<section class="container" id="footer-widgets">
+			<div class="container-inner">
+				
+				<div class="pad group">
+																
+					<div class="footer-widget-1 grid one-third ">
+						<div id="alxposts-3" class="widget widget_alx_posts">
+<h3>Linux Monitoring Tools</h3>
+			
+	<ul class="alx-posts group ">
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/mytop-mysql-database-monitoring-in-rhel-centos-fedora/" rel="bookmark" title="Mytop (MySQL Database Monitoring) in RHEL/CentOS 6.3/5.6 and Fedora 17/12">Mytop (MySQL Database Monitoring) in RHEL/CentOS 6.3/5.6 and Fedora 17/12</a></p>
+				<p class="post-item-date">8 Nov, 2012</p>			</div>
+			
+		</li>
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/install-cacti-network-monitoring-on-rhel-centos-6-3-5-8-and-fedora-17-12/" rel="bookmark" title="Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 21-12">Install Cacti (Network Monitoring) on RHEL/CentOS 7.x/6.x/5.x and Fedora 21-12</a></p>
+				<p class="post-item-date">19 Mar, 2015</p>			</div>
+			
+		</li>
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/real-time-interactive-ip-lan-monitoring-with-iptraf-tool/" rel="bookmark" title="Real Time Interactive IP LAN Monitoring with IPTraf Tool">Real Time Interactive IP LAN Monitoring with IPTraf Tool</a></p>
+				<p class="post-item-date">8 Feb, 2013</p>			</div>
+			
+		</li>
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/install-iftop-bandwidth-monitoring-tool-in-rhel-centos-fedora/" rel="bookmark" title="Install IfTop (Bandwidth Monitoring) Tool in RHEL / CentOS / Fedora">Install IfTop (Bandwidth Monitoring) Tool in RHEL / CentOS / Fedora</a></p>
+				<p class="post-item-date">5 Oct, 2012</p>			</div>
+			
+		</li>
+			</ul><!--/.alx-posts-->
+
+</div>
+					</div>
+					
+																						
+					<div class="footer-widget-2 grid one-third ">
+						<div id="alxposts-4" class="widget widget_alx_posts">
+<h3>Linux Interview Questions</h3>
+			
+	<ul class="alx-posts group ">
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/ls-command-interview-questions/" rel="bookmark" title="15 Interview Questions on Linux “ls” Command – Part 1">15 Interview Questions on Linux “ls” Command – Part 1</a></p>
+				<p class="post-item-date">30 Sep, 2014</p>			</div>
+			
+		</li>
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/linux-interview-questions-and-answers-for-linux-beginners/" rel="bookmark" title="10 Linux Interview Questions and Answers for Linux Beginners – Part 3">10 Linux Interview Questions and Answers for Linux Beginners – Part 3</a></p>
+				<p class="post-item-date">7 Dec, 2013</p>			</div>
+			
+		</li>
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/ssh-interview-questions/" rel="bookmark" title="10 Useful SSH (Secure Shell) Interview Questions and Answers">10 Useful SSH (Secure Shell) Interview Questions and Answers</a></p>
+				<p class="post-item-date">15 Mar, 2014</p>			</div>
+			
+		</li>
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/basic-linux-interview-questions-and-answers/" rel="bookmark" title="11 Basic Linux Interview Questions and Answers">11 Basic Linux Interview Questions and Answers</a></p>
+				<p class="post-item-date">18 Nov, 2013</p>			</div>
+			
+		</li>
+			</ul><!--/.alx-posts-->
+
+</div>
+					</div>
+					
+																						
+					<div class="footer-widget-3 grid one-third last">
+						<div id="alxposts-5" class="widget widget_alx_posts">
+<h3>Open Source Tools</h3>
+			
+	<ul class="alx-posts group ">
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/playonlinux-run-windows-applications-and-games-on-linux/" rel="bookmark" title="PlayOnLinux – Run Windows Applications and Games on Linux">PlayOnLinux – Run Windows Applications and Games on Linux</a></p>
+				<p class="post-item-date">21 Mar, 2013</p>			</div>
+			
+		</li>
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/install-iotop-monitor-linux-disk-io-in-rhel-centos-and-fedora/" rel="bookmark" title="Install Iotop (Monitor Linux Disk I/O) in RHEL, CentOS and Fedora">Install Iotop (Monitor Linux Disk I/O) in RHEL, CentOS and Fedora</a></p>
+				<p class="post-item-date">24 Jul, 2012</p>			</div>
+			
+		</li>
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/watch-movies-online-using-popcorn-time/" rel="bookmark" title="Watch Favorite Movies/TV Shows Online Using “Popcorn Time” in Your Linux Desktop">Watch Favorite Movies/TV Shows Online Using “Popcorn Time” in Your Linux Desktop</a></p>
+				<p class="post-item-date">16 Mar, 2015</p>			</div>
+			
+		</li>
+				<li>
+			
+						
+			<div class="post-item-inner group">
+								<p class="post-item-title"><a href="http://www.tecmint.com/install-opera-12-00-browser-in-rhel-centos-6-3-and-fedora-17-16-15/" rel="bookmark" title="Install Opera 12.11 (Browser) in RHEL/CentOS 6.3 and Fedora 17/16/15">Install Opera 12.11 (Browser) in RHEL/CentOS 6.3 and Fedora 17/16/15</a></p>
+				<p class="post-item-date">29 Nov, 2012</p>			</div>
+			
+		</li>
+			</ul><!--/.alx-posts-->
+
+</div>
+					</div>
+					
+															</div><!--/.pad-->
+				
+			</div><!--/.container-inner-->
+		</section><!--/.container-->	
+				
+					<nav class="nav-container group" id="nav-footer">
+				<div class="nav-toggle"><i class="fa fa-bars"></i></div>
+				<div class="nav-text"><!-- put your mobile menu text here --></div>
+				<div class="nav-wrap"><ul id="menu-footer" class="nav container group"><li id="menu-item-10442" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10442"><a href="http://www.tecmint.com/advertise/">Advertise</a></li>
+<li id="menu-item-10441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10441"><a href="http://www.tecmint.com/services/">Linux Services</a></li>
+<li id="menu-item-10435" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10435"><a href="http://www.tecmint.com/copyright-policy/">Copyright Policy</a></li>
+<li id="menu-item-10436" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10436"><a href="http://www.tecmint.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-10437" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10437"><a href="http://www.tecmint.com/contact-us/">Contact Us</a></li>
+</ul></div>
+			</nav><!--/#nav-footer-->
+				
+		<section class="container" id="footer-bottom">
+			<div class="container-inner">
+				
+				<a id="back-to-top" href="http://www.tecmint.com/ifconfig-command-examples/#"><i class="fa fa-angle-up"></i></a>
+				
+				<div class="pad group">
+					
+					<div class="grid one-half">
+						
+												
+						<div id="copyright">
+															<p>Tecmint: Linux Howtos, Tutorials &amp; Guides © 2015. All Rights Reserved.</p>
+
+<p>This work is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license"><b style="color:#ccc;">(cc) BY-NC</b></a></p>
+  <p>The material in this site cannot be republished either online or offline, without our permission.</p>
+													</div><!--/#copyright-->
+						
+												
+					</div>
+					
+					<div class="grid one-half last">	
+						<ul class="social-links"><li><a rel="nofollow" class="social-tooltip" title="twitter" href="http://twitter.com/tecmint" target="Array"><i class="fa fa-twitter" style="color: #33ccff;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="facebook" href="https://www.facebook.com/TecMint" target="Array"><i class="fa fa-facebook" style="color: #3b5998;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Google+" href="https://plus.google.com/101049688653487009744" target="Array"><i class="fa fa-google-plus" style="color: #db4a39;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Rss" href="http://www.tecmint.com/feed" target="Array"><i class="fa fa-rss" style="color: #ff6600;"></i></a></li><li><a rel="nofollow" class="social-tooltip" title="Youtube" href="https://www.youtube.com/channel/UCkiRkzdLvoGBtW_YArytJlQ" target="Array"><i class="fa fa fa-youtube-square" style="color: #c4302b;"></i></a></li></ul>					</div>
+				
+				</div><!--/.pad-->
+				
+			</div><!--/.container-inner-->
+		</section><!--/.container-->
+		
+	</footer><!--/#footer-->
+
+<!--/#wrapper-->
+
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/form.js"></script>
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/jquery.sonar.min.js"></script>
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/lazy-load.js"></script>
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/jquery.fancybox.pack.js"></script>
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/light.js"></script>
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/scripts.js"></script>
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/jquery.sharrre.min.js"></script>
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/comment-reply.min.js"></script>
+<!--[if lt IE 9]>
+<script src="http://www.tecmint.com/wp-content/themes/tecmint/js/ie/respond.js"></script>
+<![endif]-->
+
+<!--     ===== START Dreamgrow Scroll Triggered Box =====   -->
+
+<div class="dgd_stb_box clean_white" id="dgd_scrollbox-11027" style="padding: 10px; width: 300px; opacity: 1; bottom: 10px; right: 10px; display: block;"><a class="dgd_stb_box_close dgd_stb_box_x" href="javascript:void(0);"> </a><h5>Join Over 62000+ Linux Users</h5>
+<div id="social_sprite">
+<ol>
+	<li><a href="https://www.facebook.com/TecMint" target="_blank"><span id="soc_fbuk" class="soc_icon"></span><span class="count">48100</span></a></li>
+	<li><a href="http://twitter.com/tecmint" target="_blank"><span id="soc_twitter" class="soc_icon"> </span><span class="count">2222</span></a></li>
+	<li><a href="https://plus.google.com/101049688653487009744" target="_blank"><span id="soc_gplus" class="soc_icon"> </span><span class="count">11697</span></a></li>
+</ol>
+</div>
+Enter your email to get latest Linux Howto's
+
+<form class="stbContactForm" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow"><input name="uri" type="hidden" value="tecmint"><input name="loc" type="hidden" value="en_US"><input class="Text" name="email" type="text" value="Enter Your Email Address :)">
+<input class="stb-submit" type="submit" value="Subscribe"></form>
+<p class="stbMsgArea"></p><ul class="stb_social"></ul></div>
+
+
+<!--     ===== END OF Dreamgrow Scroll Triggered Box =====   -->
+
+<script type="text/javascript" src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/element.js"></script>
+<div class="fixedBar">
+<div class="boxfloat">
+<ul id="tips">
+<li><a href="http://www.tecmint.com/51-useful-lesser-known-commands-for-linux-users/">51 Useful Lesser Known Commands for Linux Users</a></li>
+<li><a href="http://www.tecmint.com/linux-server-hardening-security-tips/">25 Hardening Security Tips for Linux Servers</a></li>
+<li><a href="http://www.tecmint.com/60-commands-of-linux-a-guide-from-newbies-to-system-administrator/">60 Commands of Linux : A Guide from Newbies to System Administrator</a></li>
+<li><a href="http://www.tecmint.com/command-line-tools-to-monitor-linux-performance/">20 Command Line Tools to Monitor Linux Performance</a></li>
+<li style="display: list-item;"><a href="http://www.tecmint.com/18-tar-command-examples-in-linux/">18 Tar Command Examples in Linux</a></li>
+<li><a href="http://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/">20 Linux YUM (Yellowdog Updater, Modified) Commands</a></li>
+<li><a href="http://www.tecmint.com/useful-basic-commands-of-apt-get-and-apt-cache-for-package-management/">25 Useful Basic Commands of APT-GET and APT-CACHE</a></li>
+<li><a href="http://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/">20 Funny Commands of Linux or Linux is Fun in Terminal</a></li>
+<li><a href="http://www.tecmint.com/35-practical-examples-of-linux-find-command/">35 Practical Examples of Linux Find Command</a></li>
+<li><a href="http://www.tecmint.com/sed-command-to-create-edit-and-manipulate-files-in-linux/">Preparation for the LFCS (Linux Fundation Certified SysAdmin) Exam</a></li>
+<li><a href="http://www.tecmint.com/installing-network-services-and-configuring-services-at-system-boot/">Preparation for the LFCE (Linux Fundation Certified Engineer) Exam</a></li>
+</ul>
+</div>
+</div><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./15 Useful  ifconfig  Commands to Configure Network Interface in Linux_files/translate-32.png" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+</body></html>

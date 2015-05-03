@@ -1,0 +1,97 @@
+Exercise2:
+
+1. Command "ifconfig" 
+MAC 70:54:d2:1b:23:3f
+IPV4 10.105.11.107
+IVP6 (Scope: link) fe80::7254:d2ff:fe1b:233f
+
+2. Command "ifconfig"
+MTU size = 1500 bytes
+MTU = Maximum Transmission Unit (The maximum size of data unit that can be passed onto the lower layers (physical layer) by the ethernet adapter)
+
+3. Command "ethtool eth0"
+Ethernet mode: Full Duplex
+Speed: 100 Mbps
+cable type: Twisted Pair
+
+4. Commands "ifconfig" or "netstat -i"
+Transmitted: 526060132 packets
+Received: 396832651 packets
+Dropped: 83950 packets dropped (on the receiver side)
+Dropped: 0 packets dropped (on the transmission side)
+
+5. Commands "ifconfig && netstat -i"
+When we run the following command, we get the exact same statistics for both commands. Hence we conclude that in the interval between firing the two commands, there are some packets transmitted and received. This is the difference which is reflected in firing the commands separately.
+
+6. Command "ifconfig"
+0 packets suffered collission. This is because we are operating in full duplex mode, over star topology. Here, there is no MAC employed as it is not needed (there are separate wires for sending and receiving), which is why there is no collision as there is no possibility of the same.
+
+7. Command "ifconfig"
+Received : 65.5 GB
+Transmitted : 501.6 GB
+
+8. Command "ifconfig"
+We googled, and found that our manufacturer is "Pegatron Corporation (Made in China)". the first six bits are 70:54:d2 in hex, which are uniquely used to identify the manufacturer
+
+9. The interface lo is for local loopback. It is a kind of interface which has a single endpoint (the localhost in our case). Hence, we do not need a unique identification id such as MAC address to identify the same. 
+Experiment:
+1. Configure tcpdump to listen on the loopback interface lo using "tcpdump -i lo"
+2. Now ping your machine on the local host "ping 127.0.0.1"
+3. Ping a separate host such as moodle using "ping moodle.iitb.ac.in"
+Result:
+You notice that tcpdump records the ping made to localhost, and does not record the ping made moodle.iitb.ac.in
+Inference:
+The lo interface only listens on local loopback transmissions. There were requests from localhost to localhost, and then there were replies back from localhost to localhost (found via tcpdump). For transmissions/receptions from moodle, the ethernet (eth0) adaptor is used, which we were not listening on using tcpdump.
+
+10.
+1. We used the command "route", to find out the IP of the default gateway (10.105.1.250)
+2. We used the command "arp" to find out its MAC address ("arp 10.105.1.250"). The MAC address is 00:19:56:ed:66:c1.
+
+
+Exercise 4
+
+1. 
+uml1: 10.0.0.1 on lo, 10.0.0.2, 10.0.0.3, 10.0.0.4 on eth1
+uml2: 10.0.0.2 on lo, 10.0.0.1, 10.0.0.3, 10.0.0.4 on eth1
+uml3: 10.0.0.1, 10.0.0.2 on eth1, 10.0.0.3 and 10.0.0.4 on lo, 10.0.0.5, 10.0.0.6 on eth2
+uml4: 10.0.0.5 on lo, 10.0.0.6 , 10.0.0.7 on eth1, 
+uml5: 10.0.0.6 on lo, 10.0.0.7 on lo, 10.0.0.5 on eth1, 10.0.0.8 on eth2
+uml6: 10.0.0.8 on lo
+
+This is explained as follows. 
+Before the bridges are set up the respective hosts, they are connected as such, as shown in the figure, except that they all have eth1 set up as their default network interface cards while sending data. This is why, we can communicate with 10.0.0.5 from uml3 over the eth2 interface of uml3 (by explicitly changing the sending interface to eth2) and the eth1 interface of 10.0.0.5, but the opposite (communicating with 10.0.0.3/4 from uml4) is not possible, since uml3 receives packets from uml4 on its eth2 interface, but it is configured to respond on its eth1 interface, which cannot be changed.
+
+2.
+10.0.0.1 on lo, 10.0.0.2/5/6/7 on its eth1 interface. This is because the bridge was created at uml3, which connects net0 and net1, and uml3 ceases to act as host, as it is now treated as a bridge.
+
+3.
+10.0.0.1 on lo, 10.0.0.2/5/8 on its eth1 interface. Now additionally, the bridge at uml5 connects net1 and net2, and is now treated as a bridge. Hence, 10.0.0.8 is accessible, and 10.0.0.6 and 10.0.0.7 no longer can be accessed as uml5 is no more a host (it is now a bridge)
+
+4.
+The learning table at the bridges at uml3 as well as uml5 contain the entries for 10.0.0.1 and 10.0.0.8, apart from their own entries. Commands used were "brctl setageing <bridgename> 0" to delete all entries, and then "brctl setageing <bridgename> 300" to reset. Now, we pinged 10.0.0.8 from the terminal of uml 1, and noted down the results. Note that the documentation says that setting ageing to 0 should lead to an infinite buffer flush time, which however, is not getting reflected.
+Yes, they match the theory, because only these MAC addresses will be present in the packets sent and received, and the bridges listen in on them to learn from them.
+
+5.
+The bridge at uml3 is the root bridge. This happened because its ID (8000.fefd00000301) was lesser than the ID of the bridge at uml5 (8000.fefd00000501).
+Designated Bridges
+Net0: bridge at uml3
+Net1: bridge at uml3
+Net2: bridge at uml5
+(Commands used: brctl stp <bridgename> on, brctl showstp <bridgename>)
+
+6. 
+on uml3:
+brctl addbr br1
+brctl addif br1 eth1
+brctl addif br1 eth2
+ifconfig br1 up
+on uml5:
+brctl addbr br1
+brctl addif br1 eth1
+brctl addif br1 eth2
+ifconfig br1 up
+If the spanning tree protocol is to be turned on, the command brctl stp br1 on is run on both uml3 and uml5
+
+Extra Credit:
+1. 300s (brctl showstp <bridgename>)
+2. We brought down the root bridge, and then the bridge at uml5 becomes the root bridge. The designated bridge for net1 is the one at uml5.

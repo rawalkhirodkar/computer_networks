@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://danielmiessler.com/study/tcpdump/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>A tcpdump Tutorial and Primer</title><link rel="stylesheet" href="./A tcpdump Tutorial and Primer_files/style.css" type="text/css" media="screen">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+<!-- This site is optimized with the Yoast WordPress SEO Premium plugin v2.0.1 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="robots" content="noodp,noydir">
+<meta name="description" content="A tcpdump primer, tutorial, and reference aimed at giving you maximum traffic visibility in minimum time.">
+<link rel="canonical" href="./A tcpdump Tutorial and Primer_files/A tcpdump Tutorial and Primer.html">
+<link rel="publisher" href="https://plus.google.com/+Danielmiessler/about">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A tcpdump Tutorial and Primer">
+<meta property="og:description" content="A tcpdump primer, tutorial, and reference aimed at giving you maximum traffic visibility in minimum time.">
+<meta property="og:url" content="https://danielmiessler.com/study/tcpdump/">
+<meta property="og:site_name" content="danielmiessler.com">
+<meta property="article:author" content="https://www.facebook.com/danielrmiessler">
+<meta property="og:image" content="//dmiessler.cachefly.net/images/tcp_header.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="A tcpdump primer, tutorial, and reference aimed at giving you maximum traffic visibility in minimum time.">
+<meta name="twitter:title" content="A tcpdump Tutorial and Primer">
+<meta name="twitter:site" content="@danielmiessler">
+<meta name="twitter:domain" content="danielmiessler.com">
+<meta name="twitter:image:src" content="//dmiessler.cachefly.net/images/tcp_header.png">
+<meta name="twitter:creator" content="@danielmiessler">
+<!-- / Yoast WordPress SEO Premium plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="danielmiessler.com » Feed" href="http://feeds.danielmiessler.com/danielmiessler">
+<link rel="alternate" type="application/rss+xml" title="danielmiessler.com » Comments Feed" href="https://danielmiessler.com/comments/feed/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://danielmiessler.com/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 4.1.1">
+<link rel="Shortcut Icon" href="https://dmiessler.cachefly.net/wp-content/themes/danielmiessler/images/favicon.png" type="image/x-icon">
+<script async="" src="./A tcpdump Tutorial and Primer_files/analytics.js"></script><script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script><style type="text/css"></style><!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script type="text/javascript" async="" src="./A tcpdump Tutorial and Primer_files/embed.js"></script><script type="text/javascript" src="https://ads.dfgio.com/loader.js?client=topaz0003"></script></head>
+<body class="page page-id-16093 page-child parent-pageid-16097 page-template-default content-sidebar" itemscope="itemscope" itemtype="http://schema.org/WebPage"><div class="site-container"><header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div class="wrap"><div class="title-area"><p class="site-title" itemprop="headline"><a title="danielmiessler.com" href="https://danielmiessler.com/"><img src="./A tcpdump Tutorial and Primer_files/logo.png" alt="daniel miessler logo"></a></p></div><aside class="widget-area header-widget-area"><nav class="nav-primary" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement"><div class="wrap"><ul id="menu-main-nav" class="menu genesis-nav-menu menu-primary"><li id="menu-item-18732" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-18732"><a href="https://danielmiessler.com/">Home</a></li>
+<li id="menu-item-16378" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16378"><a href="https://danielmiessler.com/blog/">Blog</a></li>
+<li id="menu-item-16374" class="menu-item menu-item-type-post_type menu-item-object-page current-page-ancestor menu-item-16374"><a href="https://danielmiessler.com/study/">Study</a></li>
+<li id="menu-item-44502" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44502"><a href="https://danielmiessler.com/ideas/">Ideas</a></li>
+<li id="menu-item-16381" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16381"><a href="https://danielmiessler.com/projects/">Projects</a></li>
+<li id="menu-item-16427" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16427"><a href="https://danielmiessler.com/writing/">Writing</a></li>
+<li id="menu-item-16382" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16382"><a href="https://danielmiessler.com/connect/">Connect</a></li>
+<li id="menu-item-16380" class="last menu-item menu-item-type-post_type menu-item-object-page menu-item-16380"><a href="https://danielmiessler.com/about/">About</a></li>
+</ul></div></nav></aside></div></header><div class="site-inner"><div class="wrap"><div class="content-sidebar-wrap"><main class="content" role="main" itemprop="mainContentOfPage"><article class="post-16093 page type-page status-publish entry" itemscope="itemscope" itemtype="http://schema.org/CreativeWork"><header class="entry-header"><h1 class="entry-title" itemprop="headline">A tcpdump Tutorial and Primer</h1> 
+<div class="breadcrumb" itemprop="breadcrumb">
+		<span prefix="v: http://rdf.data-vocabulary.org/#">
+			<span typeof="v:Breadcrumb"><a href="https://danielmiessler.com/" rel="v:url" property="v:title">Home</a></span> » <span typeof="v:Breadcrumb"><a href="https://danielmiessler.com/study/" rel="v:url" property="v:title">Study</a></span> » <span typeof="v:Breadcrumb"><span class="breadcrumb_last" property="v:title">A tcpdump Tutorial and Primer</span></span>
+		</span></div></header><div class="entry-content" itemprop="text"><p style="text-align:center"><img width="640" height="300" src="./A tcpdump Tutorial and Primer_files/tcp_header.png" alt="tcp_header"></p>
+
+<ul class="toc"> 
+    <li><a href="https://danielmiessler.com/study/tcpdump/#options">Options</a></li>
+    <li><a href="https://danielmiessler.com/study/tcpdump/#basics">Basic Usage</a></li> 
+    <li><a href="https://danielmiessler.com/study/tcpdump/#common">Common Syntax</a></li> 
+    <li><a href="https://danielmiessler.com/study/tcpdump/#writing">Writing to a File</a></li> 
+    <li><a href="https://danielmiessler.com/study/tcpdump/#creative">Getting Creative</a></li> 
+    <li><a href="https://danielmiessler.com/study/tcpdump/#advanced">Advanced</a></li>  
+</ul>
+
+<p><a href="http://en.wikipedia.org/wiki/Tcpdump"><code>tcpdump</code></a> is the premier network analysis tool for <a href="http://en.wikipedia.org/wiki/Information_security">information security</a> professionals. Having a solid grasp of this über-powerful application is mandatory for anyone desiring a thorough understanding of <a href="http://en.wikipedia.org/wiki/TCPIP">TCP/IP</a>. Many prefer to use higher level analysis tools such as <a href="http://www.ethereal.com/"><strike>Ethereal</strike></a> <a href="http://www.wireshark.org/">Wireshark</a>, but I believe this to usually be a mistake.</p>
+
+<p>In a discipline so dependent on a true understanding of concepts vs. <a href="http://en.wikipedia.org/wiki/Rote_learning">rote learning</a>, it’s important to stay fluent in the underlying mechanics of the TCP/IP suite. A thorough grasp of these protocols allows one to troubleshoot at a level far beyond the average analyst, but mastery of the protocols is only possible through continued exposure to them.</p>
+
+<p>When using a tool that displays network traffic a more natural (raw) way the burden of analysis is placed directly on the human rather than the application. This approach cultivates continued and elevated understanding of the TCP/IP suite, and for this reason I <em>strongly</em> advocate using <code>tcpdump</code> instead of other tools whenever possible.</p>
+
+<p></p><pre class="codeblock"><strong>15:31:34.079416</strong> <font color="orange">IP</font> (tos 0x0, ttl  <font color="blue">64</font>, id 20244, offset 0, flags <font color="red">[DF]</font>, 
+proto: TCP (6), length: <font color="green">60</font>) source.35970 &gt; dest.80: S, cksum 0x0ac1 
+(correct), 2647022145:2647022145(0) win 5840<font color="green"> 0x0000:  4500 003c 4f14 4000 
+4006 7417 0afb 0257  E..  0x0010:  4815 222a 8c82 0050 9dc6 5a41 0000 
+0000  H."*...P..ZA....  0x0020:  a002 16d0 0ac1 0000 0204 05b4 
+0402 080a  ................  0x0030:  14b4 1555 0000 0000 0103 0302</font></pre><p></p>
+
+<h2><a name="options">Options</a></h2>
+
+<p>Below are a few options (with examples) that will help you greatly when working with the tool. They’re easy to forget and/or confuse with other types of filters, i.e. ethereal, so hopefully this page can serve as a reference for you, as it does me.</p>
+
+<p>First off, I like to add a few options to the <code>tcpdump</code> command itself, depending on what I’m looking at. The first of these is <strong>-n</strong>, which requests that names are not resolved, resulting in the IPs themselves always being displayed. The second is <strong>-X</strong>, which displays both hex and ascii content within the packet.  The final one is <strong>-S</strong>, which changes the display of sequence numbers to absolute rather than relative. The idea there is that you can’t see weirdness in the sequence numbers if they’re being hidden from you. Remember, the advantage of using <code>tcpdump</code> vs. another tool is getting manual interaction with the packets.</p>
+
+<p>It’s also important to note that <code>tcpdump</code> only takes the first <strike>68</strike> 96 bytes of data from a packet by default. If you would like to look at more, add the <strong>-s <em>number</em></strong> option to the mix, where <em>number</em> is the number of bytes you want to capture. I recommend using 0 (zero) for a snaplength, which gets everything. Here’s a short list of the options I use most:</p>
+
+<ul class="nobullet">
+<li><strong><code><font color="blue">-i any</font></code></strong> : Listen on all interfaces just to see if you’re seeing any traffic.</li>
+<li><strong><code><font color="blue">-n</font></code></strong> : Don’t resolve hostnames.</li>
+<li><strong><code><font color="blue">-nn</font></code></strong> : Don’t resolve hostnames <em>or</em> port names.</li>
+<li><strong><code><font color="blue">-X</font></code></strong> : Show the packet’s <em>contents</em> in both <a href="http://en.wikipedia.org/wiki/Hexidecimal">hex</a> and <a href="http://en.wikipedia.org/wiki/Ascii">ASCII</a>.</li>
+<li><strong><code>-XX</code></strong> : Same as <strong><code><font color="blue">-X</font></code></strong>, but also shows the ethernet header.</li>
+<li><strong><code><font color="blue">-v, -vv, -vvv</font></code></strong> : Increase the amount of packet information you get back.</li>
+<li><strong><code><font color="blue">-c</font></code></strong> : Only get <em>x</em> number of packets and then stop.</li>
+<li><strong><code><font color="blue">-s</font></code></strong> : Define the <em>snaplength</em> (size) of the capture in bytes. Use <code>-s0</code> to get everything, unless you are intentionally capturing less.</li>
+<li><strong><code><font color="blue">-S</font></code></strong> : Print absolute sequence numbers.</li>
+<li><strong><code><font color="blue">-e</font></code></strong> : Get the ethernet header as well.</li>
+<li><strong><code><font color="blue">-q</font></code></strong> : Show less protocol information.</li>
+<li><strong><code><font color="blue">-E</font></code></strong> : Decrypt IPSEC traffic by providing an encryption key.</li>
+</ul>
+
+<p class="post_note">[ The default snaplength as of <code>tcpdump</code> 4.0 has changed from 68 bytes to 96 bytes. While this will give you more of a packet to see, it still won’t get everything. Use <code>-s 1514</code> to get full coverage ]</p>
+
+<h2><a name="basics">Basic Usage</a></h2>
+
+<p>So, based on the kind of traffic I’m looking for, I use a different combination of options to <code>tcpdump</code>, as can be seen below:</p>
+
+<p>
+</p><ol>
+<li><strong>Basic communication</strong> <small>// see the basics without many options</small>
+<p class="command"># <span class="first">tcpdump</span> <span class="third">-nS</span></p></li>
+
+<li><strong>Basic communication (very verbose)</strong> <small>// see a good amount of traffic, with verbosity and no name help</small>
+<p class="command"># <span class="first">tcpdump</span> <span class="third">-nnvvS</span></p></li>
+
+<li><strong>A deeper look at the traffic</strong> <small>// adds -X for payload but doesn’t grab any more of the packet</small>
+<p class="command"># <span class="first">tcpdump</span> <span class="third">-nnvvXS</span></p></li>
+
+<li><strong>Heavy packet viewing</strong> <small>// the final “s” increases the snaplength, grabbing the whole packet</small>
+<p class="command"># <span class="first">tcpdump</span> <span class="third">-nnvvXSs</span> <span class="fifth">1514</span></p></li>
+
+</ol>
+<p></p>
+
+<p>
+Here’s a capture of exactly two (<code>-c2</code>) <a href="http://en.wikipedia.org/wiki/Icmp">ICMP</a> packets (a <a href="http://www.networksorcery.com/enp/protocol/icmp/msg8.htm">ping</a> and <a href="http://www.networksorcery.com/enp/protocol/icmp/msg0.htm">pong</a>) using some of the options described above. Notice how much we see about each packet.
+</p>
+
+<p></p><pre class="codeblock"><font color="red">hermes</font> <font color="blue">root</font> # tcpdump -nnvXSs 0 -c2 icmp
+tcpdump: listening on eth0, link-type EN10MB (Ethernet), 23:11:10.370321 IP 
+(tos 0x20, ttl  48, id 34859, offset 0, flags [none], length: 84) 
+69.254.213.43 &gt; 72.21.34.42: icmp 64: echo request seq 0
+<font color="green">
+        0x0000:  4520 0054 882b 0000 3001 7cf5 45fe d52b  E..T.+..0.|.E..+
+        0x0010:  4815 222a 0800 3530 272a 0000 25ff d744  H."<em>..50'</em>..%..D
+        0x0020:  ae5e 0500 0809 0a0b 0c0d 0e0f 1011 1213  .^..............
+        0x0030:  1415 1617 1819 1a1b 1c1d 1e1f 2021 2223  .............!"#
+        0x0040:  2425 2627 2829 2a2b 2c2d 2e2f 3031 3233  $%&amp;'()<em>+,-./0123
+        0x0050:  3435 3637                                4567</em></font><em>
+23:11:10.370344 IP (tos 0x20, ttl  64, id 35612, offset 0, flags [none], 
+length: 84) 72.21.34.42 &gt; 69.254.213.43: icmp 64: echo reply seq 0<font color="green">
+        0x0000:  4520 0054 8b1c 0000 4001 6a04 4815 222a  E..T....@.j.H."</font></em><font color="green">
+        0x0010:  45fe d52b 0000 3d30 272a 0000 25ff d744  E..+..=0'<em>..%..D
+        0x0020:  ae5e 0500 0809 0a0b 0c0d 0e0f 1011 1213  .^..............
+        0x0030:  1415 1617 1819 1a1b 1c1d 1e1f 2021 2223  .............!"#
+        0x0040:  2425 2627 2829 2a2b 2c2d 2e2f 3031 3233  $%&amp;'()</em>+,-./0123
+        0x0050:  3435 3637                                4567</font>
+2 packets captured
+2 packets received by filter
+0 packets dropped by kernel
+<font color="red">hermes</font> <font color="blue">root</font> # 
+</pre><p></p><p></p>
+
+<h2><a name="common">Common Syntax</a></h2>
+
+<p>Expressions allow you to trim out various types of traffic and find exactly what you’re looking for. Mastering the expressions and learning to combine them creatively is what makes one truly powerful with <code>tcpdump</code>. There are three main types of expression: <code>type</code>, <code>dir</code>, and <code>proto</code>.</p>
+
+<p>Type options are <code>host</code>, <code>net</code>, and <code>port</code>. Direction is indicated by <code>dir</code>, and there you can have <code>src</code>, <code>dst</code>, <code>src or dst</code>, and <code>src and dst</code>. Here are a few that you should definitely be comfortable with:</p>
+
+<p>
+</p><ul>
+<li><strong><code>host</code></strong> <small>// look for traffic based on IP address (also works with hostname if you’re not using <strong>-n</strong>)</small>
+<br>
+<p></p>
+
+<p class="command"># <span class="first">tcpdump</span> <span class="second">host</span> <span class="third">1.2.3.4</span></p>
+
+<p></p></li><p></p>
+
+<p></p><li><strong><code>src</code></strong>, <strong><code>dst</code></strong> <small>// find traffic from only a source or destination (eliminates one side of a <strong>host</strong> conversation)</small>
+<br><p></p>
+
+<p class="command"># <span class="first">tcpdump</span> <span class="second">src</span> <span class="third">2.3.4.5</span>
+<br>
+# <span class="first">tcpdump</span> <span class="second">dst</span> <span class="third">3.4.5.6</span>
+</p>
+
+<p></p></li><p></p>
+
+<p></p><li><strong><code>net</code></strong> <small>// capture an entire network using <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a> notation</small>
+<br><p></p>
+
+<p class="command"># <span class="first">tcpdump</span> <span class="second">net</span> <span class="third">1.2.3.0/24</span></p>
+
+<p></p></li><p></p>
+
+<p></p><li><strong><code>proto</code></strong> <small>// works for tcp, udp, and icmp. Note that you don’t have to type <code>proto</code></small>
+<br><p></p>
+
+<p class="command"># <span class="first">tcpdump</span> <span class="second">icmp</span></p>
+
+<p></p></li><p></p>
+
+<p></p><li><strong><code>port</code></strong> <small>// see only traffic to or from a certain port</small>
+<br><p></p>
+
+<p class="command"># <span class="first">tcpdump</span> <span class="second">port</span> <span class="third">3389</span>
+</p>
+
+<p></p></li><p></p>
+
+<p></p><li><strong><code>src, dst port</code></strong> <small>// filter based on the source or destination port</small>
+<br><p></p>
+
+<p class="command"># <span class="first">tcpdump</span> <span class="second">src</span> <span class="second">port</span> <span class="third">1025</span>
+
+# <span class="first">tcpdump</span> <span class="second">dst</span> <span class="second">port</span> <span class="third">389</span>
+</p>
+
+<p></p></li><p></p>
+
+<p></p><li><strong><code>src/dst, port, protocol</code></strong> <small>// combine all three</small>
+<br><p></p>
+
+<p class="command"># <span class="first">tcpdump</span> <span class="second">src</span> <span class="second">port</span> <span class="third">1025</span> and <span class="fourth">tcp</span>
+<br>
+# <span class="first">tcpdump</span> <span class="second">udp</span> and <span class="third">src</span> <span class="third">port</span> <span class="fourth">53</span>
+</p>
+
+<p></p></li>
+</ul><p></p>
+
+<p>You also have the option to filter by a <em>range</em> of ports instead of declaring them individually, and to only see packets that are above or below a certain size.</p>
+
+<ul>
+    <li><strong>Port Ranges</strong> <small>// see traffic to any port in a range</small>
+    <br>
+    <code>tcpdump <font color="blue">portrange</font> <font color="red">21-23</font></code>
+    </li>
+
+    <br>
+
+    <li><strong>Packet Size Filter</strong> <small>// only see packets below or above a certain size (in bytes)</small>
+    <br>
+    <code>tcpdump <font color="blue">less</font> <font color="red">32</font></code>
+    <br>
+    <code>tcpdump <font color="blue">greater</font> <font color="red">128</font></code>
+    </li>
+
+<p class="post_note">[ You can use the symbols for <em>less than</em>, <em>greater than</em>, and <em>less than or equal</em> / <em>greater than or equal signs</em> as well. ]</p>
+
+<small>// filtering for size using symbols</small>
+<br>
+<code>tcpdump <font color="blue">&gt;</font> <font color="red">32</font></code>
+<br>
+<code>tcpdump <font color="blue">&lt;=</font> <font color="red">128</font></code>
+
+</ul>
+
+<h2><a name="writing">Writing to a File</a></h2>
+
+<p><code>tcpdump</code> allows you to send what you’re capturing to a file for later use using the <strong><code>-w</code></strong> option, and then to read it back using the <strong><code>-r</code></strong> option. This is an excellent way to capture raw traffic and then run it through various tools later.</p>
+
+<p>The traffic captured in this way is stored in <code>tcpdump</code> format, which is pretty much universal in the network analysis space. This means it can be read in by all sorts of tools, including <a href="http://www.wireshark.org/" title="Wireshark · Go deep.">Wireshark</a>, <a href="http://www.snort.org/" title="Snort :: Home Page">Snort</a>, etc.</p>
+
+<h4>Capture all Port 80 Traffic to a File</h4>
+
+<p class="command"># <span class="first">tcpdump -s 1514</span> <span class="second">port</span> <span class="second">80</span> <span class="third">-w</span>  <span class="fourth">capture_file</span>
+</p>
+
+<p>Then, at some point in the future, you can then read the traffic back in like so:</p>
+
+<h4>Read Captured Traffic back into <code>tcpdump</code></h4>
+
+<p class="command"># <span class="first">tcpdump -r</span> <span class="second">capture_file</span></p>
+
+<h2><a name="creative">Getting Creative</a></h2>
+
+<p>Expressions are nice, but the real magic of <code>tcpdump</code> comes from the ability to <em>combine</em> them in creative ways in order to isolate exactly what you’re looking for. There are three ways to do combinations, and if you’ve studied computers at all they’ll be pretty familar to you:</p>
+
+<ol>
+<li><strong>AND</strong>
+<br>
+<em><code><font color="green">and</font></code></em> or <code><font color="green">&amp;&amp;</font></code></li>
+
+<li><strong>OR</strong> 
+<br>
+<em><code><font color="blue">or</font></code></em> or <code><font color="blue">||</font></code></li>
+
+<li><strong>EXCEPT</strong> 
+<br>
+<em><code><font color="red">not</font></code></em> or <code><font color="red">!</font></code></li>
+</ol>
+
+<h3>More Examples</h3>
+
+<div id="commandentry"> 
+<p class="commandcomment"># TCP traffic from 10.5.2.3 destined for port 3389</p> 
+<p class="command"><span class="first">tcpdump -nnvvS</span> <span class="third">src 10.5.2.3</span> <span class="fourth">and</span> <span class="fifth">dst port 3389</span></p> 
+</div>
+
+<div id="commandentry"> 
+<p class="commandcomment"># Traffic originating from the 192.168 network headed for the 10 or 172.16 networks</p> 
+<p class="command"><span class="first">tcpdump -nvX src net 192.168.0.0/16</span> <span class="second">and</span> <span class="third">dst net 10.0.0.0/8</span> <span class="fourth">or</span> <span class="fifth">172.16.0.0/16</span></p> 
+</div>
+
+<div id="commandentry"> 
+<p class="commandcomment"># Non-ICMP traffic destined for 192.168.0.2 from the 172.16 network</p> 
+<p class="command"><span class="first">tcpdump -nvvXSs 1514 dst 192.168.0.2</span> <span class="second">and</span> <span class="third">src net</span> <span class="fourth">and</span> <span class="fifth">not icmp</span></p> 
+</div>
+
+<div id="commandentry"> 
+<p class="commandcomment"># Traffic originating from Mars or Pluto that isn’t to the SSH port</p> 
+<p class="command"><span class="first">tcpdump -vv src mars</span> <span class="second">and</span> <span class="third">not</span> <span class="fourth">dst port 22</span></p> 
+</div>
+
+<p>As you can see, you can build queries to find just about anything you need. The key is to first figure out <em>precisely</em> what you’re looking for and then to build the syntax to isolate that specific type of traffic.</p>
+
+<h3>Grouping</h3>
+
+<p></p>
+
+<p>Also keep in mind that when you’re building complex queries you might have to group your options using single quotes. Single quotes are used in order to tell <code>tcpdump</code> to ignore certain special characters — in this case the “( )” brackets. This same technique can be used to group using other expressions such as <code>host</code>, <code>port</code>, <code>net</code>, etc. Take a look at the command below:</p>
+
+<div id="commandentry"> 
+<p class="commandcomment"># Traffic that’s from 10.0.2.4 AND destined for ports 3389 or 22 <strong>(incorrect)</strong></p> 
+<p class="command"><span class="first">tcpdump src 10.0.2.4 and</span> <span class="second">(dst port 3389 or 22)</span></p> 
+</div>
+
+<p>If you tried to run this otherwise very useful command, you’d get an error because of the parenthesis. You can either fix this by escaping the parenthesis (putting a \ before each one), or by putting the entire command within single quotes:</p>
+
+<div id="commandentry"> 
+<p class="commandcomment"># Traffic that’s from 10.0.2.4 AND destined for ports 3389 or 22 <strong>(correct)</strong></p> 
+<p class="command"><span class="first">tcpdump ‘src 10.0.2.4 and</span> <span class="second">(dst port 3389 or 22)’</span></p> 
+</div>
+
+<h2><a name="advanced">Advanced</a></h2>
+
+<p>You can also filter based on specific portions of a packet, as well as combine multiple conditions into groups. The former is useful when looking for only SYNs or RSTs, for example, and the latter for even more advanced traffic isolation.</p>
+
+<p class="post_note">[ Hint: An anagram for the TCP flags: <a href="https://danielmiessler.com/study/tcpflags/"> <b>U</b>nskilled <b>A</b>ttackers <b>P</b>ester <b>R</b>eal <b>S</b>ecurity <b>F</b>olk</a> ]</p>
+
+<div id="commandentry"> 
+<p>Show me all URGENT <strong>(URG)</strong> packets…</p>
+<p class="command"><span class="first"># tcpdump <span class="fourth">‘tcp[13]</span> &amp;</span> <span class="third">32</span>!=<span class="fifth">0</span>‘</p> 
+</div>
+
+<div id="commandentry"> 
+<p>Show me all ACKNOWLEDGE <strong>(ACK)</strong> packets…</p>
+<p class="command"><span class="first"># tcpdump <span class="fourth">‘tcp[13]</span> &amp;</span> <span class="third">16</span>!=<span class="fifth">0</span>‘</p> 
+</div>
+
+<div id="commandentry"> 
+<p>Show me all PUSH <strong>(PSH)</strong> packets…</p>
+<p class="command"><span class="first"># tcpdump <span class="fourth">‘tcp[13]</span> &amp;</span> <span class="third">8</span>!=<span class="fifth">0</span>‘</p> 
+</div>
+
+<div id="commandentry"> 
+<p>Show me all RESET <strong>(RST)</strong> packets…</p>
+<p class="command"><span class="first"># tcpdump <span class="fourth">‘tcp[13]</span> &amp;</span> <span class="third">4</span>!=<span class="fifth">0</span>‘</p> 
+</div>
+
+<div id="commandentry"> 
+<p>Show me all SYNCHRONIZE <strong>(SYN)</strong> packets…</p>
+<p class="command"><span class="first"># tcpdump <span class="fourth">‘tcp[13]</span> &amp;</span> <span class="third">2</span>!=<span class="fifth">0</span>‘</p> 
+</div>
+
+<div id="commandentry"> 
+<p>Show me all FINISH <strong>(FIN)</strong> packets…</p>
+<p class="command"><span class="first"># tcpdump <span class="fourth">‘tcp[13]</span> &amp;</span> <span class="third">1</span>!=<span class="fifth">0</span>‘</p> 
+</div>
+
+<div id="commandentry"> 
+<p>Show me all SYNCHRONIZE/ACKNOWLEDGE <strong>(SYNACK)</strong> packets…</p>
+<p class="command"><span class="first"># tcpdump <span class="fourth">‘tcp[13]</span><span class="third">=18</span>‘</span></p> 
+</div>
+
+<p class="post_note">[ Note: Only the PSH, RST, SYN, and FIN flags are displayed in <code>tcpdump</code>‘s flag field output. URGs and ACKs are displayed, but they are shown elsewhere in the output rather than in the flags field ]</p>
+
+<p>Keep in mind the reasons these filters work. The filters above find these various packets because <code>tcp[13]</code> looks at offset 13 in the <a href="http://www.networksorcery.com/enp/protocol/tcp.htm">TCP header</a>, the number represents the location within the byte, and the !=0 means that the flag in question is set to 1, i.e. it’s on.</p>
+
+<p>As with most powerful tools, however, there are multiple ways to do things. The example below shows another way to capture packets with specific TCP flags set.</p>
+
+<div id="commandentry"> 
+<p class="strong">Capture TCP Flags Using the <code>tcpflags</code> Option…</p>
+<p class="command"><span class="first"># tcpdump <span class="fourth">‘tcp[tcpflags]</span> &amp;</span> <span class="third">&amp; tcp-syn != 0</span>‘</p> 
+</div>
+
+<h3>Specialized Traffic</h3>
+
+<p>Finally, there are a few quick recipes you’ll want to remember for catching specific and specialized traffic, such as IPv6 and malformed/likely-malicious packets.</p>
+
+<div id="commandentry"> 
+<p class="strong">IPv6 traffic</p>
+<p class="command"><span class="first"># tcpdump <span class="fifth">ip6</span></span></p> 
+</div>
+
+<div id="commandentry"> 
+<p class="strong">Packets with both the RST and SYN flags set (why?)</p>
+<p class="command"><span class="first"># tcpdump <span class="fifth">‘tcp[13] = 6′</span></span></p> 
+</div>
+
+<div id="commandentry"> 
+<p class="strong">Traffic with the ‘Evil Bit’ Set</p>
+<p class="command"><span class="first"># tcpdump <span class="fifth">‘ip[6]</span> &amp; <span class="second">128 != 0</span>‘</span></p> 
+</div>
+
+<h2>Conclusion</h2>
+
+<p>Well, this primer should get you going strong, but <a href="http://www.tcpdump.org/tcpdump_man.html">the man page</a> should always be handy for the most advanced and one-off usage scenarios. I truly hope this has been useful to you, and feel free to <a href="https://danielmiessler.com/contact/">contact me</a> if you have any questions.</p>
+
+<p class="note"> [ If you liked this, check out my other technical primers <a href="https://danielmiessler.com/study/">here</a>. ]</p>
+
+<h3>Notes</h3>
+
+<ol class="note">
+    <li>I’m currently writing a book on tcpdump for No Starch Press.</li>
+    <li>The leading image is from <a href="http://securitywizardry.com/">SecurityWizardry.com</a>.</li>
+</ol>
+<div id="crp_related" class="crp_related"><h4>Related…</h4><ul><li><a href="https://danielmiessler.com/study/icmp/" rel="nofollow" class="crp_title">An ICMP Reference</a></li><li><a href="https://danielmiessler.com/study/synpackets/" rel="nofollow" class="crp_title">Not All SYNs Are Created Equal</a></li><li><a href="https://danielmiessler.com/blog/entering-promiscuous-mode-os-x/" rel="nofollow" class="crp_title">Entering Promiscuous Mode on OS X</a></li><li><a href="https://danielmiessler.com/study/tcpflags/" rel="nofollow" class="crp_title">How to Remember Your TCP Flags</a></li><li><a href="https://danielmiessler.com/blog/benign-indian-ddos/" rel="nofollow" class="crp_title">Benign Indian DDoS Attempt</a></li></ul><div style="clear:both"></div></div><div class="us_pages_bottom" style="margin-top:0px;margin-bottom:20px;"><div class="us_wrapper tal us_skin_default"><div class="us_facebook us_button sharrre" data-url="https://danielmiessler.com/study/tcpdump/" data-text="A tcpdump Tutorial and Primer"><a class="us_box" href="https://danielmiessler.com/study/tcpdump/#"><div class="us_share"><i class="us-icon-facebook"></i></div><div class="us_count">23</div></a></div><div class="us_twitter us_button sharrre" data-url="https://danielmiessler.com/study/tcpdump/" data-text="A tcpdump Tutorial and Primer"><a class="us_box" href="https://danielmiessler.com/study/tcpdump/#"><div class="us_share"><i class="us-icon-twitter"></i></div><div class="us_count">28</div></a></div><div class="us_googleplus us_button sharrre" data-url="https://danielmiessler.com/study/tcpdump/" data-text="A tcpdump Tutorial and Primer"><a class="us_box" href="https://danielmiessler.com/study/tcpdump/#"><div class="us_share"><i class="us-icon-gplus"></i></div><div class="us_count">226</div></a></div><div class="us_linkedin us_button sharrre" data-url="https://danielmiessler.com/study/tcpdump/" data-text="A tcpdump Tutorial and Primer"><a class="us_box" href="https://danielmiessler.com/study/tcpdump/#"><div class="us_share"><i class="us-icon-linkedin"></i></div><div class="us_count">63</div></a></div><div class="us_pocket us_button sharrre" data-url="https://danielmiessler.com/study/tcpdump/" data-text="A tcpdump Tutorial and Primer"><a class="us_box" href="https://danielmiessler.com/study/tcpdump/#"><div class="us_share"><i class="us-icon-pocket"></i></div><div class="us_count">2.6k</div></a></div><div class="us_reddit us_button sharrre" data-url="https://danielmiessler.com/study/tcpdump/" data-text="A tcpdump Tutorial and Primer"><a class="us_box" href="https://danielmiessler.com/study/tcpdump/#"><div class="us_share"><i class="us-icon-reddit"></i></div><div class="us_count">4</div></a></div></div></div></div><!--
+<h4>Share…</h4>
+<p class="social_buttons">
+<a href="javascript:window.location=%22http://www.facebook.com/sharer.php?u=%22+encodeURIComponent(document.location)+%22&#38;t=%22+encodeURIComponent(document.title)" title="Share on Facebook..." target="_blank">Like</a> | 
+<a href="javascript:window.location=%22https://twitter.com/share?url=%22+encodeURIComponent(document.location)+%22&text=%22+encodeURIComponent(document.title)" target="_blank">Tweet</a> | 
+<a href="https://plusone.google.com/_/+1/confirm?hl=en&url=https://danielmiessler.com/study/tcpdump/" target="_blank" title="Plus one this page on Google">Google +1</a> | 
+<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://danielmiessler.com/study/tcpdump/" target="_blank">LinkedIn</a> | 
+<a href="javascript:window.location=%22http://reddit.com/submit?url=%22+encodeURIComponent(document.location)+%22&title=%22+encodeURIComponent(document.title)" target="_blank">Reddit</a> | 
+<a href="javascript:window.location=%22http://news.ycombinator.com/submitlink?u=%22+encodeURIComponent(document.location)+%22&t=%22+encodeURIComponent(document.title)" target="_blank">Hacker News</a>
+</p>
+-->
+<div id="mc_embed_signup">
+<form action="https://danielmiessler.us8.list-manage.com/subscribe/post?u=6a9e465ab1570df8aaecb2292&id=49fdb7d723" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+<div class="mc-field-group">
+<input type="email" value="" name="EMAIL" class="redditquired email" placeholder="Enter your email for a weekly summary…" id="mce-EMAIL">
+</div>
+<div id="mce-responses" class="classear">
+<div class="response" id="mce-error-response" style="display:none"></div>
+<div class="response" id="mce-success-response" style="discussplay:none"></div>
+</div>    <!-- real people should not fill this in Addressnd expect good things - do not remove this or risk form bot signups-->
+<div style="position: absolute; left: -5000px;"><input type="text" name="b_6a9e465ab1570df8aaecb2292_49fdb7d723" tabindex="-1" value=""></div>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div> 
+</form>
+</div>
+<br>
+
+<!--
+<p>If you'd like to comment, you can reply via <a class="top_social" href="javascript:window.location=%22https://twitter.com/share?url=%22+encodeURIComponent(document.location)+%22&text=%22+encodeURIComponent(document.title)">Twitter</a>, by <a href="mailto:daniel@danielmiessler.com">email</a>, or <a href="javascript:window.location=%22http://reddit.com/submit?url=%22+encodeURIComponent(document.location)+%22&title=%22+encodeURIComponent(document.title)" target="_blank">discuss it here</a>.</p>
+--> 
+
+<p>Have an opinion on this? You can reply via <a class="top_social" href="javascript:window.location=%22https://twitter.com/share?url=%22+encodeURIComponent(document.location)+%22&text=%22+encodeURIComponent(document.title)">Twitter</a>, via <a href="mailto:daniel@danielmiessler.com">email</a>, <a href="javascript:window.location=%22http://reddit.com/submit?url=%22+encodeURIComponent(document.location)+%22&title=%22+encodeURIComponent(document.title)" target="_blank">discuss it here</a>, or comment below.</p>
+
+<div id="disqus_thread"><iframe id="dsq-2" data-disqus-uid="2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./A tcpdump Tutorial and Primer_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 2475px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe><iframe id="dsq-indicator-north" data-disqus-uid="indicator-north" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 610px !important; border: none !important; overflow: hidden !important; top: 0px !important; min-width: 610px !important; max-width: 610px !important; position: fixed !important; z-index: 2147483646 !important; height: 29px !important; min-height: 29px !important; max-height: 29px !important; display: none !important;"></iframe><iframe id="dsq-indicator-south" data-disqus-uid="indicator-south" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" style="width: 610px !important; border: none !important; overflow: hidden !important; bottom: 0px !important; min-width: 610px !important; max-width: 610px !important; position: fixed !important; z-index: 2147483646 !important; height: 29px !important; min-height: 29px !important; max-height: 29px !important; display: none !important;"></iframe></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'drm'; // required: replace example with your forum shortname
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;</noscript>
+</article></main><aside class="sidebar sidebar-primary widget-area" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar"><section id="search-4" class="widget widget_search"><div class="widget-wrap"><form method="get" class="search-form" action="https://danielmiessler.com/" role="search"><input type="search" name="s" placeholder="Search this website…"><input type="submit" value="Search"></form></div></section><section id="text-3" class="widget widget_text"><div class="widget-wrap">			<div class="textwidget"><p>
+<br>
+:: <a href="http://feeds.danielmiessler.com/danielmiessler" style="text-decoration:none"><span class="rss">RSS</span></a><br>
+:: <a href="https://twitter.com/intent/user?screen_name=DanielMiessler" style="text-decoration:none"><span class="twitter">Twitter</span></a><br>
+:: <a href="https://github.com/danielmiessler" style="text-decoration:none"><span class="larger">Github</span></a>
+</p></div>
+		</div></section><section id="text-10" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Get Email Updates</h4>
+			<div class="textwidget"><div id="mc_embed_signup">
+<form action="https://danielmiessler.us8.list-manage.com/subscribe/post?u=6a9e465ab1570df8aaecb2292&id=49fdb7d723" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email…" required="">
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_6a9e465ab1570df8aaecb2292_49fdb7d723" tabindex="-1" value=""></div>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+
+<!--End mc_embed_signup--></div>
+		</div></section><section id="text-13" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Most popular</h4>
+			<div class="textwidget">- <a href="https://danielmiessler.com/study/vim/"><strong>A <code>vim</code> Primer</strong></a><br>
+- <a href="./A tcpdump Tutorial and Primer_files/A tcpdump Tutorial and Primer.html">A <code>tcpdump</code> Primer</a><br>
+- <a href="https://danielmiessler.com/study/tmux/">A <code>tmux</code> Primer</a><br>
+- <a href="https://danielmiessler.com/blog/saying-goodbye-to-google-services/">Saying Goodbye to Google</a><br>
+- <a href="https://danielmiessler.com/blog/build-successful-infosec-career/">How to Build an InfoSec Career</a><br>
+- <a href="https://danielmiessler.com/study/infosec_interview_questions/">InfoSec Interview Questions</a><br>
+- <a href="https://danielmiessler.com/arguments/free_will/two_lever_argument/">The Two-lever Argument</a><br>
+- <a href="https://danielmiessler.com/blog/meaning-is-an-illusion/">Meaning is an Illusion</a></div>
+		</div></section><section id="text-12" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Explore content</h4>
+			<div class="textwidget">• <a href="https://danielmiessler.com/recommended/"><span class="secondsidebar">Recommended</span></a><br>
+• <a href="https://danielmiessler.com/sitemap/"><span class="thirdsidebar">Sitemap</span></a><br>
+• <a href="http://feeds.danielmiessler.com/discovered">Discovered</a>&nbsp;<a target="_blank" href="https://danielmiessler.com/blog/how-i-collect-and-display-interesting-content-i-find-online/"><sup>?</sup></a></div>
+		</div></section>		<section id="recent-posts-3" class="widget widget_recent_entries"><div class="widget-wrap">		<h4 class="widget-title widgettitle">Recent posts</h4>
+		<ul>
+					<li>
+				<a href="https://danielmiessler.com/blog/2016-oldest-political-story/">2016 Plays Out The Oldest Political Story</a>
+						</li>
+					<li>
+				<a href="https://danielmiessler.com/blog/truth-earth-2015/">The Truth About Earth in 2015</a>
+						</li>
+					<li>
+				<a href="https://danielmiessler.com/blog/artificial-sweeteners-may-make-you-fat-through-altering-gut-bacteria/">Artificial Sweeteners May Make You Fat Through Altering Gut Bacteria</a>
+						</li>
+					<li>
+				<a href="https://danielmiessler.com/blog/going-minimalist/">Going Minimalist</a>
+						</li>
+					<li>
+				<a href="https://danielmiessler.com/blog/take-1-security-podcast-episode-12/">Take 1 Security Podcast: Episode 12</a>
+						</li>
+				</ul>
+		</div></section><section id="text-14" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">What I’m Reading</h4>
+			<div class="textwidget">› The Journal of Henry David Thoreau <br>
+› The Slow Regard of Silent Things<br>
+› Zero to One<br>
+› <a href="https://danielmiessler.com/projects/reading/spent">Spent</a><br>
+› <a href="https://danielmiessler.com/projects/reading/zealot">Zealot</a><br>
+› <a href="https://danielmiessler.com/projects/reading/capital-in-the-21st-century/">Capital in the 21st Century</a><br>
+› <a href="https://danielmiessler.com/projects/reading/the-stranger/">The Stranger</a><br>
+› <a href="https://danielmiessler.com/projects/reading/metamorphosis-of-prime-intellect/">Metamorphosis of Prime Intellect</a></div>
+		</div></section><section id="categories-3" class="widget widget_categories"><div class="widget-wrap"><h4 class="widget-title widgettitle">Categories</h4>
+<select name="cat" id="cat" class="postform">
+	<option value="-1">Select Category</option>
+	<option class="level-0" value="34">Business&nbsp;&nbsp;(33)</option>
+	<option class="level-0" value="155">Creativity&nbsp;&nbsp;(127)</option>
+	<option class="level-0" value="11">Culture&nbsp;&nbsp;(228)</option>
+	<option class="level-0" value="330">Happiness&nbsp;&nbsp;(202)</option>
+	<option class="level-0" value="50">Information Security&nbsp;&nbsp;(233)</option>
+	<option class="level-0" value="3">Personal&nbsp;&nbsp;(64)</option>
+	<option class="level-0" value="7">Philosophy&nbsp;&nbsp;(229)</option>
+	<option class="level-0" value="1287">Politics&nbsp;&nbsp;(166)</option>
+	<option class="level-0" value="6">Science&nbsp;&nbsp;(109)</option>
+	<option class="level-0" value="1401">Take 1 Security Podcast&nbsp;&nbsp;(12)</option>
+	<option class="level-0" value="2">Technology&nbsp;&nbsp;(521)</option>
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "https://danielmiessler.com/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</div></section><section id="archives-3" class="widget widget_archive"><div class="widget-wrap"><h4 class="widget-title widgettitle">Archives</h4>
+		<select name="archive-dropdown" onchange="document.location.href=this.options[this.selectedIndex].value;">
+			<option value="">Select Month</option>
+
+				<option value="https://danielmiessler.com/blog/2015/04/"> April 2015 &nbsp;(8)</option>
+	<option value="https://danielmiessler.com/blog/2015/03/"> March 2015 &nbsp;(28)</option>
+	<option value="https://danielmiessler.com/blog/2015/02/"> February 2015 &nbsp;(24)</option>
+	<option value="https://danielmiessler.com/blog/2015/01/"> January 2015 &nbsp;(39)</option>
+	<option value="https://danielmiessler.com/blog/2014/12/"> December 2014 &nbsp;(28)</option>
+	<option value="https://danielmiessler.com/blog/2014/11/"> November 2014 &nbsp;(20)</option>
+	<option value="https://danielmiessler.com/blog/2014/10/"> October 2014 &nbsp;(20)</option>
+	<option value="https://danielmiessler.com/blog/2014/09/"> September 2014 &nbsp;(24)</option>
+	<option value="https://danielmiessler.com/blog/2014/08/"> August 2014 &nbsp;(22)</option>
+	<option value="https://danielmiessler.com/blog/2014/07/"> July 2014 &nbsp;(73)</option>
+	<option value="https://danielmiessler.com/blog/2014/06/"> June 2014 &nbsp;(31)</option>
+	<option value="https://danielmiessler.com/blog/2014/05/"> May 2014 &nbsp;(31)</option>
+	<option value="https://danielmiessler.com/blog/2014/04/"> April 2014 &nbsp;(7)</option>
+	<option value="https://danielmiessler.com/blog/2014/03/"> March 2014 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2014/02/"> February 2014 &nbsp;(14)</option>
+	<option value="https://danielmiessler.com/blog/2014/01/"> January 2014 &nbsp;(19)</option>
+	<option value="https://danielmiessler.com/blog/2013/12/"> December 2013 &nbsp;(12)</option>
+	<option value="https://danielmiessler.com/blog/2013/11/"> November 2013 &nbsp;(15)</option>
+	<option value="https://danielmiessler.com/blog/2013/10/"> October 2013 &nbsp;(31)</option>
+	<option value="https://danielmiessler.com/blog/2013/09/"> September 2013 &nbsp;(28)</option>
+	<option value="https://danielmiessler.com/blog/2013/08/"> August 2013 &nbsp;(11)</option>
+	<option value="https://danielmiessler.com/blog/2013/07/"> July 2013 &nbsp;(18)</option>
+	<option value="https://danielmiessler.com/blog/2013/06/"> June 2013 &nbsp;(16)</option>
+	<option value="https://danielmiessler.com/blog/2013/05/"> May 2013 &nbsp;(24)</option>
+	<option value="https://danielmiessler.com/blog/2013/04/"> April 2013 &nbsp;(23)</option>
+	<option value="https://danielmiessler.com/blog/2013/03/"> March 2013 &nbsp;(19)</option>
+	<option value="https://danielmiessler.com/blog/2013/02/"> February 2013 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2013/01/"> January 2013 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2012/12/"> December 2012 &nbsp;(19)</option>
+	<option value="https://danielmiessler.com/blog/2012/11/"> November 2012 &nbsp;(19)</option>
+	<option value="https://danielmiessler.com/blog/2012/10/"> October 2012 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2012/09/"> September 2012 &nbsp;(5)</option>
+	<option value="https://danielmiessler.com/blog/2012/08/"> August 2012 &nbsp;(5)</option>
+	<option value="https://danielmiessler.com/blog/2012/07/"> July 2012 &nbsp;(7)</option>
+	<option value="https://danielmiessler.com/blog/2012/06/"> June 2012 &nbsp;(11)</option>
+	<option value="https://danielmiessler.com/blog/2012/05/"> May 2012 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2012/04/"> April 2012 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2012/03/"> March 2012 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2012/02/"> February 2012 &nbsp;(7)</option>
+	<option value="https://danielmiessler.com/blog/2012/01/"> January 2012 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2011/12/"> December 2011 &nbsp;(15)</option>
+	<option value="https://danielmiessler.com/blog/2011/11/"> November 2011 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2011/10/"> October 2011 &nbsp;(11)</option>
+	<option value="https://danielmiessler.com/blog/2011/09/"> September 2011 &nbsp;(8)</option>
+	<option value="https://danielmiessler.com/blog/2011/08/"> August 2011 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2011/07/"> July 2011 &nbsp;(11)</option>
+	<option value="https://danielmiessler.com/blog/2011/06/"> June 2011 &nbsp;(12)</option>
+	<option value="https://danielmiessler.com/blog/2011/05/"> May 2011 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2011/04/"> April 2011 &nbsp;(8)</option>
+	<option value="https://danielmiessler.com/blog/2011/03/"> March 2011 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2011/02/"> February 2011 &nbsp;(7)</option>
+	<option value="https://danielmiessler.com/blog/2011/01/"> January 2011 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2010/12/"> December 2010 &nbsp;(11)</option>
+	<option value="https://danielmiessler.com/blog/2010/11/"> November 2010 &nbsp;(20)</option>
+	<option value="https://danielmiessler.com/blog/2010/10/"> October 2010 &nbsp;(8)</option>
+	<option value="https://danielmiessler.com/blog/2010/09/"> September 2010 &nbsp;(8)</option>
+	<option value="https://danielmiessler.com/blog/2010/08/"> August 2010 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2010/07/"> July 2010 &nbsp;(18)</option>
+	<option value="https://danielmiessler.com/blog/2010/06/"> June 2010 &nbsp;(24)</option>
+	<option value="https://danielmiessler.com/blog/2010/05/"> May 2010 &nbsp;(8)</option>
+	<option value="https://danielmiessler.com/blog/2010/04/"> April 2010 &nbsp;(7)</option>
+	<option value="https://danielmiessler.com/blog/2010/03/"> March 2010 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2010/02/"> February 2010 &nbsp;(8)</option>
+	<option value="https://danielmiessler.com/blog/2010/01/"> January 2010 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2009/12/"> December 2009 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2009/11/"> November 2009 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2009/10/"> October 2009 &nbsp;(8)</option>
+	<option value="https://danielmiessler.com/blog/2009/09/"> September 2009 &nbsp;(17)</option>
+	<option value="https://danielmiessler.com/blog/2009/08/"> August 2009 &nbsp;(24)</option>
+	<option value="https://danielmiessler.com/blog/2009/07/"> July 2009 &nbsp;(24)</option>
+	<option value="https://danielmiessler.com/blog/2009/06/"> June 2009 &nbsp;(21)</option>
+	<option value="https://danielmiessler.com/blog/2009/05/"> May 2009 &nbsp;(20)</option>
+	<option value="https://danielmiessler.com/blog/2009/04/"> April 2009 &nbsp;(28)</option>
+	<option value="https://danielmiessler.com/blog/2009/03/"> March 2009 &nbsp;(14)</option>
+	<option value="https://danielmiessler.com/blog/2009/02/"> February 2009 &nbsp;(18)</option>
+	<option value="https://danielmiessler.com/blog/2009/01/"> January 2009 &nbsp;(39)</option>
+	<option value="https://danielmiessler.com/blog/2008/12/"> December 2008 &nbsp;(37)</option>
+	<option value="https://danielmiessler.com/blog/2008/11/"> November 2008 &nbsp;(19)</option>
+	<option value="https://danielmiessler.com/blog/2008/10/"> October 2008 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2008/09/"> September 2008 &nbsp;(15)</option>
+	<option value="https://danielmiessler.com/blog/2008/08/"> August 2008 &nbsp;(11)</option>
+	<option value="https://danielmiessler.com/blog/2008/07/"> July 2008 &nbsp;(26)</option>
+	<option value="https://danielmiessler.com/blog/2008/06/"> June 2008 &nbsp;(18)</option>
+	<option value="https://danielmiessler.com/blog/2008/05/"> May 2008 &nbsp;(11)</option>
+	<option value="https://danielmiessler.com/blog/2008/04/"> April 2008 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2008/03/"> March 2008 &nbsp;(30)</option>
+	<option value="https://danielmiessler.com/blog/2008/02/"> February 2008 &nbsp;(11)</option>
+	<option value="https://danielmiessler.com/blog/2008/01/"> January 2008 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2007/12/"> December 2007 &nbsp;(14)</option>
+	<option value="https://danielmiessler.com/blog/2007/11/"> November 2007 &nbsp;(14)</option>
+	<option value="https://danielmiessler.com/blog/2007/10/"> October 2007 &nbsp;(23)</option>
+	<option value="https://danielmiessler.com/blog/2007/09/"> September 2007 &nbsp;(21)</option>
+	<option value="https://danielmiessler.com/blog/2007/08/"> August 2007 &nbsp;(29)</option>
+	<option value="https://danielmiessler.com/blog/2007/07/"> July 2007 &nbsp;(14)</option>
+	<option value="https://danielmiessler.com/blog/2007/06/"> June 2007 &nbsp;(17)</option>
+	<option value="https://danielmiessler.com/blog/2007/05/"> May 2007 &nbsp;(25)</option>
+	<option value="https://danielmiessler.com/blog/2007/04/"> April 2007 &nbsp;(16)</option>
+	<option value="https://danielmiessler.com/blog/2007/03/"> March 2007 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2007/02/"> February 2007 &nbsp;(14)</option>
+	<option value="https://danielmiessler.com/blog/2007/01/"> January 2007 &nbsp;(18)</option>
+	<option value="https://danielmiessler.com/blog/2006/12/"> December 2006 &nbsp;(12)</option>
+	<option value="https://danielmiessler.com/blog/2006/11/"> November 2006 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2006/10/"> October 2006 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2006/09/"> September 2006 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2006/08/"> August 2006 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2006/07/"> July 2006 &nbsp;(8)</option>
+	<option value="https://danielmiessler.com/blog/2006/06/"> June 2006 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2006/05/"> May 2006 &nbsp;(5)</option>
+	<option value="https://danielmiessler.com/blog/2006/04/"> April 2006 &nbsp;(7)</option>
+	<option value="https://danielmiessler.com/blog/2006/03/"> March 2006 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2006/02/"> February 2006 &nbsp;(10)</option>
+	<option value="https://danielmiessler.com/blog/2006/01/"> January 2006 &nbsp;(5)</option>
+	<option value="https://danielmiessler.com/blog/2005/12/"> December 2005 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2005/11/"> November 2005 &nbsp;(7)</option>
+	<option value="https://danielmiessler.com/blog/2005/10/"> October 2005 &nbsp;(5)</option>
+	<option value="https://danielmiessler.com/blog/2005/09/"> September 2005 &nbsp;(3)</option>
+	<option value="https://danielmiessler.com/blog/2005/08/"> August 2005 &nbsp;(5)</option>
+	<option value="https://danielmiessler.com/blog/2005/07/"> July 2005 &nbsp;(3)</option>
+	<option value="https://danielmiessler.com/blog/2005/06/"> June 2005 &nbsp;(4)</option>
+	<option value="https://danielmiessler.com/blog/2005/05/"> May 2005 &nbsp;(15)</option>
+	<option value="https://danielmiessler.com/blog/2005/04/"> April 2005 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2005/03/"> March 2005 &nbsp;(5)</option>
+	<option value="https://danielmiessler.com/blog/2005/02/"> February 2005 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/2005/01/"> January 2005 &nbsp;(4)</option>
+	<option value="https://danielmiessler.com/blog/2004/12/"> December 2004 &nbsp;(2)</option>
+	<option value="https://danielmiessler.com/blog/2004/11/"> November 2004 &nbsp;(3)</option>
+	<option value="https://danielmiessler.com/blog/2004/10/"> October 2004 &nbsp;(15)</option>
+	<option value="https://danielmiessler.com/blog/2004/09/"> September 2004 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/2004/08/"> August 2004 &nbsp;(2)</option>
+	<option value="https://danielmiessler.com/blog/2004/06/"> June 2004 &nbsp;(2)</option>
+	<option value="https://danielmiessler.com/blog/2004/05/"> May 2004 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/2002/12/"> December 2002 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/2001/09/"> September 2001 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/2000/01/"> January 2000 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1999/12/"> December 1999 &nbsp;(2)</option>
+	<option value="https://danielmiessler.com/blog/1999/11/"> November 1999 &nbsp;(4)</option>
+	<option value="https://danielmiessler.com/blog/1999/08/"> August 1999 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1998/10/"> October 1998 &nbsp;(2)</option>
+	<option value="https://danielmiessler.com/blog/1998/09/"> September 1998 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1998/05/"> May 1998 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1998/03/"> March 1998 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1998/02/"> February 1998 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1997/11/"> November 1997 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1997/10/"> October 1997 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1997/09/"> September 1997 &nbsp;(2)</option>
+	<option value="https://danielmiessler.com/blog/1997/08/"> August 1997 &nbsp;(3)</option>
+	<option value="https://danielmiessler.com/blog/1997/07/"> July 1997 &nbsp;(2)</option>
+	<option value="https://danielmiessler.com/blog/1997/06/"> June 1997 &nbsp;(9)</option>
+	<option value="https://danielmiessler.com/blog/1997/05/"> May 1997 &nbsp;(5)</option>
+	<option value="https://danielmiessler.com/blog/1997/04/"> April 1997 &nbsp;(4)</option>
+	<option value="https://danielmiessler.com/blog/1997/02/"> February 1997 &nbsp;(6)</option>
+	<option value="https://danielmiessler.com/blog/1997/01/"> January 1997 &nbsp;(3)</option>
+	<option value="https://danielmiessler.com/blog/1996/12/"> December 1996 &nbsp;(5)</option>
+	<option value="https://danielmiessler.com/blog/1996/11/"> November 1996 &nbsp;(3)</option>
+	<option value="https://danielmiessler.com/blog/1996/10/"> October 1996 &nbsp;(2)</option>
+	<option value="https://danielmiessler.com/blog/1996/09/"> September 1996 &nbsp;(2)</option>
+	<option value="https://danielmiessler.com/blog/1996/04/"> April 1996 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1996/03/"> March 1996 &nbsp;(1)</option>
+	<option value="https://danielmiessler.com/blog/1996/01/"> January 1996 &nbsp;(1)</option>
+		</select>
+</div></section><section id="text-15" class="widget widget_text"><div class="widget-wrap"><h4 class="widget-title widgettitle">Recommendations</h4>
+			<div class="textwidget">⌱ Dan Carlin's Hardcore History<br>
+⌱ The Partially Examined Life<br>
+⌱ Very Bad Wizards<br>
+⌱ Brain Pickings<br>
+⌱ Explore<br>
+⌱ Less Wrong<br>
+⌱ Overcoming Bias<br>
+⌱ The Last Psychiatrist<br>
+⌱ Intelligence<sup>2</sup><br>
+⌱ fffound</div>
+		</div></section></aside></div></div></div><footer class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div class="wrap"><p></p><p>© Daniel Miessler 1999-2015 | <a href="https://danielmiessler.com/stack/">Stack</a> | <a href="http://creativecommons.org/licenses/by-sa/2.0/">Share</a> | <a href="https://danielmiessler.com/syndication/">Syndication</a> | <a href="https://danielmiessler.com/privacy/">Privacy</a></p></div></footer></div><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-83006-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript">document.getElementById('menu-main-nav').onclick = function() {var className = '' + this.className + ''; if ( ~className.indexOf('active') ) { this.className = className.replace('active', ''); } else {this.className += ' active';} }</script>
+<script type="text/javascript">
+  var _sf_async_config = { uid: 5085, domain: 'danielmiessler.com', useCanonical: true };
+  (function() {
+    function loadChartbeat() {
+      window._sf_endpt = (new Date()).getTime();
+      var e = document.createElement('script');
+      e.setAttribute('language', 'javascript');
+      e.setAttribute('type', 'text/javascript');
+      e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+      document.body.appendChild(e);
+    };
+    var oldonload = window.onload;
+    window.onload = (typeof window.onload != 'function') ?
+      loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  })();
+</script><link rel="stylesheet" id="us-plugin-styles-css" href="./A tcpdump Tutorial and Primer_files/style(1).css" type="text/css" media="all">
+<style id="us-plugin-styles-inline-css" type="text/css">
+.us_sticky .us_wrapper { background-color:#ffffff; }.us_floating .us_wrapper .us_button { width: 45px; -webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_floating .us_wrapper .us_button:hover { width: 90px;-webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_fan_count_button { -moz-border-radius-topleft: 0px; -moz-border-radius-topright: 0px; -moz-border-radius-bottomright: 0px; -moz-border-radius-bottomleft: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; -webkit-border-top-left-radius: 0px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; -webkit-border-bottom-left-radius: 0px; }.us_skin_default .us_button { -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; -moz-border-radius-bottomright: 4px; -moz-border-radius-bottomleft: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; -webkit-border-top-left-radius: 4px; -webkit-border-top-right-radius: 4px; -webkit-border-bottom-right-radius: 4px; -webkit-border-bottom-left-radius: 4px; }.us_skin_default div[class*='us_facebook'], .us_skin_modern div[class*='us_facebook'] { background-color:#3b5998; }.us_skin_default div[class*='us_twitter'], .us_skin_modern div[class*='us_twitter'] { background-color:#00ABF0; }.us_skin_default div[class*='us_google'], .us_skin_modern div[class*='us_google'] { background-color:#D95232; }.us_skin_default div[class*='us_delicious'], .us_skin_modern div[class*='us_delicious'] { background-color:#66B2FD; }.us_skin_default div[class*='us_stumble'], .us_skin_modern div[class*='us_stumble'] { background-color:#169300; }.us_skin_default div[class*='us_linkedin'], .us_skin_modern div[class*='us_linkedin'] { background-color:#1C86BC; }.us_skin_default div[class*='us_pinterest'], .us_skin_modern div[class*='us_pinterest'] { background-color:#AE181F; }.us_skin_default div[class*='us_buffer'], .us_skin_modern div[class*='us_buffer'] { background-color:#4f4f4f; }.us_skin_default div[class*='us_reddit'], .us_skin_modern div[class*='us_reddit'] { background-color:#3894f7; }.us_skin_default div[class*='us_vkontakte'], .us_skin_modern div[class*='us_vkontakte'] { background-color:#537599; }.us_skin_default .us_mail, .us_skin_modern .us_mail { background-color:#666666; }.us_skin_default div[class*='us_love'], .us_skin_modern div[class*='us_love'] { background-color:#FF0000; }.us_skin_default div[class*='us_pocket'], .us_skin_modern div[class*='us_pocket'] { background-color:#ee4056; }.us_skin_default div[class*='us_tumblr'], .us_skin_modern div[class*='us_tumblr'] { background-color:#529ecc; }.us_skin_default div[class*='us_print'], .us_skin_modern div[class*='us_print'] { background-color:#60d0d4; }.us_skin_default div[class*='us_flipboard'], .us_skin_modern div[class*='us_flipboard'] { background-color:#c10000; }.us_skin_default div[class*='us_comments'], .us_skin_modern div[class*='us_comments']{ background-color:#b69823; }.us_skin_default div[class*='us_feedly'], .us_skin_modern div[class*='us_feedly'] { background-color:#414141; }.us_skin_default div[class*='us_youtube'], .us_skin_modern div[class*='us_youtube'] { background-color:#cc181e; }.us_skin_default div[class*='us_vimeo'], .us_skin_modern div[class*='us_vimeo'] { background-color:#1bb6ec; }.us_skin_default div[class*='us_behance'], .us_skin_modern div[class*='us_behance'] { background-color:#1769ff; }.us_skin_default div[class*='us_ok'], .us_skin_modern div[class*='us_ok'] { background-color:#f2720c; }.us_skin_default div[class*='us_weibo'], .us_skin_modern div[class*='us_weibo'] { background-color:#e64141; }.us_skin_default div[class*='us_managewp'], .us_skin_modern div[class*='us_managewp'] { background-color:#098ae0; }.us_skin_default div[class*='us_xing'], .us_skin_modern div[class*='us_xing'] { background-color:#026466; }.us_skin_default div[class*='us_whatsapp'], .us_skin_modern div[class*='us_whatsapp'] { background-color:#34af23; }.us_skin_default div[class*='us_meneame'], .us_skin_modern div[class*='us_meneame'] { background-color:#ff6400; }.us_skin_default div[class*='us_digg'], .us_skin_modern div[class*='us_digg'] { background-color:#000000; }.us_skin_default div[class*='us_dribbble'], .us_skin_modern div[class*='us_dribbble'] { background-color:#f72b7f; }.us_skin_default div[class*='us_envato'], .us_skin_modern div[class*='us_envato'] { background-color:#82b540; }.us_skin_default div[class*='us_github'], .us_skin_modern div[class*='us_github'] { background-color:#201e1f; }.us_skin_default div[class*='us_soundcloud'], .us_skin_modern div[class*='us_soundcloud'] { background-color:#ff6f00; }.us_skin_default div[class*='us_instagram'], .us_skin_modern div[class*='us_instagram'] { background-color:#48769c; }.us_skin_default div[class*='us_feedpress'], .us_skin_modern div[class*='us_feedpress'] { background-color:#ffafaf; }.us_skin_default div[class*='us_mailchimp'], .us_skin_modern div[class*='us_mailchimp'] { background-color:#6dc5dc; }.us_skin_default div[class*='us_flickr'], .us_skin_modern div[class*='us_flickr'] { background-color:#0062dd; }.us_skin_default div[class*='us_members'], .us_skin_modern div[class*='us_members'] { background-color:#0ab071; }.us_skin_default div[class*='us_more'], .us_skin_modern div[class*='us_more'] { background-color:#53B27C; }.us_skin_default .us_posts_fan_count, .us_skin_modern .us_posts_fan_count { background-color:#924e2a; }.us_skin_default .us_button:hover, .us_skin_modern .us_fan_count_button:hover, .us_skin_modern .us_button:hover, .us_skin_modern .us_fan_count_button:hover { background-color:#136ebf; }.us_skin_simple div[class*='us_facebook'] a, .us_skin_minimal div[class*='us_facebook'] a { color:#3b5998; }.us_skin_simple div[class*='us_twitter'] a, .us_skin_minimal div[class*='us_twitter'] a { color:#00ABF0; }.us_skin_simple div[class*='us_google'] a, .us_skin_minimal div[class*='us_google'] a { color:#D95232; }.us_skin_simple div[class*='us_delicious'] a, .us_skin_minimal div[class*='us_delicious'] a { color:#66B2FD; }.us_skin_simple div[class*='us_stumble'] a, .us_skin_minimal div[class*='us_stumble'] a { color:#169300; }.us_skin_simple div[class*='us_linkedin'] a, .us_skin_minimal div[class*='us_linkedin'] a { color:#1C86BC; }.us_skin_simple div[class*='us_pinterest'] a, .us_skin_minimal div[class*='us_pinterest'] a { color:#AE181F; }.us_skin_simple div[class*='us_buffer'] a, .us_skin_minimal div[class*='us_buffer'] a { color:#4f4f4f; }.us_skin_simple div[class*='us_reddit'] a, .us_skin_minimal div[class*='us_reddit'] a { color:#3894f7; }.us_skin_simple div[class*='us_vkontakte'] a, .us_skin_minimal div[class*='us_vkontakte'] a { color:#537599; }.us_skin_simple .us_mail a, .us_skin_minimal .us_mail a { color:#666666; }.us_skin_simple div[class*='us_love'] a, .us_skin_minimal div[class*='us_love'] a { color:#FF0000; }.us_skin_simple div[class*='us_pocket'] a, .us_skin_minimal div[class*='us_pocket'] a { color:#ee4056; }.us_skin_simple div[class*='us_tumblr'] a, .us_skin_minimal div[class*='us_tumblr'] a { color:#529ecc; }.us_skin_simple div[class*='us_print'] a, .us_skin_minimal div[class*='us_print'] a { color:#60d0d4; }.us_skin_simple div[class*='us_flipboard'] a, .us_skin_minimal div[class*='us_flipboard'] a { color:#c10000; }.us_skin_simple div[class*='us_comments'] *, .us_skin_minimal div[class*='us_comments'] * { color:#b69823; }.us_skin_simple div[class*='us_feedly'] a, .us_skin_minimal div[class*='us_feedly'] a { color:#414141; }.us_skin_simple div[class*='us_youtube'] a, .us_skin_minimal div[class*='us_youtube'] a { color:#cc181e; }.us_skin_simple div[class*='us_vimeo'] a, .us_skin_minimal div[class*='us_vimeo'] a { color:#1bb6ec; }.us_skin_simple div[class*='us_behance'] a, .us_skin_minimal div[class*='us_behance'] a { color:#1769ff; }.us_skin_simple div[class*='us_ok'] a, .us_skin_minimal div[class*='us_ok'] a { color:#f2720c; }.us_skin_simple div[class*='us_weibo'] a, .us_skin_minimal div[class*='us_weibo'] a { color:#e64141; }.us_skin_simple div[class*='us_managewp'] a, .us_skin_minimal div[class*='us_managewp'] a { color:#098ae0; }.us_skin_simple div[class*='us_xing'] a, .us_skin_minimal div[class*='us_xing'] a { color:#026466; }.us_skin_simple div[class*='us_whatsapp'] a, .us_skin_minimal div[class*='us_whatsapp'] a { color:#34af23; }.us_skin_simple div[class*='us_meneame'] a, .us_skin_minimal div[class*='us_meneame'] a { color:#ff6400; }.us_skin_simple div[class*='us_digg'] a, .us_skin_minimal div[class*='us_digg'] a { color:#000000; }.us_skin_simple div[class*='us_dribbble'] a, .us_skin_minimal div[class*='us_dribbble'] a { color:#f72b7f; }.us_skin_simple div[class*='us_envato'] a, .us_skin_minimal div[class*='us_envato'] a { color:#82b540; }.us_skin_simple div[class*='us_github'] a, .us_skin_minimal div[class*='us_github'] a { color:#201e1f; }.us_skin_simple div[class*='us_soundcloud'] a, .us_skin_minimal div[class*='us_soundcloud'] a { color:#ff6f00; }.us_skin_simple div[class*='us_instagram'] a, .us_skin_minimal div[class*='us_instagram'] a { color:#48769c; }.us_skin_simple div[class*='us_feedpress'], .us_skin_minimal div[class*='us_feedpress'] a { color:#ffafaf; }.us_skin_simple div[class*='us_mailchimp'], .us_skin_minimal div[class*='us_mailchimp'] { color:#6dc5dc; }.us_skin_simple div[class*='us_flickr'] a, .us_skin_minimal div[class*='us_flickr'] a { color:#0062dd; }.us_skin_simple div[class*='us_members'], .us_skin_minimal div[class*='us_members'] { color:#0ab071; }.us_skin_simple div[class*='us_more'] a, .us_skin_minimal div[class*='us_more'] a { color:#53B27C; }.us_skin_simple .us_posts_fan_count, .us_skin_minimal .us_posts_fan_count { color:#924e2a; }.us_skin_simple .us_button:hover a, .us_skin_minimal .us_button:hover a { color:#136ebf; }.us_skin_round div[class*='us_facebook'] .us_share, .us_skin_round div[class*='us_facebook'].us_fan_count { background-color:#3b5998; }.us_skin_round div[class*='us_twitter'] .us_share, .us_skin_round div[class*='us_twitter'].us_fan_count { background-color:#00ABF0; }.us_skin_round div[class*='us_google'] .us_share, .us_skin_round div[class*='us_google'].us_fan_count { background-color:#D95232; }.us_skin_round div[class*='us_delicious'] .us_share, .us_skin_round div[class*='us_delicious'].us_fan_count { background-color:#66B2FD; }.us_skin_round div[class*='us_stumble'] .us_share { background-color:#169300; }.us_skin_round div[class*='us_linkedin'] .us_share, .us_skin_round div[class*='us_linkedin'].us_fan_count { background-color:#1C86BC; }.us_skin_round div[class*='us_pinterest'] .us_share, .us_skin_round div[class*='us_pinterest'].us_fan_count { background-color:#AE181F; }.us_skin_round div[class*='us_buffer'] .us_share { background-color:#4f4f4f; }.us_skin_round div[class*='us_reddit'] .us_share { background-color:#3894f7; }.us_skin_round div[class*='us_vkontakte'] .us_share, .us_skin_round div[class*='us_vkontakte'].us_fan_count { background-color:#537599; }.us_skin_round .us_mail .us_share { background-color:#666666; }.us_skin_round div[class*='us_love'] .us_share, .us_skin_round div[class*='us_love'].us_fan_count { background-color:#FF0000; }.us_skin_round div[class*='us_pocket'] .us_share { background-color:#ee4056; }.us_skin_round div[class*='us_tumblr'] .us_share { background-color:#529ecc; }.us_skin_round div[class*='us_print'] .us_share { background-color:#60d0d4; }.us_skin_round div[class*='us_flipboard'] .us_share { background-color:#c10000; }.us_skin_round div[class*='us_more'] .us_share { background-color:#53B27C; }.us_skin_round div[class*='us_comments'] .us_share, .us_skin_round div[class*='us_comments'].us_fan_count { background-color:#b69823; }.us_skin_round div[class*='us_feedly'] .us_share { background-color:#414141; }.us_skin_round div[class*='us_youtube'].us_fan_count { background-color:#cc181e; }.us_skin_round div[class*='us_vimeo'].us_fan_count { background-color:#1bb6ec; }.us_skin_round div[class*='us_behance'].us_fan_count { background-color:#1769ff; }.us_skin_round div[class*='us_ok'] .us_share { background-color:#f2720c; }.us_skin_round div[class*='us_weibo'] .us_share { background-color:#e64141; }.us_skin_round div[class*='us_managewp'] .us_share { background-color:#098ae0; }.us_skin_round div[class*='us_xing'] .us_share { background-color:#026466; }.us_skin_round div[class*='us_whatsapp'].us_fan_count { background-color:#34af23; }.us_skin_round div[class*='us_meneame'].us_fan_count { background-color:#ff6400; }.us_skin_round div[class*='us_digg'].us_fan_count { background-color:#000000; }.us_skin_round div[class*='us_dribbble'].us_fan_count { background-color:#f72b7f; }.us_skin_round div[class*='us_envato'].us_fan_count { background-color:#82b540; }.us_skin_round div[class*='us_github'].us_fan_count { background-color:#201e1f; }.us_skin_round div[class*='us_soundcloud'].us_fan_count  { background-color:#ff6f00; }.us_skin_round div[class*='us_instagram'].us_fan_count  { background-color:#48769c; }.us_skin_round div[class*='us_feedpress'].us_fan_count { background-color:#ffafaf; }.us_skin_round div[class*='us_mailchimp'].us_fan_count { background-color:#6dc5dc; }.us_skin_round div[class*='us_flickr'].us_fan_count { background-color:#0062dd; }.us_skin_round div[class*='us_members'].us_fan_count { background-color:#0ab071; }.us_skin_round .us_posts_fan_count.us_fan_count { background-color:#924e2a; }.us_skin_round .us_button:hover .us_share, .us_skin_round .us_button.us_fan_count:hover { background-color:#136ebf; }
+.us_sticky .us_wrapper { background-color:#ffffff; }.us_floating .us_wrapper .us_button { width: 45px; -webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_floating .us_wrapper .us_button:hover { width: 90px;-webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_fan_count_button { -moz-border-radius-topleft: 0px; -moz-border-radius-topright: 0px; -moz-border-radius-bottomright: 0px; -moz-border-radius-bottomleft: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; -webkit-border-top-left-radius: 0px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; -webkit-border-bottom-left-radius: 0px; }.us_skin_default .us_button { -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; -moz-border-radius-bottomright: 4px; -moz-border-radius-bottomleft: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; -webkit-border-top-left-radius: 4px; -webkit-border-top-right-radius: 4px; -webkit-border-bottom-right-radius: 4px; -webkit-border-bottom-left-radius: 4px; }.us_skin_default div[class*='us_facebook'], .us_skin_modern div[class*='us_facebook'] { background-color:#3b5998; }.us_skin_default div[class*='us_twitter'], .us_skin_modern div[class*='us_twitter'] { background-color:#00ABF0; }.us_skin_default div[class*='us_google'], .us_skin_modern div[class*='us_google'] { background-color:#D95232; }.us_skin_default div[class*='us_delicious'], .us_skin_modern div[class*='us_delicious'] { background-color:#66B2FD; }.us_skin_default div[class*='us_stumble'], .us_skin_modern div[class*='us_stumble'] { background-color:#169300; }.us_skin_default div[class*='us_linkedin'], .us_skin_modern div[class*='us_linkedin'] { background-color:#1C86BC; }.us_skin_default div[class*='us_pinterest'], .us_skin_modern div[class*='us_pinterest'] { background-color:#AE181F; }.us_skin_default div[class*='us_buffer'], .us_skin_modern div[class*='us_buffer'] { background-color:#4f4f4f; }.us_skin_default div[class*='us_reddit'], .us_skin_modern div[class*='us_reddit'] { background-color:#3894f7; }.us_skin_default div[class*='us_vkontakte'], .us_skin_modern div[class*='us_vkontakte'] { background-color:#537599; }.us_skin_default .us_mail, .us_skin_modern .us_mail { background-color:#666666; }.us_skin_default div[class*='us_love'], .us_skin_modern div[class*='us_love'] { background-color:#FF0000; }.us_skin_default div[class*='us_pocket'], .us_skin_modern div[class*='us_pocket'] { background-color:#ee4056; }.us_skin_default div[class*='us_tumblr'], .us_skin_modern div[class*='us_tumblr'] { background-color:#529ecc; }.us_skin_default div[class*='us_print'], .us_skin_modern div[class*='us_print'] { background-color:#60d0d4; }.us_skin_default div[class*='us_flipboard'], .us_skin_modern div[class*='us_flipboard'] { background-color:#c10000; }.us_skin_default div[class*='us_comments'], .us_skin_modern div[class*='us_comments']{ background-color:#b69823; }.us_skin_default div[class*='us_feedly'], .us_skin_modern div[class*='us_feedly'] { background-color:#414141; }.us_skin_default div[class*='us_youtube'], .us_skin_modern div[class*='us_youtube'] { background-color:#cc181e; }.us_skin_default div[class*='us_vimeo'], .us_skin_modern div[class*='us_vimeo'] { background-color:#1bb6ec; }.us_skin_default div[class*='us_behance'], .us_skin_modern div[class*='us_behance'] { background-color:#1769ff; }.us_skin_default div[class*='us_ok'], .us_skin_modern div[class*='us_ok'] { background-color:#f2720c; }.us_skin_default div[class*='us_weibo'], .us_skin_modern div[class*='us_weibo'] { background-color:#e64141; }.us_skin_default div[class*='us_managewp'], .us_skin_modern div[class*='us_managewp'] { background-color:#098ae0; }.us_skin_default div[class*='us_xing'], .us_skin_modern div[class*='us_xing'] { background-color:#026466; }.us_skin_default div[class*='us_whatsapp'], .us_skin_modern div[class*='us_whatsapp'] { background-color:#34af23; }.us_skin_default div[class*='us_meneame'], .us_skin_modern div[class*='us_meneame'] { background-color:#ff6400; }.us_skin_default div[class*='us_digg'], .us_skin_modern div[class*='us_digg'] { background-color:#000000; }.us_skin_default div[class*='us_dribbble'], .us_skin_modern div[class*='us_dribbble'] { background-color:#f72b7f; }.us_skin_default div[class*='us_envato'], .us_skin_modern div[class*='us_envato'] { background-color:#82b540; }.us_skin_default div[class*='us_github'], .us_skin_modern div[class*='us_github'] { background-color:#201e1f; }.us_skin_default div[class*='us_soundcloud'], .us_skin_modern div[class*='us_soundcloud'] { background-color:#ff6f00; }.us_skin_default div[class*='us_instagram'], .us_skin_modern div[class*='us_instagram'] { background-color:#48769c; }.us_skin_default div[class*='us_feedpress'], .us_skin_modern div[class*='us_feedpress'] { background-color:#ffafaf; }.us_skin_default div[class*='us_mailchimp'], .us_skin_modern div[class*='us_mailchimp'] { background-color:#6dc5dc; }.us_skin_default div[class*='us_flickr'], .us_skin_modern div[class*='us_flickr'] { background-color:#0062dd; }.us_skin_default div[class*='us_members'], .us_skin_modern div[class*='us_members'] { background-color:#0ab071; }.us_skin_default div[class*='us_more'], .us_skin_modern div[class*='us_more'] { background-color:#53B27C; }.us_skin_default .us_posts_fan_count, .us_skin_modern .us_posts_fan_count { background-color:#924e2a; }.us_skin_default .us_button:hover, .us_skin_modern .us_fan_count_button:hover, .us_skin_modern .us_button:hover, .us_skin_modern .us_fan_count_button:hover { background-color:#136ebf; }.us_skin_simple div[class*='us_facebook'] a, .us_skin_minimal div[class*='us_facebook'] a { color:#3b5998; }.us_skin_simple div[class*='us_twitter'] a, .us_skin_minimal div[class*='us_twitter'] a { color:#00ABF0; }.us_skin_simple div[class*='us_google'] a, .us_skin_minimal div[class*='us_google'] a { color:#D95232; }.us_skin_simple div[class*='us_delicious'] a, .us_skin_minimal div[class*='us_delicious'] a { color:#66B2FD; }.us_skin_simple div[class*='us_stumble'] a, .us_skin_minimal div[class*='us_stumble'] a { color:#169300; }.us_skin_simple div[class*='us_linkedin'] a, .us_skin_minimal div[class*='us_linkedin'] a { color:#1C86BC; }.us_skin_simple div[class*='us_pinterest'] a, .us_skin_minimal div[class*='us_pinterest'] a { color:#AE181F; }.us_skin_simple div[class*='us_buffer'] a, .us_skin_minimal div[class*='us_buffer'] a { color:#4f4f4f; }.us_skin_simple div[class*='us_reddit'] a, .us_skin_minimal div[class*='us_reddit'] a { color:#3894f7; }.us_skin_simple div[class*='us_vkontakte'] a, .us_skin_minimal div[class*='us_vkontakte'] a { color:#537599; }.us_skin_simple .us_mail a, .us_skin_minimal .us_mail a { color:#666666; }.us_skin_simple div[class*='us_love'] a, .us_skin_minimal div[class*='us_love'] a { color:#FF0000; }.us_skin_simple div[class*='us_pocket'] a, .us_skin_minimal div[class*='us_pocket'] a { color:#ee4056; }.us_skin_simple div[class*='us_tumblr'] a, .us_skin_minimal div[class*='us_tumblr'] a { color:#529ecc; }.us_skin_simple div[class*='us_print'] a, .us_skin_minimal div[class*='us_print'] a { color:#60d0d4; }.us_skin_simple div[class*='us_flipboard'] a, .us_skin_minimal div[class*='us_flipboard'] a { color:#c10000; }.us_skin_simple div[class*='us_comments'] *, .us_skin_minimal div[class*='us_comments'] * { color:#b69823; }.us_skin_simple div[class*='us_feedly'] a, .us_skin_minimal div[class*='us_feedly'] a { color:#414141; }.us_skin_simple div[class*='us_youtube'] a, .us_skin_minimal div[class*='us_youtube'] a { color:#cc181e; }.us_skin_simple div[class*='us_vimeo'] a, .us_skin_minimal div[class*='us_vimeo'] a { color:#1bb6ec; }.us_skin_simple div[class*='us_behance'] a, .us_skin_minimal div[class*='us_behance'] a { color:#1769ff; }.us_skin_simple div[class*='us_ok'] a, .us_skin_minimal div[class*='us_ok'] a { color:#f2720c; }.us_skin_simple div[class*='us_weibo'] a, .us_skin_minimal div[class*='us_weibo'] a { color:#e64141; }.us_skin_simple div[class*='us_managewp'] a, .us_skin_minimal div[class*='us_managewp'] a { color:#098ae0; }.us_skin_simple div[class*='us_xing'] a, .us_skin_minimal div[class*='us_xing'] a { color:#026466; }.us_skin_simple div[class*='us_whatsapp'] a, .us_skin_minimal div[class*='us_whatsapp'] a { color:#34af23; }.us_skin_simple div[class*='us_meneame'] a, .us_skin_minimal div[class*='us_meneame'] a { color:#ff6400; }.us_skin_simple div[class*='us_digg'] a, .us_skin_minimal div[class*='us_digg'] a { color:#000000; }.us_skin_simple div[class*='us_dribbble'] a, .us_skin_minimal div[class*='us_dribbble'] a { color:#f72b7f; }.us_skin_simple div[class*='us_envato'] a, .us_skin_minimal div[class*='us_envato'] a { color:#82b540; }.us_skin_simple div[class*='us_github'] a, .us_skin_minimal div[class*='us_github'] a { color:#201e1f; }.us_skin_simple div[class*='us_soundcloud'] a, .us_skin_minimal div[class*='us_soundcloud'] a { color:#ff6f00; }.us_skin_simple div[class*='us_instagram'] a, .us_skin_minimal div[class*='us_instagram'] a { color:#48769c; }.us_skin_simple div[class*='us_feedpress'], .us_skin_minimal div[class*='us_feedpress'] a { color:#ffafaf; }.us_skin_simple div[class*='us_mailchimp'], .us_skin_minimal div[class*='us_mailchimp'] { color:#6dc5dc; }.us_skin_simple div[class*='us_flickr'] a, .us_skin_minimal div[class*='us_flickr'] a { color:#0062dd; }.us_skin_simple div[class*='us_members'], .us_skin_minimal div[class*='us_members'] { color:#0ab071; }.us_skin_simple div[class*='us_more'] a, .us_skin_minimal div[class*='us_more'] a { color:#53B27C; }.us_skin_simple .us_posts_fan_count, .us_skin_minimal .us_posts_fan_count { color:#924e2a; }.us_skin_simple .us_button:hover a, .us_skin_minimal .us_button:hover a { color:#136ebf; }.us_skin_round div[class*='us_facebook'] .us_share, .us_skin_round div[class*='us_facebook'].us_fan_count { background-color:#3b5998; }.us_skin_round div[class*='us_twitter'] .us_share, .us_skin_round div[class*='us_twitter'].us_fan_count { background-color:#00ABF0; }.us_skin_round div[class*='us_google'] .us_share, .us_skin_round div[class*='us_google'].us_fan_count { background-color:#D95232; }.us_skin_round div[class*='us_delicious'] .us_share, .us_skin_round div[class*='us_delicious'].us_fan_count { background-color:#66B2FD; }.us_skin_round div[class*='us_stumble'] .us_share { background-color:#169300; }.us_skin_round div[class*='us_linkedin'] .us_share, .us_skin_round div[class*='us_linkedin'].us_fan_count { background-color:#1C86BC; }.us_skin_round div[class*='us_pinterest'] .us_share, .us_skin_round div[class*='us_pinterest'].us_fan_count { background-color:#AE181F; }.us_skin_round div[class*='us_buffer'] .us_share { background-color:#4f4f4f; }.us_skin_round div[class*='us_reddit'] .us_share { background-color:#3894f7; }.us_skin_round div[class*='us_vkontakte'] .us_share, .us_skin_round div[class*='us_vkontakte'].us_fan_count { background-color:#537599; }.us_skin_round .us_mail .us_share { background-color:#666666; }.us_skin_round div[class*='us_love'] .us_share, .us_skin_round div[class*='us_love'].us_fan_count { background-color:#FF0000; }.us_skin_round div[class*='us_pocket'] .us_share { background-color:#ee4056; }.us_skin_round div[class*='us_tumblr'] .us_share { background-color:#529ecc; }.us_skin_round div[class*='us_print'] .us_share { background-color:#60d0d4; }.us_skin_round div[class*='us_flipboard'] .us_share { background-color:#c10000; }.us_skin_round div[class*='us_more'] .us_share { background-color:#53B27C; }.us_skin_round div[class*='us_comments'] .us_share, .us_skin_round div[class*='us_comments'].us_fan_count { background-color:#b69823; }.us_skin_round div[class*='us_feedly'] .us_share { background-color:#414141; }.us_skin_round div[class*='us_youtube'].us_fan_count { background-color:#cc181e; }.us_skin_round div[class*='us_vimeo'].us_fan_count { background-color:#1bb6ec; }.us_skin_round div[class*='us_behance'].us_fan_count { background-color:#1769ff; }.us_skin_round div[class*='us_ok'] .us_share { background-color:#f2720c; }.us_skin_round div[class*='us_weibo'] .us_share { background-color:#e64141; }.us_skin_round div[class*='us_managewp'] .us_share { background-color:#098ae0; }.us_skin_round div[class*='us_xing'] .us_share { background-color:#026466; }.us_skin_round div[class*='us_whatsapp'].us_fan_count { background-color:#34af23; }.us_skin_round div[class*='us_meneame'].us_fan_count { background-color:#ff6400; }.us_skin_round div[class*='us_digg'].us_fan_count { background-color:#000000; }.us_skin_round div[class*='us_dribbble'].us_fan_count { background-color:#f72b7f; }.us_skin_round div[class*='us_envato'].us_fan_count { background-color:#82b540; }.us_skin_round div[class*='us_github'].us_fan_count { background-color:#201e1f; }.us_skin_round div[class*='us_soundcloud'].us_fan_count  { background-color:#ff6f00; }.us_skin_round div[class*='us_instagram'].us_fan_count  { background-color:#48769c; }.us_skin_round div[class*='us_feedpress'].us_fan_count { background-color:#ffafaf; }.us_skin_round div[class*='us_mailchimp'].us_fan_count { background-color:#6dc5dc; }.us_skin_round div[class*='us_flickr'].us_fan_count { background-color:#0062dd; }.us_skin_round div[class*='us_members'].us_fan_count { background-color:#0ab071; }.us_skin_round .us_posts_fan_count.us_fan_count { background-color:#924e2a; }.us_skin_round .us_button:hover .us_share, .us_skin_round .us_button.us_fan_count:hover { background-color:#136ebf; }
+.us_sticky .us_wrapper { background-color:#ffffff; }.us_floating .us_wrapper .us_button { width: 45px; -webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_floating .us_wrapper .us_button:hover { width: 90px;-webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_fan_count_button { -moz-border-radius-topleft: 0px; -moz-border-radius-topright: 0px; -moz-border-radius-bottomright: 0px; -moz-border-radius-bottomleft: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; -webkit-border-top-left-radius: 0px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; -webkit-border-bottom-left-radius: 0px; }.us_skin_default .us_button { -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; -moz-border-radius-bottomright: 4px; -moz-border-radius-bottomleft: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; -webkit-border-top-left-radius: 4px; -webkit-border-top-right-radius: 4px; -webkit-border-bottom-right-radius: 4px; -webkit-border-bottom-left-radius: 4px; }.us_skin_default div[class*='us_facebook'], .us_skin_modern div[class*='us_facebook'] { background-color:#3b5998; }.us_skin_default div[class*='us_twitter'], .us_skin_modern div[class*='us_twitter'] { background-color:#00ABF0; }.us_skin_default div[class*='us_google'], .us_skin_modern div[class*='us_google'] { background-color:#D95232; }.us_skin_default div[class*='us_delicious'], .us_skin_modern div[class*='us_delicious'] { background-color:#66B2FD; }.us_skin_default div[class*='us_stumble'], .us_skin_modern div[class*='us_stumble'] { background-color:#169300; }.us_skin_default div[class*='us_linkedin'], .us_skin_modern div[class*='us_linkedin'] { background-color:#1C86BC; }.us_skin_default div[class*='us_pinterest'], .us_skin_modern div[class*='us_pinterest'] { background-color:#AE181F; }.us_skin_default div[class*='us_buffer'], .us_skin_modern div[class*='us_buffer'] { background-color:#4f4f4f; }.us_skin_default div[class*='us_reddit'], .us_skin_modern div[class*='us_reddit'] { background-color:#3894f7; }.us_skin_default div[class*='us_vkontakte'], .us_skin_modern div[class*='us_vkontakte'] { background-color:#537599; }.us_skin_default .us_mail, .us_skin_modern .us_mail { background-color:#666666; }.us_skin_default div[class*='us_love'], .us_skin_modern div[class*='us_love'] { background-color:#FF0000; }.us_skin_default div[class*='us_pocket'], .us_skin_modern div[class*='us_pocket'] { background-color:#ee4056; }.us_skin_default div[class*='us_tumblr'], .us_skin_modern div[class*='us_tumblr'] { background-color:#529ecc; }.us_skin_default div[class*='us_print'], .us_skin_modern div[class*='us_print'] { background-color:#60d0d4; }.us_skin_default div[class*='us_flipboard'], .us_skin_modern div[class*='us_flipboard'] { background-color:#c10000; }.us_skin_default div[class*='us_comments'], .us_skin_modern div[class*='us_comments']{ background-color:#b69823; }.us_skin_default div[class*='us_feedly'], .us_skin_modern div[class*='us_feedly'] { background-color:#414141; }.us_skin_default div[class*='us_youtube'], .us_skin_modern div[class*='us_youtube'] { background-color:#cc181e; }.us_skin_default div[class*='us_vimeo'], .us_skin_modern div[class*='us_vimeo'] { background-color:#1bb6ec; }.us_skin_default div[class*='us_behance'], .us_skin_modern div[class*='us_behance'] { background-color:#1769ff; }.us_skin_default div[class*='us_ok'], .us_skin_modern div[class*='us_ok'] { background-color:#f2720c; }.us_skin_default div[class*='us_weibo'], .us_skin_modern div[class*='us_weibo'] { background-color:#e64141; }.us_skin_default div[class*='us_managewp'], .us_skin_modern div[class*='us_managewp'] { background-color:#098ae0; }.us_skin_default div[class*='us_xing'], .us_skin_modern div[class*='us_xing'] { background-color:#026466; }.us_skin_default div[class*='us_whatsapp'], .us_skin_modern div[class*='us_whatsapp'] { background-color:#34af23; }.us_skin_default div[class*='us_meneame'], .us_skin_modern div[class*='us_meneame'] { background-color:#ff6400; }.us_skin_default div[class*='us_digg'], .us_skin_modern div[class*='us_digg'] { background-color:#000000; }.us_skin_default div[class*='us_dribbble'], .us_skin_modern div[class*='us_dribbble'] { background-color:#f72b7f; }.us_skin_default div[class*='us_envato'], .us_skin_modern div[class*='us_envato'] { background-color:#82b540; }.us_skin_default div[class*='us_github'], .us_skin_modern div[class*='us_github'] { background-color:#201e1f; }.us_skin_default div[class*='us_soundcloud'], .us_skin_modern div[class*='us_soundcloud'] { background-color:#ff6f00; }.us_skin_default div[class*='us_instagram'], .us_skin_modern div[class*='us_instagram'] { background-color:#48769c; }.us_skin_default div[class*='us_feedpress'], .us_skin_modern div[class*='us_feedpress'] { background-color:#ffafaf; }.us_skin_default div[class*='us_mailchimp'], .us_skin_modern div[class*='us_mailchimp'] { background-color:#6dc5dc; }.us_skin_default div[class*='us_flickr'], .us_skin_modern div[class*='us_flickr'] { background-color:#0062dd; }.us_skin_default div[class*='us_members'], .us_skin_modern div[class*='us_members'] { background-color:#0ab071; }.us_skin_default div[class*='us_more'], .us_skin_modern div[class*='us_more'] { background-color:#53B27C; }.us_skin_default .us_posts_fan_count, .us_skin_modern .us_posts_fan_count { background-color:#924e2a; }.us_skin_default .us_button:hover, .us_skin_modern .us_fan_count_button:hover, .us_skin_modern .us_button:hover, .us_skin_modern .us_fan_count_button:hover { background-color:#136ebf; }.us_skin_simple div[class*='us_facebook'] a, .us_skin_minimal div[class*='us_facebook'] a { color:#3b5998; }.us_skin_simple div[class*='us_twitter'] a, .us_skin_minimal div[class*='us_twitter'] a { color:#00ABF0; }.us_skin_simple div[class*='us_google'] a, .us_skin_minimal div[class*='us_google'] a { color:#D95232; }.us_skin_simple div[class*='us_delicious'] a, .us_skin_minimal div[class*='us_delicious'] a { color:#66B2FD; }.us_skin_simple div[class*='us_stumble'] a, .us_skin_minimal div[class*='us_stumble'] a { color:#169300; }.us_skin_simple div[class*='us_linkedin'] a, .us_skin_minimal div[class*='us_linkedin'] a { color:#1C86BC; }.us_skin_simple div[class*='us_pinterest'] a, .us_skin_minimal div[class*='us_pinterest'] a { color:#AE181F; }.us_skin_simple div[class*='us_buffer'] a, .us_skin_minimal div[class*='us_buffer'] a { color:#4f4f4f; }.us_skin_simple div[class*='us_reddit'] a, .us_skin_minimal div[class*='us_reddit'] a { color:#3894f7; }.us_skin_simple div[class*='us_vkontakte'] a, .us_skin_minimal div[class*='us_vkontakte'] a { color:#537599; }.us_skin_simple .us_mail a, .us_skin_minimal .us_mail a { color:#666666; }.us_skin_simple div[class*='us_love'] a, .us_skin_minimal div[class*='us_love'] a { color:#FF0000; }.us_skin_simple div[class*='us_pocket'] a, .us_skin_minimal div[class*='us_pocket'] a { color:#ee4056; }.us_skin_simple div[class*='us_tumblr'] a, .us_skin_minimal div[class*='us_tumblr'] a { color:#529ecc; }.us_skin_simple div[class*='us_print'] a, .us_skin_minimal div[class*='us_print'] a { color:#60d0d4; }.us_skin_simple div[class*='us_flipboard'] a, .us_skin_minimal div[class*='us_flipboard'] a { color:#c10000; }.us_skin_simple div[class*='us_comments'] *, .us_skin_minimal div[class*='us_comments'] * { color:#b69823; }.us_skin_simple div[class*='us_feedly'] a, .us_skin_minimal div[class*='us_feedly'] a { color:#414141; }.us_skin_simple div[class*='us_youtube'] a, .us_skin_minimal div[class*='us_youtube'] a { color:#cc181e; }.us_skin_simple div[class*='us_vimeo'] a, .us_skin_minimal div[class*='us_vimeo'] a { color:#1bb6ec; }.us_skin_simple div[class*='us_behance'] a, .us_skin_minimal div[class*='us_behance'] a { color:#1769ff; }.us_skin_simple div[class*='us_ok'] a, .us_skin_minimal div[class*='us_ok'] a { color:#f2720c; }.us_skin_simple div[class*='us_weibo'] a, .us_skin_minimal div[class*='us_weibo'] a { color:#e64141; }.us_skin_simple div[class*='us_managewp'] a, .us_skin_minimal div[class*='us_managewp'] a { color:#098ae0; }.us_skin_simple div[class*='us_xing'] a, .us_skin_minimal div[class*='us_xing'] a { color:#026466; }.us_skin_simple div[class*='us_whatsapp'] a, .us_skin_minimal div[class*='us_whatsapp'] a { color:#34af23; }.us_skin_simple div[class*='us_meneame'] a, .us_skin_minimal div[class*='us_meneame'] a { color:#ff6400; }.us_skin_simple div[class*='us_digg'] a, .us_skin_minimal div[class*='us_digg'] a { color:#000000; }.us_skin_simple div[class*='us_dribbble'] a, .us_skin_minimal div[class*='us_dribbble'] a { color:#f72b7f; }.us_skin_simple div[class*='us_envato'] a, .us_skin_minimal div[class*='us_envato'] a { color:#82b540; }.us_skin_simple div[class*='us_github'] a, .us_skin_minimal div[class*='us_github'] a { color:#201e1f; }.us_skin_simple div[class*='us_soundcloud'] a, .us_skin_minimal div[class*='us_soundcloud'] a { color:#ff6f00; }.us_skin_simple div[class*='us_instagram'] a, .us_skin_minimal div[class*='us_instagram'] a { color:#48769c; }.us_skin_simple div[class*='us_feedpress'], .us_skin_minimal div[class*='us_feedpress'] a { color:#ffafaf; }.us_skin_simple div[class*='us_mailchimp'], .us_skin_minimal div[class*='us_mailchimp'] { color:#6dc5dc; }.us_skin_simple div[class*='us_flickr'] a, .us_skin_minimal div[class*='us_flickr'] a { color:#0062dd; }.us_skin_simple div[class*='us_members'], .us_skin_minimal div[class*='us_members'] { color:#0ab071; }.us_skin_simple div[class*='us_more'] a, .us_skin_minimal div[class*='us_more'] a { color:#53B27C; }.us_skin_simple .us_posts_fan_count, .us_skin_minimal .us_posts_fan_count { color:#924e2a; }.us_skin_simple .us_button:hover a, .us_skin_minimal .us_button:hover a { color:#136ebf; }.us_skin_round div[class*='us_facebook'] .us_share, .us_skin_round div[class*='us_facebook'].us_fan_count { background-color:#3b5998; }.us_skin_round div[class*='us_twitter'] .us_share, .us_skin_round div[class*='us_twitter'].us_fan_count { background-color:#00ABF0; }.us_skin_round div[class*='us_google'] .us_share, .us_skin_round div[class*='us_google'].us_fan_count { background-color:#D95232; }.us_skin_round div[class*='us_delicious'] .us_share, .us_skin_round div[class*='us_delicious'].us_fan_count { background-color:#66B2FD; }.us_skin_round div[class*='us_stumble'] .us_share { background-color:#169300; }.us_skin_round div[class*='us_linkedin'] .us_share, .us_skin_round div[class*='us_linkedin'].us_fan_count { background-color:#1C86BC; }.us_skin_round div[class*='us_pinterest'] .us_share, .us_skin_round div[class*='us_pinterest'].us_fan_count { background-color:#AE181F; }.us_skin_round div[class*='us_buffer'] .us_share { background-color:#4f4f4f; }.us_skin_round div[class*='us_reddit'] .us_share { background-color:#3894f7; }.us_skin_round div[class*='us_vkontakte'] .us_share, .us_skin_round div[class*='us_vkontakte'].us_fan_count { background-color:#537599; }.us_skin_round .us_mail .us_share { background-color:#666666; }.us_skin_round div[class*='us_love'] .us_share, .us_skin_round div[class*='us_love'].us_fan_count { background-color:#FF0000; }.us_skin_round div[class*='us_pocket'] .us_share { background-color:#ee4056; }.us_skin_round div[class*='us_tumblr'] .us_share { background-color:#529ecc; }.us_skin_round div[class*='us_print'] .us_share { background-color:#60d0d4; }.us_skin_round div[class*='us_flipboard'] .us_share { background-color:#c10000; }.us_skin_round div[class*='us_more'] .us_share { background-color:#53B27C; }.us_skin_round div[class*='us_comments'] .us_share, .us_skin_round div[class*='us_comments'].us_fan_count { background-color:#b69823; }.us_skin_round div[class*='us_feedly'] .us_share { background-color:#414141; }.us_skin_round div[class*='us_youtube'].us_fan_count { background-color:#cc181e; }.us_skin_round div[class*='us_vimeo'].us_fan_count { background-color:#1bb6ec; }.us_skin_round div[class*='us_behance'].us_fan_count { background-color:#1769ff; }.us_skin_round div[class*='us_ok'] .us_share { background-color:#f2720c; }.us_skin_round div[class*='us_weibo'] .us_share { background-color:#e64141; }.us_skin_round div[class*='us_managewp'] .us_share { background-color:#098ae0; }.us_skin_round div[class*='us_xing'] .us_share { background-color:#026466; }.us_skin_round div[class*='us_whatsapp'].us_fan_count { background-color:#34af23; }.us_skin_round div[class*='us_meneame'].us_fan_count { background-color:#ff6400; }.us_skin_round div[class*='us_digg'].us_fan_count { background-color:#000000; }.us_skin_round div[class*='us_dribbble'].us_fan_count { background-color:#f72b7f; }.us_skin_round div[class*='us_envato'].us_fan_count { background-color:#82b540; }.us_skin_round div[class*='us_github'].us_fan_count { background-color:#201e1f; }.us_skin_round div[class*='us_soundcloud'].us_fan_count  { background-color:#ff6f00; }.us_skin_round div[class*='us_instagram'].us_fan_count  { background-color:#48769c; }.us_skin_round div[class*='us_feedpress'].us_fan_count { background-color:#ffafaf; }.us_skin_round div[class*='us_mailchimp'].us_fan_count { background-color:#6dc5dc; }.us_skin_round div[class*='us_flickr'].us_fan_count { background-color:#0062dd; }.us_skin_round div[class*='us_members'].us_fan_count { background-color:#0ab071; }.us_skin_round .us_posts_fan_count.us_fan_count { background-color:#924e2a; }.us_skin_round .us_button:hover .us_share, .us_skin_round .us_button.us_fan_count:hover { background-color:#136ebf; }
+.us_sticky .us_wrapper { background-color:#ffffff; }.us_floating .us_wrapper .us_button { width: 45px; -webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_floating .us_wrapper .us_button:hover { width: 90px;-webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_fan_count_button { -moz-border-radius-topleft: 0px; -moz-border-radius-topright: 0px; -moz-border-radius-bottomright: 0px; -moz-border-radius-bottomleft: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; -webkit-border-top-left-radius: 0px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; -webkit-border-bottom-left-radius: 0px; }.us_skin_default .us_button { -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; -moz-border-radius-bottomright: 4px; -moz-border-radius-bottomleft: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; -webkit-border-top-left-radius: 4px; -webkit-border-top-right-radius: 4px; -webkit-border-bottom-right-radius: 4px; -webkit-border-bottom-left-radius: 4px; }.us_skin_default div[class*='us_facebook'], .us_skin_modern div[class*='us_facebook'] { background-color:#3b5998; }.us_skin_default div[class*='us_twitter'], .us_skin_modern div[class*='us_twitter'] { background-color:#00ABF0; }.us_skin_default div[class*='us_google'], .us_skin_modern div[class*='us_google'] { background-color:#D95232; }.us_skin_default div[class*='us_delicious'], .us_skin_modern div[class*='us_delicious'] { background-color:#66B2FD; }.us_skin_default div[class*='us_stumble'], .us_skin_modern div[class*='us_stumble'] { background-color:#169300; }.us_skin_default div[class*='us_linkedin'], .us_skin_modern div[class*='us_linkedin'] { background-color:#1C86BC; }.us_skin_default div[class*='us_pinterest'], .us_skin_modern div[class*='us_pinterest'] { background-color:#AE181F; }.us_skin_default div[class*='us_buffer'], .us_skin_modern div[class*='us_buffer'] { background-color:#4f4f4f; }.us_skin_default div[class*='us_reddit'], .us_skin_modern div[class*='us_reddit'] { background-color:#3894f7; }.us_skin_default div[class*='us_vkontakte'], .us_skin_modern div[class*='us_vkontakte'] { background-color:#537599; }.us_skin_default .us_mail, .us_skin_modern .us_mail { background-color:#666666; }.us_skin_default div[class*='us_love'], .us_skin_modern div[class*='us_love'] { background-color:#FF0000; }.us_skin_default div[class*='us_pocket'], .us_skin_modern div[class*='us_pocket'] { background-color:#ee4056; }.us_skin_default div[class*='us_tumblr'], .us_skin_modern div[class*='us_tumblr'] { background-color:#529ecc; }.us_skin_default div[class*='us_print'], .us_skin_modern div[class*='us_print'] { background-color:#60d0d4; }.us_skin_default div[class*='us_flipboard'], .us_skin_modern div[class*='us_flipboard'] { background-color:#c10000; }.us_skin_default div[class*='us_comments'], .us_skin_modern div[class*='us_comments']{ background-color:#b69823; }.us_skin_default div[class*='us_feedly'], .us_skin_modern div[class*='us_feedly'] { background-color:#414141; }.us_skin_default div[class*='us_youtube'], .us_skin_modern div[class*='us_youtube'] { background-color:#cc181e; }.us_skin_default div[class*='us_vimeo'], .us_skin_modern div[class*='us_vimeo'] { background-color:#1bb6ec; }.us_skin_default div[class*='us_behance'], .us_skin_modern div[class*='us_behance'] { background-color:#1769ff; }.us_skin_default div[class*='us_ok'], .us_skin_modern div[class*='us_ok'] { background-color:#f2720c; }.us_skin_default div[class*='us_weibo'], .us_skin_modern div[class*='us_weibo'] { background-color:#e64141; }.us_skin_default div[class*='us_managewp'], .us_skin_modern div[class*='us_managewp'] { background-color:#098ae0; }.us_skin_default div[class*='us_xing'], .us_skin_modern div[class*='us_xing'] { background-color:#026466; }.us_skin_default div[class*='us_whatsapp'], .us_skin_modern div[class*='us_whatsapp'] { background-color:#34af23; }.us_skin_default div[class*='us_meneame'], .us_skin_modern div[class*='us_meneame'] { background-color:#ff6400; }.us_skin_default div[class*='us_digg'], .us_skin_modern div[class*='us_digg'] { background-color:#000000; }.us_skin_default div[class*='us_dribbble'], .us_skin_modern div[class*='us_dribbble'] { background-color:#f72b7f; }.us_skin_default div[class*='us_envato'], .us_skin_modern div[class*='us_envato'] { background-color:#82b540; }.us_skin_default div[class*='us_github'], .us_skin_modern div[class*='us_github'] { background-color:#201e1f; }.us_skin_default div[class*='us_soundcloud'], .us_skin_modern div[class*='us_soundcloud'] { background-color:#ff6f00; }.us_skin_default div[class*='us_instagram'], .us_skin_modern div[class*='us_instagram'] { background-color:#48769c; }.us_skin_default div[class*='us_feedpress'], .us_skin_modern div[class*='us_feedpress'] { background-color:#ffafaf; }.us_skin_default div[class*='us_mailchimp'], .us_skin_modern div[class*='us_mailchimp'] { background-color:#6dc5dc; }.us_skin_default div[class*='us_flickr'], .us_skin_modern div[class*='us_flickr'] { background-color:#0062dd; }.us_skin_default div[class*='us_members'], .us_skin_modern div[class*='us_members'] { background-color:#0ab071; }.us_skin_default div[class*='us_more'], .us_skin_modern div[class*='us_more'] { background-color:#53B27C; }.us_skin_default .us_posts_fan_count, .us_skin_modern .us_posts_fan_count { background-color:#924e2a; }.us_skin_default .us_button:hover, .us_skin_modern .us_fan_count_button:hover, .us_skin_modern .us_button:hover, .us_skin_modern .us_fan_count_button:hover { background-color:#136ebf; }.us_skin_simple div[class*='us_facebook'] a, .us_skin_minimal div[class*='us_facebook'] a { color:#3b5998; }.us_skin_simple div[class*='us_twitter'] a, .us_skin_minimal div[class*='us_twitter'] a { color:#00ABF0; }.us_skin_simple div[class*='us_google'] a, .us_skin_minimal div[class*='us_google'] a { color:#D95232; }.us_skin_simple div[class*='us_delicious'] a, .us_skin_minimal div[class*='us_delicious'] a { color:#66B2FD; }.us_skin_simple div[class*='us_stumble'] a, .us_skin_minimal div[class*='us_stumble'] a { color:#169300; }.us_skin_simple div[class*='us_linkedin'] a, .us_skin_minimal div[class*='us_linkedin'] a { color:#1C86BC; }.us_skin_simple div[class*='us_pinterest'] a, .us_skin_minimal div[class*='us_pinterest'] a { color:#AE181F; }.us_skin_simple div[class*='us_buffer'] a, .us_skin_minimal div[class*='us_buffer'] a { color:#4f4f4f; }.us_skin_simple div[class*='us_reddit'] a, .us_skin_minimal div[class*='us_reddit'] a { color:#3894f7; }.us_skin_simple div[class*='us_vkontakte'] a, .us_skin_minimal div[class*='us_vkontakte'] a { color:#537599; }.us_skin_simple .us_mail a, .us_skin_minimal .us_mail a { color:#666666; }.us_skin_simple div[class*='us_love'] a, .us_skin_minimal div[class*='us_love'] a { color:#FF0000; }.us_skin_simple div[class*='us_pocket'] a, .us_skin_minimal div[class*='us_pocket'] a { color:#ee4056; }.us_skin_simple div[class*='us_tumblr'] a, .us_skin_minimal div[class*='us_tumblr'] a { color:#529ecc; }.us_skin_simple div[class*='us_print'] a, .us_skin_minimal div[class*='us_print'] a { color:#60d0d4; }.us_skin_simple div[class*='us_flipboard'] a, .us_skin_minimal div[class*='us_flipboard'] a { color:#c10000; }.us_skin_simple div[class*='us_comments'] *, .us_skin_minimal div[class*='us_comments'] * { color:#b69823; }.us_skin_simple div[class*='us_feedly'] a, .us_skin_minimal div[class*='us_feedly'] a { color:#414141; }.us_skin_simple div[class*='us_youtube'] a, .us_skin_minimal div[class*='us_youtube'] a { color:#cc181e; }.us_skin_simple div[class*='us_vimeo'] a, .us_skin_minimal div[class*='us_vimeo'] a { color:#1bb6ec; }.us_skin_simple div[class*='us_behance'] a, .us_skin_minimal div[class*='us_behance'] a { color:#1769ff; }.us_skin_simple div[class*='us_ok'] a, .us_skin_minimal div[class*='us_ok'] a { color:#f2720c; }.us_skin_simple div[class*='us_weibo'] a, .us_skin_minimal div[class*='us_weibo'] a { color:#e64141; }.us_skin_simple div[class*='us_managewp'] a, .us_skin_minimal div[class*='us_managewp'] a { color:#098ae0; }.us_skin_simple div[class*='us_xing'] a, .us_skin_minimal div[class*='us_xing'] a { color:#026466; }.us_skin_simple div[class*='us_whatsapp'] a, .us_skin_minimal div[class*='us_whatsapp'] a { color:#34af23; }.us_skin_simple div[class*='us_meneame'] a, .us_skin_minimal div[class*='us_meneame'] a { color:#ff6400; }.us_skin_simple div[class*='us_digg'] a, .us_skin_minimal div[class*='us_digg'] a { color:#000000; }.us_skin_simple div[class*='us_dribbble'] a, .us_skin_minimal div[class*='us_dribbble'] a { color:#f72b7f; }.us_skin_simple div[class*='us_envato'] a, .us_skin_minimal div[class*='us_envato'] a { color:#82b540; }.us_skin_simple div[class*='us_github'] a, .us_skin_minimal div[class*='us_github'] a { color:#201e1f; }.us_skin_simple div[class*='us_soundcloud'] a, .us_skin_minimal div[class*='us_soundcloud'] a { color:#ff6f00; }.us_skin_simple div[class*='us_instagram'] a, .us_skin_minimal div[class*='us_instagram'] a { color:#48769c; }.us_skin_simple div[class*='us_feedpress'], .us_skin_minimal div[class*='us_feedpress'] a { color:#ffafaf; }.us_skin_simple div[class*='us_mailchimp'], .us_skin_minimal div[class*='us_mailchimp'] { color:#6dc5dc; }.us_skin_simple div[class*='us_flickr'] a, .us_skin_minimal div[class*='us_flickr'] a { color:#0062dd; }.us_skin_simple div[class*='us_members'], .us_skin_minimal div[class*='us_members'] { color:#0ab071; }.us_skin_simple div[class*='us_more'] a, .us_skin_minimal div[class*='us_more'] a { color:#53B27C; }.us_skin_simple .us_posts_fan_count, .us_skin_minimal .us_posts_fan_count { color:#924e2a; }.us_skin_simple .us_button:hover a, .us_skin_minimal .us_button:hover a { color:#136ebf; }.us_skin_round div[class*='us_facebook'] .us_share, .us_skin_round div[class*='us_facebook'].us_fan_count { background-color:#3b5998; }.us_skin_round div[class*='us_twitter'] .us_share, .us_skin_round div[class*='us_twitter'].us_fan_count { background-color:#00ABF0; }.us_skin_round div[class*='us_google'] .us_share, .us_skin_round div[class*='us_google'].us_fan_count { background-color:#D95232; }.us_skin_round div[class*='us_delicious'] .us_share, .us_skin_round div[class*='us_delicious'].us_fan_count { background-color:#66B2FD; }.us_skin_round div[class*='us_stumble'] .us_share { background-color:#169300; }.us_skin_round div[class*='us_linkedin'] .us_share, .us_skin_round div[class*='us_linkedin'].us_fan_count { background-color:#1C86BC; }.us_skin_round div[class*='us_pinterest'] .us_share, .us_skin_round div[class*='us_pinterest'].us_fan_count { background-color:#AE181F; }.us_skin_round div[class*='us_buffer'] .us_share { background-color:#4f4f4f; }.us_skin_round div[class*='us_reddit'] .us_share { background-color:#3894f7; }.us_skin_round div[class*='us_vkontakte'] .us_share, .us_skin_round div[class*='us_vkontakte'].us_fan_count { background-color:#537599; }.us_skin_round .us_mail .us_share { background-color:#666666; }.us_skin_round div[class*='us_love'] .us_share, .us_skin_round div[class*='us_love'].us_fan_count { background-color:#FF0000; }.us_skin_round div[class*='us_pocket'] .us_share { background-color:#ee4056; }.us_skin_round div[class*='us_tumblr'] .us_share { background-color:#529ecc; }.us_skin_round div[class*='us_print'] .us_share { background-color:#60d0d4; }.us_skin_round div[class*='us_flipboard'] .us_share { background-color:#c10000; }.us_skin_round div[class*='us_more'] .us_share { background-color:#53B27C; }.us_skin_round div[class*='us_comments'] .us_share, .us_skin_round div[class*='us_comments'].us_fan_count { background-color:#b69823; }.us_skin_round div[class*='us_feedly'] .us_share { background-color:#414141; }.us_skin_round div[class*='us_youtube'].us_fan_count { background-color:#cc181e; }.us_skin_round div[class*='us_vimeo'].us_fan_count { background-color:#1bb6ec; }.us_skin_round div[class*='us_behance'].us_fan_count { background-color:#1769ff; }.us_skin_round div[class*='us_ok'] .us_share { background-color:#f2720c; }.us_skin_round div[class*='us_weibo'] .us_share { background-color:#e64141; }.us_skin_round div[class*='us_managewp'] .us_share { background-color:#098ae0; }.us_skin_round div[class*='us_xing'] .us_share { background-color:#026466; }.us_skin_round div[class*='us_whatsapp'].us_fan_count { background-color:#34af23; }.us_skin_round div[class*='us_meneame'].us_fan_count { background-color:#ff6400; }.us_skin_round div[class*='us_digg'].us_fan_count { background-color:#000000; }.us_skin_round div[class*='us_dribbble'].us_fan_count { background-color:#f72b7f; }.us_skin_round div[class*='us_envato'].us_fan_count { background-color:#82b540; }.us_skin_round div[class*='us_github'].us_fan_count { background-color:#201e1f; }.us_skin_round div[class*='us_soundcloud'].us_fan_count  { background-color:#ff6f00; }.us_skin_round div[class*='us_instagram'].us_fan_count  { background-color:#48769c; }.us_skin_round div[class*='us_feedpress'].us_fan_count { background-color:#ffafaf; }.us_skin_round div[class*='us_mailchimp'].us_fan_count { background-color:#6dc5dc; }.us_skin_round div[class*='us_flickr'].us_fan_count { background-color:#0062dd; }.us_skin_round div[class*='us_members'].us_fan_count { background-color:#0ab071; }.us_skin_round .us_posts_fan_count.us_fan_count { background-color:#924e2a; }.us_skin_round .us_button:hover .us_share, .us_skin_round .us_button.us_fan_count:hover { background-color:#136ebf; }
+.us_sticky .us_wrapper { background-color:#ffffff; }.us_floating .us_wrapper .us_button { width: 45px; -webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_floating .us_wrapper .us_button:hover { width: 90px;-webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_fan_count_button { -moz-border-radius-topleft: 0px; -moz-border-radius-topright: 0px; -moz-border-radius-bottomright: 0px; -moz-border-radius-bottomleft: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; -webkit-border-top-left-radius: 0px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; -webkit-border-bottom-left-radius: 0px; }.us_skin_default .us_button { -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; -moz-border-radius-bottomright: 4px; -moz-border-radius-bottomleft: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; -webkit-border-top-left-radius: 4px; -webkit-border-top-right-radius: 4px; -webkit-border-bottom-right-radius: 4px; -webkit-border-bottom-left-radius: 4px; }.us_skin_default div[class*='us_facebook'], .us_skin_modern div[class*='us_facebook'] { background-color:#3b5998; }.us_skin_default div[class*='us_twitter'], .us_skin_modern div[class*='us_twitter'] { background-color:#00ABF0; }.us_skin_default div[class*='us_google'], .us_skin_modern div[class*='us_google'] { background-color:#D95232; }.us_skin_default div[class*='us_delicious'], .us_skin_modern div[class*='us_delicious'] { background-color:#66B2FD; }.us_skin_default div[class*='us_stumble'], .us_skin_modern div[class*='us_stumble'] { background-color:#169300; }.us_skin_default div[class*='us_linkedin'], .us_skin_modern div[class*='us_linkedin'] { background-color:#1C86BC; }.us_skin_default div[class*='us_pinterest'], .us_skin_modern div[class*='us_pinterest'] { background-color:#AE181F; }.us_skin_default div[class*='us_buffer'], .us_skin_modern div[class*='us_buffer'] { background-color:#4f4f4f; }.us_skin_default div[class*='us_reddit'], .us_skin_modern div[class*='us_reddit'] { background-color:#3894f7; }.us_skin_default div[class*='us_vkontakte'], .us_skin_modern div[class*='us_vkontakte'] { background-color:#537599; }.us_skin_default .us_mail, .us_skin_modern .us_mail { background-color:#666666; }.us_skin_default div[class*='us_love'], .us_skin_modern div[class*='us_love'] { background-color:#FF0000; }.us_skin_default div[class*='us_pocket'], .us_skin_modern div[class*='us_pocket'] { background-color:#ee4056; }.us_skin_default div[class*='us_tumblr'], .us_skin_modern div[class*='us_tumblr'] { background-color:#529ecc; }.us_skin_default div[class*='us_print'], .us_skin_modern div[class*='us_print'] { background-color:#60d0d4; }.us_skin_default div[class*='us_flipboard'], .us_skin_modern div[class*='us_flipboard'] { background-color:#c10000; }.us_skin_default div[class*='us_comments'], .us_skin_modern div[class*='us_comments']{ background-color:#b69823; }.us_skin_default div[class*='us_feedly'], .us_skin_modern div[class*='us_feedly'] { background-color:#414141; }.us_skin_default div[class*='us_youtube'], .us_skin_modern div[class*='us_youtube'] { background-color:#cc181e; }.us_skin_default div[class*='us_vimeo'], .us_skin_modern div[class*='us_vimeo'] { background-color:#1bb6ec; }.us_skin_default div[class*='us_behance'], .us_skin_modern div[class*='us_behance'] { background-color:#1769ff; }.us_skin_default div[class*='us_ok'], .us_skin_modern div[class*='us_ok'] { background-color:#f2720c; }.us_skin_default div[class*='us_weibo'], .us_skin_modern div[class*='us_weibo'] { background-color:#e64141; }.us_skin_default div[class*='us_managewp'], .us_skin_modern div[class*='us_managewp'] { background-color:#098ae0; }.us_skin_default div[class*='us_xing'], .us_skin_modern div[class*='us_xing'] { background-color:#026466; }.us_skin_default div[class*='us_whatsapp'], .us_skin_modern div[class*='us_whatsapp'] { background-color:#34af23; }.us_skin_default div[class*='us_meneame'], .us_skin_modern div[class*='us_meneame'] { background-color:#ff6400; }.us_skin_default div[class*='us_digg'], .us_skin_modern div[class*='us_digg'] { background-color:#000000; }.us_skin_default div[class*='us_dribbble'], .us_skin_modern div[class*='us_dribbble'] { background-color:#f72b7f; }.us_skin_default div[class*='us_envato'], .us_skin_modern div[class*='us_envato'] { background-color:#82b540; }.us_skin_default div[class*='us_github'], .us_skin_modern div[class*='us_github'] { background-color:#201e1f; }.us_skin_default div[class*='us_soundcloud'], .us_skin_modern div[class*='us_soundcloud'] { background-color:#ff6f00; }.us_skin_default div[class*='us_instagram'], .us_skin_modern div[class*='us_instagram'] { background-color:#48769c; }.us_skin_default div[class*='us_feedpress'], .us_skin_modern div[class*='us_feedpress'] { background-color:#ffafaf; }.us_skin_default div[class*='us_mailchimp'], .us_skin_modern div[class*='us_mailchimp'] { background-color:#6dc5dc; }.us_skin_default div[class*='us_flickr'], .us_skin_modern div[class*='us_flickr'] { background-color:#0062dd; }.us_skin_default div[class*='us_members'], .us_skin_modern div[class*='us_members'] { background-color:#0ab071; }.us_skin_default div[class*='us_more'], .us_skin_modern div[class*='us_more'] { background-color:#53B27C; }.us_skin_default .us_posts_fan_count, .us_skin_modern .us_posts_fan_count { background-color:#924e2a; }.us_skin_default .us_button:hover, .us_skin_modern .us_fan_count_button:hover, .us_skin_modern .us_button:hover, .us_skin_modern .us_fan_count_button:hover { background-color:#136ebf; }.us_skin_simple div[class*='us_facebook'] a, .us_skin_minimal div[class*='us_facebook'] a { color:#3b5998; }.us_skin_simple div[class*='us_twitter'] a, .us_skin_minimal div[class*='us_twitter'] a { color:#00ABF0; }.us_skin_simple div[class*='us_google'] a, .us_skin_minimal div[class*='us_google'] a { color:#D95232; }.us_skin_simple div[class*='us_delicious'] a, .us_skin_minimal div[class*='us_delicious'] a { color:#66B2FD; }.us_skin_simple div[class*='us_stumble'] a, .us_skin_minimal div[class*='us_stumble'] a { color:#169300; }.us_skin_simple div[class*='us_linkedin'] a, .us_skin_minimal div[class*='us_linkedin'] a { color:#1C86BC; }.us_skin_simple div[class*='us_pinterest'] a, .us_skin_minimal div[class*='us_pinterest'] a { color:#AE181F; }.us_skin_simple div[class*='us_buffer'] a, .us_skin_minimal div[class*='us_buffer'] a { color:#4f4f4f; }.us_skin_simple div[class*='us_reddit'] a, .us_skin_minimal div[class*='us_reddit'] a { color:#3894f7; }.us_skin_simple div[class*='us_vkontakte'] a, .us_skin_minimal div[class*='us_vkontakte'] a { color:#537599; }.us_skin_simple .us_mail a, .us_skin_minimal .us_mail a { color:#666666; }.us_skin_simple div[class*='us_love'] a, .us_skin_minimal div[class*='us_love'] a { color:#FF0000; }.us_skin_simple div[class*='us_pocket'] a, .us_skin_minimal div[class*='us_pocket'] a { color:#ee4056; }.us_skin_simple div[class*='us_tumblr'] a, .us_skin_minimal div[class*='us_tumblr'] a { color:#529ecc; }.us_skin_simple div[class*='us_print'] a, .us_skin_minimal div[class*='us_print'] a { color:#60d0d4; }.us_skin_simple div[class*='us_flipboard'] a, .us_skin_minimal div[class*='us_flipboard'] a { color:#c10000; }.us_skin_simple div[class*='us_comments'] *, .us_skin_minimal div[class*='us_comments'] * { color:#b69823; }.us_skin_simple div[class*='us_feedly'] a, .us_skin_minimal div[class*='us_feedly'] a { color:#414141; }.us_skin_simple div[class*='us_youtube'] a, .us_skin_minimal div[class*='us_youtube'] a { color:#cc181e; }.us_skin_simple div[class*='us_vimeo'] a, .us_skin_minimal div[class*='us_vimeo'] a { color:#1bb6ec; }.us_skin_simple div[class*='us_behance'] a, .us_skin_minimal div[class*='us_behance'] a { color:#1769ff; }.us_skin_simple div[class*='us_ok'] a, .us_skin_minimal div[class*='us_ok'] a { color:#f2720c; }.us_skin_simple div[class*='us_weibo'] a, .us_skin_minimal div[class*='us_weibo'] a { color:#e64141; }.us_skin_simple div[class*='us_managewp'] a, .us_skin_minimal div[class*='us_managewp'] a { color:#098ae0; }.us_skin_simple div[class*='us_xing'] a, .us_skin_minimal div[class*='us_xing'] a { color:#026466; }.us_skin_simple div[class*='us_whatsapp'] a, .us_skin_minimal div[class*='us_whatsapp'] a { color:#34af23; }.us_skin_simple div[class*='us_meneame'] a, .us_skin_minimal div[class*='us_meneame'] a { color:#ff6400; }.us_skin_simple div[class*='us_digg'] a, .us_skin_minimal div[class*='us_digg'] a { color:#000000; }.us_skin_simple div[class*='us_dribbble'] a, .us_skin_minimal div[class*='us_dribbble'] a { color:#f72b7f; }.us_skin_simple div[class*='us_envato'] a, .us_skin_minimal div[class*='us_envato'] a { color:#82b540; }.us_skin_simple div[class*='us_github'] a, .us_skin_minimal div[class*='us_github'] a { color:#201e1f; }.us_skin_simple div[class*='us_soundcloud'] a, .us_skin_minimal div[class*='us_soundcloud'] a { color:#ff6f00; }.us_skin_simple div[class*='us_instagram'] a, .us_skin_minimal div[class*='us_instagram'] a { color:#48769c; }.us_skin_simple div[class*='us_feedpress'], .us_skin_minimal div[class*='us_feedpress'] a { color:#ffafaf; }.us_skin_simple div[class*='us_mailchimp'], .us_skin_minimal div[class*='us_mailchimp'] { color:#6dc5dc; }.us_skin_simple div[class*='us_flickr'] a, .us_skin_minimal div[class*='us_flickr'] a { color:#0062dd; }.us_skin_simple div[class*='us_members'], .us_skin_minimal div[class*='us_members'] { color:#0ab071; }.us_skin_simple div[class*='us_more'] a, .us_skin_minimal div[class*='us_more'] a { color:#53B27C; }.us_skin_simple .us_posts_fan_count, .us_skin_minimal .us_posts_fan_count { color:#924e2a; }.us_skin_simple .us_button:hover a, .us_skin_minimal .us_button:hover a { color:#136ebf; }.us_skin_round div[class*='us_facebook'] .us_share, .us_skin_round div[class*='us_facebook'].us_fan_count { background-color:#3b5998; }.us_skin_round div[class*='us_twitter'] .us_share, .us_skin_round div[class*='us_twitter'].us_fan_count { background-color:#00ABF0; }.us_skin_round div[class*='us_google'] .us_share, .us_skin_round div[class*='us_google'].us_fan_count { background-color:#D95232; }.us_skin_round div[class*='us_delicious'] .us_share, .us_skin_round div[class*='us_delicious'].us_fan_count { background-color:#66B2FD; }.us_skin_round div[class*='us_stumble'] .us_share { background-color:#169300; }.us_skin_round div[class*='us_linkedin'] .us_share, .us_skin_round div[class*='us_linkedin'].us_fan_count { background-color:#1C86BC; }.us_skin_round div[class*='us_pinterest'] .us_share, .us_skin_round div[class*='us_pinterest'].us_fan_count { background-color:#AE181F; }.us_skin_round div[class*='us_buffer'] .us_share { background-color:#4f4f4f; }.us_skin_round div[class*='us_reddit'] .us_share { background-color:#3894f7; }.us_skin_round div[class*='us_vkontakte'] .us_share, .us_skin_round div[class*='us_vkontakte'].us_fan_count { background-color:#537599; }.us_skin_round .us_mail .us_share { background-color:#666666; }.us_skin_round div[class*='us_love'] .us_share, .us_skin_round div[class*='us_love'].us_fan_count { background-color:#FF0000; }.us_skin_round div[class*='us_pocket'] .us_share { background-color:#ee4056; }.us_skin_round div[class*='us_tumblr'] .us_share { background-color:#529ecc; }.us_skin_round div[class*='us_print'] .us_share { background-color:#60d0d4; }.us_skin_round div[class*='us_flipboard'] .us_share { background-color:#c10000; }.us_skin_round div[class*='us_more'] .us_share { background-color:#53B27C; }.us_skin_round div[class*='us_comments'] .us_share, .us_skin_round div[class*='us_comments'].us_fan_count { background-color:#b69823; }.us_skin_round div[class*='us_feedly'] .us_share { background-color:#414141; }.us_skin_round div[class*='us_youtube'].us_fan_count { background-color:#cc181e; }.us_skin_round div[class*='us_vimeo'].us_fan_count { background-color:#1bb6ec; }.us_skin_round div[class*='us_behance'].us_fan_count { background-color:#1769ff; }.us_skin_round div[class*='us_ok'] .us_share { background-color:#f2720c; }.us_skin_round div[class*='us_weibo'] .us_share { background-color:#e64141; }.us_skin_round div[class*='us_managewp'] .us_share { background-color:#098ae0; }.us_skin_round div[class*='us_xing'] .us_share { background-color:#026466; }.us_skin_round div[class*='us_whatsapp'].us_fan_count { background-color:#34af23; }.us_skin_round div[class*='us_meneame'].us_fan_count { background-color:#ff6400; }.us_skin_round div[class*='us_digg'].us_fan_count { background-color:#000000; }.us_skin_round div[class*='us_dribbble'].us_fan_count { background-color:#f72b7f; }.us_skin_round div[class*='us_envato'].us_fan_count { background-color:#82b540; }.us_skin_round div[class*='us_github'].us_fan_count { background-color:#201e1f; }.us_skin_round div[class*='us_soundcloud'].us_fan_count  { background-color:#ff6f00; }.us_skin_round div[class*='us_instagram'].us_fan_count  { background-color:#48769c; }.us_skin_round div[class*='us_feedpress'].us_fan_count { background-color:#ffafaf; }.us_skin_round div[class*='us_mailchimp'].us_fan_count { background-color:#6dc5dc; }.us_skin_round div[class*='us_flickr'].us_fan_count { background-color:#0062dd; }.us_skin_round div[class*='us_members'].us_fan_count { background-color:#0ab071; }.us_skin_round .us_posts_fan_count.us_fan_count { background-color:#924e2a; }.us_skin_round .us_button:hover .us_share, .us_skin_round .us_button.us_fan_count:hover { background-color:#136ebf; }
+.us_sticky .us_wrapper { background-color:#ffffff; }.us_floating .us_wrapper .us_button { width: 45px; -webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_floating .us_wrapper .us_button:hover { width: 90px;-webkit-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -moz-transition: width 1000ms ease-in-out, background-color 400ms ease-out; -o-transition: width 1000ms ease-in-out, background-color 400ms ease-out; transition: width 1000ms ease-in-out, background-color 400ms ease-out; }.us_fan_count_button { -moz-border-radius-topleft: 0px; -moz-border-radius-topright: 0px; -moz-border-radius-bottomright: 0px; -moz-border-radius-bottomleft: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; -webkit-border-top-left-radius: 0px; -webkit-border-top-right-radius: 0px; -webkit-border-bottom-right-radius: 0px; -webkit-border-bottom-left-radius: 0px; }.us_skin_default .us_button { -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; -moz-border-radius-bottomright: 4px; -moz-border-radius-bottomleft: 4px; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; -webkit-border-top-left-radius: 4px; -webkit-border-top-right-radius: 4px; -webkit-border-bottom-right-radius: 4px; -webkit-border-bottom-left-radius: 4px; }.us_skin_default div[class*='us_facebook'], .us_skin_modern div[class*='us_facebook'] { background-color:#3b5998; }.us_skin_default div[class*='us_twitter'], .us_skin_modern div[class*='us_twitter'] { background-color:#00ABF0; }.us_skin_default div[class*='us_google'], .us_skin_modern div[class*='us_google'] { background-color:#D95232; }.us_skin_default div[class*='us_delicious'], .us_skin_modern div[class*='us_delicious'] { background-color:#66B2FD; }.us_skin_default div[class*='us_stumble'], .us_skin_modern div[class*='us_stumble'] { background-color:#169300; }.us_skin_default div[class*='us_linkedin'], .us_skin_modern div[class*='us_linkedin'] { background-color:#1C86BC; }.us_skin_default div[class*='us_pinterest'], .us_skin_modern div[class*='us_pinterest'] { background-color:#AE181F; }.us_skin_default div[class*='us_buffer'], .us_skin_modern div[class*='us_buffer'] { background-color:#4f4f4f; }.us_skin_default div[class*='us_reddit'], .us_skin_modern div[class*='us_reddit'] { background-color:#3894f7; }.us_skin_default div[class*='us_vkontakte'], .us_skin_modern div[class*='us_vkontakte'] { background-color:#537599; }.us_skin_default .us_mail, .us_skin_modern .us_mail { background-color:#666666; }.us_skin_default div[class*='us_love'], .us_skin_modern div[class*='us_love'] { background-color:#FF0000; }.us_skin_default div[class*='us_pocket'], .us_skin_modern div[class*='us_pocket'] { background-color:#ee4056; }.us_skin_default div[class*='us_tumblr'], .us_skin_modern div[class*='us_tumblr'] { background-color:#529ecc; }.us_skin_default div[class*='us_print'], .us_skin_modern div[class*='us_print'] { background-color:#60d0d4; }.us_skin_default div[class*='us_flipboard'], .us_skin_modern div[class*='us_flipboard'] { background-color:#c10000; }.us_skin_default div[class*='us_comments'], .us_skin_modern div[class*='us_comments']{ background-color:#b69823; }.us_skin_default div[class*='us_feedly'], .us_skin_modern div[class*='us_feedly'] { background-color:#414141; }.us_skin_default div[class*='us_youtube'], .us_skin_modern div[class*='us_youtube'] { background-color:#cc181e; }.us_skin_default div[class*='us_vimeo'], .us_skin_modern div[class*='us_vimeo'] { background-color:#1bb6ec; }.us_skin_default div[class*='us_behance'], .us_skin_modern div[class*='us_behance'] { background-color:#1769ff; }.us_skin_default div[class*='us_ok'], .us_skin_modern div[class*='us_ok'] { background-color:#f2720c; }.us_skin_default div[class*='us_weibo'], .us_skin_modern div[class*='us_weibo'] { background-color:#e64141; }.us_skin_default div[class*='us_managewp'], .us_skin_modern div[class*='us_managewp'] { background-color:#098ae0; }.us_skin_default div[class*='us_xing'], .us_skin_modern div[class*='us_xing'] { background-color:#026466; }.us_skin_default div[class*='us_whatsapp'], .us_skin_modern div[class*='us_whatsapp'] { background-color:#34af23; }.us_skin_default div[class*='us_meneame'], .us_skin_modern div[class*='us_meneame'] { background-color:#ff6400; }.us_skin_default div[class*='us_digg'], .us_skin_modern div[class*='us_digg'] { background-color:#000000; }.us_skin_default div[class*='us_dribbble'], .us_skin_modern div[class*='us_dribbble'] { background-color:#f72b7f; }.us_skin_default div[class*='us_envato'], .us_skin_modern div[class*='us_envato'] { background-color:#82b540; }.us_skin_default div[class*='us_github'], .us_skin_modern div[class*='us_github'] { background-color:#201e1f; }.us_skin_default div[class*='us_soundcloud'], .us_skin_modern div[class*='us_soundcloud'] { background-color:#ff6f00; }.us_skin_default div[class*='us_instagram'], .us_skin_modern div[class*='us_instagram'] { background-color:#48769c; }.us_skin_default div[class*='us_feedpress'], .us_skin_modern div[class*='us_feedpress'] { background-color:#ffafaf; }.us_skin_default div[class*='us_mailchimp'], .us_skin_modern div[class*='us_mailchimp'] { background-color:#6dc5dc; }.us_skin_default div[class*='us_flickr'], .us_skin_modern div[class*='us_flickr'] { background-color:#0062dd; }.us_skin_default div[class*='us_members'], .us_skin_modern div[class*='us_members'] { background-color:#0ab071; }.us_skin_default div[class*='us_more'], .us_skin_modern div[class*='us_more'] { background-color:#53B27C; }.us_skin_default .us_posts_fan_count, .us_skin_modern .us_posts_fan_count { background-color:#924e2a; }.us_skin_default .us_button:hover, .us_skin_modern .us_fan_count_button:hover, .us_skin_modern .us_button:hover, .us_skin_modern .us_fan_count_button:hover { background-color:#136ebf; }.us_skin_simple div[class*='us_facebook'] a, .us_skin_minimal div[class*='us_facebook'] a { color:#3b5998; }.us_skin_simple div[class*='us_twitter'] a, .us_skin_minimal div[class*='us_twitter'] a { color:#00ABF0; }.us_skin_simple div[class*='us_google'] a, .us_skin_minimal div[class*='us_google'] a { color:#D95232; }.us_skin_simple div[class*='us_delicious'] a, .us_skin_minimal div[class*='us_delicious'] a { color:#66B2FD; }.us_skin_simple div[class*='us_stumble'] a, .us_skin_minimal div[class*='us_stumble'] a { color:#169300; }.us_skin_simple div[class*='us_linkedin'] a, .us_skin_minimal div[class*='us_linkedin'] a { color:#1C86BC; }.us_skin_simple div[class*='us_pinterest'] a, .us_skin_minimal div[class*='us_pinterest'] a { color:#AE181F; }.us_skin_simple div[class*='us_buffer'] a, .us_skin_minimal div[class*='us_buffer'] a { color:#4f4f4f; }.us_skin_simple div[class*='us_reddit'] a, .us_skin_minimal div[class*='us_reddit'] a { color:#3894f7; }.us_skin_simple div[class*='us_vkontakte'] a, .us_skin_minimal div[class*='us_vkontakte'] a { color:#537599; }.us_skin_simple .us_mail a, .us_skin_minimal .us_mail a { color:#666666; }.us_skin_simple div[class*='us_love'] a, .us_skin_minimal div[class*='us_love'] a { color:#FF0000; }.us_skin_simple div[class*='us_pocket'] a, .us_skin_minimal div[class*='us_pocket'] a { color:#ee4056; }.us_skin_simple div[class*='us_tumblr'] a, .us_skin_minimal div[class*='us_tumblr'] a { color:#529ecc; }.us_skin_simple div[class*='us_print'] a, .us_skin_minimal div[class*='us_print'] a { color:#60d0d4; }.us_skin_simple div[class*='us_flipboard'] a, .us_skin_minimal div[class*='us_flipboard'] a { color:#c10000; }.us_skin_simple div[class*='us_comments'] *, .us_skin_minimal div[class*='us_comments'] * { color:#b69823; }.us_skin_simple div[class*='us_feedly'] a, .us_skin_minimal div[class*='us_feedly'] a { color:#414141; }.us_skin_simple div[class*='us_youtube'] a, .us_skin_minimal div[class*='us_youtube'] a { color:#cc181e; }.us_skin_simple div[class*='us_vimeo'] a, .us_skin_minimal div[class*='us_vimeo'] a { color:#1bb6ec; }.us_skin_simple div[class*='us_behance'] a, .us_skin_minimal div[class*='us_behance'] a { color:#1769ff; }.us_skin_simple div[class*='us_ok'] a, .us_skin_minimal div[class*='us_ok'] a { color:#f2720c; }.us_skin_simple div[class*='us_weibo'] a, .us_skin_minimal div[class*='us_weibo'] a { color:#e64141; }.us_skin_simple div[class*='us_managewp'] a, .us_skin_minimal div[class*='us_managewp'] a { color:#098ae0; }.us_skin_simple div[class*='us_xing'] a, .us_skin_minimal div[class*='us_xing'] a { color:#026466; }.us_skin_simple div[class*='us_whatsapp'] a, .us_skin_minimal div[class*='us_whatsapp'] a { color:#34af23; }.us_skin_simple div[class*='us_meneame'] a, .us_skin_minimal div[class*='us_meneame'] a { color:#ff6400; }.us_skin_simple div[class*='us_digg'] a, .us_skin_minimal div[class*='us_digg'] a { color:#000000; }.us_skin_simple div[class*='us_dribbble'] a, .us_skin_minimal div[class*='us_dribbble'] a { color:#f72b7f; }.us_skin_simple div[class*='us_envato'] a, .us_skin_minimal div[class*='us_envato'] a { color:#82b540; }.us_skin_simple div[class*='us_github'] a, .us_skin_minimal div[class*='us_github'] a { color:#201e1f; }.us_skin_simple div[class*='us_soundcloud'] a, .us_skin_minimal div[class*='us_soundcloud'] a { color:#ff6f00; }.us_skin_simple div[class*='us_instagram'] a, .us_skin_minimal div[class*='us_instagram'] a { color:#48769c; }.us_skin_simple div[class*='us_feedpress'], .us_skin_minimal div[class*='us_feedpress'] a { color:#ffafaf; }.us_skin_simple div[class*='us_mailchimp'], .us_skin_minimal div[class*='us_mailchimp'] { color:#6dc5dc; }.us_skin_simple div[class*='us_flickr'] a, .us_skin_minimal div[class*='us_flickr'] a { color:#0062dd; }.us_skin_simple div[class*='us_members'], .us_skin_minimal div[class*='us_members'] { color:#0ab071; }.us_skin_simple div[class*='us_more'] a, .us_skin_minimal div[class*='us_more'] a { color:#53B27C; }.us_skin_simple .us_posts_fan_count, .us_skin_minimal .us_posts_fan_count { color:#924e2a; }.us_skin_simple .us_button:hover a, .us_skin_minimal .us_button:hover a { color:#136ebf; }.us_skin_round div[class*='us_facebook'] .us_share, .us_skin_round div[class*='us_facebook'].us_fan_count { background-color:#3b5998; }.us_skin_round div[class*='us_twitter'] .us_share, .us_skin_round div[class*='us_twitter'].us_fan_count { background-color:#00ABF0; }.us_skin_round div[class*='us_google'] .us_share, .us_skin_round div[class*='us_google'].us_fan_count { background-color:#D95232; }.us_skin_round div[class*='us_delicious'] .us_share, .us_skin_round div[class*='us_delicious'].us_fan_count { background-color:#66B2FD; }.us_skin_round div[class*='us_stumble'] .us_share { background-color:#169300; }.us_skin_round div[class*='us_linkedin'] .us_share, .us_skin_round div[class*='us_linkedin'].us_fan_count { background-color:#1C86BC; }.us_skin_round div[class*='us_pinterest'] .us_share, .us_skin_round div[class*='us_pinterest'].us_fan_count { background-color:#AE181F; }.us_skin_round div[class*='us_buffer'] .us_share { background-color:#4f4f4f; }.us_skin_round div[class*='us_reddit'] .us_share { background-color:#3894f7; }.us_skin_round div[class*='us_vkontakte'] .us_share, .us_skin_round div[class*='us_vkontakte'].us_fan_count { background-color:#537599; }.us_skin_round .us_mail .us_share { background-color:#666666; }.us_skin_round div[class*='us_love'] .us_share, .us_skin_round div[class*='us_love'].us_fan_count { background-color:#FF0000; }.us_skin_round div[class*='us_pocket'] .us_share { background-color:#ee4056; }.us_skin_round div[class*='us_tumblr'] .us_share { background-color:#529ecc; }.us_skin_round div[class*='us_print'] .us_share { background-color:#60d0d4; }.us_skin_round div[class*='us_flipboard'] .us_share { background-color:#c10000; }.us_skin_round div[class*='us_more'] .us_share { background-color:#53B27C; }.us_skin_round div[class*='us_comments'] .us_share, .us_skin_round div[class*='us_comments'].us_fan_count { background-color:#b69823; }.us_skin_round div[class*='us_feedly'] .us_share { background-color:#414141; }.us_skin_round div[class*='us_youtube'].us_fan_count { background-color:#cc181e; }.us_skin_round div[class*='us_vimeo'].us_fan_count { background-color:#1bb6ec; }.us_skin_round div[class*='us_behance'].us_fan_count { background-color:#1769ff; }.us_skin_round div[class*='us_ok'] .us_share { background-color:#f2720c; }.us_skin_round div[class*='us_weibo'] .us_share { background-color:#e64141; }.us_skin_round div[class*='us_managewp'] .us_share { background-color:#098ae0; }.us_skin_round div[class*='us_xing'] .us_share { background-color:#026466; }.us_skin_round div[class*='us_whatsapp'].us_fan_count { background-color:#34af23; }.us_skin_round div[class*='us_meneame'].us_fan_count { background-color:#ff6400; }.us_skin_round div[class*='us_digg'].us_fan_count { background-color:#000000; }.us_skin_round div[class*='us_dribbble'].us_fan_count { background-color:#f72b7f; }.us_skin_round div[class*='us_envato'].us_fan_count { background-color:#82b540; }.us_skin_round div[class*='us_github'].us_fan_count { background-color:#201e1f; }.us_skin_round div[class*='us_soundcloud'].us_fan_count  { background-color:#ff6f00; }.us_skin_round div[class*='us_instagram'].us_fan_count  { background-color:#48769c; }.us_skin_round div[class*='us_feedpress'].us_fan_count { background-color:#ffafaf; }.us_skin_round div[class*='us_mailchimp'].us_fan_count { background-color:#6dc5dc; }.us_skin_round div[class*='us_flickr'].us_fan_count { background-color:#0062dd; }.us_skin_round div[class*='us_members'].us_fan_count { background-color:#0ab071; }.us_skin_round .us_posts_fan_count.us_fan_count { background-color:#924e2a; }.us_skin_round .us_button:hover .us_share, .us_skin_round .us_button.us_fan_count:hover { background-color:#136ebf; }
+</style>
+<script type="text/javascript" src="./A tcpdump Tutorial and Primer_files/jquery.js"></script>
+<script type="text/javascript" src="./A tcpdump Tutorial and Primer_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./A tcpdump Tutorial and Primer_files/jquery.color.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var us_script = {"ajaxurl":"https:\/\/danielmiessler.com\/wp-admin\/admin-ajax.php","tweet_via":"danielmiessler","sharrre_url":"https:\/\/danielmiessler.com\/wp-admin\/admin-ajax.php","success":"Your message was sent.","trying":"Trying to send email...","total_shares_text":"","facebook_height":"500","facebook_width":"900","twitter_height":"500","twitter_width":"900","googleplus_height":"500","googleplus_width":"900","delicious_height":"550","delicious_width":"550","stumble_height":"550","stumble_width":"550","linkedin_height":"550","linkedin_width":"550","pinterest_height":"320","pinterest_width":"720","buffer_height":"500","buffer_width":"900","reddit_height":"500","reddit_width":"900","vkontakte_height":"500","vkontakte_width":"900","printfriendly_height":"500","printfriendly_width":"1045","pocket_height":"500","pocket_width":"900","tumblr_height":"500","tumblr_width":"900","flipboard_height":"500","flipboard_width":"900","weibo_height":"500","weibo_width":"900","xing_height":"500","xing_width":"900","ok_height":"500","ok_width":"900","managewp_height":"500","managewp_width":"900","meneame_height":"500","meneame_width":"900","digg_height":"500","digg_width":"900","vkontakte_appid":"","facebook_appid":"danielrmiessler","home_url":"https:\/\/danielmiessler.com","nonce":"e9aa5ad4f6","already_loved_message":"You have already loved this item.","error_message":"Sorry, there was a problem processing your request.","logged_in":"false","bitly":"false"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./A tcpdump Tutorial and Primer_files/script.js"></script>
+
+
+<script language="javascript" type="text/javascript" src="./A tcpdump Tutorial and Primer_files/chartbeat.js"></script></body></html>

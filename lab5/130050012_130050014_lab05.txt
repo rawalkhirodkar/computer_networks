@@ -1,0 +1,217 @@
+Exercise 2:
+
+1.
+	Using command ifconfig:
+	MAC Address: 70:54:d2:7b:a8:1d
+	IPv4 Address: 10.105.11.84
+	IPv6 Address: fe80::7254:d2ff:fe7b:a81d/64
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2.
+	Using command ifconfig:
+	MTU size: 1500 Bytes
+	
+	A maximum transmission unit (MTU) is the largest size packet or frame, specified in octets (eight-bit bytes),that can be sent in a packet- 
+	or frame-based network such as the Internet.
+	
+	This means that the largest size of packet/frame which we can send by our device is 1500 Bytes
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.	
+	Using command ethtool eth0:
+	Speed: 100Mb/s
+	Duplex: Full
+	Cable type: Twisted Pair
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4.	
+	Using command ifconfig:
+	Received packets: 73294004
+    Transmitted packets: 2101152
+	Packets Dropped: 0
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5.
+	Yes, there is a difference between the statistics collected by netstat and ifconfig because of the time delay between executing those commands.
+	During that time delay, the ethernet have sent some more packets, which is reflected back as difference in number of packets.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6.	
+	Using command ifconfig:
+	No. of collisions: 0
+	It is possible because of duplex link and each computer/device is connected directly to switch. As a result no collisions occur.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7.	
+	Using command ifconfig:
+	Received bytes:6975062715 (6.9 GB)
+	Transmitted bytes:1310385664 (1.3 GB)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8.	
+	Found Mac address using command ifconfig and and then googled it.
+	Pegatron Corporation (70:54:d2) is the manufacturer of the ethernet card.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9.	
+	"lo" is local loopback interface. It just provides interface for communication between applications inside the same host.
+	Loopback link is not present physically. Because of this, it does not have any MAC addr.
+	Loopback interface can be assumed as a communication channel with only one communication end-point.
+	Any message transmitted by this is immediately and only received by the same channel.
+
+	Experiment : 
+	"ping 127.0.0.1" and capturing the communication and writing to a trace file using "tcpdump -w trace.pcap"
+	
+	Observation:
+	The source and destination for the ICMP packets (ping) are the same (127.0.0.1).
+	
+	Conclusion:
+	This means that my device is communicating to itself by "lo" interface. This stands true with our previous arguements.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+10.
+	Default Gateway router IP: 10.105.1.250
+	Default Gateway router MAC addr: 00:19:56:ed:66:c1
+	We found it using route and arp command. By route, We were able to find IP address of Deault gateway router and by ARP, we found its MAC addr.
+
+##############################################################################################################################################################
+
+Exercise 4: Bridging
+
+1.	Reachable IP address from the machines
+	uml1: 10.0.0.1
+	      10.0.0.2
+		  10.0.0.3
+		  10.0.0.4
+	
+	uml2: 10.0.0.1
+		  10.0.0.2
+		  10.0.0.3
+		  10.0.0.4
+		  
+	uml3: 10.0.0.1
+		  10.0.0.2
+		  10.0.0.3
+		  10.0.0.4
+	
+	uml4: 10.0.0.5
+		  10.0.0.6
+		  10.0.0.7
+	
+	uml5: 10.0.0.5
+		  10.0.0.6
+		  10.0.0.7
+	
+	uml6: 10.0.0.8
+
+	Anomalies: a) uml3(IP:10.0.0.4) is not able to reach uml4(IP:10.0.0.5) although they are configured to be connected,in the .xml file.
+			   b) uml5(IP:10.0.0.7) is not able to reach uml6(IP:10.0.0.8) although they are configured to be connected,in the .xml file.
+
+	Possible reason: Uml3 has two ip addresses, one on Net0 and Net1.
+					 Before bridging, the ping(ICMP packets) are only sent on one of this two Ips of uml3, 10.0.0.3 in this case.
+					 Essentially only one IP is in working condition.
+					 Hence the ping from uml3 is not able to reach uml4. Uml4 doesnt receives any packets, hence no response by uml4.
+					 
+					 The ping works two ways, you need to receive a feeback from other side inorder to conclude that receiver is active.
+					 This explains why uml4 is not able to connect(ping) to uml3 too ,due to lack of feedback from uml3 ( All packets are sent on another ip.)
+					 
+					 The same argument works for uml5 and uml6.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+					 
+2.	Reachable IP address from the uml1
+	uml1: 10.0.0.1
+	      10.0.0.2					 
+		  10.0.0.5
+		  10.0.0.6
+		  10.0.0.7
+	
+	Therefore,uml1 can reach interface Net0 and Net1.
+	As uml3 is acting as a bridge now, it no longer responds to ping from other hosts. 
+	uml3 now interconnects Net0 and Net1,hence inter-connecting hosts on Net0 and Net1.
+	This enables uml1 to access interface Net1 and Net0 was already accessible to uml1.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+3.	Reachable IP address from the uml1
+	uml1: 10.0.0.1
+	      10.0.0.2					 
+		  10.0.0.5
+		  10.0.0.8
+
+	Therefore,uml1 can reach interface Net0, Net1 and Net2.
+	As uml5 is acting as a bridge now, it no longer responds to ping from other hosts. 
+	uml5 now interconnects Net1 and Net2,hence inter-connecting hosts on Net1 and Net2.
+	As Net1 and Net0 were already connected, all hosts on Net0, Net1 and Net2 are now interconnected.
+	
+	As a result uml1 can reach uml2, uml4, uml6.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+4.	Ouput:
+	
+	port no		mac addr			is local?			ageing timer
+	1			02:fd:00:00:00:01	no						10.64
+	1			02:fd:00:00:02:01	yes						0
+	2			02:fd:00:00:02:02	yes						0
+	2			02:fd:00:00:05:01	no						10.64
+	
+	Commands used:( AT Uml3)
+	sudo brctl setageing br0 0 // to delete entries
+	sudo brctl setageing br0 300 // reset it to default
+	
+	After doing ping from uml6 to uml1
+	
+	Do: sudo brctl showmacs br0 //at uml3
+	
+	uml6 has MACid as 02:fd:00:00:05:01.
+	uml1 has MACid as 02:fd:00:00:00:01.
+	
+	uml1 sends message on port 1 of bridge uml3.
+	uml6 sends message on port 2 of bridge uml3.
+	
+	Uml3 thus fills its forwarding table as Uml1 on port 1 and Uml6 on port 2.
+	
+	Also the two local entries belong to uml3, which are always present in the table.
+	Hence this is consistent with theory.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+5.	Host uml3 acts as root bridge.
+	ID:8000.02fd00000201
+	
+	Lan Segments				Designated bridge
+	Net0						Bridge 3
+	Net1						Bridge 3
+	Net2						Bridge 5
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+6.	Command List:
+	(At uml3)
+	sudo brctl addbr br0
+	sudo brctl addif br0 eth1
+    sudo brctl addif br0 eth2 
+    ifconfig br0 up
+    sudo brctl stp br0 on
+	
+	(At uml5)
+	sudo brctl addbr br1
+	sudo brctl addif br1 eth1
+    sudo brctl addif br1 eth2 
+    ifconfig br1 up
+    sudo brctl stp br1 on
+
+##############################################################################################################################################################
+
+Extra Credits:
+
+1.	Default ageing time: 300 s
+
+	Before you make any changes to the bridge,use following command:-
+	Command used: sudo brctl showstp br1
+
+	Entry as :"ageing time:300"
+
+2.	Bringing down the root bridge ,uml3 in this case results in loss of connectivity between Net0 and Net1.
+	The other remaining bridge uml5 becomes the Root bridge, as it is the only bridge with lowest bridge-id.
+	
+	Also the designated bridge of uml4 is updated as uml5(it being the only root).
+	
+
+##############################################################################################################################################################	
